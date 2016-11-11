@@ -101,14 +101,14 @@
 		E8037D541DD5ABAF00096969 /* BLEProject */ = {
 			isa = PBXGroup;
 			children = (
+				E8037D881DD5AC9C00096969 /* Resource */,
+				E8037D891DD5AC9C00096969 /* Tool */,
 				E8037D581DD5ABAF00096969 /* AppDelegate.h */,
 				E8037D591DD5ABAF00096969 /* AppDelegate.m */,
 				E8037D5B1DD5ABAF00096969 /* ViewController.h */,
 				E8037D5C1DD5ABAF00096969 /* ViewController.m */,
 				E8037D5E1DD5ABAF00096969 /* Main.storyboard */,
-				E8037D611DD5ABAF00096969 /* Assets.xcassets */,
 				E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */,
-				E8037D661DD5ABAF00096969 /* Info.plist */,
 				E8037D551DD5ABAF00096969 /* Supporting Files */,
 			);
 			path = BLEProject;
@@ -117,6 +117,8 @@
 		E8037D551DD5ABAF00096969 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E8037D611DD5ABAF00096969 /* Assets.xcassets */,
+				E8037D661DD5ABAF00096969 /* Info.plist */,
 				E8037D561DD5ABAF00096969 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +140,20 @@
 				E8037D7C1DD5ABAF00096969 /* Info.plist */,
 			);
 			path = BLEProjectUITests;
+			sourceTree = "<group>";
+		};
+		E8037D881DD5AC9C00096969 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E8037D891DD5AC9C00096969 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
