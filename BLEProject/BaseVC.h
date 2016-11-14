@@ -1,5 +1,5 @@
 //
-//  FunctionTabbarVC.h
+//  BaseVC.h
 //  BLEProject
 //
 //  Created by jp on 2016/11/14.
@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+MMDrawerController.h"
 
-@interface FunctionTabbarVC : UITabBarController
+
+@interface BaseVC : UIViewController
 
 @end

@@ -15,10 +15,9 @@
 		E8037D651DD5ABAF00096969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */; };
 		E8037D701DD5ABAF00096969 /* BLEProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */; };
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
-		E8505D521DD6FAC40072C266 /* FuctionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D511DD6FAC40072C266 /* FuctionVC.m */; };
 		E8505D551DD6FB430072C266 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D541DD6FB430072C266 /* ScanVC.m */; };
 		E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8505D581DD7032E0072C266 /* FunctionVC.storyboard */; };
-		E8D8E70F1DD9475A001B1F83 /* FunctionTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E70E1DD9475A001B1F83 /* FunctionTabbarVC.m */; };
+		E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E7141DD9AC73001B1F83 /* BaseVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,15 +54,13 @@
 		E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectUITests.m; sourceTree = "<group>"; };
 		E8037D7C1DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8505D501DD6FAC40072C266 /* FuctionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuctionVC.h; sourceTree = "<group>"; };
-		E8505D511DD6FAC40072C266 /* FuctionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuctionVC.m; sourceTree = "<group>"; };
 		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
 		E8505D541DD6FB430072C266 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
 		E8505D561DD6FE580072C266 /* MacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		E8505D571DD6FFAF0072C266 /* BlueHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
 		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
-		E8D8E70D1DD9475A001B1F83 /* FunctionTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionTabbarVC.h; sourceTree = "<group>"; };
-		E8D8E70E1DD9475A001B1F83 /* FunctionTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionTabbarVC.m; sourceTree = "<group>"; };
+		E8D8E7131DD9AC73001B1F83 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		E8D8E7141DD9AC73001B1F83 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,10 +139,8 @@
 				E8037D8B1DD5B54100096969 /* FunctionModel */,
 				E8037D581DD5ABAF00096969 /* AppDelegate.h */,
 				E8037D591DD5ABAF00096969 /* AppDelegate.m */,
-				E8505D501DD6FAC40072C266 /* FuctionVC.h */,
-				E8505D511DD6FAC40072C266 /* FuctionVC.m */,
-				E8D8E70D1DD9475A001B1F83 /* FunctionTabbarVC.h */,
-				E8D8E70E1DD9475A001B1F83 /* FunctionTabbarVC.m */,
+				E8D8E7131DD9AC73001B1F83 /* BaseVC.h */,
+				E8D8E7141DD9AC73001B1F83 /* BaseVC.m */,
 				E8505D531DD6FB430072C266 /* ScanVC.h */,
 				E8505D541DD6FB430072C266 /* ScanVC.m */,
 				E8037D5E1DD5ABAF00096969 /* Main.storyboard */,
@@ -413,8 +408,7 @@
 			files = (
 				E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */,
 				E8505D551DD6FB430072C266 /* ScanVC.m in Sources */,
-				E8505D521DD6FAC40072C266 /* FuctionVC.m in Sources */,
-				E8D8E70F1DD9475A001B1F83 /* FunctionTabbarVC.m in Sources */,
+				E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */,
 				E8037D571DD5ABAF00096969 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
