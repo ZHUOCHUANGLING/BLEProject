@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */; };
 		E8037D571DD5ABAF00096969 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D561DD5ABAF00096969 /* main.m */; };
 		E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D591DD5ABAF00096969 /* AppDelegate.m */; };
 		E8037D601DD5ABAF00096969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8037D5E1DD5ABAF00096969 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.release.xcconfig"; sourceTree = "<group>"; };
+		52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D521DD5ABAF00096969 /* BLEProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D561DD5ABAF00096969 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8037D581DD5ABAF00096969 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
 		E8D8E70D1DD9475A001B1F83 /* FunctionTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionTabbarVC.h; sourceTree = "<group>"; };
 		E8D8E70E1DD9475A001B1F83 /* FunctionTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionTabbarVC.m; sourceTree = "<group>"; };
+		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		878E7BC8DB9BF0A3F2B0E2E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD1CC568CD64CA51A083ACD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */,
+				11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8037D491DD5ABAF00096969 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +117,8 @@
 				E8037D6E1DD5ABAF00096969 /* BLEProjectTests */,
 				E8037D791DD5ABAF00096969 /* BLEProjectUITests */,
 				E8037D531DD5ABAF00096969 /* Products */,
+				CD1CC568CD64CA51A083ACD0 /* Pods */,
+				878E7BC8DB9BF0A3F2B0E2E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8037D7F1DD5ABAF00096969 /* Build configuration list for PBXNativeTarget "BLEProject" */;
 			buildPhases = (
+				FD4BF18ADA0BA658F25AFC10 /* [CP] Check Pods Manifest.lock */,
 				E8037D4E1DD5ABAF00096969 /* Sources */,
 				E8037D4F1DD5ABAF00096969 /* Frameworks */,
 				E8037D501DD5ABAF00096969 /* Resources */,
+				2402DAB4EA215A778E322C59 /* [CP] Embed Pods Frameworks */,
+				E7FF62E0660A6776D95FFB25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,6 +357,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2402DAB4EA215A778E322C59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7FF62E0660A6776D95FFB25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4BF18ADA0BA658F25AFC10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8037D4E1DD5ABAF00096969 /* Sources */ = {
@@ -485,6 +560,7 @@
 		};
 		E8037D801DD5ABAF00096969 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4WJ5UPLLC;
@@ -500,6 +576,7 @@
 		};
 		E8037D811DD5ABAF00096969 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4WJ5UPLLC;
