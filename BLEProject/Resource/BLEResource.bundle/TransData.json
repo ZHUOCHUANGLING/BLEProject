@@ -1,0 +1,2690 @@
+{
+  "protocolVersion": 1,
+  "OTAUrl": "http://ota.buildwin.com.cn/powermusiclight/",
+  "peripheralInfo": {
+    "comInfo": 1,
+    "chipInfo": 1,
+    "mainVersion": 1,
+    "subVersion": 1
+  },
+  "module": [
+    {
+      "name": "MULT",
+      "location": {
+        "SSPhead": "MUL",
+        "service": "FFF0",
+        "character": "FFF1"
+      },
+      "com": [
+        {
+          "comment": "同步外设信息，获取外设当前模式以及其他模式开闭状态",
+          "name": "getState",
+          "location": {
+            "SSPhead": "MUL",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "intoFM",
+          "comment": "进入FM模式,并获取其内容",
+          "location": {
+            "SSPhead": "MUL",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "intoAUX",
+          "comment": "进入AUX模式，并获取其内容",
+          "location": {
+            "SSPhead": "MUL",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "intoMUSIC",
+          "comment": "进入MUSIC模式，并获取其内容",
+          "location": {
+            "SSPhead": "MUL",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "getFinish",
+          "comment": "同步结束指令",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "comment": "当前外设状态，1为FM 2为AUX，3为Music",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF1"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MUSIC",
+      "location": {
+        "SSPhead": "MUS",
+        "service": "FFF0",
+        "character": "FFF2"
+      },
+      "com": [
+        {
+          "name": "prev",
+          "comment": "上一曲",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "next",
+          "comment": "下一曲",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "play",
+          "comment": "播放或暂停",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "source",
+          "comment": "设置歌曲源 1为bluetooth 2为sdcard 3为u盘",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 4,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "device",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "getSongList",
+          "comment": "获取歌曲列表",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "playMode",
+          "comment": "设置播放模式 1为全曲 2为单曲循环 3为随机",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "mode",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "selectSong",
+          "comment": "设置播放歌曲index 点击播放播放外设对应序号曲目",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 4,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            }
+          ]
+        },
+        {
+          "name": "LBState",
+          "comment": "灯光律动开关 LBopen 00为关 01为开",
+          "location": {
+            "SSPhead": "LED",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 5,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "LBopen",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "MUSICState",
+          "comment": "MUSIC模式状态 switch为是否接入 00为未接入 01为已接入",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF4"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 4,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "sourceOpen",
+          "comment": "歌曲源开启通知，1为bluetooth模式连接 2为SDcard接入 3为U盘接入",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "source",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "sourceClose",
+          "comment": "歌曲源关闭通知，1为bluetooth连接断开 2为SDcard关闭 3为U盘关闭",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "source",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "sourceState",
+          "comment": "获取当前外设所属状态 1为bluetooth 2为SDcard 3为U盘",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "source",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "songContent",
+          "comment": "通知当前播放歌曲内容 index:播放序号 num:歌曲数量 currentTime:当前时间 totalTime：总时间 switch:是否播放 播放为1 暂停为0 ",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "outPut",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "num",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "currentTime",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "totalTime",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 2,
+                "min": 0,
+                "max": -1
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 10,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "currentName",
+          "comment": "当前歌曲名数据通知 code 编码 01为unicode 02为gbk switch为传送开关 01为传送中 00传送结束 剩余16位为data",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "outPut",
+          "des": "data",
+          "content": [
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "code",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "data",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 16,
+                "min": 0,
+                "max": -1
+              }
+            }
+          ]
+        },
+        {
+          "name": "songList",
+          "comment": "歌曲列表数据 code为编码 swithch为传送开关 01开始 00结束 剩余16位为数据",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "outPut",
+          "des": "data",
+          "content": [
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "code",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "data",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 16,
+                "min": 0,
+                "max": -1
+              }
+            }
+          ]
+        },
+        {
+          "name": "localControl",
+          "comment": "bluetooth模式中的外设按键响应 switch中 01是上一曲 02是播放暂停 03是下一曲",
+          "location": {
+            "SSPhead": "MUS",
+            "service": "FFF0",
+            "character": "FFF2"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 4,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LED",
+      "location": {
+        "SSPhead": "LED",
+        "service": "FFF0",
+        "character": "FFF3"
+      },
+      "com": [
+        {
+          "name": "setScene",
+          "comment": "设置场景模式",
+          "location": {
+            "SSPhead": "LED",
+            "service": "FFF0",
+            "character": "FFF3"
+          },
+          "controller": "table",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "type",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "trans",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "colorLight",
+          "comment": "设置外设灯光RGBW",
+          "location": {
+            "SSPhead": "LED",
+            "service": "FFF0",
+            "character": "FFF3"
+          },
+          "controller": "circle",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "R",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "G",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "B",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "W",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AUX",
+      "location": {
+        "SSPhead": "AUX",
+        "service": "FFF0",
+        "character": "FFF4"
+      },
+      "note": [
+        {
+          "name": "AUXState",
+          "comment": "AUX模式状态 switch为是否接入 00为未接入 01为已接入",
+          "location": {
+            "SSPhead": "AUX",
+            "service": "FFF0",
+            "character": "FFF4"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "AUXcontent",
+          "comment": "AUX模式内容 vol表示当前音量级数 0~15",
+          "location": {
+            "SSPhead": "AUX",
+            "service": "FFF0",
+            "character": "FFF4"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "vol",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 15
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VOL",
+      "location": {
+        "SSPhead": "VOL",
+        "service": "FFF0",
+        "character": "FFF5"
+      },
+      "com": [
+        {
+          "name": "setVol",
+          "comment": "设置音量",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFF5"
+          },
+          "controller": "Slider",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "vol",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 15
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "volValue",
+          "comment": "获取当前外设音量",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFF5"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "currentVol",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 15
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FM",
+      "location": {
+        "SSPhead": "FML",
+        "service": "FFF0",
+        "character": "FFF6"
+      },
+      "com": [
+        {
+          "name": "prev",
+          "comment": "FM上一台",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "next",
+          "comment": "FM下一台",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "search",
+          "comment": "FM搜台/停止搜台",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "setChannel",
+          "comment": "设置频点 16位数据 101.5为1015转16位 在channel中传递",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "input",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "channel",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "FMContent",
+          "comment": "FM内容通知 currentChannel 当前频道序号 totalChannel总频道序号 channelRate频点 规则 101.5 乘十转16位 即1015",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "currentChannel",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "totalChannel",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "channelRate",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            }
+          ]
+        },
+        {
+          "name": "searchState",
+          "comment": "外设搜索状态 switch为搜索状态开关 00为搜索状态关闭 01为搜索状态开启",
+          "location": {
+            "SSPhead": "FML",
+            "service": "FFF0",
+            "character": "FFF6"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ALARM",
+      "location": {
+        "SSPhead": "ALA",
+        "service": "FFF0",
+        "character": "FFF7"
+      },
+      "com": [
+        {
+          "name": "setTime",
+          "comment": "校准时间 均为16进制 年为00～99范围 weekday通过位运算获取 星期日为1<<6 星期六为1<<0",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "year",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "mouth",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "day",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "hour",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "minute",
+              "val": 0,
+              "rang": {
+                "loc": 5,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "second",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "weekday",
+              "val": 0,
+              "rang": {
+                "loc": 7,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "getInfo",
+          "comment": "获取闹钟数据",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "delAlarm",
+          "comment": "删除闹钟 index为闹钟序号",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "setAlarm",
+          "comment": "设置闹钟 index为序号 opne为开关 repeat为重复时间 通过位运算获取 1<<6为星期日 1<<0为星期六",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "input",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 256
+              }
+            },
+            {
+              "key": "open",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "hour",
+              "val": 0,
+              "rang": {
+                "len": 1,
+                "loc": 3,
+                "min": 0,
+                "max": 23
+              }
+            },
+            {
+              "key": "minute",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 59
+              }
+            },
+            {
+              "key": "repeat",
+              "val": 0,
+              "rang": {
+                "loc": 5,
+                "len": 1,
+                "min": 0,
+                "max": -1
+              }
+            },
+            {
+              "key": "task",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 1,
+                "min": 0,
+                "max": -1
+              }
+            },
+            {
+              "key": "scenes",
+              "val": 0,
+              "rang": {
+                "loc": 7,
+                "len": 1,
+                "min": 0,
+                "max": -1
+              }
+            },
+            {
+              "key": "channel",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 2,
+                "min": 0,
+                "max": -1
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "alarmInfo",
+          "comment": "闹钟信息 内容格式与设置闹钟格式相同 ",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "data",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "index",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "open",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "hour",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 23
+              }
+            },
+            {
+              "key": "minute",
+              "val": 0,
+              "rang": {
+                "loc": 5,
+                "len": 1,
+                "min": 0,
+                "max": 59
+              }
+            },
+            {
+              "key": "repeat",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "task",
+              "val": 0,
+              "rang": {
+                "loc": 7,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "scenes",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "channel",
+              "val": 0,
+              "rang": {
+                "loc": 9,
+                "len": 2,
+                "min": 0,
+                "max": -1
+              }
+            }
+          ]
+        },
+        {
+          "name": "bellState",
+          "comment": "闹钟响铃状态 switch 01为开启 00为关闭 ",
+          "location": {
+            "SSPhead": "ALA",
+            "service": "FFF0",
+            "character": "FFF7"
+          },
+          "controller": "state",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OTAHANDLE",
+      "location": {
+        "SSPhead": "OTA",
+        "service": "FFF0",
+        "character": "FFF8"
+      },
+      "com": [
+        {
+          "name": "website",
+          "comment": "OTA升级地址",
+          "location": {
+            "SSPhead": "OTA",
+            "service": "FFF0",
+            "character": "FFF8"
+          },
+          "controller": "http://ota.buildwin.com.cn/powermusiclight/",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 0,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "start",
+          "comment": "第一次握手policy为更新方案 ",
+          "location": {
+            "SSPhead": "OTA",
+            "service": "FFF0",
+            "character": "FFF8"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "policy",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "finish",
+          "comment": "第二次握手 CRC为文件CRC值 用于验证",
+          "location": {
+            "SSPhead": "OTA",
+            "service": "FFF0",
+            "character": "FFF8"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "CRC",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "startResponse",
+          "comment": "第一次握手回应 switch为握手回应 01为成功 00为失败",
+          "location": {
+            "SSPhead": "OTA",
+            "service": "FFF0",
+            "character": "FFF8"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "finishResponse",
+          "comment": "第二次握手回应 switch为握手回应 01为成功 00为失败",
+          "location": {
+            "SSPhead": "OTA",
+            "service": "FFF0",
+            "character": "FFF8"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OTADATA",
+      "comment": "OTA数据传输模块 20byte纯数据传输",
+      "location": {
+        "SSPhead": "",
+        "service": "FFF0",
+        "character": "FFF9"
+      },
+      "com": [
+        {
+          "name": "sendData",
+          "location": {
+            "SSPhead": "",
+            "service": "FFF0",
+            "character": "FFF9"
+          },
+          "controller": "event",
+          "des": "data",
+          "content": [
+            {
+              "key": "data",
+              "val": 0,
+              "rang": {
+                "loc": 0,
+                "len": 20,
+                "min": 0,
+                "max": -1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VERIFY",
+      "location": {
+        "SSPhead": "VER",
+        "service": "FFF0",
+        "character": "FFFA"
+      },
+      "com": [
+        {
+          "name": "getVersion",
+          "comment": "获取外设固件版本信息",
+          "location": {
+            "SSPhead": "VER",
+            "service": "FFF0",
+            "character": "FFFA"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "version",
+          "comment": "外设固件信息返回通知 com为公司信息 chipNum为芯片信息  main为主版本 sub为副版本 均用16进制2byte表示",
+          "location": {
+            "SSPhead": "VER",
+            "service": "FFF0",
+            "character": "FFFA"
+          },
+          "controller": "event",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "com",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "chipNum",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "main",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            },
+            {
+              "key": "sub",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 2,
+                "min": 0,
+                "max": 65535
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SHAKE",
+      "location": {
+        "SSPhead": "VOL",
+        "service": "FFF0",
+        "character": "FFFB"
+      },
+      "com": [
+        {
+          "name": "task",
+          "comment": "摇一摇动作指令",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFB"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "switch",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EQ",
+      "location": {
+        "SSPhead": "VOL",
+        "service": "FFF0",
+        "character": "FFFC"
+      },
+      "com": [
+        {
+          "name": "setEQ",
+          "comment": "设置EQ",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFC"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "EQtype",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "setUserEQ",
+          "comment": "设置自定义EQ",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFC"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 3,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "EQone",
+              "val": 0,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQtwo",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQthree",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQfour",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQfive",
+              "val": 0,
+              "rang": {
+                "loc": 5,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQsix",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQseven",
+              "val": 0,
+              "rang": {
+                "loc": 7,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQeight",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "getEQ",
+          "comment": "获取EQ状态",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFC"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "name": "userEQInfo",
+          "comment": "自定义EQ状态通知",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFC"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 2,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "EQone",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQtwo",
+              "val": 0,
+              "rang": {
+                "loc": 3,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQthree",
+              "val": 0,
+              "rang": {
+                "loc": 4,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQfour",
+              "val": 0,
+              "rang": {
+                "loc": 5,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQfive",
+              "val": 0,
+              "rang": {
+                "loc": 6,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQsix",
+              "val": 0,
+              "rang": {
+                "loc": 7,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQseven",
+              "val": 0,
+              "rang": {
+                "loc": 8,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQeight",
+              "val": 0,
+              "rang": {
+                "loc": 9,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        {
+          "name": "EQinfo",
+          "comment": "预设EQ状态",
+          "location": {
+            "SSPhead": "VOL",
+            "service": "FFF0",
+            "character": "FFFC"
+          },
+          "controller": "button",
+          "des": "msg",
+          "content": [
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 0,
+                "len": 1,
+                "min": 0,
+                "max": 0
+              }
+            },
+            {
+              "key": "ident",
+              "val": 1,
+              "rang": {
+                "loc": 1,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "EQtype",
+              "val": 0,
+              "rang": {
+                "loc": 2,
+                "len": 1,
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

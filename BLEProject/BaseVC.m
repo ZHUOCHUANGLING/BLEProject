@@ -7,14 +7,18 @@
 //
 
 #import "BaseVC.h"
-#import "MMDrawerController.h"
-#import "MMDrawerBarButtonItem.h"
+
 
 @interface BaseVC ()
+
+
+
 
 @end
 
 @implementation BaseVC
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,18 +28,12 @@
     [self settingSideBarMode];
     
     
-//    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
-//    [self.navigationItem setLeftBarButtonItem:leftButton animated:YES];
+    
 }
 
 
 
-//-(void)leftButtonPress:(id)sender{
-//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
-//                                    completion:nil];
-//    
-//    
-//}
+
 
 
 
@@ -45,12 +43,40 @@
 
     self.mm_drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     self.mm_drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
-    self.mm_drawerController.maximumLeftDrawerWidth = 200.0;
+    self.mm_drawerController.maximumLeftDrawerWidth = ScreenWidth * 0.4;
+    [self.mm_drawerController setShouldStretchDrawer:NO];
     
+    
+    
+    
+    
+    [self settingTabbarBtn];
+
+}
+
+
+
+
+
+
+
+
+
+#pragma mark -  侧边栏按钮
+-(void)settingTabbarBtn{
+
+    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftButton animated:YES];
 
 
 }
 
+-(void)leftButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
+                                    completion:nil];
+    
+    
+}
 
 
 
@@ -67,7 +93,7 @@
 #pragma mark -  跳转搜索界面
 -(void)presentScanAction{
     
-    [self performSegueWithIdentifier:@"scanSegue" sender:nil];
+//    [self performSegueWithIdentifier:@"scanSegue" sender:nil];
     
 }
 

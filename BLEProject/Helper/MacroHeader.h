@@ -10,9 +10,16 @@
 #define MacroHeader_h
 
 
+
+//BLE
+#define DataManager [DataStreamManager sharedManager]
+
+
+
+//
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
-
+#define margin 15
 
 
 #endif /* MacroHeader_h */

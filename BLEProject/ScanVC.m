@@ -8,23 +8,206 @@
 
 #import "ScanVC.h"
 
-@interface ScanVC ()
+
+@interface ScanVC ()<UITableViewDelegate,UITableViewDataSource>
+
+
+#pragma mark - 属性
+@property (nonatomic, strong) NSMutableArray <CBPeripheral *> *dataArr;
+@property (nonatomic, assign) CBCentralManager *central;
+
+#pragma mark - 视图
+@property (weak, nonatomic) IBOutlet UITableView *peripheralList;
 
 @end
 
 @implementation ScanVC
 
+- (NSMutableArray *)dataArr
+{
+    if (!_dataArr) {
+        _dataArr = [@[] mutableCopy];
+    }
+    return _dataArr;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [DataManager startScan];
+    
+    [self initUI];
+    
+    
 }
 
-- (IBAction)searchBtn:(UIButton *)sender {
+
+
+-(void)initUI{
+    _peripheralList.delegate = self;
+    _peripheralList.dataSource = self;
+    _peripheralList.layer.cornerRadius = margin;
+    //去掉tableview顶部留白
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
+    
+    [self centerStartListening];
+}
+
+
+
+
+
+
+
+
+
+#pragma mark -  开始监听
+-(void)centerStartListening{
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralUpdateState:) name:BLECentralStateUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralScanedPeripheral:) name:BLEScanedPeripheralNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralSuccessConnnectPeripher:) name:BLEPeripheralConnectSuccedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralFailConnectPeripher:) name:BLEConnectFailNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralDisconnetPeripheral:) name:BLEPeripheralDisconnectNotification object:nil];
+
+}
+
+
+
+
+#pragma mark -  收到通知回调方法
+
+//状态改变
+- (void)CenteralUpdateState:(NSNotification *)StateNote{
+
+    CBCentralManager *manager = StateNote.userInfo[@"centralManager"];
+    _central = manager;
+    
+}
+
+//中心设备搜索到外设
+- (void)CenteralScanedPeripheral:(NSNotification *)PeripheralNote
+{
+    //遍历单例中保存的外设
+    for (CBPeripheral *peripheral in DataManager.searchedPeripheralArr) {
+        if (![self.dataArr containsObject:peripheral]) {
+            [self.dataArr addObject:peripheral];
+            [self resetDataSource];
+        }
+    }
+    
+}
+
+//中心设备连接成功
+- (void)CenteralSuccessConnnectPeripher:(NSNotification *)SuccessNote
+{
+    
+    [self dismissVC];
+    NSLog(@"-->与外设连接成功");
+}
+
+//中心设备连接失败
+- (void)CenteralFailConnectPeripher:(NSNotification *)FailNote
+{
+    NSLog(@"失败-->%@",FailNote.userInfo);
+}
+
+//中心设备断开连接
+- (void)CenteralDisconnetPeripheral:(NSNotification *)disConnectNote
+{
+    
+    [self resetDataSource];
+    NSLog(@"--->与外设断开连接");
+}
+
+
+
+#pragma mark -  tableView_DataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return _dataArr.count;
+
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        //设置文字内缩进
+        cell.separatorInset = UIEdgeInsetsMake(0, 20, 0, 0);
+        //取消cell选中效果
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CBPeripheral *peripheral = self.dataArr[indexPath.row];
+    cell.textLabel.text = peripheral.name;
+    cell.textLabel.textColor = [UIColor blackColor];
+    
+}
+
+
+
+
+#pragma mark -  tableView_Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [DataManager disconnectPeripheral];
+    
+    DataManager.connectedPeripheral = self.dataArr[indexPath.row];
+    
+    [DataManager connectPeripheral:DataManager.connectedPeripheral];
+    
+}
+
+
+
+
+
+#pragma mark -  搜索按钮
+- (IBAction)searchBtn:(UIButton *)sender {
+    [DataManager stopScan];
+    [self.dataArr removeAllObjects];
+    [self resetDataSource];
+    [DataManager startScan];
+    
+    
+    
+    
+    
+    
+    [self dismissVC];
+}
+
+
+#pragma mark -  离开当前界面
+-(void)dismissVC{
+    
+    [DataManager stopScan];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
+}
+
+
+#pragma mark - 更新数据源
+- (void)resetDataSource
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.peripheralList reloadData];
+    });
 }
 
 

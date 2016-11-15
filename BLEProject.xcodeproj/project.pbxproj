@@ -15,9 +15,12 @@
 		E8037D651DD5ABAF00096969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */; };
 		E8037D701DD5ABAF00096969 /* BLEProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */; };
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
+		E80C69871DD9FE9400675BD9 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */; };
+		E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */; };
 		E8505D551DD6FB430072C266 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D541DD6FB430072C266 /* ScanVC.m */; };
 		E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8505D581DD7032E0072C266 /* FunctionVC.storyboard */; };
 		E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E7141DD9AC73001B1F83 /* BaseVC.m */; };
+		E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +57,17 @@
 		E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectUITests.m; sourceTree = "<group>"; };
 		E8037D7C1DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
-		E8505D541DD6FB430072C266 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
+		E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
+		E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
+		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanVC.h; path = ../../ScanVC.h; sourceTree = "<group>"; };
+		E8505D541DD6FB430072C266 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanVC.m; path = ../../ScanVC.m; sourceTree = "<group>"; };
 		E8505D561DD6FE580072C266 /* MacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		E8505D571DD6FFAF0072C266 /* BlueHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
 		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
 		E8D8E7131DD9AC73001B1F83 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		E8D8E7141DD9AC73001B1F83 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80C69871DD9FE9400675BD9 /* BluetoothFoundation.framework in Frameworks */,
 				313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,10 +147,10 @@
 				E8037D8B1DD5B54100096969 /* FunctionModel */,
 				E8037D581DD5ABAF00096969 /* AppDelegate.h */,
 				E8037D591DD5ABAF00096969 /* AppDelegate.m */,
+				E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */,
+				E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */,
 				E8D8E7131DD9AC73001B1F83 /* BaseVC.h */,
 				E8D8E7141DD9AC73001B1F83 /* BaseVC.m */,
-				E8505D531DD6FB430072C266 /* ScanVC.h */,
-				E8505D541DD6FB430072C266 /* ScanVC.m */,
 				E8037D5E1DD5ABAF00096969 /* Main.storyboard */,
 				E8505D581DD7032E0072C266 /* FunctionVC.storyboard */,
 				E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */,
@@ -182,6 +190,8 @@
 		E8037D881DD5AC9C00096969 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */,
+				E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 		E8037D8A1DD5B54100096969 /* FunctionController */ = {
 			isa = PBXGroup;
 			children = (
+				E8505D531DD6FB430072C266 /* ScanVC.h */,
+				E8505D541DD6FB430072C266 /* ScanVC.m */,
 			);
 			name = FunctionController;
 			path = Tool/FunctionController;
@@ -334,6 +346,7 @@
 				E8037D621DD5ABAF00096969 /* Assets.xcassets in Resources */,
 				E8037D601DD5ABAF00096969 /* Main.storyboard in Resources */,
 				E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */,
+				E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +422,7 @@
 				E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */,
 				E8505D551DD6FB430072C266 /* ScanVC.m in Sources */,
 				E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */,
+				E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */,
 				E8037D571DD5ABAF00096969 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +572,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4WJ5UPLLC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BLEProject/Resource",
+					"$(PROJECT_DIR)/BLEProject/Resource/BLEResource.bundle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BLEProject/Helper/BlueHeader.pch";
 				INFOPLIST_FILE = BLEProject/Info.plist;
@@ -574,6 +593,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4WJ5UPLLC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BLEProject/Resource",
+					"$(PROJECT_DIR)/BLEProject/Resource/BLEResource.bundle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BLEProject/Helper/BlueHeader.pch";
 				INFOPLIST_FILE = BLEProject/Info.plist;

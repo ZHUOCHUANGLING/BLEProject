@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="-2279" y="701"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Left SideVC-->
         <scene sceneID="dhn-z7-4HC">
             <objects>
-                <tableViewController id="Xct-bp-MUG" sceneMemberID="viewController">
+                <tableViewController id="Xct-bp-MUG" customClass="LeftSideVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7cM-SO-D00">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YF3-fL-1Z6" id="LQr-hi-3DO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fd-Oj-luc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3630" y="1277"/>
+            <point key="canvasLocation" x="-3068" y="1460"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cDA-ej-Dhr">
@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="-1164" y="699"/>
         </scene>
-        <!--ScanVC-->
+        <!--搜索-->
         <scene sceneID="RQI-7k-wtb">
             <objects>
                 <viewController id="o4l-4L-hSe" customClass="ScanVC" sceneMemberID="viewController">
@@ -87,26 +87,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qlc-4a-Iml">
+                                <rect key="frame" x="60" y="131" width="255" height="405"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etk-fb-yKH">
-                                <rect key="frame" x="164" y="600" width="46" height="30"/>
+                                <rect key="frame" x="164" y="589" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="searchBtn:" destination="o4l-4L-hSe" eventType="touchUpInside" id="gvv-7c-wvW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qlc-4a-Iml">
-                                <rect key="frame" x="60" y="151" width="255" height="405"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="搜索" id="RvB-yf-keh"/>
+                    <connections>
+                        <outlet property="peripheralList" destination="Qlc-4a-Iml" id="OFI-hn-7n5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frl-C0-Ora" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3510" y="2492"/>
+            <point key="canvasLocation" x="-2279" y="2490"/>
         </scene>
         <!--BaseVC-->
         <scene sceneID="DjI-IN-h7Z">
@@ -123,12 +127,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="yav-PV-KNv"/>
                     <connections>
-                        <segue destination="o4l-4L-hSe" kind="modal" identifier="scanSegue" id="Otq-SG-d3A"/>
+                        <segue destination="Mn1-vz-ibd" kind="modal" identifier="scanSegue" id="Otq-SG-d3A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hs-CN-1vj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2116" y="1736"/>
+            <point key="canvasLocation" x="-1164" y="1579"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ppz-X0-7Od">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mn1-vz-ibd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D91-8M-jLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o4l-4L-hSe" kind="relationship" relationship="rootViewController" id="M83-Oe-t1w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RET-Nt-BXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1164" y="2491"/>
         </scene>
     </scenes>
 </document>
