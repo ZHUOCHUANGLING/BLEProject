@@ -127,7 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yav-PV-KNv"/>
                     <connections>
-                        <segue destination="Mn1-vz-ibd" kind="modal" identifier="scanSegue" id="Otq-SG-d3A"/>
+                        <segue destination="Mn1-vz-ibd" kind="modal" identifier="scanSegue" id="s5e-85-hLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hs-CN-1vj" userLabel="First Responder" sceneMemberID="firstResponder"/>

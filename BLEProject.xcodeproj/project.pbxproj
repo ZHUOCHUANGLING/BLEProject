@@ -19,6 +19,8 @@
 		E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */; };
 		E8505D551DD6FB430072C266 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D541DD6FB430072C266 /* ScanVC.m */; };
 		E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8505D581DD7032E0072C266 /* FunctionVC.storyboard */; };
+		E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A16D6C1DDB317900AE15B9 /* LampVC.m */; };
+		E8A16D701DDB320B00AE15B9 /* musicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A16D6F1DDB320B00AE15B9 /* musicVC.m */; };
 		E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E7141DD9AC73001B1F83 /* BaseVC.m */; };
 		E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */; };
 /* End PBXBuildFile section */
@@ -57,7 +59,7 @@
 		E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectUITests.m; sourceTree = "<group>"; };
 		E8037D7C1DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
 		E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
 		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanVC.h; path = ../../ScanVC.h; sourceTree = "<group>"; };
@@ -65,6 +67,10 @@
 		E8505D561DD6FE580072C266 /* MacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		E8505D571DD6FFAF0072C266 /* BlueHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
 		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
+		E8A16D6B1DDB317900AE15B9 /* LampVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LampVC.h; sourceTree = "<group>"; };
+		E8A16D6C1DDB317900AE15B9 /* LampVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LampVC.m; sourceTree = "<group>"; };
+		E8A16D6E1DDB320B00AE15B9 /* musicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicVC.h; sourceTree = "<group>"; };
+		E8A16D6F1DDB320B00AE15B9 /* musicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicVC.m; sourceTree = "<group>"; };
 		E8D8E7131DD9AC73001B1F83 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		E8D8E7141DD9AC73001B1F83 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
@@ -153,7 +159,6 @@
 				E8D8E7141DD9AC73001B1F83 /* BaseVC.m */,
 				E8037D5E1DD5ABAF00096969 /* Main.storyboard */,
 				E8505D581DD7032E0072C266 /* FunctionVC.storyboard */,
-				E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */,
 				E8037D551DD5ABAF00096969 /* Supporting Files */,
 			);
 			path = BLEProject;
@@ -162,6 +167,7 @@
 		E8037D551DD5ABAF00096969 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */,
 				E8037D611DD5ABAF00096969 /* Assets.xcassets */,
 				E8037D661DD5ABAF00096969 /* Info.plist */,
 				E8037D561DD5ABAF00096969 /* main.m */,
@@ -190,7 +196,6 @@
 		E8037D881DD5AC9C00096969 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */,
 				E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */,
 			);
 			path = Resource;
@@ -199,6 +204,7 @@
 		E8037D891DD5AC9C00096969 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -208,6 +214,10 @@
 			children = (
 				E8505D531DD6FB430072C266 /* ScanVC.h */,
 				E8505D541DD6FB430072C266 /* ScanVC.m */,
+				E8A16D6B1DDB317900AE15B9 /* LampVC.h */,
+				E8A16D6C1DDB317900AE15B9 /* LampVC.m */,
+				E8A16D6E1DDB320B00AE15B9 /* musicVC.h */,
+				E8A16D6F1DDB320B00AE15B9 /* musicVC.m */,
 			);
 			name = FunctionController;
 			path = Tool/FunctionController;
@@ -419,9 +429,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */,
 				E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */,
 				E8505D551DD6FB430072C266 /* ScanVC.m in Sources */,
 				E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */,
+				E8A16D701DDB320B00AE15B9 /* musicVC.m in Sources */,
 				E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */,
 				E8037D571DD5ABAF00096969 /* main.m in Sources */,
 			);

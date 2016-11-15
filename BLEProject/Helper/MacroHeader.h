@@ -20,6 +20,6 @@
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define margin 15
-
+#define ROWHEIGHT 60
 
 #endif /* MacroHeader_h */
