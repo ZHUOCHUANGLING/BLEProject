@@ -21,15 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cea-Nx-bKH">
-                                <rect key="frame" x="67" y="148" width="240" height="128"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vqj-Rm-zys">
+                                <rect key="frame" x="39" y="535" width="299" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.53925450613083137" green="1" blue="0.43636017236391444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
+                                <connections>
+                                    <action selector="brightnessChange:" destination="iJ0-FK-R2q" eventType="valueChanged" id="5hC-DR-ahI"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HQl-LF-Krk"/>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="vqj-Rm-zys" id="n1s-qo-vu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpq-cE-Yks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,7 +43,7 @@
         <!--MusicVC-->
         <scene sceneID="1zh-aB-7fV">
             <objects>
-                <viewController id="04g-s1-qwm" customClass="musicVC" sceneMemberID="viewController">
+                <viewController id="04g-s1-qwm" customClass="MusicVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MuT-HV-swt"/>
                         <viewControllerLayoutGuide type="bottom" id="qdA-Tt-nE1"/>
@@ -61,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="848"/>
         </scene>
-        <!--View Controller-->
+        <!--FMVC-->
         <scene sceneID="sjP-LO-Ae3">
             <objects>
-                <viewController id="oIQ-rk-FFO" sceneMemberID="viewController">
+                <viewController id="oIQ-rk-FFO" customClass="FMVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="igb-gi-VGc"/>
                         <viewControllerLayoutGuide type="bottom" id="lQh-z1-LkC"/>
@@ -80,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="1648"/>
         </scene>
-        <!--View Controller-->
+        <!--AUXVC-->
         <scene sceneID="2Xl-yW-joY">
             <objects>
-                <viewController id="CIr-jc-t1O" sceneMemberID="viewController">
+                <viewController id="CIr-jc-t1O" customClass="AUXVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rjL-bf-kb5"/>
                         <viewControllerLayoutGuide type="bottom" id="nD7-lY-gw8"/>
@@ -99,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="2525"/>
         </scene>
-        <!--View Controller-->
+        <!--TimingVC-->
         <scene sceneID="rlq-8H-syz">
             <objects>
-                <viewController id="csl-nk-DNu" sceneMemberID="viewController">
+                <viewController id="csl-nk-DNu" customClass="TimingVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tSM-Vf-dNN"/>
                         <viewControllerLayoutGuide type="bottom" id="svW-gX-55O"/>
@@ -118,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="3466"/>
         </scene>
-        <!--View Controller-->
+        <!--SettingVC-->
         <scene sceneID="uDo-bY-03W">
             <objects>
-                <viewController id="Szj-2i-gyH" sceneMemberID="viewController">
+                <viewController id="Szj-2i-gyH" customClass="SettingVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tfw-11-yry"/>
                         <viewControllerLayoutGuide type="bottom" id="jDh-9h-hHU"/>

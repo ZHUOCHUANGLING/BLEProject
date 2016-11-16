@@ -1,8 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MMDrawerController" "${PODS_ROOT}/Headers/Public/MMDrawerController+Storyboard"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MMDrawerController" "$PODS_CONFIGURATION_BUILD_DIR/MMDrawerController+Storyboard"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MMDrawerController" -isystem "${PODS_ROOT}/Headers/Public/MMDrawerController+Storyboard"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"MMDrawerController" -l"MMDrawerController+Storyboard" -framework "QuartzCore"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MMDrawerController" "${PODS_ROOT}/Headers/Public/MMDrawerController+Storyboard" "${PODS_ROOT}/Headers/Public/RSColorPicker"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MMDrawerController" "$PODS_CONFIGURATION_BUILD_DIR/MMDrawerController+Storyboard" "$PODS_CONFIGURATION_BUILD_DIR/RSColorPicker"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MMDrawerController" -isystem "${PODS_ROOT}/Headers/Public/MMDrawerController+Storyboard" -isystem "${PODS_ROOT}/Headers/Public/RSColorPicker"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"MMDrawerController" -l"MMDrawerController+Storyboard" -l"RSColorPicker" -framework "Accelerate" -framework "CoreGraphics" -framework "QuartzCore" -framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

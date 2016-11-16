@@ -19,6 +19,10 @@
 @end
 
 @implementation LeftSideVC
+{
+    NSInteger selectedRow;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,13 +39,14 @@
     
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
     
-    
-    
-    
+
 
 }
 
 -(void)initData{
+    
+    selectedRow = -1;
+    
     
     _modualIDArr = [NSMutableArray arrayWithObjects:
                     @"lampVC",
@@ -70,10 +75,6 @@
 
 #pragma mark -  tableView_Datasource
 
-
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _modualIDArr.count;
 }
@@ -93,26 +94,43 @@
 
 
 #pragma mark -  tableView_Delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    NSString *functionID = _modualIDArr[indexPath.row];
-    
-    UIViewController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
-    
-    self.mm_drawerController.centerViewController = fVC;
-    
-    
+    if (indexPath.row != selectedRow) {
+        NSString *functionID = _modualIDArr[indexPath.row];
+        
+        UINavigationController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
+        
+        self.mm_drawerController.centerViewController = fVC;
+        
+        
+        
+        fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
+        [self settingNavBar:fVC];
+        
+        selectedRow = indexPath.row;
+
+    }
     
 }
 
 
+#pragma mark -  侧边栏按钮
+-(void)settingNavBar:(UINavigationController *)nav{
+    
+    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
+    [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
+    
+}
 
-
-
-
-
-
+-(void)leftButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
+                                    completion:nil];
+    
+    
+}
 
 
 

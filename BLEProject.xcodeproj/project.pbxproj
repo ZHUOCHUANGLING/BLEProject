@@ -17,10 +17,15 @@
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
 		E80C69871DD9FE9400675BD9 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */; };
 		E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */; };
+		E834A9F51DDC0FF100307B82 /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9F41DDC0FF100307B82 /* MusicVC.m */; };
+		E834A9F81DDC102F00307B82 /* FMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9F71DDC102F00307B82 /* FMVC.m */; };
+		E834A9FB1DDC104700307B82 /* AUXVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9FA1DDC104700307B82 /* AUXVC.m */; };
+		E834A9FE1DDC105E00307B82 /* TimingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9FD1DDC105E00307B82 /* TimingVC.m */; };
+		E834AA011DDC107700307B82 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834AA001DDC107700307B82 /* SettingVC.m */; };
+		E84215A71DDC37B80040A318 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E84215A61DDC37B80040A318 /* UIView+Frame.m */; };
 		E8505D551DD6FB430072C266 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D541DD6FB430072C266 /* ScanVC.m */; };
 		E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8505D581DD7032E0072C266 /* FunctionVC.storyboard */; };
 		E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A16D6C1DDB317900AE15B9 /* LampVC.m */; };
-		E8A16D701DDB320B00AE15B9 /* musicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A16D6F1DDB320B00AE15B9 /* musicVC.m */; };
 		E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E7141DD9AC73001B1F83 /* BaseVC.m */; };
 		E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,18 @@
 		E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
 		E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
+		E834A9F31DDC0FF100307B82 /* MusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
+		E834A9F41DDC0FF100307B82 /* MusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
+		E834A9F61DDC102F00307B82 /* FMVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVC.h; sourceTree = "<group>"; };
+		E834A9F71DDC102F00307B82 /* FMVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMVC.m; sourceTree = "<group>"; };
+		E834A9F91DDC104700307B82 /* AUXVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUXVC.h; sourceTree = "<group>"; };
+		E834A9FA1DDC104700307B82 /* AUXVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUXVC.m; sourceTree = "<group>"; };
+		E834A9FC1DDC105E00307B82 /* TimingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingVC.h; sourceTree = "<group>"; };
+		E834A9FD1DDC105E00307B82 /* TimingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingVC.m; sourceTree = "<group>"; };
+		E834A9FF1DDC107700307B82 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		E834AA001DDC107700307B82 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		E84215A51DDC37B80040A318 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E84215A61DDC37B80040A318 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanVC.h; path = ../../ScanVC.h; sourceTree = "<group>"; };
 		E8505D541DD6FB430072C266 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanVC.m; path = ../../ScanVC.m; sourceTree = "<group>"; };
 		E8505D561DD6FE580072C266 /* MacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
@@ -69,8 +86,6 @@
 		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
 		E8A16D6B1DDB317900AE15B9 /* LampVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LampVC.h; sourceTree = "<group>"; };
 		E8A16D6C1DDB317900AE15B9 /* LampVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LampVC.m; sourceTree = "<group>"; };
-		E8A16D6E1DDB320B00AE15B9 /* musicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicVC.h; sourceTree = "<group>"; };
-		E8A16D6F1DDB320B00AE15B9 /* musicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicVC.m; sourceTree = "<group>"; };
 		E8D8E7131DD9AC73001B1F83 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		E8D8E7141DD9AC73001B1F83 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
@@ -204,6 +219,7 @@
 		E8037D891DD5AC9C00096969 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E84215A41DDC37940040A318 /* UIView+frame */,
 				E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */,
 			);
 			path = Tool;
@@ -212,12 +228,20 @@
 		E8037D8A1DD5B54100096969 /* FunctionController */ = {
 			isa = PBXGroup;
 			children = (
-				E8505D531DD6FB430072C266 /* ScanVC.h */,
-				E8505D541DD6FB430072C266 /* ScanVC.m */,
 				E8A16D6B1DDB317900AE15B9 /* LampVC.h */,
 				E8A16D6C1DDB317900AE15B9 /* LampVC.m */,
-				E8A16D6E1DDB320B00AE15B9 /* musicVC.h */,
-				E8A16D6F1DDB320B00AE15B9 /* musicVC.m */,
+				E834A9F31DDC0FF100307B82 /* MusicVC.h */,
+				E834A9F41DDC0FF100307B82 /* MusicVC.m */,
+				E834A9F61DDC102F00307B82 /* FMVC.h */,
+				E834A9F71DDC102F00307B82 /* FMVC.m */,
+				E834A9F91DDC104700307B82 /* AUXVC.h */,
+				E834A9FA1DDC104700307B82 /* AUXVC.m */,
+				E834A9FC1DDC105E00307B82 /* TimingVC.h */,
+				E834A9FD1DDC105E00307B82 /* TimingVC.m */,
+				E834A9FF1DDC107700307B82 /* SettingVC.h */,
+				E834AA001DDC107700307B82 /* SettingVC.m */,
+				E8505D531DD6FB430072C266 /* ScanVC.h */,
+				E8505D541DD6FB430072C266 /* ScanVC.m */,
 			);
 			name = FunctionController;
 			path = Tool/FunctionController;
@@ -229,6 +253,15 @@
 			);
 			name = FunctionModel;
 			path = Tool/FunctionModel;
+			sourceTree = "<group>";
+		};
+		E84215A41DDC37940040A318 /* UIView+frame */ = {
+			isa = PBXGroup;
+			children = (
+				E84215A51DDC37B80040A318 /* UIView+Frame.h */,
+				E84215A61DDC37B80040A318 /* UIView+Frame.m */,
+			);
+			name = "UIView+frame";
 			sourceTree = "<group>";
 		};
 		E8505D4E1DD6F5E10072C266 /* Helper */ = {
@@ -429,11 +462,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84215A71DDC37B80040A318 /* UIView+Frame.m in Sources */,
+				E834A9F51DDC0FF100307B82 /* MusicVC.m in Sources */,
 				E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */,
+				E834A9FE1DDC105E00307B82 /* TimingVC.m in Sources */,
 				E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */,
+				E834A9FB1DDC104700307B82 /* AUXVC.m in Sources */,
 				E8505D551DD6FB430072C266 /* ScanVC.m in Sources */,
 				E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */,
-				E8A16D701DDB320B00AE15B9 /* musicVC.m in Sources */,
+				E834AA011DDC107700307B82 /* SettingVC.m in Sources */,
+				E834A9F81DDC102F00307B82 /* FMVC.m in Sources */,
 				E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */,
 				E8037D571DD5ABAF00096969 /* main.m in Sources */,
 			);
