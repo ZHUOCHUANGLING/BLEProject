@@ -67,35 +67,17 @@
 
 -(void)initColorPicker{
 
-    int width=0;
-    CGRect rect;
-    if ([UIScreen mainScreen].bounds.size.height == 568) {
-        width = ScreenWidth*0.5;
-        
-        rect = CGRectMake((ScreenWidth-ScreenWidth*0.5)/2.0, 110, width, width);
-        _colorPicker = [[RSColorPickerView alloc] initWithFrame:rect];
-        
-    }
-    
-    if ([UIScreen mainScreen].bounds.size.height == 667) {
-        width = ScreenWidth*0.65;
-        rect = CGRectMake((ScreenWidth-ScreenWidth*0.7)/1.74, 120, width, width);
-        _colorPicker = [[RSColorPickerView alloc] initWithFrame:rect];
-    }
-    
-    if ([UIScreen mainScreen].bounds.size.height == 736) {
-        width = ScreenWidth*0.7;
-        rect = CGRectMake((ScreenWidth-ScreenWidth*0.8)/1.5, 130, width, width);
-        _colorPicker = [[RSColorPickerView alloc] initWithFrame:rect];
-    }
-
-    
-    [_colorPicker setDelegate:self];
+    int width=ScreenWidth*0.7;
     
     
+    CGRect rect = CGRectMake(0.15*ScreenWidth, ScreenHeight*0.15, width, width);
+    _colorPicker = [[RSColorPickerView alloc] initWithFrame:rect];
     
     _colorPicker.cropToCircle = YES;
     _colorPicker.showLoupe = NO;
+    [_colorPicker setDelegate:self];
+    
+
     [self.view addSubview:_colorPicker];
 }
 
