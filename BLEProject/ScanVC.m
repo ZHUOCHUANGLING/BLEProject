@@ -26,10 +26,25 @@
 - (NSMutableArray *)dataArr
 {
     if (!_dataArr) {
-        _dataArr = [@[] mutableCopy];
+        _dataArr = [NSMutableArray array];
     }
     return _dataArr;
 }
+
+
+
+
+
+
+
+
+#pragma mark -  监听断开蓝牙事件
++(void)load{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentScanVC) name:BLEPeripheralDisconnectNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentScanVC) name:BLEConnectFailNotification object:nil];
+}
+
+
 
 
 - (void)viewDidLoad {
@@ -69,8 +84,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralUpdateState:) name:BLECentralStateUpdateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralScanedPeripheral:) name:BLEScanedPeripheralNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralSuccessConnnectPeripher:) name:BLEPeripheralConnectSuccedNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralFailConnectPeripher:) name:BLEConnectFailNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralDisconnetPeripheral:) name:BLEPeripheralDisconnectNotification object:nil];
 
 }
 
@@ -81,7 +94,7 @@
 
 //状态改变
 - (void)CenteralUpdateState:(NSNotification *)StateNote{
-
+    
     CBCentralManager *manager = StateNote.userInfo[@"centralManager"];
     _central = manager;
     
@@ -90,6 +103,7 @@
 //中心设备搜索到外设
 - (void)CenteralScanedPeripheral:(NSNotification *)PeripheralNote
 {
+    
     //遍历单例中保存的外设
     for (CBPeripheral *peripheral in DataManager.searchedPeripheralArr) {
         if (![self.dataArr containsObject:peripheral]) {
@@ -108,19 +122,8 @@
     NSLog(@"-->与外设连接成功");
 }
 
-//中心设备连接失败
-- (void)CenteralFailConnectPeripher:(NSNotification *)FailNote
-{
-    NSLog(@"失败-->%@",FailNote.userInfo);
-}
 
-//中心设备断开连接
-- (void)CenteralDisconnetPeripheral:(NSNotification *)disConnectNote
-{
-    
-    [self resetDataSource];
-    NSLog(@"--->与外设断开连接");
-}
+
 
 
 
@@ -186,8 +189,7 @@
     
     
     
-    
-    
+#warning 测试用
     [self dismissVC];
 }
 
@@ -209,6 +211,31 @@
         [self.peripheralList reloadData];
     });
 }
+
+
+
+
+
+
+
+#pragma mark -  跳转搜索界面
++(void)presentScanVC{
+    
+    
+    UIViewController * scanVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:@"scanVC"];
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:scanVC animated:YES completion:nil];
+    });
+    
+    
+}
+
+
+
+
+
 
 
 @end

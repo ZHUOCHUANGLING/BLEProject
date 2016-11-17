@@ -11,7 +11,6 @@
 		E8037D701DD5ABAF00096969 /* BLEProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */; };
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
 		E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BBC1DDD9295000CABB0 /* AppDelegate.m */; };
-		E8093BE31DDD9295000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BBD1DDD9295000CABB0 /* Assets.xcassets */; };
 		E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */; };
 		E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BC01DDD9295000CABB0 /* Main.storyboard */; };
 		E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC31DDD9295000CABB0 /* BaseVC.m */; };
@@ -22,13 +21,14 @@
 		E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BCE1DDD9295000CABB0 /* SettingVC.m */; };
 		E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD01DDD9295000CABB0 /* TimingVC.m */; };
 		E8093BED1DDD9295000CABB0 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */; };
-		E8093BEE1DDD9295000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BD61DDD9295000CABB0 /* Info.plist */; };
 		E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD81DDD9295000CABB0 /* LeftSideVC.m */; };
 		E8093BF01DDD9295000CABB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD91DDD9295000CABB0 /* main.m */; };
 		E8093BF11DDD9295000CABB0 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */; };
 		E8093BF21DDD9295000CABB0 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */; };
 		E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BDE1DDD9295000CABB0 /* ScanVC.m */; };
 		E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BE11DDD9295000CABB0 /* UIView+Frame.m */; };
+		E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BF61DDD9449000CABB0 /* Assets.xcassets */; };
+		E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BFA1DDD9508000CABB0 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,8 @@
 		E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectUITests.m; sourceTree = "<group>"; };
 		E8037D7C1DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8093BBB1DDD9295000CABB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E8093BBC1DDD9295000CABB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8093BBD1DDD9295000CABB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8093BBB1DDD9295000CABB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		E8093BBC1DDD9295000CABB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		E8093BBF1DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8093BC11DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8093BC21DDD9295000CABB0 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
@@ -80,16 +79,17 @@
 		E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
 		E8093BD41DDD9295000CABB0 /* BlueHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
 		E8093BD51DDD9295000CABB0 /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
-		E8093BD61DDD9295000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8093BD71DDD9295000CABB0 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
 		E8093BD81DDD9295000CABB0 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
-		E8093BD91DDD9295000CABB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8093BD91DDD9295000CABB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
 		E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
-		E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
-		E8093BDD1DDD9295000CABB0 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
-		E8093BDE1DDD9295000CABB0 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
+		E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E8093BDD1DDD9295000CABB0 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanVC.h; path = ../ScanVC.h; sourceTree = "<group>"; };
+		E8093BDE1DDD9295000CABB0 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanVC.m; path = ../ScanVC.m; sourceTree = "<group>"; };
 		E8093BE01DDD9295000CABB0 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		E8093BE11DDD9295000CABB0 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E8093BF61DDD9449000CABB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8093BFA1DDD9508000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,25 +180,18 @@
 		E8093BBA1DDD9295000CABB0 /* BLEProject */ = {
 			isa = PBXGroup;
 			children = (
-				E8093BBB1DDD9295000CABB0 /* AppDelegate.h */,
-				E8093BBC1DDD9295000CABB0 /* AppDelegate.m */,
-				E8093BBD1DDD9295000CABB0 /* Assets.xcassets */,
-				E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */,
-				E8093BC01DDD9295000CABB0 /* Main.storyboard */,
-				E8093BC21DDD9295000CABB0 /* BaseVC.h */,
-				E8093BC31DDD9295000CABB0 /* BaseVC.m */,
+				E8093BD31DDD9295000CABB0 /* Helper */,
+				E8093BDF1DDD9295000CABB0 /* Tool */,
+				E8093BDA1DDD9295000CABB0 /* Resource */,
 				E8093BC41DDD9295000CABB0 /* FunctionController */,
 				E8093BD11DDD9295000CABB0 /* FunctionModel */,
-				E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */,
-				E8093BD31DDD9295000CABB0 /* Helper */,
-				E8093BD61DDD9295000CABB0 /* Info.plist */,
+				E8093BC21DDD9295000CABB0 /* BaseVC.h */,
+				E8093BC31DDD9295000CABB0 /* BaseVC.m */,
 				E8093BD71DDD9295000CABB0 /* LeftSideVC.h */,
 				E8093BD81DDD9295000CABB0 /* LeftSideVC.m */,
-				E8093BD91DDD9295000CABB0 /* main.m */,
-				E8093BDA1DDD9295000CABB0 /* Resource */,
-				E8093BDD1DDD9295000CABB0 /* ScanVC.h */,
-				E8093BDE1DDD9295000CABB0 /* ScanVC.m */,
-				E8093BDF1DDD9295000CABB0 /* Tool */,
+				E8093BC01DDD9295000CABB0 /* Main.storyboard */,
+				E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */,
+				E8093BF51DDD9449000CABB0 /* Supporting Files */,
 			);
 			path = BLEProject;
 			sourceTree = "<group>";
@@ -206,18 +199,20 @@
 		E8093BC41DDD9295000CABB0 /* FunctionController */ = {
 			isa = PBXGroup;
 			children = (
-				E8093BC51DDD9295000CABB0 /* AUXVC.h */,
-				E8093BC61DDD9295000CABB0 /* AUXVC.m */,
-				E8093BC71DDD9295000CABB0 /* FMVC.h */,
-				E8093BC81DDD9295000CABB0 /* FMVC.m */,
 				E8093BC91DDD9295000CABB0 /* LampVC.h */,
 				E8093BCA1DDD9295000CABB0 /* LampVC.m */,
 				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
 				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
-				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
-				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
+				E8093BC71DDD9295000CABB0 /* FMVC.h */,
+				E8093BC81DDD9295000CABB0 /* FMVC.m */,
+				E8093BC51DDD9295000CABB0 /* AUXVC.h */,
+				E8093BC61DDD9295000CABB0 /* AUXVC.m */,
 				E8093BCF1DDD9295000CABB0 /* TimingVC.h */,
 				E8093BD01DDD9295000CABB0 /* TimingVC.m */,
+				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
+				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
+				E8093BDD1DDD9295000CABB0 /* ScanVC.h */,
+				E8093BDE1DDD9295000CABB0 /* ScanVC.m */,
 			);
 			path = FunctionController;
 			sourceTree = "<group>";
@@ -242,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
-				E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -252,8 +246,22 @@
 			children = (
 				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
 				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
+				E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		E8093BF51DDD9449000CABB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BBB1DDD9295000CABB0 /* AppDelegate.h */,
+				E8093BBC1DDD9295000CABB0 /* AppDelegate.m */,
+				E8093BD91DDD9295000CABB0 /* main.m */,
+				E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */,
+				E8093BFA1DDD9508000CABB0 /* Info.plist */,
+				E8093BF61DDD9449000CABB0 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,9 +377,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */,
-				E8093BE31DDD9295000CABB0 /* Assets.xcassets in Resources */,
 				E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */,
-				E8093BEE1DDD9295000CABB0 /* Info.plist in Resources */,
+				E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */,
+				E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */,
 				E8093BED1DDD9295000CABB0 /* FunctionVC.storyboard in Resources */,
 				E8093BF11DDD9295000CABB0 /* BLEResource.bundle in Resources */,
 			);
@@ -499,6 +507,7 @@
 				E8093BBF1DDD9295000CABB0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E8093BC01DDD9295000CABB0 /* Main.storyboard */ = {
