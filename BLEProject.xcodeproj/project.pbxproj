@@ -8,26 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */; };
-		E8037D571DD5ABAF00096969 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D561DD5ABAF00096969 /* main.m */; };
-		E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D591DD5ABAF00096969 /* AppDelegate.m */; };
-		E8037D601DD5ABAF00096969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8037D5E1DD5ABAF00096969 /* Main.storyboard */; };
-		E8037D621DD5ABAF00096969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8037D611DD5ABAF00096969 /* Assets.xcassets */; };
-		E8037D651DD5ABAF00096969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */; };
 		E8037D701DD5ABAF00096969 /* BLEProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */; };
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
-		E80C69871DD9FE9400675BD9 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */; };
-		E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */; };
-		E834A9F51DDC0FF100307B82 /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9F41DDC0FF100307B82 /* MusicVC.m */; };
-		E834A9F81DDC102F00307B82 /* FMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9F71DDC102F00307B82 /* FMVC.m */; };
-		E834A9FB1DDC104700307B82 /* AUXVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9FA1DDC104700307B82 /* AUXVC.m */; };
-		E834A9FE1DDC105E00307B82 /* TimingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834A9FD1DDC105E00307B82 /* TimingVC.m */; };
-		E834AA011DDC107700307B82 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E834AA001DDC107700307B82 /* SettingVC.m */; };
-		E84215A71DDC37B80040A318 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E84215A61DDC37B80040A318 /* UIView+Frame.m */; };
-		E8505D551DD6FB430072C266 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8505D541DD6FB430072C266 /* ScanVC.m */; };
-		E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8505D581DD7032E0072C266 /* FunctionVC.storyboard */; };
-		E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A16D6C1DDB317900AE15B9 /* LampVC.m */; };
-		E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D8E7141DD9AC73001B1F83 /* BaseVC.m */; };
-		E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */; };
+		E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BBC1DDD9295000CABB0 /* AppDelegate.m */; };
+		E8093BE31DDD9295000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BBD1DDD9295000CABB0 /* Assets.xcassets */; };
+		E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */; };
+		E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BC01DDD9295000CABB0 /* Main.storyboard */; };
+		E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC31DDD9295000CABB0 /* BaseVC.m */; };
+		E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC61DDD9295000CABB0 /* AUXVC.m */; };
+		E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC81DDD9295000CABB0 /* FMVC.m */; };
+		E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BCA1DDD9295000CABB0 /* LampVC.m */; };
+		E8093BEA1DDD9295000CABB0 /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BCC1DDD9295000CABB0 /* MusicVC.m */; };
+		E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BCE1DDD9295000CABB0 /* SettingVC.m */; };
+		E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD01DDD9295000CABB0 /* TimingVC.m */; };
+		E8093BED1DDD9295000CABB0 /* FunctionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */; };
+		E8093BEE1DDD9295000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BD61DDD9295000CABB0 /* Info.plist */; };
+		E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD81DDD9295000CABB0 /* LeftSideVC.m */; };
+		E8093BF01DDD9295000CABB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BD91DDD9295000CABB0 /* main.m */; };
+		E8093BF11DDD9295000CABB0 /* BLEResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */; };
+		E8093BF21DDD9295000CABB0 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */; };
+		E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BDE1DDD9295000CABB0 /* ScanVC.m */; };
+		E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BE11DDD9295000CABB0 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,44 +52,44 @@
 		11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.release.xcconfig"; sourceTree = "<group>"; };
 		52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D521DD5ABAF00096969 /* BLEProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8037D561DD5ABAF00096969 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E8037D581DD5ABAF00096969 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E8037D591DD5ABAF00096969 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8037D5F1DD5ABAF00096969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8037D611DD5ABAF00096969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E8037D641DD5ABAF00096969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8037D661DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8037D6B1DD5ABAF00096969 /* BLEProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectTests.m; sourceTree = "<group>"; };
 		E8037D711DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProjectUITests.m; sourceTree = "<group>"; };
 		E8037D7C1DD5ABAF00096969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
-		E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
-		E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
-		E834A9F31DDC0FF100307B82 /* MusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
-		E834A9F41DDC0FF100307B82 /* MusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
-		E834A9F61DDC102F00307B82 /* FMVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVC.h; sourceTree = "<group>"; };
-		E834A9F71DDC102F00307B82 /* FMVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMVC.m; sourceTree = "<group>"; };
-		E834A9F91DDC104700307B82 /* AUXVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUXVC.h; sourceTree = "<group>"; };
-		E834A9FA1DDC104700307B82 /* AUXVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUXVC.m; sourceTree = "<group>"; };
-		E834A9FC1DDC105E00307B82 /* TimingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingVC.h; sourceTree = "<group>"; };
-		E834A9FD1DDC105E00307B82 /* TimingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingVC.m; sourceTree = "<group>"; };
-		E834A9FF1DDC107700307B82 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
-		E834AA001DDC107700307B82 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		E84215A51DDC37B80040A318 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		E84215A61DDC37B80040A318 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		E8505D531DD6FB430072C266 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanVC.h; path = ../../ScanVC.h; sourceTree = "<group>"; };
-		E8505D541DD6FB430072C266 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanVC.m; path = ../../ScanVC.m; sourceTree = "<group>"; };
-		E8505D561DD6FE580072C266 /* MacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
-		E8505D571DD6FFAF0072C266 /* BlueHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
-		E8505D581DD7032E0072C266 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
-		E8A16D6B1DDB317900AE15B9 /* LampVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LampVC.h; sourceTree = "<group>"; };
-		E8A16D6C1DDB317900AE15B9 /* LampVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LampVC.m; sourceTree = "<group>"; };
-		E8D8E7131DD9AC73001B1F83 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		E8D8E7141DD9AC73001B1F83 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
+		E8093BBB1DDD9295000CABB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8093BBC1DDD9295000CABB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8093BBD1DDD9295000CABB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8093BBF1DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8093BC11DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8093BC21DDD9295000CABB0 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		E8093BC31DDD9295000CABB0 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		E8093BC51DDD9295000CABB0 /* AUXVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUXVC.h; sourceTree = "<group>"; };
+		E8093BC61DDD9295000CABB0 /* AUXVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUXVC.m; sourceTree = "<group>"; };
+		E8093BC71DDD9295000CABB0 /* FMVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVC.h; sourceTree = "<group>"; };
+		E8093BC81DDD9295000CABB0 /* FMVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMVC.m; sourceTree = "<group>"; };
+		E8093BC91DDD9295000CABB0 /* LampVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LampVC.h; sourceTree = "<group>"; };
+		E8093BCA1DDD9295000CABB0 /* LampVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LampVC.m; sourceTree = "<group>"; };
+		E8093BCB1DDD9295000CABB0 /* MusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
+		E8093BCC1DDD9295000CABB0 /* MusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
+		E8093BCD1DDD9295000CABB0 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		E8093BCE1DDD9295000CABB0 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		E8093BCF1DDD9295000CABB0 /* TimingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingVC.h; sourceTree = "<group>"; };
+		E8093BD01DDD9295000CABB0 /* TimingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingVC.m; sourceTree = "<group>"; };
+		E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
+		E8093BD41DDD9295000CABB0 /* BlueHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
+		E8093BD51DDD9295000CABB0 /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
+		E8093BD61DDD9295000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8093BD71DDD9295000CABB0 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
+		E8093BD81DDD9295000CABB0 /* LeftSideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideVC.m; sourceTree = "<group>"; };
+		E8093BD91DDD9295000CABB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BLEResource.bundle; sourceTree = "<group>"; };
+		E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E8093BDD1DDD9295000CABB0 /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
+		E8093BDE1DDD9295000CABB0 /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
+		E8093BE01DDD9295000CABB0 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E8093BE11DDD9295000CABB0 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E80C69871DD9FE9400675BD9 /* BluetoothFoundation.framework in Frameworks */,
+				E8093BF21DDD9295000CABB0 /* BluetoothFoundation.framework in Frameworks */,
 				313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +140,7 @@
 		E8037D491DD5ABAF00096969 = {
 			isa = PBXGroup;
 			children = (
-				E8037D541DD5ABAF00096969 /* BLEProject */,
+				E8093BBA1DDD9295000CABB0 /* BLEProject */,
 				E8037D6E1DD5ABAF00096969 /* BLEProjectTests */,
 				E8037D791DD5ABAF00096969 /* BLEProjectUITests */,
 				E8037D531DD5ABAF00096969 /* Products */,
@@ -156,38 +157,6 @@
 				E8037D761DD5ABAF00096969 /* BLEProjectUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E8037D541DD5ABAF00096969 /* BLEProject */ = {
-			isa = PBXGroup;
-			children = (
-				E8505D4E1DD6F5E10072C266 /* Helper */,
-				E8037D881DD5AC9C00096969 /* Resource */,
-				E8037D891DD5AC9C00096969 /* Tool */,
-				E8037D8A1DD5B54100096969 /* FunctionController */,
-				E8037D8B1DD5B54100096969 /* FunctionModel */,
-				E8037D581DD5ABAF00096969 /* AppDelegate.h */,
-				E8037D591DD5ABAF00096969 /* AppDelegate.m */,
-				E82DB2C21DDAE1E9002D0A05 /* LeftSideVC.h */,
-				E82DB2C31DDAE1E9002D0A05 /* LeftSideVC.m */,
-				E8D8E7131DD9AC73001B1F83 /* BaseVC.h */,
-				E8D8E7141DD9AC73001B1F83 /* BaseVC.m */,
-				E8037D5E1DD5ABAF00096969 /* Main.storyboard */,
-				E8505D581DD7032E0072C266 /* FunctionVC.storyboard */,
-				E8037D551DD5ABAF00096969 /* Supporting Files */,
-			);
-			path = BLEProject;
-			sourceTree = "<group>";
-		};
-		E8037D551DD5ABAF00096969 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */,
-				E8037D611DD5ABAF00096969 /* Assets.xcassets */,
-				E8037D661DD5ABAF00096969 /* Info.plist */,
-				E8037D561DD5ABAF00096969 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E8037D6E1DD5ABAF00096969 /* BLEProjectTests */ = {
@@ -208,69 +177,83 @@
 			path = BLEProjectUITests;
 			sourceTree = "<group>";
 		};
-		E8037D881DD5AC9C00096969 /* Resource */ = {
+		E8093BBA1DDD9295000CABB0 /* BLEProject */ = {
 			isa = PBXGroup;
 			children = (
-				E8D8E7181DD9D2A4001B1F83 /* BLEResource.bundle */,
+				E8093BBB1DDD9295000CABB0 /* AppDelegate.h */,
+				E8093BBC1DDD9295000CABB0 /* AppDelegate.m */,
+				E8093BBD1DDD9295000CABB0 /* Assets.xcassets */,
+				E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */,
+				E8093BC01DDD9295000CABB0 /* Main.storyboard */,
+				E8093BC21DDD9295000CABB0 /* BaseVC.h */,
+				E8093BC31DDD9295000CABB0 /* BaseVC.m */,
+				E8093BC41DDD9295000CABB0 /* FunctionController */,
+				E8093BD11DDD9295000CABB0 /* FunctionModel */,
+				E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */,
+				E8093BD31DDD9295000CABB0 /* Helper */,
+				E8093BD61DDD9295000CABB0 /* Info.plist */,
+				E8093BD71DDD9295000CABB0 /* LeftSideVC.h */,
+				E8093BD81DDD9295000CABB0 /* LeftSideVC.m */,
+				E8093BD91DDD9295000CABB0 /* main.m */,
+				E8093BDA1DDD9295000CABB0 /* Resource */,
+				E8093BDD1DDD9295000CABB0 /* ScanVC.h */,
+				E8093BDE1DDD9295000CABB0 /* ScanVC.m */,
+				E8093BDF1DDD9295000CABB0 /* Tool */,
+			);
+			path = BLEProject;
+			sourceTree = "<group>";
+		};
+		E8093BC41DDD9295000CABB0 /* FunctionController */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BC51DDD9295000CABB0 /* AUXVC.h */,
+				E8093BC61DDD9295000CABB0 /* AUXVC.m */,
+				E8093BC71DDD9295000CABB0 /* FMVC.h */,
+				E8093BC81DDD9295000CABB0 /* FMVC.m */,
+				E8093BC91DDD9295000CABB0 /* LampVC.h */,
+				E8093BCA1DDD9295000CABB0 /* LampVC.m */,
+				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
+				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
+				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
+				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
+				E8093BCF1DDD9295000CABB0 /* TimingVC.h */,
+				E8093BD01DDD9295000CABB0 /* TimingVC.m */,
+			);
+			path = FunctionController;
+			sourceTree = "<group>";
+		};
+		E8093BD11DDD9295000CABB0 /* FunctionModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FunctionModel;
+			sourceTree = "<group>";
+		};
+		E8093BD31DDD9295000CABB0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BD41DDD9295000CABB0 /* BlueHeader.pch */,
+				E8093BD51DDD9295000CABB0 /* MacroHeader.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E8093BDA1DDD9295000CABB0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
+				E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		E8037D891DD5AC9C00096969 /* Tool */ = {
+		E8093BDF1DDD9295000CABB0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				E84215A41DDC37940040A318 /* UIView+frame */,
-				E80C69861DD9FE9400675BD9 /* BluetoothFoundation.framework */,
+				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
+				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		E8037D8A1DD5B54100096969 /* FunctionController */ = {
-			isa = PBXGroup;
-			children = (
-				E8A16D6B1DDB317900AE15B9 /* LampVC.h */,
-				E8A16D6C1DDB317900AE15B9 /* LampVC.m */,
-				E834A9F31DDC0FF100307B82 /* MusicVC.h */,
-				E834A9F41DDC0FF100307B82 /* MusicVC.m */,
-				E834A9F61DDC102F00307B82 /* FMVC.h */,
-				E834A9F71DDC102F00307B82 /* FMVC.m */,
-				E834A9F91DDC104700307B82 /* AUXVC.h */,
-				E834A9FA1DDC104700307B82 /* AUXVC.m */,
-				E834A9FC1DDC105E00307B82 /* TimingVC.h */,
-				E834A9FD1DDC105E00307B82 /* TimingVC.m */,
-				E834A9FF1DDC107700307B82 /* SettingVC.h */,
-				E834AA001DDC107700307B82 /* SettingVC.m */,
-				E8505D531DD6FB430072C266 /* ScanVC.h */,
-				E8505D541DD6FB430072C266 /* ScanVC.m */,
-			);
-			name = FunctionController;
-			path = Tool/FunctionController;
-			sourceTree = "<group>";
-		};
-		E8037D8B1DD5B54100096969 /* FunctionModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FunctionModel;
-			path = Tool/FunctionModel;
-			sourceTree = "<group>";
-		};
-		E84215A41DDC37940040A318 /* UIView+frame */ = {
-			isa = PBXGroup;
-			children = (
-				E84215A51DDC37B80040A318 /* UIView+Frame.h */,
-				E84215A61DDC37B80040A318 /* UIView+Frame.m */,
-			);
-			name = "UIView+frame";
-			sourceTree = "<group>";
-		};
-		E8505D4E1DD6F5E10072C266 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				E8505D561DD6FE580072C266 /* MacroHeader.h */,
-				E8505D571DD6FFAF0072C266 /* BlueHeader.pch */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,11 +368,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8037D651DD5ABAF00096969 /* LaunchScreen.storyboard in Resources */,
-				E8037D621DD5ABAF00096969 /* Assets.xcassets in Resources */,
-				E8037D601DD5ABAF00096969 /* Main.storyboard in Resources */,
-				E8505D591DD7032E0072C266 /* FunctionVC.storyboard in Resources */,
-				E8D8E7191DD9D2A4001B1F83 /* BLEResource.bundle in Resources */,
+				E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */,
+				E8093BE31DDD9295000CABB0 /* Assets.xcassets in Resources */,
+				E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */,
+				E8093BEE1DDD9295000CABB0 /* Info.plist in Resources */,
+				E8093BED1DDD9295000CABB0 /* FunctionVC.storyboard in Resources */,
+				E8093BF11DDD9295000CABB0 /* BLEResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,18 +446,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84215A71DDC37B80040A318 /* UIView+Frame.m in Sources */,
-				E834A9F51DDC0FF100307B82 /* MusicVC.m in Sources */,
-				E8A16D6D1DDB317900AE15B9 /* LampVC.m in Sources */,
-				E834A9FE1DDC105E00307B82 /* TimingVC.m in Sources */,
-				E8037D5A1DD5ABAF00096969 /* AppDelegate.m in Sources */,
-				E834A9FB1DDC104700307B82 /* AUXVC.m in Sources */,
-				E8505D551DD6FB430072C266 /* ScanVC.m in Sources */,
-				E8D8E7151DD9AC73001B1F83 /* BaseVC.m in Sources */,
-				E834AA011DDC107700307B82 /* SettingVC.m in Sources */,
-				E834A9F81DDC102F00307B82 /* FMVC.m in Sources */,
-				E82DB2C41DDAE1E9002D0A05 /* LeftSideVC.m in Sources */,
-				E8037D571DD5ABAF00096969 /* main.m in Sources */,
+				E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */,
+				E8093BF01DDD9295000CABB0 /* main.m in Sources */,
+				E8093BEA1DDD9295000CABB0 /* MusicVC.m in Sources */,
+				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
+				E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */,
+				E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */,
+				E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */,
+				E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */,
+				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
+				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
+				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
+				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,20 +493,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E8037D5E1DD5ABAF00096969 /* Main.storyboard */ = {
+		E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E8037D5F1DD5ABAF00096969 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E8037D631DD5ABAF00096969 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8037D641DD5ABAF00096969 /* Base */,
+				E8093BBF1DDD9295000CABB0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E8093BC01DDD9295000CABB0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8093BC11DDD9295000CABB0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
