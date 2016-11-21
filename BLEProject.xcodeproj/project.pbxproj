@@ -29,6 +29,8 @@
 		E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BE11DDD9295000CABB0 /* UIView+Frame.m */; };
 		E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BF61DDD9449000CABB0 /* Assets.xcassets */; };
 		E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BFA1DDD9508000CABB0 /* Info.plist */; };
+		E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093C041DDDB3ED000CABB0 /* MusicListVC.m */; };
+		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,10 @@
 		E8093BE11DDD9295000CABB0 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E8093BF61DDD9449000CABB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8093BFA1DDD9508000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		E8093C031DDDB3ED000CABB0 /* MusicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListVC.h; sourceTree = "<group>"; };
+		E8093C041DDDB3ED000CABB0 /* MusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListVC.m; sourceTree = "<group>"; };
+		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
+		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,20 +205,13 @@
 		E8093BC41DDD9295000CABB0 /* FunctionController */ = {
 			isa = PBXGroup;
 			children = (
-				E8093BC91DDD9295000CABB0 /* LampVC.h */,
-				E8093BCA1DDD9295000CABB0 /* LampVC.m */,
-				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
-				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
-				E8093BC71DDD9295000CABB0 /* FMVC.h */,
-				E8093BC81DDD9295000CABB0 /* FMVC.m */,
-				E8093BC51DDD9295000CABB0 /* AUXVC.h */,
-				E8093BC61DDD9295000CABB0 /* AUXVC.m */,
-				E8093BCF1DDD9295000CABB0 /* TimingVC.h */,
-				E8093BD01DDD9295000CABB0 /* TimingVC.m */,
-				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
-				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
-				E8093BDD1DDD9295000CABB0 /* ScanVC.h */,
-				E8093BDE1DDD9295000CABB0 /* ScanVC.m */,
+				E8093C021DDDB39E000CABB0 /* Scan */,
+				E8093BFC1DDDB355000CABB0 /* Lamp */,
+				E8093BFD1DDDB36A000CABB0 /* Music */,
+				E8093BFE1DDDB37B000CABB0 /* FM */,
+				E8093BFF1DDDB392000CABB0 /* AUX */,
+				E8093C001DDDB394000CABB0 /* Timing */,
+				E8093C011DDDB399000CABB0 /* Setting */,
 			);
 			path = FunctionController;
 			sourceTree = "<group>";
@@ -246,6 +245,8 @@
 			children = (
 				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
 				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
+				E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */,
+				E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */,
 				E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */,
 			);
 			path = Tool;
@@ -262,6 +263,71 @@
 				E8093BF61DDD9449000CABB0 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8093BFC1DDDB355000CABB0 /* Lamp */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BC91DDD9295000CABB0 /* LampVC.h */,
+				E8093BCA1DDD9295000CABB0 /* LampVC.m */,
+			);
+			name = Lamp;
+			sourceTree = "<group>";
+		};
+		E8093BFD1DDDB36A000CABB0 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
+				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
+				E8093C031DDDB3ED000CABB0 /* MusicListVC.h */,
+				E8093C041DDDB3ED000CABB0 /* MusicListVC.m */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		E8093BFE1DDDB37B000CABB0 /* FM */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BC71DDD9295000CABB0 /* FMVC.h */,
+				E8093BC81DDD9295000CABB0 /* FMVC.m */,
+			);
+			name = FM;
+			sourceTree = "<group>";
+		};
+		E8093BFF1DDDB392000CABB0 /* AUX */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BC51DDD9295000CABB0 /* AUXVC.h */,
+				E8093BC61DDD9295000CABB0 /* AUXVC.m */,
+			);
+			name = AUX;
+			sourceTree = "<group>";
+		};
+		E8093C001DDDB394000CABB0 /* Timing */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BCF1DDD9295000CABB0 /* TimingVC.h */,
+				E8093BD01DDD9295000CABB0 /* TimingVC.m */,
+			);
+			name = Timing;
+			sourceTree = "<group>";
+		};
+		E8093C011DDDB399000CABB0 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
+				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		E8093C021DDDB39E000CABB0 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BDD1DDD9295000CABB0 /* ScanVC.h */,
+				E8093BDE1DDD9295000CABB0 /* ScanVC.m */,
+			);
+			name = Scan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +402,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = B4WJ5UPLLC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					E8037D6A1DD5ABAF00096969 = {
 						CreatedOnToolsVersion = 8.1;
@@ -463,9 +537,11 @@
 				E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */,
 				E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */,
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
+				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
 				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
+				E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

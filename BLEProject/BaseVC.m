@@ -19,21 +19,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    [self initFunction];
     [self initUI];
     
+    
+    [self initFirstViewController];
     [ScanVC presentScanVC];
     
 }
+
+
+
+-(void)initFunction{
+
+    //让app支持接受远程控制事件
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+}
+
 
 
 -(void)initUI{
 
     [self settingSideBarMode];
     
-    UITableViewController *leftVC = (UITableViewController *)self.mm_drawerController.leftDrawerViewController;
-    [leftVC tableView:leftVC.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    
-
 }
 
 
@@ -52,8 +61,13 @@
 }
 
 
+#pragma mark -  弹出第一个功能界面
+-(void)initFirstViewController{
 
+    UITableViewController *leftVC = (UITableViewController *)self.mm_drawerController.leftDrawerViewController;
+    [leftVC tableView:leftVC.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 
+}
 
 
 

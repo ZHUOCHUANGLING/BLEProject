@@ -2,4 +2,5 @@ platform :ios,'8.0'
 target 'BLEProject' do
 pod 'MMDrawerController+Storyboard', '~> 0.0.2'
 pod 'RSColorPicker', '~> 0.8'
+pod 'SVProgressHUD', '~> 2.0.3'
 end

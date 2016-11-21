@@ -7,89 +7,107 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00064572A01265EC6630708779AA5173 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		0088522C20DB2BA651F93A1AE8CC7DE0 /* BitmapRotationManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2E207A0D49D808A8DA2ED59223B9A1 /* BitmapRotationManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		03BE06C9D2F74CA66DF3AFB93599A8FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
-		03CF713F668DF0E51C4C49BB50AEB9F3 /* RSColorFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 546A3816D927F92271BF11DD955C9307 /* RSColorFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		03D36AF4A9574D7593F1C2AF9677683F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */; };
-		09B2695BA2CDA80052BE2A8F1743BE09 /* RSColorFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA4D8E8088A61F8E8072E533E69B71D /* RSColorFunctions.m */; };
-		0DB6B23A225FD7C11D6038D88BB1E8D3 /* CGContextCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EA464E0E84418C20CBD513968576F5 /* CGContextCreator.m */; };
-		13410B7A9A00CDA79B235144C53AFFCE /* BGRSLoupeLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BA8F145EF72E5808A66F4EC0A65EC1 /* BGRSLoupeLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1A378C41991F5219E9959E3A250E9A03 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8EDB94CDCAB6D8A9D34BB339191425 /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CEABC8FB6F338A085AA19B8DFFF662F /* BitmapDrawManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 626299DB03640C540EDCDD6BDC19BA2D /* BitmapDrawManipulator.m */; };
-		27046982E3A5514CC2554199231C84A1 /* CGImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BA449D9A499CD9BFE912CDE3B0CE7 /* CGImageContainer.m */; };
-		2983C57092D6C4365860891690B5DA6F /* Pods-BLEProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7325A4187C6DE5BD18C58E6FA4465DBE /* Pods-BLEProject-dummy.m */; };
-		2C22F6A37F57EE2EC1E5E825D80812AA /* RSColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1547A7015EE8C32455018BBBFA8EEB01 /* RSColorPicker-dummy.m */; };
-		2DD4EF619AEA55040D34174EE891830A /* BitmapCropManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B625B4AA883511C537F9F0CA69DAF0 /* BitmapCropManipulator.m */; };
-		31BBB1B4BED2215C411A2F447E0361F7 /* BitmapScaleManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E7CD5DADB8820E49F22D7B883AC0A /* BitmapScaleManipulator.m */; };
-		3AE7427A561105D0C9180680999C4EB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
-		3FEF167E92BBA93BEC5294FDF53AD1A0 /* RSGenerateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CDE6696A82A601F54B91EAA5F8CD56 /* RSGenerateOperation.m */; };
-		529A38EA9243FD532B23CE6731C41062 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF3BC357E9D879DC7758AFFDD1D985 /* MMDrawerBarButtonItem.m */; };
-		565C21A4DCF1DED303078AD9081B7FA4 /* ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B7A6C416DF1F054F0A452B9F7C9941 /* ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		634D4E7662F6332E9CC9FC41D4202254 /* NSImage+ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 457CA792628D1E895F6E798104253F96 /* NSImage+ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		64A7141483D4B0EEBA163A376FBA02BE /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF9595C87FD59E07B36AD20F35438B5 /* MMDrawerController+Storyboard.m */; };
-		64C9DA80BA1A278F6C4467C066627D1A /* RSColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E93807EE8D7A94160C04F52D575B5A6 /* RSColorPickerView.m */; };
-		6845FC52D35B720A94CDED3CD009B239 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */; };
-		6B90CF1457514AE8D0945B49D8D0F5D7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F472F6C6A7FE0DF31C2C7E0039E036 /* UIViewController+MMDrawerController.m */; };
-		6DCAAD460D5EDE19E9C93E52945F9D4B /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE846C926AAFC8BED965FE8F7EB33E /* MMDrawerController-dummy.m */; };
-		706A26834B840DE5BD0267E5B501981C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9D71B48BA9B11718AA4B099CDB767 /* MMDrawerVisualState.m */; };
-		70C010B0BF2329DF2B25C5C2901F681E /* BitmapScaleManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E447AA38FC0194B8A8CA2B541239F9C /* BitmapScaleManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		79263EAD2316C4538B0E66A27DCB1F5D /* BGRSLoupeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF103146832069A25850A68DAB0B4DB0 /* BGRSLoupeLayer.m */; };
-		86614623615283A3DB061BB98C1F25FF /* OSCommonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F6501AE823E83F9A9162B886E17D0305 /* OSCommonImage.m */; };
-		870155F8D2A6C298B6F68B080C53295D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */; };
-		947575549E0193C1A5A2379EA9D95D46 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = E01CFD8B406BEF4D5152EEA2416365F0 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		969242845CEC4CE6B42B4FBC4FEC88F2 /* MMDrawerController+Storyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 694E450CD0CC1D8C2759BFE98512DBBC /* MMDrawerController+Storyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		984DD4BA68A399F50B9D7849E72385F8 /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 44387CC143A63655256D10CE97AEEF64 /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0878FDFEFF54FE711DFF4429B920AC9C /* BitmapContextRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 35173D1A38E74F6EF2706A9D0CE825E8 /* BitmapContextRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0C5D0C35BD16CB99588DD829AB2728E7 /* CGContextCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A79066A3439CA86B42AF7D91B3E1AA7 /* CGContextCreator.m */; };
+		0E033EA8EEC6CAD16704DA400C154DF2 /* RSSelectionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C105952F0606F2465288C35F87216FA /* RSSelectionLayer.m */; };
+		0E4D02176FE607AE4CA81FF773F40F6A /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FC692AE89770D4CEE91AA4B42DC7E8 /* SVProgressHUD-dummy.m */; };
+		179025BFFED4BC77A7BB2C684D697961 /* BitmapScaleManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B06241F9CEC87101B4E3AE5D5360C1D /* BitmapScaleManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		17BDB423D3273240B4878E5DD60E4EB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */; };
+		1A378C41991F5219E9959E3A250E9A03 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 63CE6029A4687C67F9483CEEB8FC1C7D /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B764D37FE9841E03090A1E03DA33299 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDFBD0B55D2F14E370D815BB73C327F /* SVIndefiniteAnimatedView.m */; };
+		1C5F0F638A82D14C1D8F9CDE9B28DE5B /* BitmapContextManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566A3BCF39933A872DD69CC96A829409 /* BitmapContextManipulator.m */; };
+		210FF838F0954DBE0E9E6979E53DDDEA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */; };
+		25EE014EA090FF6FA6A40CBFEE6C16A9 /* RSColorPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB0AA7E4882F52183FECF4ED42CB6DA /* RSColorPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		361CDE71D133EA140569E13B07D4A463 /* NSImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F797FAF649B4F5A8F0CD747ECE8E3CC /* NSImage+ANImageBitmapRep.m */; };
+		3DC9CE74E3F8A036B732930B9455B568 /* BitmapContextRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC80662C280D4AB8C1B527D2074124 /* BitmapContextRep.m */; };
+		40337AACB154F8AF46773B5919458A1A /* RSColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57136409CAA52118D1FD26925FB0B932 /* RSColorPickerView.m */; };
+		41974D2C8751E787A390BB62FA87E05C /* BGRSLoupeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E907A1A84D1B4C88BED52D7AD267C /* BGRSLoupeLayer.m */; };
+		442D2BADFC2DDBC880F630555E35A1CB /* BitmapRotationManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC801552A0D8711BEE09A3AAAB024902 /* BitmapRotationManipulator.m */; };
+		4512EC15ED877FEAE1E32C65FDA6568E /* BitmapScaleManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1B31C6917153DC07B101198815937 /* BitmapScaleManipulator.m */; };
+		4534FA74FE625B842EF91D3A3DB648F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */; };
+		486F10399D28F1EF0A011FF83B9A0291 /* BitmapContextManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 783EAF307295D084CD36BA524F046231 /* BitmapContextManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		529A38EA9243FD532B23CE6731C41062 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC90FA836B2088A04DA39FB9C6FE610 /* MMDrawerBarButtonItem.m */; };
+		58ECAEF09BDADBBBAB90FC6C378E822B /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C868794AC46051EFA1ED5846B73260 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BE81F8E4ADD0E44E637661F73DFB266 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */; };
+		5EC02C3CCC61B0902C20916CC8E5A275 /* BitmapDrawManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2270374E91E0A3FFF1F83269DC9B90F3 /* BitmapDrawManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5EEB81E20BCC643ECF6ED87D1E43D822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		6176BBDC0608C761211AF70B5D3CE85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		64A7141483D4B0EEBA163A376FBA02BE /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CF2111EB0000CC34A4EBB3C6A35581 /* MMDrawerController+Storyboard.m */; };
+		66D8866C73A87BE108FFFB5EC0095540 /* Pods-BLEProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7325A4187C6DE5BD18C58E6FA4465DBE /* Pods-BLEProject-dummy.m */; };
+		6B0888DABBCFB6A02CCB8FBF38DB25AF /* RSGenerateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B66D116412771B083E1283596F6F6F /* RSGenerateOperation.m */; };
+		6B90CF1457514AE8D0945B49D8D0F5D7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CFB8B601A585FB692D52F3C12F3E1A /* UIViewController+MMDrawerController.m */; };
+		6BBA698173127A1FAB44528AA2D7FFE2 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4288019F117EF2E067D79289B027CD8B /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DCAAD460D5EDE19E9C93E52945F9D4B /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7047A0BCCE70ADA0E47C89D62AB85 /* MMDrawerController-dummy.m */; };
+		706A26834B840DE5BD0267E5B501981C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 44146526E5C52C926BDDE07E900D6487 /* MMDrawerVisualState.m */; };
+		7398B3A90229448E2F67208A1B8007A4 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 08FC79F71F3B787E38A30E52BD8D7DAD /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7808F14D2C352EF1F1868F0B60320D6B /* RSColorFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32D03B7075F89D52560CF61CAF48BA /* RSColorFunctions.m */; };
+		7E3304CEB1068B57D6A1438DC2FE6258 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 21596310D6D66F99B334DD9C96743312 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83E9475ED74D3A4F9D69B24B222C8C2D /* RSColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 513CD5DCE21822A0085A1D5B6123A956 /* RSColorPicker-dummy.m */; };
+		873F92512749736F63B0D17D2289935F /* CGImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1251F0D6A827858555AE11F483039F35 /* CGImageContainer.m */; };
+		8E6FF6EAB9DEDECEAE917A15067AD61A /* CGContextCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5FE28CB6E60FD35DC9CB12345EAAA6 /* CGContextCreator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91A978CBE66C038EC90B4CCD6D18ED46 /* RSGenerateOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C0A5FBAD57A20BE37F7D51CFDCDB7EA /* RSGenerateOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92A3A39E5F94FAB7C37EBB639AFAB30A /* BitmapCropManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8F1777A10A726769C4389BE127890B /* BitmapCropManipulator.m */; };
+		947575549E0193C1A5A2379EA9D95D46 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA2E4803562F623BF1D45979CFD440E /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		969242845CEC4CE6B42B4FBC4FEC88F2 /* MMDrawerController+Storyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 149EB14347ED0A7BA51242B52186A93F /* MMDrawerController+Storyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		984DD4BA68A399F50B9D7849E72385F8 /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = EC65D2BBCA6EEA8800065A17D52C5EFD /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9992CAEFD98C62677EEDC83827AFD8BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
-		9A7F170BE65EFFD69B5986DB55C1920A /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 89DE5E063DA3D7BA7C6C9FEFD9026288 /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E043B8F035E878886236E8E01753C76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */; };
-		A39C7DF4D0CD92692047FB848167CB23 /* RSColorPickerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 3936B59F3BFF905CF2E1FDA5E51F872F /* RSColorPickerState.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AE3C2A4D3FCCCB624D41FAF0C9DA8C0E /* UIImage+ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6408ED4D6F82544F6A7CE2E305E840 /* UIImage+ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AF84E096C85B0BEE2CE62500E7E84E71 /* CGContextCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 354F393205DA8778CF0FD1D05198206A /* CGContextCreator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B39E13DFA90C387EF28B2E0128BF5151 /* UIImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 047870E6FC7FF29A1D71D5EF29B324D7 /* UIImage+ANImageBitmapRep.m */; };
-		B6E17242FCAE76682476701C85B28A91 /* BitmapContextManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 82D1C2D32517868BC955B8F576374FFD /* BitmapContextManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B71067E0689876AF241EC1C89101EDD7 /* OSCommonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 498D6F0A3036273F8E8EBB29374C3F8F /* OSCommonImage.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B898348DA049E2555CB6D1FF7BCE1DB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
-		B93281E494B5E009984DDCB9785C7C73 /* BitmapContextManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFAF0CE4E229E9AEFD58AE5FDEAA83 /* BitmapContextManipulator.m */; };
-		BF167054DA36AA2EE9A4F79A13C89BB1 /* MMDrawerController+Storyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B37FDB7F3773E714D3A5B9B3A5EABE /* MMDrawerController+Storyboard-dummy.m */; };
-		C3350CA27E57FF9AD285CF2888C7919E /* BitmapCropManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = C7C0478BF3B5C0CD32FC967C1B06A3BB /* BitmapCropManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C362EC4772EB671473B28F531CB8C17D /* RSSelectionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 928E4CAF80D466ED4B99A48981EFDFE8 /* RSSelectionLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C8C95A773054322B5CFB6033AB262CB2 /* BitmapDrawManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7EA1966C7508A2FFF60444BE0DB197 /* BitmapDrawManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CBDA07EDCC57437A1B4AF795C5EBE823 /* RSColorPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2653D5A2CA54C54A024791C564E487D /* RSColorPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCE9B53D276605CF4D3495F68719DC05 /* RSGenerateOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 035A7D91FB2DEFE3083C5B06AFDDFD4B /* RSGenerateOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CF85F7CABA4B23CD38C177F04A678709 /* NSImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1B82264952D12C1677594737F26057 /* NSImage+ANImageBitmapRep.m */; };
-		D0A2FD572A6597F773C4A7A4069009C7 /* RSSelectionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A56B9E12CAD2B7DD4A7AFEC5AB01AEB9 /* RSSelectionLayer.m */; };
-		D1C9C1A7F26787E97E0320C2A5B49C6F /* BitmapRotationManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5431599A9D07EC4677E8C5E3BAEED8 /* BitmapRotationManipulator.m */; };
-		D2110A67EB7E7C335C491C316B15F6EF /* CGImageContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7394BAED244FC626B1C56FAAB5DD87E1 /* CGImageContainer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DD6B05D509394F0D68A0C572DC376F4E /* BitmapRotationManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4595DA636191E1C8ABF30E3B4EB51F76 /* BitmapRotationManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A7F170BE65EFFD69B5986DB55C1920A /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27C9F638E916245C0AA125A02CE95D5 /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1EC5C10BDCE369E296C846205ADF863 /* UIImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4B7075012F1EACBC7E48212D7EDC3 /* UIImage+ANImageBitmapRep.m */; };
+		A60677F28C3074F93E30FDF33857314C /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8BB3051B7315633736CA6889F1CC2 /* SVProgressAnimatedView.m */; };
+		A61046679FDCC143D6B67793A648B835 /* RSColorFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F04D97128E043A776B9037653F7243 /* RSColorFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A8BCAC94CEB5B4FDCE1799B608D96C28 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 255C76136F54273DE2808F41E0AF403E /* SVRadialGradientLayer.m */; };
+		ABD52C7311AA26754B4930DC279A7EEA /* BGRSLoupeLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AC1C00DB3D71F7865D20A09591C4B078 /* BGRSLoupeLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B4C0746288324E849CEEA34146D29E49 /* BitmapCropManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B042A1DDC2B7B1806A003C3799F325B /* BitmapCropManipulator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B65E0683763F9D58C5880D1D7B9A81CF /* OSCommonImage.h in Headers */ = {isa = PBXBuildFile; fileRef = DB84192F6C3B5981C511A2BB3DFBEC01 /* OSCommonImage.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BB865CB9CAF3C7665097CB229EC20119 /* BitmapDrawManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = C05847BFD7FB9144EF8EF6161FB682CF /* BitmapDrawManipulator.m */; };
+		BD99C8FE43D23C497255C82E172E3DBB /* NSImage+ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 470AEFF877F1132B6B9466DC42235F61 /* NSImage+ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF167054DA36AA2EE9A4F79A13C89BB1 /* MMDrawerController+Storyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D48DA6704BF2822FD57731BFCF0BE609 /* MMDrawerController+Storyboard-dummy.m */; };
+		C3E3E99AB4B33CE1A40FAED6B8D2A7D5 /* RSSelectionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 60DDD68B7896B7F6A69045D445A72627 /* RSSelectionLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C965FA8CA4D7152E8779795DBE91F15E /* ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 826AFD9E19D4BF07BAE89D75AB195E7C /* ANImageBitmapRep.m */; };
+		CBD79C6CA6C60A28751F21462E16E1B9 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD937E3399461DD7AC04B648A011AED /* SVProgressHUD.m */; };
+		CEF4E14A2A42FFD4896374FFAA193410 /* RSColorPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A5846A3AFA3133A610A16625A787A /* RSColorPickerState.m */; };
+		D37DA4FAA9D20D0BEEED5605591532D7 /* OSCommonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F86D281225A0D843FA196096B4CBB4D /* OSCommonImage.m */; };
+		D3A15E585C59921E80B57EBD2325113F /* CGImageContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = EB25384DF3EBA73F35EFA1FCBFF1B1CB /* CGImageContainer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DC9D24D7B45648DF8803A9BCE3249149 /* RSColorPickerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C27871561D04B3474BA5E7F55261C23 /* RSColorPickerState.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		DEC10EB5F93A97639486F1BDA39CD973 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */; };
-		ED2FA27F9528A76626BA99798F3CB47B /* BitmapContextRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A18C612C27251B6E18A8398B17301EA /* BitmapContextRep.m */; };
-		F1267FE53FA144AF66A676A6BCA4737B /* BitmapContextRep.h in Headers */ = {isa = PBXBuildFile; fileRef = B163433CA65B0074CA82B07B02DEDF3E /* BitmapContextRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F2EAD99350E6FA3E3265CAF44C5A359D /* RSColorPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0AF666AF6AF0343871F2ECCC0C437 /* RSColorPickerState.m */; };
-		F733730F57E794BCFB4B18DC00E2FF9B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D05CC49FA6B7A023CED5E5C4B0214F /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB78B4FA3F7FDB26C48040A0086C43F9 /* ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4B87339C40B1592ECCFC1E972C2CE /* ANImageBitmapRep.m */; };
-		FB8782C801FCC735C4CAED59846EFACF /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E03C06EDD6FFAB7A2B38C32019AC77 /* MMDrawerController.m */; };
+		E031B3FCC7DDD9D30CEB9948B48E23D8 /* UIImage+ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = D76DCAFA2A4391692D5D0E245A6C3AFB /* UIImage+ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E47DA03CAB11FE894C9D7BCD001EC820 /* ANImageBitmapRep.h in Headers */ = {isa = PBXBuildFile; fileRef = FC6F8206618EA7AFBF507FF9A1A85894 /* ANImageBitmapRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F421BE0C54A2264BD182343B68DC4A92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */; };
+		F733730F57E794BCFB4B18DC00E2FF9B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD6C225FAE28272E6026DBD6911E204 /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB8782C801FCC735C4CAED59846EFACF /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 416A94E89F398B3401C71F5696419FB3 /* MMDrawerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5A3EC002D47F0DBDF9E91BBEC6BEA9FD /* PBXContainerItemProxy */ = {
+		6308958AE8B1F530CA4D5F95085D4D4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0BA4DF9E11034B12723F43B320747DB0;
-			remoteInfo = RSColorPicker;
+			remoteGlobalIDString = 550F7EEAEEA17E3F92C873912E23B01C;
+			remoteInfo = MMDrawerController;
 		};
-		7A7CA48C01DC09C3E8C0A89FF54D3532 /* PBXContainerItemProxy */ = {
+		83398F98598327119316D36775664658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 998566382D0B7487D4A273328144EE43;
+			remoteInfo = SVProgressHUD;
+		};
+		8B058F3B7B289A9F01F81EFD015B40F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C83DC0B4881D58A9555C25FA8291CA5F;
 			remoteInfo = "MMDrawerController+Storyboard";
 		};
-		8F5F8CD9C09D8370674FE20E386B128B /* PBXContainerItemProxy */ = {
+		A54104E3F9F9C7CFB110DDBC78D40BDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 550F7EEAEEA17E3F92C873912E23B01C;
-			remoteInfo = MMDrawerController;
+			remoteGlobalIDString = 2CE8323A7823829F8C8D66F842F031F2;
+			remoteInfo = RSColorPicker;
 		};
 		BD579DDD628954F955745D8DC77FDE3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -101,99 +119,112 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003BA449D9A499CD9BFE912CDE3B0CE7 /* CGImageContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGImageContainer.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGImageContainer.m; sourceTree = "<group>"; };
 		0143B3BDF3700B18BABF6CB3A8914951 /* Pods-BLEProject-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEProject-resources.sh"; sourceTree = "<group>"; };
-		01F472F6C6A7FE0DF31C2C7E0039E036 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		035A7D91FB2DEFE3083C5B06AFDDFD4B /* RSGenerateOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSGenerateOperation.h; path = RSColorPicker/ColorPickerClasses/RSGenerateOperation.h; sourceTree = "<group>"; };
-		047870E6FC7FF29A1D71D5EF29B324D7 /* UIImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ANImageBitmapRep.m"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/UIImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
-		0A18C612C27251B6E18A8398B17301EA /* BitmapContextRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapContextRep.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/BitmapContextRep.m; sourceTree = "<group>"; };
-		0B2E7CD5DADB8820E49F22D7B883AC0A /* BitmapScaleManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapScaleManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapScaleManipulator.m; sourceTree = "<group>"; };
-		0E93807EE8D7A94160C04F52D575B5A6 /* RSColorPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorPickerView.m; path = RSColorPicker/ColorPickerClasses/RSColorPickerView.m; sourceTree = "<group>"; };
-		1547A7015EE8C32455018BBBFA8EEB01 /* RSColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSColorPicker-dummy.m"; sourceTree = "<group>"; };
-		159F9888E5BB2213EF6E2844B71BF063 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
-		17E03C06EDD6FFAB7A2B38C32019AC77 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		08FC79F71F3B787E38A30E52BD8D7DAD /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		0AA2E4803562F623BF1D45979CFD440E /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		0E4A5846A3AFA3133A610A16625A787A /* RSColorPickerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorPickerState.m; path = RSColorPicker/ColorPickerClasses/RSColorPickerState.m; sourceTree = "<group>"; };
+		0F797FAF649B4F5A8F0CD747ECE8E3CC /* NSImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+ANImageBitmapRep.m"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/NSImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
+		0FEBFF64A658922A4F6318291EBE8B7F /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		1251F0D6A827858555AE11F483039F35 /* CGImageContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGImageContainer.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGImageContainer.m; sourceTree = "<group>"; };
+		149EB14347ED0A7BA51242B52186A93F /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
 		195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		1AEF3BC357E9D879DC7758AFFDD1D985 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		1C6A73974E9D5639340C15E196250587 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1FAFAF0CE4E229E9AEFD58AE5FDEAA83 /* BitmapContextManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapContextManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapContextManipulator.m; sourceTree = "<group>"; };
-		2CA369F51823103A12E2872B91484AFC /* RSColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSColorPicker.xcconfig; sourceTree = "<group>"; };
-		2F6408ED4D6F82544F6A7CE2E305E840 /* UIImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ANImageBitmapRep.h"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/UIImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
+		1CC1B31C6917153DC07B101198815937 /* BitmapScaleManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapScaleManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapScaleManipulator.m; sourceTree = "<group>"; };
+		1E5FE28CB6E60FD35DC9CB12345EAAA6 /* CGContextCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGContextCreator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGContextCreator.h; sourceTree = "<group>"; };
+		21596310D6D66F99B334DD9C96743312 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		2270374E91E0A3FFF1F83269DC9B90F3 /* BitmapDrawManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapDrawManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapDrawManipulator.h; sourceTree = "<group>"; };
+		255C76136F54273DE2808F41E0AF403E /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		25F8BB3051B7315633736CA6889F1CC2 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		2C105952F0606F2465288C35F87216FA /* RSSelectionLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSSelectionLayer.m; path = RSColorPicker/ColorPickerClasses/RSSelectionLayer.m; sourceTree = "<group>"; };
+		2CEC80662C280D4AB8C1B527D2074124 /* BitmapContextRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapContextRep.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/BitmapContextRep.m; sourceTree = "<group>"; };
+		2DDFBD0B55D2F14E370D815BB73C327F /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		30C868794AC46051EFA1ED5846B73260 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		30D63D59295A7D984A70BF0CFD83802E /* libPods-BLEProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3383CF2107F73EDA988FDFAE4E80126A /* Pods-BLEProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BLEProject.release.xcconfig"; sourceTree = "<group>"; };
-		354F393205DA8778CF0FD1D05198206A /* CGContextCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGContextCreator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGContextCreator.h; sourceTree = "<group>"; };
-		3936B59F3BFF905CF2E1FDA5E51F872F /* RSColorPickerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorPickerState.h; path = RSColorPicker/ColorPickerClasses/RSColorPickerState.h; sourceTree = "<group>"; };
-		39EA464E0E84418C20CBD513968576F5 /* CGContextCreator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGContextCreator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGContextCreator.m; sourceTree = "<group>"; };
-		44387CC143A63655256D10CE97AEEF64 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		457CA792628D1E895F6E798104253F96 /* NSImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+ANImageBitmapRep.h"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/NSImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
-		4595DA636191E1C8ABF30E3B4EB51F76 /* BitmapRotationManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapRotationManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapRotationManipulator.h; sourceTree = "<group>"; };
-		48B37FDB7F3773E714D3A5B9B3A5EABE /* MMDrawerController+Storyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard-dummy.m"; sourceTree = "<group>"; };
-		498D6F0A3036273F8E8EBB29374C3F8F /* OSCommonImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OSCommonImage.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/OSCommonImage.h; sourceTree = "<group>"; };
-		4EF0AF666AF6AF0343871F2ECCC0C437 /* RSColorPickerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorPickerState.m; path = RSColorPicker/ColorPickerClasses/RSColorPickerState.m; sourceTree = "<group>"; };
-		546A3816D927F92271BF11DD955C9307 /* RSColorFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorFunctions.h; path = RSColorPicker/ColorPickerClasses/RSColorFunctions.h; sourceTree = "<group>"; };
-		5B4053D9E565DFA80E61E5A33B6EC1CA /* libMMDrawerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMDrawerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D1B82264952D12C1677594737F26057 /* NSImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+ANImageBitmapRep.m"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/NSImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
+		35173D1A38E74F6EF2706A9D0CE825E8 /* BitmapContextRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapContextRep.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/BitmapContextRep.h; sourceTree = "<group>"; };
+		3EC90FA836B2088A04DA39FB9C6FE610 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		3F668BCF7152F9BF0B5485FAE2590281 /* RSColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSColorPicker-prefix.pch"; sourceTree = "<group>"; };
+		416A94E89F398B3401C71F5696419FB3 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		4288019F117EF2E067D79289B027CD8B /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		44146526E5C52C926BDDE07E900D6487 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		470AEFF877F1132B6B9466DC42235F61 /* NSImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+ANImageBitmapRep.h"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/NSImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
+		49CFB8B601A585FB692D52F3C12F3E1A /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		4B042A1DDC2B7B1806A003C3799F325B /* BitmapCropManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapCropManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapCropManipulator.h; sourceTree = "<group>"; };
+		513CD5DCE21822A0085A1D5B6123A956 /* RSColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSColorPicker-dummy.m"; sourceTree = "<group>"; };
+		566A3BCF39933A872DD69CC96A829409 /* BitmapContextManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapContextManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapContextManipulator.m; sourceTree = "<group>"; };
+		57136409CAA52118D1FD26925FB0B932 /* RSColorPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorPickerView.m; path = RSColorPicker/ColorPickerClasses/RSColorPickerView.m; sourceTree = "<group>"; };
+		5CE7047A0BCCE70ADA0E47C89D62AB85 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		5F86D281225A0D843FA196096B4CBB4D /* OSCommonImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OSCommonImage.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/OSCommonImage.m; sourceTree = "<group>"; };
+		60DDD68B7896B7F6A69045D445A72627 /* RSSelectionLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSSelectionLayer.h; path = RSColorPicker/ColorPickerClasses/RSSelectionLayer.h; sourceTree = "<group>"; };
 		6188FF0172D4C7EE0864F465C58D8EBE /* Pods-BLEProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BLEProject-acknowledgements.plist"; sourceTree = "<group>"; };
-		626299DB03640C540EDCDD6BDC19BA2D /* BitmapDrawManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapDrawManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapDrawManipulator.m; sourceTree = "<group>"; };
-		694E450CD0CC1D8C2759BFE98512DBBC /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
-		725F2F4CFE5BB4CE3252F9768EE6FAC3 /* MMDrawerController+Storyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard-prefix.pch"; sourceTree = "<group>"; };
+		63CE6029A4687C67F9483CEEB8FC1C7D /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		6A79066A3439CA86B42AF7D91B3E1AA7 /* CGContextCreator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGContextCreator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGContextCreator.m; sourceTree = "<group>"; };
+		6B8F1777A10A726769C4389BE127890B /* BitmapCropManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapCropManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapCropManipulator.m; sourceTree = "<group>"; };
+		72B8975C725FCAC68C637A06472C7A37 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
+		72E0AC42A899DCA6B84E68ABCDF62E69 /* MMDrawerController+Storyboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MMDrawerController+Storyboard.xcconfig"; sourceTree = "<group>"; };
 		7325A4187C6DE5BD18C58E6FA4465DBE /* Pods-BLEProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BLEProject-dummy.m"; sourceTree = "<group>"; };
-		7394BAED244FC626B1C56FAAB5DD87E1 /* CGImageContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGImageContainer.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGImageContainer.h; sourceTree = "<group>"; };
 		767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		7BDE846C926AAFC8BED965FE8F7EB33E /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		768801FF324F28E99C1F50BB8E7DE0C9 /* RSColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSColorPicker.xcconfig; sourceTree = "<group>"; };
+		76FC692AE89770D4CEE91AA4B42DC7E8 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		783EAF307295D084CD36BA524F046231 /* BitmapContextManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapContextManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapContextManipulator.h; sourceTree = "<group>"; };
+		7B06241F9CEC87101B4E3AE5D5360C1D /* BitmapScaleManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapScaleManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapScaleManipulator.h; sourceTree = "<group>"; };
+		7B4E907A1A84D1B4C88BED52D7AD267C /* BGRSLoupeLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BGRSLoupeLayer.m; path = RSColorPicker/ColorPickerClasses/BGRSLoupeLayer.m; sourceTree = "<group>"; };
+		7E38D914D151705FD7F07E05505F89EB /* libRSColorPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSColorPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		82D1C2D32517868BC955B8F576374FFD /* BitmapContextManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapContextManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapContextManipulator.h; sourceTree = "<group>"; };
-		83B7A6C416DF1F054F0A452B9F7C9941 /* ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANImageBitmapRep.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/ANImageBitmapRep.h; sourceTree = "<group>"; };
-		86BA8F145EF72E5808A66F4EC0A65EC1 /* BGRSLoupeLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BGRSLoupeLayer.h; path = RSColorPicker/ColorPickerClasses/BGRSLoupeLayer.h; sourceTree = "<group>"; };
-		87DF9A4937246C2F9C1DA681C30D1DAE /* libPods-BLEProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89DE5E063DA3D7BA7C6C9FEFD9026288 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		8E447AA38FC0194B8A8CA2B541239F9C /* BitmapScaleManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapScaleManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapScaleManipulator.h; sourceTree = "<group>"; };
-		928E4CAF80D466ED4B99A48981EFDFE8 /* RSSelectionLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSSelectionLayer.h; path = RSColorPicker/ColorPickerClasses/RSSelectionLayer.h; sourceTree = "<group>"; };
+		826AFD9E19D4BF07BAE89D75AB195E7C /* ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ANImageBitmapRep.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/ANImageBitmapRep.m; sourceTree = "<group>"; };
+		8E2E207A0D49D808A8DA2ED59223B9A1 /* BitmapRotationManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapRotationManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapRotationManipulator.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		967E23C7AF74560FD2E004F0C87F876A /* Pods-BLEProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BLEProject-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9AD9D71B48BA9B11718AA4B099CDB767 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		9C0A5FBAD57A20BE37F7D51CFDCDB7EA /* RSGenerateOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSGenerateOperation.h; path = RSColorPicker/ColorPickerClasses/RSGenerateOperation.h; sourceTree = "<group>"; };
+		9C27871561D04B3474BA5E7F55261C23 /* RSColorPickerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorPickerState.h; path = RSColorPicker/ColorPickerClasses/RSColorPickerState.h; sourceTree = "<group>"; };
+		9CD6C225FAE28272E6026DBD6911E204 /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		9DA4B7075012F1EACBC7E48212D7EDC3 /* UIImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ANImageBitmapRep.m"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/UIImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
 		9FDFCA3962E900C86BFEA51670D84BF7 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
-		A56B9E12CAD2B7DD4A7AFEC5AB01AEB9 /* RSSelectionLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSSelectionLayer.m; path = RSColorPicker/ColorPickerClasses/RSSelectionLayer.m; sourceTree = "<group>"; };
-		A6B625B4AA883511C537F9F0CA69DAF0 /* BitmapCropManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapCropManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapCropManipulator.m; sourceTree = "<group>"; };
-		AB5431599A9D07EC4677E8C5E3BAEED8 /* BitmapRotationManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapRotationManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapRotationManipulator.m; sourceTree = "<group>"; };
-		AD75448EDE859971BBE71CA6991DDEBE /* libRSColorPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSColorPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27C9F638E916245C0AA125A02CE95D5 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		A9B66D116412771B083E1283596F6F6F /* RSGenerateOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSGenerateOperation.m; path = RSColorPicker/ColorPickerClasses/RSGenerateOperation.m; sourceTree = "<group>"; };
+		AA8E7D4E0B88DE06544A2C267221EA45 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		AC1C00DB3D71F7865D20A09591C4B078 /* BGRSLoupeLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BGRSLoupeLayer.h; path = RSColorPicker/ColorPickerClasses/BGRSLoupeLayer.h; sourceTree = "<group>"; };
+		AF345C1B9CBDA3C5590FD20E846FBB7F /* libMMDrawerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMDrawerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B163433CA65B0074CA82B07B02DEDF3E /* BitmapContextRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapContextRep.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/BitmapContextRep.h; sourceTree = "<group>"; };
-		BC7EA1966C7508A2FFF60444BE0DB197 /* BitmapDrawManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapDrawManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapDrawManipulator.h; sourceTree = "<group>"; };
-		C2653D5A2CA54C54A024791C564E487D /* RSColorPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorPickerView.h; path = RSColorPicker/ColorPickerClasses/RSColorPickerView.h; sourceTree = "<group>"; };
-		C6D05CC49FA6B7A023CED5E5C4B0214F /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		C7C0478BF3B5C0CD32FC967C1B06A3BB /* BitmapCropManipulator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BitmapCropManipulator.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapCropManipulator.h; sourceTree = "<group>"; };
-		CCA4D8E8088A61F8E8072E533E69B71D /* RSColorFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorFunctions.m; path = RSColorPicker/ColorPickerClasses/RSColorFunctions.m; sourceTree = "<group>"; };
-		CE8EDB94CDCAB6D8A9D34BB339191425 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
-		CF103146832069A25850A68DAB0B4DB0 /* BGRSLoupeLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BGRSLoupeLayer.m; path = RSColorPicker/ColorPickerClasses/BGRSLoupeLayer.m; sourceTree = "<group>"; };
+		B86D624A790A0B71FCB96DED522721AB /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		B9F04D97128E043A776B9037653F7243 /* RSColorFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorFunctions.h; path = RSColorPicker/ColorPickerClasses/RSColorFunctions.h; sourceTree = "<group>"; };
+		C05847BFD7FB9144EF8EF6161FB682CF /* BitmapDrawManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapDrawManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapDrawManipulator.m; sourceTree = "<group>"; };
+		CB0C187B26C42B1FB15BAD048831F553 /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB32D03B7075F89D52560CF61CAF48BA /* RSColorFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSColorFunctions.m; path = RSColorPicker/ColorPickerClasses/RSColorFunctions.m; sourceTree = "<group>"; };
+		CC801552A0D8711BEE09A3AAAB024902 /* BitmapRotationManipulator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BitmapRotationManipulator.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Manipulators/BitmapRotationManipulator.m; sourceTree = "<group>"; };
+		CCCCB387D1C94577A4839EEC34F14460 /* libMMDrawerController+Storyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMMDrawerController+Storyboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD937E3399461DD7AC04B648A011AED /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		D0DB67F2E85959E11C14911A23DA94E5 /* MMDrawerController+Storyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard-prefix.pch"; sourceTree = "<group>"; };
+		D48DA6704BF2822FD57731BFCF0BE609 /* MMDrawerController+Storyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard-dummy.m"; sourceTree = "<group>"; };
 		D5274BA68F994A80622251B06464B894 /* Pods-BLEProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEProject-frameworks.sh"; sourceTree = "<group>"; };
-		D5D0FB71300AC06F4883F18D7DEAB3C4 /* MMDrawerController+Storyboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MMDrawerController+Storyboard.xcconfig"; sourceTree = "<group>"; };
-		DD0DBA424EAAF5D05D51D23A1D0FCA46 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
-		DEF9595C87FD59E07B36AD20F35438B5 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
-		DF81FB9BCC07B8BF9EDF0591E8BDA8CB /* libMMDrawerController+Storyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMMDrawerController+Storyboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E01CFD8B406BEF4D5152EEA2416365F0 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		E7CDE6696A82A601F54B91EAA5F8CD56 /* RSGenerateOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSGenerateOperation.m; path = RSColorPicker/ColorPickerClasses/RSGenerateOperation.m; sourceTree = "<group>"; };
-		F07162BAA7F92D0CD5DD73ED89C3D704 /* RSColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSColorPicker-prefix.pch"; sourceTree = "<group>"; };
-		F4B4B87339C40B1592ECCFC1E972C2CE /* ANImageBitmapRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ANImageBitmapRep.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/ANImageBitmapRep.m; sourceTree = "<group>"; };
-		F6501AE823E83F9A9162B886E17D0305 /* OSCommonImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OSCommonImage.m; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/OSCommonImage.m; sourceTree = "<group>"; };
+		D76DCAFA2A4391692D5D0E245A6C3AFB /* UIImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ANImageBitmapRep.h"; path = "RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/UIImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
+		DB84192F6C3B5981C511A2BB3DFBEC01 /* OSCommonImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OSCommonImage.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/Compatibility/OSCommonImage.h; sourceTree = "<group>"; };
+		DBB0AA7E4882F52183FECF4ED42CB6DA /* RSColorPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSColorPickerView.h; path = RSColorPicker/ColorPickerClasses/RSColorPickerView.h; sourceTree = "<group>"; };
+		E7CF2111EB0000CC34A4EBB3C6A35581 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
+		EB25384DF3EBA73F35EFA1FCBFF1B1CB /* CGImageContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGImageContainer.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/CoreGraphics/CGImageContainer.h; sourceTree = "<group>"; };
+		EC65D2BBCA6EEA8800065A17D52C5EFD /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		F0295BB1CC39DF3F3A27B8FB3F1D5744 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		FC6F8206618EA7AFBF507FF9A1A85894 /* ANImageBitmapRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANImageBitmapRep.h; path = RSColorPicker/ColorPickerClasses/ANImageBitmapRep/ANImageBitmapRep.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B190422C7A8006EF94C7F814DA4F8FDC /* Frameworks */ = {
+		540B6F517A61A51B1FF8248548192BBA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6845FC52D35B720A94CDED3CD009B239 /* Accelerate.framework in Frameworks */,
-				9E043B8F035E878886236E8E01753C76 /* CoreGraphics.framework in Frameworks */,
-				B898348DA049E2555CB6D1FF7BCE1DB6 /* Foundation.framework in Frameworks */,
-				870155F8D2A6C298B6F68B080C53295D /* QuartzCore.framework in Frameworks */,
-				03D36AF4A9574D7593F1C2AF9677683F /* UIKit.framework in Frameworks */,
+				210FF838F0954DBE0E9E6979E53DDDEA /* Accelerate.framework in Frameworks */,
+				17BDB423D3273240B4878E5DD60E4EB5 /* CoreGraphics.framework in Frameworks */,
+				6176BBDC0608C761211AF70B5D3CE85C /* Foundation.framework in Frameworks */,
+				5BE81F8E4ADD0E44E637661F73DFB266 /* QuartzCore.framework in Frameworks */,
+				F421BE0C54A2264BD182343B68DC4A92 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9CDDF2E17F1189E6D3ECF651DC68B7E /* Frameworks */ = {
+		AEF4CACF143D0DED6CF729E60069264A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE7427A561105D0C9180680999C4EB2 /* Foundation.framework in Frameworks */,
+				00064572A01265EC6630708779AA5173 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +234,15 @@
 			files = (
 				03BE06C9D2F74CA66DF3AFB93599A8FF /* Foundation.framework in Frameworks */,
 				DEC10EB5F93A97639486F1BDA39CD973 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6DE3237B69B0949D87DCF2BC39AEEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EEB81E20BCC643ECF6ED87D1E43D822 /* Foundation.framework in Frameworks */,
+				4534FA74FE625B842EF91D3A3DB648F2 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,25 +257,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CB360AFF00576166CBAB0039A8C2C0F /* MMDrawerController+Storyboard */ = {
+		0ECB6C65C6EEFC8C81BCF2D598E931BB /* MMDrawerVisualStates */ = {
 			isa = PBXGroup;
 			children = (
-				694E450CD0CC1D8C2759BFE98512DBBC /* MMDrawerController+Storyboard.h */,
-				DEF9595C87FD59E07B36AD20F35438B5 /* MMDrawerController+Storyboard.m */,
-				3787E16ABBD435E9DB87E41A3752A7D9 /* Support Files */,
+				63CE6029A4687C67F9483CEEB8FC1C7D /* MMDrawerVisualState.h */,
+				44146526E5C52C926BDDE07E900D6487 /* MMDrawerVisualState.m */,
 			);
-			path = "MMDrawerController+Storyboard";
+			name = MMDrawerVisualStates;
 			sourceTree = "<group>";
 		};
-		1FDA20D8209C0DA4EE7EA9FCE117BEA7 /* Core */ = {
+		1C86696FF371E4FB8DDBA13D7838CCE3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C6D05CC49FA6B7A023CED5E5C4B0214F /* MMDrawerController.h */,
-				17E03C06EDD6FFAB7A2B38C32019AC77 /* MMDrawerController.m */,
-				44387CC143A63655256D10CE97AEEF64 /* UIViewController+MMDrawerController.h */,
-				01F472F6C6A7FE0DF31C2C7E0039E036 /* UIViewController+MMDrawerController.m */,
+				848531685749C22AFAB25183514AC020 /* MMDrawerController */,
+				536BB88708028633BF7FA342D5B9F55E /* MMDrawerController+Storyboard */,
+				56B6941F68647E70DAF42B3688EDF157 /* RSColorPicker */,
+				C94E421D670A45C34DA524BA4FE6CB49 /* SVProgressHUD */,
 			);
-			name = Core;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
@@ -246,59 +285,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28F07D1DE4EEA8731BB68BCCAB39034D /* RSColorPicker */ = {
+		218CA26E441371A6BC2705308B244083 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				83B7A6C416DF1F054F0A452B9F7C9941 /* ANImageBitmapRep.h */,
-				F4B4B87339C40B1592ECCFC1E972C2CE /* ANImageBitmapRep.m */,
-				86BA8F145EF72E5808A66F4EC0A65EC1 /* BGRSLoupeLayer.h */,
-				CF103146832069A25850A68DAB0B4DB0 /* BGRSLoupeLayer.m */,
-				82D1C2D32517868BC955B8F576374FFD /* BitmapContextManipulator.h */,
-				1FAFAF0CE4E229E9AEFD58AE5FDEAA83 /* BitmapContextManipulator.m */,
-				B163433CA65B0074CA82B07B02DEDF3E /* BitmapContextRep.h */,
-				0A18C612C27251B6E18A8398B17301EA /* BitmapContextRep.m */,
-				C7C0478BF3B5C0CD32FC967C1B06A3BB /* BitmapCropManipulator.h */,
-				A6B625B4AA883511C537F9F0CA69DAF0 /* BitmapCropManipulator.m */,
-				BC7EA1966C7508A2FFF60444BE0DB197 /* BitmapDrawManipulator.h */,
-				626299DB03640C540EDCDD6BDC19BA2D /* BitmapDrawManipulator.m */,
-				4595DA636191E1C8ABF30E3B4EB51F76 /* BitmapRotationManipulator.h */,
-				AB5431599A9D07EC4677E8C5E3BAEED8 /* BitmapRotationManipulator.m */,
-				8E447AA38FC0194B8A8CA2B541239F9C /* BitmapScaleManipulator.h */,
-				0B2E7CD5DADB8820E49F22D7B883AC0A /* BitmapScaleManipulator.m */,
-				354F393205DA8778CF0FD1D05198206A /* CGContextCreator.h */,
-				39EA464E0E84418C20CBD513968576F5 /* CGContextCreator.m */,
-				7394BAED244FC626B1C56FAAB5DD87E1 /* CGImageContainer.h */,
-				003BA449D9A499CD9BFE912CDE3B0CE7 /* CGImageContainer.m */,
-				457CA792628D1E895F6E798104253F96 /* NSImage+ANImageBitmapRep.h */,
-				5D1B82264952D12C1677594737F26057 /* NSImage+ANImageBitmapRep.m */,
-				498D6F0A3036273F8E8EBB29374C3F8F /* OSCommonImage.h */,
-				F6501AE823E83F9A9162B886E17D0305 /* OSCommonImage.m */,
-				546A3816D927F92271BF11DD955C9307 /* RSColorFunctions.h */,
-				CCA4D8E8088A61F8E8072E533E69B71D /* RSColorFunctions.m */,
-				3936B59F3BFF905CF2E1FDA5E51F872F /* RSColorPickerState.h */,
-				4EF0AF666AF6AF0343871F2ECCC0C437 /* RSColorPickerState.m */,
-				C2653D5A2CA54C54A024791C564E487D /* RSColorPickerView.h */,
-				0E93807EE8D7A94160C04F52D575B5A6 /* RSColorPickerView.m */,
-				035A7D91FB2DEFE3083C5B06AFDDFD4B /* RSGenerateOperation.h */,
-				E7CDE6696A82A601F54B91EAA5F8CD56 /* RSGenerateOperation.m */,
-				928E4CAF80D466ED4B99A48981EFDFE8 /* RSSelectionLayer.h */,
-				A56B9E12CAD2B7DD4A7AFEC5AB01AEB9 /* RSSelectionLayer.m */,
-				2F6408ED4D6F82544F6A7CE2E305E840 /* UIImage+ANImageBitmapRep.h */,
-				047870E6FC7FF29A1D71D5EF29B324D7 /* UIImage+ANImageBitmapRep.m */,
-				9205B2D758EE062E604B3EAB74215BB6 /* Support Files */,
-			);
-			path = RSColorPicker;
-			sourceTree = "<group>";
-		};
-		3787E16ABBD435E9DB87E41A3752A7D9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D5D0FB71300AC06F4883F18D7DEAB3C4 /* MMDrawerController+Storyboard.xcconfig */,
-				48B37FDB7F3773E714D3A5B9B3A5EABE /* MMDrawerController+Storyboard-dummy.m */,
-				725F2F4CFE5BB4CE3252F9768EE6FAC3 /* MMDrawerController+Storyboard-prefix.pch */,
+				768801FF324F28E99C1F50BB8E7DE0C9 /* RSColorPicker.xcconfig */,
+				513CD5DCE21822A0085A1D5B6123A956 /* RSColorPicker-dummy.m */,
+				3F668BCF7152F9BF0B5485FAE2590281 /* RSColorPicker-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController+Storyboard";
+			path = "../Target Support Files/RSColorPicker";
+			sourceTree = "<group>";
+		};
+		2A11800AB2ADDEA0096E36A881B88E94 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				72B8975C725FCAC68C637A06472C7A37 /* MMDrawerController.xcconfig */,
+				5CE7047A0BCCE70ADA0E47C89D62AB85 /* MMDrawerController-dummy.m */,
+				B86D624A790A0B71FCB96DED522721AB /* MMDrawerController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
+			sourceTree = "<group>";
+		};
+		313440AC4B39CC325CC4F00E934501B7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6C225FAE28272E6026DBD6911E204 /* MMDrawerController.h */,
+				416A94E89F398B3401C71F5696419FB3 /* MMDrawerController.m */,
+				EC65D2BBCA6EEA8800065A17D52C5EFD /* UIViewController+MMDrawerController.h */,
+				49CFB8B601A585FB692D52F3C12F3E1A /* UIViewController+MMDrawerController.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		3899E1476EF78781E245BA85997FE0DA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FEBFF64A658922A4F6318291EBE8B7F /* SVProgressHUD.xcconfig */,
+				76FC692AE89770D4CEE91AA4B42DC7E8 /* SVProgressHUD-dummy.m */,
+				F0295BB1CC39DF3F3A27B8FB3F1D5744 /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
 		459F91A28B5567A7EED5B416B6D0A9DE /* iOS */ = {
@@ -313,16 +341,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		495EC02D2D37A702E36194035881767F /* MMDrawerController */ = {
+		536BB88708028633BF7FA342D5B9F55E /* MMDrawerController+Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				1FDA20D8209C0DA4EE7EA9FCE117BEA7 /* Core */,
-				C5538B21F7792B928306E5B5689548C9 /* MMDrawerBarButtonItem */,
-				E7484F5A3CD2FE5A36D6D69A649AD635 /* MMDrawerVisualStates */,
-				F372DC048118D2824005FBF0670E2529 /* Subclass */,
-				6401067DC0D1A688F71FCE43D63F8E5C /* Support Files */,
+				149EB14347ED0A7BA51242B52186A93F /* MMDrawerController+Storyboard.h */,
+				E7CF2111EB0000CC34A4EBB3C6A35581 /* MMDrawerController+Storyboard.m */,
+				E94775E70C5074D973A6F60E502712B1 /* Support Files */,
 			);
-			path = MMDrawerController;
+			path = "MMDrawerController+Storyboard";
 			sourceTree = "<group>";
 		};
 		54C3BDCCF8BE8F7AE9CDDEAE4D9A979E /* Targets Support Files */ = {
@@ -333,15 +359,48 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6401067DC0D1A688F71FCE43D63F8E5C /* Support Files */ = {
+		56B6941F68647E70DAF42B3688EDF157 /* RSColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				159F9888E5BB2213EF6E2844B71BF063 /* MMDrawerController.xcconfig */,
-				7BDE846C926AAFC8BED965FE8F7EB33E /* MMDrawerController-dummy.m */,
-				DD0DBA424EAAF5D05D51D23A1D0FCA46 /* MMDrawerController-prefix.pch */,
+				FC6F8206618EA7AFBF507FF9A1A85894 /* ANImageBitmapRep.h */,
+				826AFD9E19D4BF07BAE89D75AB195E7C /* ANImageBitmapRep.m */,
+				AC1C00DB3D71F7865D20A09591C4B078 /* BGRSLoupeLayer.h */,
+				7B4E907A1A84D1B4C88BED52D7AD267C /* BGRSLoupeLayer.m */,
+				783EAF307295D084CD36BA524F046231 /* BitmapContextManipulator.h */,
+				566A3BCF39933A872DD69CC96A829409 /* BitmapContextManipulator.m */,
+				35173D1A38E74F6EF2706A9D0CE825E8 /* BitmapContextRep.h */,
+				2CEC80662C280D4AB8C1B527D2074124 /* BitmapContextRep.m */,
+				4B042A1DDC2B7B1806A003C3799F325B /* BitmapCropManipulator.h */,
+				6B8F1777A10A726769C4389BE127890B /* BitmapCropManipulator.m */,
+				2270374E91E0A3FFF1F83269DC9B90F3 /* BitmapDrawManipulator.h */,
+				C05847BFD7FB9144EF8EF6161FB682CF /* BitmapDrawManipulator.m */,
+				8E2E207A0D49D808A8DA2ED59223B9A1 /* BitmapRotationManipulator.h */,
+				CC801552A0D8711BEE09A3AAAB024902 /* BitmapRotationManipulator.m */,
+				7B06241F9CEC87101B4E3AE5D5360C1D /* BitmapScaleManipulator.h */,
+				1CC1B31C6917153DC07B101198815937 /* BitmapScaleManipulator.m */,
+				1E5FE28CB6E60FD35DC9CB12345EAAA6 /* CGContextCreator.h */,
+				6A79066A3439CA86B42AF7D91B3E1AA7 /* CGContextCreator.m */,
+				EB25384DF3EBA73F35EFA1FCBFF1B1CB /* CGImageContainer.h */,
+				1251F0D6A827858555AE11F483039F35 /* CGImageContainer.m */,
+				470AEFF877F1132B6B9466DC42235F61 /* NSImage+ANImageBitmapRep.h */,
+				0F797FAF649B4F5A8F0CD747ECE8E3CC /* NSImage+ANImageBitmapRep.m */,
+				DB84192F6C3B5981C511A2BB3DFBEC01 /* OSCommonImage.h */,
+				5F86D281225A0D843FA196096B4CBB4D /* OSCommonImage.m */,
+				B9F04D97128E043A776B9037653F7243 /* RSColorFunctions.h */,
+				CB32D03B7075F89D52560CF61CAF48BA /* RSColorFunctions.m */,
+				9C27871561D04B3474BA5E7F55261C23 /* RSColorPickerState.h */,
+				0E4A5846A3AFA3133A610A16625A787A /* RSColorPickerState.m */,
+				DBB0AA7E4882F52183FECF4ED42CB6DA /* RSColorPickerView.h */,
+				57136409CAA52118D1FD26925FB0B932 /* RSColorPickerView.m */,
+				9C0A5FBAD57A20BE37F7D51CFDCDB7EA /* RSGenerateOperation.h */,
+				A9B66D116412771B083E1283596F6F6F /* RSGenerateOperation.m */,
+				60DDD68B7896B7F6A69045D445A72627 /* RSSelectionLayer.h */,
+				2C105952F0606F2465288C35F87216FA /* RSSelectionLayer.m */,
+				D76DCAFA2A4391692D5D0E245A6C3AFB /* UIImage+ANImageBitmapRep.h */,
+				9DA4B7075012F1EACBC7E48212D7EDC3 /* UIImage+ANImageBitmapRep.m */,
+				218CA26E441371A6BC2705308B244083 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController";
+			path = RSColorPicker;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -349,30 +408,32 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				B4F2135BB29AC42403EAD376768BC892 /* Pods */,
-				9E93E14C92539A7638A44408A3988B4B /* Products */,
+				1C86696FF371E4FB8DDBA13D7838CCE3 /* Pods */,
+				9F6EC357D174BE3F694602479853F868 /* Products */,
 				54C3BDCCF8BE8F7AE9CDDEAE4D9A979E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9205B2D758EE062E604B3EAB74215BB6 /* Support Files */ = {
+		848531685749C22AFAB25183514AC020 /* MMDrawerController */ = {
 			isa = PBXGroup;
 			children = (
-				2CA369F51823103A12E2872B91484AFC /* RSColorPicker.xcconfig */,
-				1547A7015EE8C32455018BBBFA8EEB01 /* RSColorPicker-dummy.m */,
-				F07162BAA7F92D0CD5DD73ED89C3D704 /* RSColorPicker-prefix.pch */,
+				313440AC4B39CC325CC4F00E934501B7 /* Core */,
+				B8E55622F63782E728C9505EA7F20F12 /* MMDrawerBarButtonItem */,
+				0ECB6C65C6EEFC8C81BCF2D598E931BB /* MMDrawerVisualStates */,
+				A8DDA1BD8F816A9BA484147426E34A81 /* Subclass */,
+				2A11800AB2ADDEA0096E36A881B88E94 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RSColorPicker";
+			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
-		9E93E14C92539A7638A44408A3988B4B /* Products */ = {
+		9F6EC357D174BE3F694602479853F868 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B4053D9E565DFA80E61E5A33B6EC1CA /* libMMDrawerController.a */,
-				DF81FB9BCC07B8BF9EDF0591E8BDA8CB /* libMMDrawerController+Storyboard.a */,
-				87DF9A4937246C2F9C1DA681C30D1DAE /* libPods-BLEProject.a */,
-				AD75448EDE859971BBE71CA6991DDEBE /* libRSColorPicker.a */,
+				AF345C1B9CBDA3C5590FD20E846FBB7F /* libMMDrawerController.a */,
+				CCCCB387D1C94577A4839EEC34F14460 /* libMMDrawerController+Storyboard.a */,
+				30D63D59295A7D984A70BF0CFD83802E /* libPods-BLEProject.a */,
+				7E38D914D151705FD7F07E05505F89EB /* libRSColorPicker.a */,
+				CB0C187B26C42B1FB15BAD048831F553 /* libSVProgressHUD.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,45 +453,98 @@
 			path = "Target Support Files/Pods-BLEProject";
 			sourceTree = "<group>";
 		};
-		B4F2135BB29AC42403EAD376768BC892 /* Pods */ = {
+		A8DDA1BD8F816A9BA484147426E34A81 /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
-				495EC02D2D37A702E36194035881767F /* MMDrawerController */,
-				1CB360AFF00576166CBAB0039A8C2C0F /* MMDrawerController+Storyboard */,
-				28F07D1DE4EEA8731BB68BCCAB39034D /* RSColorPicker */,
+				0AA2E4803562F623BF1D45979CFD440E /* MMDrawerController+Subclass.h */,
 			);
-			name = Pods;
+			name = Subclass;
 			sourceTree = "<group>";
 		};
-		C5538B21F7792B928306E5B5689548C9 /* MMDrawerBarButtonItem */ = {
+		B8E55622F63782E728C9505EA7F20F12 /* MMDrawerBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				89DE5E063DA3D7BA7C6C9FEFD9026288 /* MMDrawerBarButtonItem.h */,
-				1AEF3BC357E9D879DC7758AFFDD1D985 /* MMDrawerBarButtonItem.m */,
+				A27C9F638E916245C0AA125A02CE95D5 /* MMDrawerBarButtonItem.h */,
+				3EC90FA836B2088A04DA39FB9C6FE610 /* MMDrawerBarButtonItem.m */,
 			);
 			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
-		E7484F5A3CD2FE5A36D6D69A649AD635 /* MMDrawerVisualStates */ = {
+		C94E421D670A45C34DA524BA4FE6CB49 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				CE8EDB94CDCAB6D8A9D34BB339191425 /* MMDrawerVisualState.h */,
-				9AD9D71B48BA9B11718AA4B099CDB767 /* MMDrawerVisualState.m */,
+				21596310D6D66F99B334DD9C96743312 /* SVIndefiniteAnimatedView.h */,
+				2DDFBD0B55D2F14E370D815BB73C327F /* SVIndefiniteAnimatedView.m */,
+				30C868794AC46051EFA1ED5846B73260 /* SVProgressAnimatedView.h */,
+				25F8BB3051B7315633736CA6889F1CC2 /* SVProgressAnimatedView.m */,
+				08FC79F71F3B787E38A30E52BD8D7DAD /* SVProgressHUD.h */,
+				CDD937E3399461DD7AC04B648A011AED /* SVProgressHUD.m */,
+				4288019F117EF2E067D79289B027CD8B /* SVRadialGradientLayer.h */,
+				255C76136F54273DE2808F41E0AF403E /* SVRadialGradientLayer.m */,
+				D06C2A04F573DC4FBA70BEDB4CD4ABFC /* Resources */,
+				3899E1476EF78781E245BA85997FE0DA /* Support Files */,
 			);
-			name = MMDrawerVisualStates;
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
-		F372DC048118D2824005FBF0670E2529 /* Subclass */ = {
+		D06C2A04F573DC4FBA70BEDB4CD4ABFC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E01CFD8B406BEF4D5152EEA2416365F0 /* MMDrawerController+Subclass.h */,
+				AA8E7D4E0B88DE06544A2C267221EA45 /* SVProgressHUD.bundle */,
 			);
-			name = Subclass;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E94775E70C5074D973A6F60E502712B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				72E0AC42A899DCA6B84E68ABCDF62E69 /* MMDrawerController+Storyboard.xcconfig */,
+				D48DA6704BF2822FD57731BFCF0BE609 /* MMDrawerController+Storyboard-dummy.m */,
+				D0DB67F2E85959E11C14911A23DA94E5 /* MMDrawerController+Storyboard-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController+Storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		20E66ACE10C305A89DDED7D0B9FDD800 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47DA03CAB11FE894C9D7BCD001EC820 /* ANImageBitmapRep.h in Headers */,
+				ABD52C7311AA26754B4930DC279A7EEA /* BGRSLoupeLayer.h in Headers */,
+				486F10399D28F1EF0A011FF83B9A0291 /* BitmapContextManipulator.h in Headers */,
+				0878FDFEFF54FE711DFF4429B920AC9C /* BitmapContextRep.h in Headers */,
+				B4C0746288324E849CEEA34146D29E49 /* BitmapCropManipulator.h in Headers */,
+				5EC02C3CCC61B0902C20916CC8E5A275 /* BitmapDrawManipulator.h in Headers */,
+				0088522C20DB2BA651F93A1AE8CC7DE0 /* BitmapRotationManipulator.h in Headers */,
+				179025BFFED4BC77A7BB2C684D697961 /* BitmapScaleManipulator.h in Headers */,
+				8E6FF6EAB9DEDECEAE917A15067AD61A /* CGContextCreator.h in Headers */,
+				D3A15E585C59921E80B57EBD2325113F /* CGImageContainer.h in Headers */,
+				BD99C8FE43D23C497255C82E172E3DBB /* NSImage+ANImageBitmapRep.h in Headers */,
+				B65E0683763F9D58C5880D1D7B9A81CF /* OSCommonImage.h in Headers */,
+				A61046679FDCC143D6B67793A648B835 /* RSColorFunctions.h in Headers */,
+				DC9D24D7B45648DF8803A9BCE3249149 /* RSColorPickerState.h in Headers */,
+				25EE014EA090FF6FA6A40CBFEE6C16A9 /* RSColorPickerView.h in Headers */,
+				91A978CBE66C038EC90B4CCD6D18ED46 /* RSGenerateOperation.h in Headers */,
+				C3E3E99AB4B33CE1A40FAED6B8D2A7D5 /* RSSelectionLayer.h in Headers */,
+				E031B3FCC7DDD9D30CEB9948B48E23D8 /* UIImage+ANImageBitmapRep.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4361D7507B87241FADB83FAB8C1D2F3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3304CEB1068B57D6A1438DC2FE6258 /* SVIndefiniteAnimatedView.h in Headers */,
+				58ECAEF09BDADBBBAB90FC6C378E822B /* SVProgressAnimatedView.h in Headers */,
+				7398B3A90229448E2F67208A1B8007A4 /* SVProgressHUD.h in Headers */,
+				6BBA698173127A1FAB44528AA2D7FFE2 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B25487E91D6C44A5A7199EDA11CF451 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,31 +554,6 @@
 				F733730F57E794BCFB4B18DC00E2FF9B /* MMDrawerController.h in Headers */,
 				1A378C41991F5219E9959E3A250E9A03 /* MMDrawerVisualState.h in Headers */,
 				984DD4BA68A399F50B9D7849E72385F8 /* UIViewController+MMDrawerController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E493E68E006881193A7738FAA7750D6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				565C21A4DCF1DED303078AD9081B7FA4 /* ANImageBitmapRep.h in Headers */,
-				13410B7A9A00CDA79B235144C53AFFCE /* BGRSLoupeLayer.h in Headers */,
-				B6E17242FCAE76682476701C85B28A91 /* BitmapContextManipulator.h in Headers */,
-				F1267FE53FA144AF66A676A6BCA4737B /* BitmapContextRep.h in Headers */,
-				C3350CA27E57FF9AD285CF2888C7919E /* BitmapCropManipulator.h in Headers */,
-				C8C95A773054322B5CFB6033AB262CB2 /* BitmapDrawManipulator.h in Headers */,
-				DD6B05D509394F0D68A0C572DC376F4E /* BitmapRotationManipulator.h in Headers */,
-				70C010B0BF2329DF2B25C5C2901F681E /* BitmapScaleManipulator.h in Headers */,
-				AF84E096C85B0BEE2CE62500E7E84E71 /* CGContextCreator.h in Headers */,
-				D2110A67EB7E7C335C491C316B15F6EF /* CGImageContainer.h in Headers */,
-				634D4E7662F6332E9CC9FC41D4202254 /* NSImage+ANImageBitmapRep.h in Headers */,
-				B71067E0689876AF241EC1C89101EDD7 /* OSCommonImage.h in Headers */,
-				03CF713F668DF0E51C4C49BB50AEB9F3 /* RSColorFunctions.h in Headers */,
-				A39C7DF4D0CD92692047FB848167CB23 /* RSColorPickerState.h in Headers */,
-				CBDA07EDCC57437A1B4AF795C5EBE823 /* RSColorPickerView.h in Headers */,
-				CCE9B53D276605CF4D3495F68719DC05 /* RSGenerateOperation.h in Headers */,
-				C362EC4772EB671473B28F531CB8C17D /* RSSelectionLayer.h in Headers */,
-				AE3C2A4D3FCCCB624D41FAF0C9DA8C0E /* UIImage+ANImageBitmapRep.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,13 +568,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0BA4DF9E11034B12723F43B320747DB0 /* RSColorPicker */ = {
+		2CE8323A7823829F8C8D66F842F031F2 /* RSColorPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43AFEDA46A5C17B14AB938EB7EC168A5 /* Build configuration list for PBXNativeTarget "RSColorPicker" */;
+			buildConfigurationList = AED4FA4003E0FAFE85BBC723D8A13322 /* Build configuration list for PBXNativeTarget "RSColorPicker" */;
 			buildPhases = (
-				D84711177623C33947A174BF492BB5F9 /* Sources */,
-				B190422C7A8006EF94C7F814DA4F8FDC /* Frameworks */,
-				6E493E68E006881193A7738FAA7750D6 /* Headers */,
+				895A01DB626E190C047C6DB201484AF7 /* Sources */,
+				540B6F517A61A51B1FF8248548192BBA /* Frameworks */,
+				20E66ACE10C305A89DDED7D0B9FDD800 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -493,7 +582,27 @@
 			);
 			name = RSColorPicker;
 			productName = RSColorPicker;
-			productReference = AD75448EDE859971BBE71CA6991DDEBE /* libRSColorPicker.a */;
+			productReference = 7E38D914D151705FD7F07E05505F89EB /* libRSColorPicker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3AA182ACCAB086A6D4437DA6931A2C43 /* Pods-BLEProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A38DAED6184DD832EAAD1ABFC5745951 /* Build configuration list for PBXNativeTarget "Pods-BLEProject" */;
+			buildPhases = (
+				79EC68926FE38C0E2FDD3416EBB8583A /* Sources */,
+				AEF4CACF143D0DED6CF729E60069264A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F8C0DA7AA6D4D79BF79D3DB930D6577 /* PBXTargetDependency */,
+				C99D2CA828DEA6113015CD723F0C1497 /* PBXTargetDependency */,
+				A9CE5561788E680624FF0DD8A0BB215E /* PBXTargetDependency */,
+				5FC4C5273CDBD3AF0077C3A39A1CBDB0 /* PBXTargetDependency */,
+			);
+			name = "Pods-BLEProject";
+			productName = "Pods-BLEProject";
+			productReference = 30D63D59295A7D984A70BF0CFD83802E /* libPods-BLEProject.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		550F7EEAEEA17E3F92C873912E23B01C /* MMDrawerController */ = {
@@ -510,26 +619,24 @@
 			);
 			name = MMDrawerController;
 			productName = MMDrawerController;
-			productReference = 5B4053D9E565DFA80E61E5A33B6EC1CA /* libMMDrawerController.a */;
+			productReference = AF345C1B9CBDA3C5590FD20E846FBB7F /* libMMDrawerController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		6F8C0E45521EF434D6462913FB4EFD50 /* Pods-BLEProject */ = {
+		998566382D0B7487D4A273328144EE43 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E632C3C6B19B7D0E062BFAC5B8DD601 /* Build configuration list for PBXNativeTarget "Pods-BLEProject" */;
+			buildConfigurationList = D5C4365606EF7C05EAD934549ED069A4 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				12C663636E8272DA18BF6AB2D8AA4C41 /* Sources */,
-				B9CDDF2E17F1189E6D3ECF651DC68B7E /* Frameworks */,
+				80558151DC0400FA9D94BCFC2B238E4D /* Sources */,
+				E6DE3237B69B0949D87DCF2BC39AEEED /* Frameworks */,
+				4361D7507B87241FADB83FAB8C1D2F3B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A664866A13A4676C0C4364925F1609A8 /* PBXTargetDependency */,
-				CAD32C0B46DF9E5A29AF41C948A43388 /* PBXTargetDependency */,
-				55705AD63EE01DEF7A94A6BACDDDCA4A /* PBXTargetDependency */,
 			);
-			name = "Pods-BLEProject";
-			productName = "Pods-BLEProject";
-			productReference = 87DF9A4937246C2F9C1DA681C30D1DAE /* libPods-BLEProject.a */;
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = CB0C187B26C42B1FB15BAD048831F553 /* libSVProgressHUD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		C83DC0B4881D58A9555C25FA8291CA5F /* MMDrawerController+Storyboard */ = {
@@ -547,7 +654,7 @@
 			);
 			name = "MMDrawerController+Storyboard";
 			productName = "MMDrawerController+Storyboard";
-			productReference = DF81FB9BCC07B8BF9EDF0591E8BDA8CB /* libMMDrawerController+Storyboard.a */;
+			productReference = CCCCB387D1C94577A4839EEC34F14460 /* libMMDrawerController+Storyboard.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -567,27 +674,20 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9E93E14C92539A7638A44408A3988B4B /* Products */;
+			productRefGroup = 9F6EC357D174BE3F694602479853F868 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				550F7EEAEEA17E3F92C873912E23B01C /* MMDrawerController */,
 				C83DC0B4881D58A9555C25FA8291CA5F /* MMDrawerController+Storyboard */,
-				6F8C0E45521EF434D6462913FB4EFD50 /* Pods-BLEProject */,
-				0BA4DF9E11034B12723F43B320747DB0 /* RSColorPicker */,
+				3AA182ACCAB086A6D4437DA6931A2C43 /* Pods-BLEProject */,
+				2CE8323A7823829F8C8D66F842F031F2 /* RSColorPicker */,
+				998566382D0B7487D4A273328144EE43 /* SVProgressHUD */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12C663636E8272DA18BF6AB2D8AA4C41 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2983C57092D6C4365860891690B5DA6F /* Pods-BLEProject-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		43C420DC99D22058656D93AA1E317201 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -600,6 +700,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79EC68926FE38C0E2FDD3416EBB8583A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D8866C73A87BE108FFFB5EC0095540 /* Pods-BLEProject-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80558151DC0400FA9D94BCFC2B238E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B764D37FE9841E03090A1E03DA33299 /* SVIndefiniteAnimatedView.m in Sources */,
+				A60677F28C3074F93E30FDF33857314C /* SVProgressAnimatedView.m in Sources */,
+				0E4D02176FE607AE4CA81FF773F40F6A /* SVProgressHUD-dummy.m in Sources */,
+				CBD79C6CA6C60A28751F21462E16E1B9 /* SVProgressHUD.m in Sources */,
+				A8BCAC94CEB5B4FDCE1799B608D96C28 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895A01DB626E190C047C6DB201484AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C965FA8CA4D7152E8779795DBE91F15E /* ANImageBitmapRep.m in Sources */,
+				41974D2C8751E787A390BB62FA87E05C /* BGRSLoupeLayer.m in Sources */,
+				1C5F0F638A82D14C1D8F9CDE9B28DE5B /* BitmapContextManipulator.m in Sources */,
+				3DC9CE74E3F8A036B732930B9455B568 /* BitmapContextRep.m in Sources */,
+				92A3A39E5F94FAB7C37EBB639AFAB30A /* BitmapCropManipulator.m in Sources */,
+				BB865CB9CAF3C7665097CB229EC20119 /* BitmapDrawManipulator.m in Sources */,
+				442D2BADFC2DDBC880F630555E35A1CB /* BitmapRotationManipulator.m in Sources */,
+				4512EC15ED877FEAE1E32C65FDA6568E /* BitmapScaleManipulator.m in Sources */,
+				0C5D0C35BD16CB99588DD829AB2728E7 /* CGContextCreator.m in Sources */,
+				873F92512749736F63B0D17D2289935F /* CGImageContainer.m in Sources */,
+				361CDE71D133EA140569E13B07D4A463 /* NSImage+ANImageBitmapRep.m in Sources */,
+				D37DA4FAA9D20D0BEEED5605591532D7 /* OSCommonImage.m in Sources */,
+				7808F14D2C352EF1F1868F0B60320D6B /* RSColorFunctions.m in Sources */,
+				83E9475ED74D3A4F9D69B24B222C8C2D /* RSColorPicker-dummy.m in Sources */,
+				CEF4E14A2A42FFD4896374FFAA193410 /* RSColorPickerState.m in Sources */,
+				40337AACB154F8AF46773B5919458A1A /* RSColorPickerView.m in Sources */,
+				6B0888DABBCFB6A02CCB8FBF38DB25AF /* RSGenerateOperation.m in Sources */,
+				0E033EA8EEC6CAD16704DA400C154DF2 /* RSSelectionLayer.m in Sources */,
+				A1EC5C10BDCE369E296C846205ADF863 /* UIImage+ANImageBitmapRep.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9773AC909D7BC75EABC1A1A2741F0EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,46 +755,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84711177623C33947A174BF492BB5F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB78B4FA3F7FDB26C48040A0086C43F9 /* ANImageBitmapRep.m in Sources */,
-				79263EAD2316C4538B0E66A27DCB1F5D /* BGRSLoupeLayer.m in Sources */,
-				B93281E494B5E009984DDCB9785C7C73 /* BitmapContextManipulator.m in Sources */,
-				ED2FA27F9528A76626BA99798F3CB47B /* BitmapContextRep.m in Sources */,
-				2DD4EF619AEA55040D34174EE891830A /* BitmapCropManipulator.m in Sources */,
-				1CEABC8FB6F338A085AA19B8DFFF662F /* BitmapDrawManipulator.m in Sources */,
-				D1C9C1A7F26787E97E0320C2A5B49C6F /* BitmapRotationManipulator.m in Sources */,
-				31BBB1B4BED2215C411A2F447E0361F7 /* BitmapScaleManipulator.m in Sources */,
-				0DB6B23A225FD7C11D6038D88BB1E8D3 /* CGContextCreator.m in Sources */,
-				27046982E3A5514CC2554199231C84A1 /* CGImageContainer.m in Sources */,
-				CF85F7CABA4B23CD38C177F04A678709 /* NSImage+ANImageBitmapRep.m in Sources */,
-				86614623615283A3DB061BB98C1F25FF /* OSCommonImage.m in Sources */,
-				09B2695BA2CDA80052BE2A8F1743BE09 /* RSColorFunctions.m in Sources */,
-				2C22F6A37F57EE2EC1E5E825D80812AA /* RSColorPicker-dummy.m in Sources */,
-				F2EAD99350E6FA3E3265CAF44C5A359D /* RSColorPickerState.m in Sources */,
-				64C9DA80BA1A278F6C4467C066627D1A /* RSColorPickerView.m in Sources */,
-				3FEF167E92BBA93BEC5294FDF53AD1A0 /* RSGenerateOperation.m in Sources */,
-				D0A2FD572A6597F773C4A7A4069009C7 /* RSSelectionLayer.m in Sources */,
-				B39E13DFA90C387EF28B2E0128BF5151 /* UIImage+ANImageBitmapRep.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		55705AD63EE01DEF7A94A6BACDDDCA4A /* PBXTargetDependency */ = {
+		5FC4C5273CDBD3AF0077C3A39A1CBDB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RSColorPicker;
-			target = 0BA4DF9E11034B12723F43B320747DB0 /* RSColorPicker */;
-			targetProxy = 5A3EC002D47F0DBDF9E91BBEC6BEA9FD /* PBXContainerItemProxy */;
+			name = SVProgressHUD;
+			target = 998566382D0B7487D4A273328144EE43 /* SVProgressHUD */;
+			targetProxy = 83398F98598327119316D36775664658 /* PBXContainerItemProxy */;
 		};
-		A664866A13A4676C0C4364925F1609A8 /* PBXTargetDependency */ = {
+		9F8C0DA7AA6D4D79BF79D3DB930D6577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MMDrawerController;
 			target = 550F7EEAEEA17E3F92C873912E23B01C /* MMDrawerController */;
-			targetProxy = 8F5F8CD9C09D8370674FE20E386B128B /* PBXContainerItemProxy */;
+			targetProxy = 6308958AE8B1F530CA4D5F95085D4D4D /* PBXContainerItemProxy */;
 		};
 		A709274CE79FA3065567B585CC38D44C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -656,18 +776,24 @@
 			target = 550F7EEAEEA17E3F92C873912E23B01C /* MMDrawerController */;
 			targetProxy = BD579DDD628954F955745D8DC77FDE3E /* PBXContainerItemProxy */;
 		};
-		CAD32C0B46DF9E5A29AF41C948A43388 /* PBXTargetDependency */ = {
+		A9CE5561788E680624FF0DD8A0BB215E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSColorPicker;
+			target = 2CE8323A7823829F8C8D66F842F031F2 /* RSColorPicker */;
+			targetProxy = A54104E3F9F9C7CFB110DDBC78D40BDD /* PBXContainerItemProxy */;
+		};
+		C99D2CA828DEA6113015CD723F0C1497 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MMDrawerController+Storyboard";
 			target = C83DC0B4881D58A9555C25FA8291CA5F /* MMDrawerController+Storyboard */;
-			targetProxy = 7A7CA48C01DC09C3E8C0A89FF54D3532 /* PBXContainerItemProxy */;
+			targetProxy = 8B058F3B7B289A9F01F81EFD015B40F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		052F2C2C4B91DF6734432433477D7C5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D0FB71300AC06F4883F18D7DEAB3C4 /* MMDrawerController+Storyboard.xcconfig */;
+			baseConfigurationReference = 72E0AC42A899DCA6B84E68ABCDF62E69 /* MMDrawerController+Storyboard.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -688,7 +814,7 @@
 		};
 		13BE17F59AFBF2421EE6EFEBE593BF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D0FB71300AC06F4883F18D7DEAB3C4 /* MMDrawerController+Storyboard.xcconfig */;
+			baseConfigurationReference = 72E0AC42A899DCA6B84E68ABCDF62E69 /* MMDrawerController+Storyboard.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -696,6 +822,48 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController+Storyboard/MMDrawerController+Storyboard-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4476B5A8E3E6DDDFFEC9775212E720C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3383CF2107F73EDA988FDFAE4E80126A /* Pods-BLEProject.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		47A0CD8BA969F106DBCA39ACE2515F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FEBFF64A658922A4F6318291EBE8B7F /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -749,9 +917,51 @@
 			};
 			name = Debug;
 		};
+		5206157CE2D45EB77EF404B13E7D7B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FEBFF64A658922A4F6318291EBE8B7F /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6D6531CB0E6714CD621B5799107A8C49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 768801FF324F28E99C1F50BB8E7DE0C9 /* RSColorPicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RSColorPicker/RSColorPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		7211004ECA5F41634A6E3FC44DDB79B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 159F9888E5BB2213EF6E2844B71BF063 /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = 72B8975C725FCAC68C637A06472C7A37 /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -765,48 +975,6 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		7CA6460973ACAC082246749549359BD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CA369F51823103A12E2872B91484AFC /* RSColorPicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RSColorPicker/RSColorPicker-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		A2E9E43BCA528BC465605800181BB07C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3383CF2107F73EDA988FDFAE4E80126A /* Pods-BLEProject.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -850,17 +1018,17 @@
 			};
 			name = Release;
 		};
-		C7B94A2E67FEC0C100C0E001533925A8 /* Release */ = {
+		BBA6D118EC0170DF1E79EBFF84C063DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CA369F51823103A12E2872B91484AFC /* RSColorPicker.xcconfig */;
+			baseConfigurationReference = 768801FF324F28E99C1F50BB8E7DE0C9 /* RSColorPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/RSColorPicker/RSColorPicker-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -869,9 +1037,30 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		CBEB790E082A2078B2D0AC0B65662B54 /* Debug */ = {
+		F4071D599C676E289A731E8255247E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72B8975C725FCAC68C637A06472C7A37 /* MMDrawerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FEA03DA3A738F2FFDCF02AB0A05089A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FDFCA3962E900C86BFEA51670D84BF7 /* Pods-BLEProject.debug.xcconfig */;
 			buildSettings = {
@@ -887,27 +1076,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F4071D599C676E289A731E8255247E59 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 159F9888E5BB2213EF6E2844B71BF063 /* MMDrawerController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -934,29 +1102,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43AFEDA46A5C17B14AB938EB7EC168A5 /* Build configuration list for PBXNativeTarget "RSColorPicker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7CA6460973ACAC082246749549359BD1 /* Debug */,
-				C7B94A2E67FEC0C100C0E001533925A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4E632C3C6B19B7D0E062BFAC5B8DD601 /* Build configuration list for PBXNativeTarget "Pods-BLEProject" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBEB790E082A2078B2D0AC0B65662B54 /* Debug */,
-				A2E9E43BCA528BC465605800181BB07C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6BCBDE524BD4EFDC051B5AD1A976D69B /* Build configuration list for PBXNativeTarget "MMDrawerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4071D599C676E289A731E8255247E59 /* Debug */,
 				7211004ECA5F41634A6E3FC44DDB79B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A38DAED6184DD832EAAD1ABFC5745951 /* Build configuration list for PBXNativeTarget "Pods-BLEProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA03DA3A738F2FFDCF02AB0A05089A3 /* Debug */,
+				4476B5A8E3E6DDDFFEC9775212E720C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED4FA4003E0FAFE85BBC723D8A13322 /* Build configuration list for PBXNativeTarget "RSColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA6D118EC0170DF1E79EBFF84C063DB /* Debug */,
+				6D6531CB0E6714CD621B5799107A8C49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C4365606EF7C05EAD934549ED069A4 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A0CD8BA969F106DBCA39ACE2515F36 /* Debug */,
+				5206157CE2D45EB77EF404B13E7D7B10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
