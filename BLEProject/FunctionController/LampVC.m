@@ -8,9 +8,20 @@
 
 #import "LampVC.h"
 #import "RSColorPickerView.h"
+#import "CHcir_Slider.h"
 
 
-@interface LampVC ()<RSColorPickerViewDelegate>
+typedef NS_ENUM(NSInteger, ColorLampSwitch) {
+    colorLampNoneClick,
+    redLampClick,
+    greenLampClick,
+    blueLampClick,
+    whiteLampClick
+};
+
+
+
+@interface LampVC ()<RSColorPickerViewDelegate,CHcirsliderDelegate>
 
 //UI
 @property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
@@ -25,8 +36,11 @@
 @implementation LampVC
 {
     RSColorPickerView *_colorPicker;
+    CHcir_Slider *_cirSlider;
     
     NSDate *_oldTime;
+    
+    ColorLampSwitch currentColor;
 }
 
 
@@ -36,7 +50,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initColorPicker];
+    [self initUI];
+    
+    [self initControlller];
    
     [self setupOperationModel];
 }
@@ -50,7 +66,18 @@
 }
 
 
--(void)initColorPicker{
+
+-(void)initUI{
+
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
+
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+
+-(void)initControlller{
 
     int width=ScreenWidth*0.7;
     
@@ -64,6 +91,23 @@
     
 
     [self.view addSubview:_colorPicker];
+    
+    
+    
+    
+    _cirSlider = [[CHcir_Slider alloc]init];
+    _cirSlider.frame = rect;
+    _cirSlider.startAngle = -90;
+    _cirSlider.cutoutAngle = 180;
+    _cirSlider.delegate = self;
+    _cirSlider.backgroundColor = [UIColor clearColor];
+    
+    _cirSlider.progress1 = 0;
+    
+    
+    [self.view addSubview:_cirSlider];
+    
+    
 }
 
 
@@ -79,8 +123,8 @@
     [[cp selectionColor] getRed:&r green:&g blue:&b alpha:&a];
     
     
-    NSString *colorDesc = [NSString stringWithFormat:@"rgba: %f, %f, %f, %f", r, g, b, a];
-    NSLog(@"%@", colorDesc);
+//    NSString *colorDesc = [NSString stringWithFormat:@"rgba: %f, %f, %f, %f", r, g, b, a];
+//    NSLog(@"%@", colorDesc);
 
     
     
@@ -103,6 +147,109 @@
     [self colorPickerDidChangeSelection:_colorPicker];
     
 }
+
+
+
+- (IBAction)mainSwitch:(UIButton *)sender {
+    
+
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+        
+        
+        
+        
+    }else{
+    
+        
+        [self.operationModel setLightColorWithRed:0 green:0 blue:0 white:0];
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+- (IBAction)whiteLampSwitch:(UIButton *)sender {
+    
+    
+    sender.selected = !sender.selected;
+}
+
+
+
+
+- (IBAction)colorLampBtn:(UIButton *)sender {
+    
+    
+    currentColor = sender.tag;
+    
+    switch (currentColor) {
+        case redLampClick:
+            
+            [_colorPicker setSelectionColor:[UIColor redColor]];
+            
+            break;
+            
+        case greenLampClick:
+            
+            [_colorPicker setSelectionColor:[UIColor greenColor]];
+            
+            break;
+
+        case blueLampClick:
+            
+            [_colorPicker setSelectionColor:[UIColor blueColor]];
+            
+            break;
+
+        case whiteLampClick:
+            
+            [_colorPicker setSelectionColor:[UIColor whiteColor]];
+            
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+    self.brightnessSlider.value = 1;
+    
+    [self colorPickerDidChangeSelection:_colorPicker];
+    
+}
+
+
+
+
+
+#pragma mark -  CHcir_Slider_Delegate
+- (void)minIntValueChanged:(CGFloat)minIntValue{
+    NSLog(@"minIntValue%f",minIntValue);
+    
+    
+    
+}
+- (void)maxIntValueChanged:(CGFloat)maxIntValue{
+    NSLog(@"maxIntValue%f",maxIntValue);
+}
+
+
+
 
 
 @end

@@ -60,11 +60,12 @@
 
 -(void)loadMediaItems{
     
-    MPMediaQuery *query = [MPMediaQuery songsQuery];
-    _mediaItems = [query items];
-    
-    hasMusic = [self hasMusic];
-    
+
+        MPMediaQuery *query = [MPMediaQuery songsQuery];
+        _mediaItems = [query items];
+        
+        hasMusic = [self hasMusic];
+        
     
     
     
@@ -144,6 +145,24 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

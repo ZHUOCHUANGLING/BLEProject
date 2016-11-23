@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 @implementation MusicVC
 {
     NSArray *_mediaItems;
+    NSInteger sessionMusicCount;
     
     BOOL hasMusic;
     NSTimeInterval currentTime;
@@ -82,19 +83,22 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 -(void)loadMediaItems{
     
-    MPMediaQuery *query = [MPMediaQuery songsQuery];
-    _mediaItems = [query items];
     
-    hasMusic = [self hasMusic];
+    
+        MPMediaQuery *query = [MPMediaQuery songsQuery];
+        _mediaItems = [query items];
+        
+        hasMusic = [self hasMusic];
+    
+    
+        //导入歌曲列表
+        if (hasMusic && sessionMusicCount != _mediaItems.count) {
+            [_playerController setQueueWithItemCollection:[[MPMediaItemCollection alloc] initWithItems:[_mediaItems copy]]];
+            sessionMusicCount = _mediaItems.count;
+        }
     
 
-    //导入歌曲列表
-    if (hasMusic) {
-        [_playerController setQueueWithItemCollection:[[MPMediaItemCollection alloc] initWithItems:[_mediaItems copy]]];
-    }
 
-
-    
 }
 
 -(BOOL)hasMusic{
@@ -107,6 +111,9 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     return YES;
 }
+
+
+
 
 -(void)initMusicPlayerController{
     

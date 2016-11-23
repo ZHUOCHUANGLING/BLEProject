@@ -108,6 +108,11 @@
         
         
         fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
+        
+        
+        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+
         [self settingNavBar:fVC];
         
         selectedRow = indexPath.row;
@@ -121,6 +126,7 @@
 -(void)settingNavBar:(UINavigationController *)nav{
     
     MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
+    leftButton.tintColor = [UIColor whiteColor];
     [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
     
 }
