@@ -10,28 +10,91 @@
 
 @interface AUXVC ()
 
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+
+
+@property (nonatomic, strong) AUXFunction *auxOperation;
+
+@property (nonatomic, strong) VolumeFunction *volOperation;
+
+
 @end
 
 @implementation AUXVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self initFunction];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(void)initFunction{
+
+    _auxOperation = [AUXFunction new];
+    _volOperation = [VolumeFunction new];
+    
+    __weak typeof(self) weakSelf = self;
+    _auxOperation.getAuxState = ^(BOOL auxState){
+    
+        if (auxState) {
+            [SVProgressHUD showSuccessWithStatus:@"AUX接入"];
+        }else{
+        
+            [SVProgressHUD showSuccessWithStatus:@"AUX未接入"];
+        
+        }
+    
+    };
+    
+    _auxOperation.getAuxVol = ^(NSInteger volume){
+    
+        weakSelf.volumeSlider.value = volume;
+    
+    };
+
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)muteTapGesture:(UITapGestureRecognizer *)sender {
+    
+    UIImageView *volumeImageView = (UIImageView *)sender.view;
+    
+    volumeImageView.highlighted = volumeImageView.highlighted?NO:YES;
+    
+    
+    if (volumeImageView.highlighted) {
+        [[NSUserDefaults standardUserDefaults] setFloat:self.volumeSlider.value forKey:@"volumeSliderValue"];
+        
+        [_volOperation setDeviceVolumeWithRank:0];
+        self.volumeSlider.value = 0;
+        
+    }else{
+    
+        self.volumeSlider.value = [[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"];
+
+    
+    }
+    
+
 }
-*/
+
+
+
+
+
+
+
+- (IBAction)volumeChange:(UISlider *)sender {
+    
+    [_volOperation setDeviceVolumeWithRank:sender.value];
+    
+}
+
+
 
 @end

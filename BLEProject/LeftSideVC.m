@@ -10,36 +10,77 @@
 #import "UIViewController+MMDrawerController.h"
 
 
+
+
+
 @interface LeftSideVC ()
 
 @property(nonatomic, strong)NSMutableArray *modualIDArr;
 
 @property (nonatomic, strong)NSMutableArray *modualNameArr;
+@property (weak, nonatomic) IBOutlet UILabel *connectedLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 
 @end
 
 @implementation LeftSideVC
 {
     NSInteger selectedRow;
+    
+    
 
 }
+
+
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+    
+    
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
+    
+    selectedCell.selected = YES;
+  
+    
+    
+    self.connectedLabel.text = DataManager.connectedPeripheral.name;
+    
+
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
     [self initData];
     
+    
+    
 }
 
 -(void)initUI{
     
     self.tableView.rowHeight = ROWHEIGHT;
-    //去掉空的分割线
-    self.tableView.tableFooterView = [[UIView alloc] init];
     
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    
+    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 160 - 6*ROWHEIGHT);
+
+
+    
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    backgroundView.image = [UIImage imageNamed:@"侧背景"];
+    
+    self.tableView.backgroundView = backgroundView;
     
 
+    
+    
+    
+    
 
 }
 
@@ -71,8 +112,6 @@
 
 
 
-
-
 #pragma mark -  tableView_Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -83,12 +122,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
+
     cell.textLabel.text = _modualNameArr[indexPath.row];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.imageView.image = [UIImage imageNamed:_modualNameArr[indexPath.row]];
+    
+    
+    
+    cell.selectedBackgroundView = [UIView new];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:40.f/255.f green:60.f/255.f blue:111.f/255.f alpha:1];
+    
+    
+    
     return cell;
+    
+    
 }
 
 
@@ -115,11 +163,36 @@
 
         [self settingNavBar:fVC];
         
+        
+        
+        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
+        
+        selectedCell.selected = NO;
+        
+        
+        
         selectedRow = indexPath.row;
+        
+ 
+        
 
     }
-    
+
 }
+
+
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+
+  
+}
+
+
+
+
+
+
 
 
 #pragma mark -  侧边栏按钮
@@ -134,6 +207,46 @@
 -(void)leftButtonPress:(id)sender{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
                                     completion:nil];
+    
+    
+}
+
+
+
+
+
+
+#pragma mark -  DisConnectDevice
+
+
+- (IBAction)disConnectDevice:(UIButton *)sender {
+    
+    [DataManager disconnectPeripheral];
+    
+}
+
+
+
+
+
+
+#pragma mark -  connectA2DP
+
+
+
+
+- (IBAction)presentSetting:(UIButton *)sender {
+    
+    
+    
+    if (Deviece_Version >= 10) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:nil];
+    }else{
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        
+    }
+    
     
     
 }

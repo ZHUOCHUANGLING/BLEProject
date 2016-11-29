@@ -41,9 +41,9 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
         _lineWidth = 5.f;
         _guideLineColor = [UIColor clearColor];
         _progress = 1.f;
-        _progress1 = 1.0f;
-        _handleOutSideRadius = 10.f;
-        _handleInSideRadius = 4.f;
+//        _progress1 = 1.0f;
+        _handleOutSideRadius = 9.f;
+        _handleInSideRadius = 7.f;
     }
     return self;
 }
@@ -146,7 +146,7 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     if (progress1 > 1)
         _progress1 = 1;
     else if (progress1 < 0.01)
-        _progress1 = 0.01;
+        _progress1 = 0.f;
     else
         _progress1 = progress1;
     
@@ -173,6 +173,12 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextStrokePath(context);
     
+    
+    
+    
+    
+    
+    
     [self.tintColor set];
     CGContextAddArc(context, center.x, center.y, radius, arcStartAngle, arcStartAngle - progressAngle, 1);
     CGContextStrokePath(context);
@@ -183,18 +189,21 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     
     
     
-    [[UIColor blueColor] set];
+    [[UIColor colorWithRed:70.f/255.f green:159.f/255.f blue:227.f/255.f alpha:1] set];
     CGContextSetLineWidth(context, self.handleOutSideRadius * 2);
     CGPoint handle1 = CGPointCenterRadiusAngle(center, radius, arcStartAngle - progressAngle1);
     _handcenterPoint1 = handle1;
     CGContextAddArc(context, handle1.x, handle1.y, self.handleOutSideRadius, 0, DegreesToRadians(360), 1);
     CGContextStrokePath(context);
     
-//    [[UIColor orangeColor] set];
+    
+    
+    
+//    [[UIColor colorWithRed:26 green:161 blue:230 alpha:1] set];
 //    CGContextSetLineWidth(context, self.handleInSideRadius * 2);
 //    CGContextAddArc(context, handle1.x, handle1.y, self.handleInSideRadius, 0, DegreesToRadians(360), 1);
 //    CGContextStrokePath(context);
-//    
+
 
     
 }

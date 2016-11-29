@@ -27,6 +27,10 @@
     [self initFirstViewController];
     [ScanVC presentScanVC];
     
+    
+    
+    
+    
 }
 
 
@@ -35,6 +39,11 @@
 
     //让app支持接受远程控制事件
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstLaunch"];
+    
+    
 }
 
 
@@ -54,7 +63,7 @@
 
     self.mm_drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
     self.mm_drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
-    self.mm_drawerController.maximumLeftDrawerWidth = ScreenWidth * 0.6;
+    self.mm_drawerController.maximumLeftDrawerWidth = ScreenWidth * 0.7;
 //    [self.mm_drawerController setShouldStretchDrawer:NO];
     
 

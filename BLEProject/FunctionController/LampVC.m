@@ -7,11 +7,17 @@
 //
 
 #import "LampVC.h"
+#import "SceneVC.h"
 #import "RSColorPickerView.h"
+#import "MSColorWheelView.h"
+#import "MSColorUtils.h"
 #import "CHcir_Slider.h"
 
 
-typedef NS_ENUM(NSInteger, ColorLampSwitch) {
+
+
+
+typedef NS_ENUM(NSInteger, ColorLampButton) {
     colorLampNoneClick,
     redLampClick,
     greenLampClick,
@@ -21,13 +27,10 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 
 
-@interface LampVC ()<RSColorPickerViewDelegate,CHcirsliderDelegate>
+@interface LampVC ()<CHcirsliderDelegate>
 
-//UI
-@property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
+@property (weak, nonatomic) IBOutlet UIButton *mainSwitch;
 
-
-//
 @property (nonatomic,strong) LEDFunction *operationModel;
 
 
@@ -35,12 +38,17 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 @implementation LampVC
 {
-    RSColorPickerView *_colorPicker;
+    MSColorWheelView *_colorWheelView;
     CHcir_Slider *_cirSlider;
     
     NSDate *_oldTime;
     
-    ColorLampSwitch currentColor;
+    ColorLampButton currentColor;
+    
+    NSMutableArray *_saveLampArr;
+    CGFloat r, g, b, w, slideValue, a;
+    HSB globalHSB;
+    
 }
 
 
@@ -49,13 +57,53 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self initUI];
     
     [self initControlller];
    
     [self setupOperationModel];
+    
+    
 }
+
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSMutableArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:@"saveLampArr"];
+    
+    
+    
+    if (arr) {
+        [_saveLampArr removeAllObjects];
+        [_saveLampArr addObjectsFromArray:arr];
+    }
+    
+    
+    [self resetState];
+    
+    
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    
+    [self saveLampValue];
+    [[NSUserDefaults standardUserDefaults] setObject:_saveLampArr forKey:@"saveLampArr"];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:_mainSwitch.selected forKey:@"mainSwitchState"];
+    
+    
+}
+
+
+
+
+
 
 
 - (void)setupOperationModel {
@@ -63,15 +111,26 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
     _oldTime = [NSDate date];
 
     self.operationModel = [[LEDFunction alloc] init];
+    
+
+    _saveLampArr = [NSMutableArray array];
+    
+    
+
 }
+
+
+
+
 
 
 
 -(void)initUI{
 
+    
+    
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
@@ -79,35 +138,40 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 -(void)initControlller{
 
-    int width=ScreenWidth*0.7;
-    
-    
-    CGRect rect = CGRectMake(0.15*ScreenWidth, ScreenHeight*0.15, width, width);
-    _colorPicker = [[RSColorPickerView alloc] initWithFrame:rect];
-    
-    _colorPicker.cropToCircle = YES;
-    _colorPicker.showLoupe = NO;
-    [_colorPicker setDelegate:self];
-    
-
-    [self.view addSubview:_colorPicker];
+    int width=ScreenWidth*0.6;
+    int cirWidth = ScreenWidth *0.86;
     
     
     
     
+    CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.06*ScreenHeight, cirWidth, cirWidth);
     _cirSlider = [[CHcir_Slider alloc]init];
-    _cirSlider.frame = rect;
+    _cirSlider.frame = cirRect;
+
     _cirSlider.startAngle = -90;
     _cirSlider.cutoutAngle = 180;
     _cirSlider.delegate = self;
     _cirSlider.backgroundColor = [UIColor clearColor];
     
-    _cirSlider.progress1 = 0;
-    
-    
     [self.view addSubview:_cirSlider];
     
     
+
+    
+    
+    CGRect rect = CGRectMake(0.2*ScreenWidth, ScreenHeight*0.15, width, width);
+    _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
+    
+    [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
+    
+    
+    [self.view addSubview:_colorWheelView];
+    
+    
+    
+
+    
+    
 }
 
 
@@ -116,37 +180,67 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 
 
-#pragma mark - RSColorPickerView delegate methods
-- (void)colorPickerDidChangeSelection:(RSColorPickerView *)cp {
-    
-    CGFloat r, g, b, a;
-    [[cp selectionColor] getRed:&r green:&g blue:&b alpha:&a];
+#pragma mark - MSColorWheelView methods
+- (void)touchColorWheelView {
     
     
-//    NSString *colorDesc = [NSString stringWithFormat:@"rgba: %f, %f, %f, %f", r, g, b, a];
-//    NSLog(@"%@", colorDesc);
+    HSB hsb = {_colorWheelView.hue, 1.0f,1.0f, 1.0f};
+    
+    RGB rgb = MSHSB2RGB(hsb);
+    
+    r = rgb.red;
+    g = rgb.green;
+    b = rgb.blue;
+
+    self.mainSwitch.selected = YES;
+    
+    [self adjustData];
+    
+
+}
+
+
+
+
+
+
+-(void)adjustData{
 
     
+    CGFloat cirSliderValue = _cirSlider.progress1;
     
-    CGFloat slideValue = self.brightnessSlider.value;
     
-    if (-[_oldTime timeIntervalSinceNow] > 0.08) {
+    
+    
+    if (-[_oldTime timeIntervalSinceNow] > 0.1) {
         _oldTime = [NSDate date];
+    
         
-            [self.operationModel setLightColorWithRed:r*255*slideValue green:g*255*slideValue blue:b*255*slideValue white:0];
+        
+        w = 0;
+        if (_colorWheelView.saturation == 0 && _colorWheelView.hue == 0) {
+            r = 0;
+            g = 0;
+            b = 0;
+            w = 1;
+        }
+        
+        
+        [self.operationModel setLightColorWithRed:r*255*cirSliderValue green:g*255*cirSliderValue blue:b*255*cirSliderValue white:w];
         
     }
     
+    
+    slideValue = _cirSlider.progress1;
+    HSB _globalHSB = {_colorWheelView.hue,_colorWheelView.saturation,1.0f,1.0f};
+    globalHSB = _globalHSB;
 }
 
 
 
 
-- (IBAction)brightnessChange:(UISlider *)sender {
-    
-    [self colorPickerDidChangeSelection:_colorPicker];
-    
-}
+
+
 
 
 
@@ -154,40 +248,26 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
     
 
     sender.selected = !sender.selected;
+    [[NSUserDefaults standardUserDefaults] setBool:_mainSwitch.selected forKey:@"mainSwitchState"];
     
     if (sender.selected) {
-        
-        
-        
+
+        [self resetState];
+
         
     }else{
     
-        
+        [self saveLampValue];
         [self.operationModel setLightColorWithRed:0 green:0 blue:0 white:0];
     
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
 
-
-
-- (IBAction)whiteLampSwitch:(UIButton *)sender {
-    
-    
-    sender.selected = !sender.selected;
-}
 
 
 
@@ -195,30 +275,33 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 - (IBAction)colorLampBtn:(UIButton *)sender {
     
     
+    HSB _hsb;
+    
     currentColor = sender.tag;
     
     switch (currentColor) {
         case redLampClick:
+
+            _hsb = MSRGB2HSB(MSRGBColorComponents([UIColor redColor]));
             
-            [_colorPicker setSelectionColor:[UIColor redColor]];
             
             break;
             
         case greenLampClick:
             
-            [_colorPicker setSelectionColor:[UIColor greenColor]];
+            _hsb = MSRGB2HSB(MSRGBColorComponents([UIColor greenColor]));
             
             break;
 
         case blueLampClick:
             
-            [_colorPicker setSelectionColor:[UIColor blueColor]];
+            _hsb = MSRGB2HSB(MSRGBColorComponents([UIColor blueColor]));
             
             break;
 
         case whiteLampClick:
             
-            [_colorPicker setSelectionColor:[UIColor whiteColor]];
+            _hsb = MSRGB2HSB(MSRGBColorComponents([UIColor whiteColor]));
             
             break;
         default:
@@ -227,10 +310,14 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
     
     
     
-    self.brightnessSlider.value = 1;
+    [_colorWheelView setHue:_hsb.hue];
+    [_colorWheelView setSaturation:_hsb.saturation];
     
-    [self colorPickerDidChangeSelection:_colorPicker];
+    _cirSlider.progress1 = 1;
     
+    [self touchColorWheelView];
+    
+    _mainSwitch.selected = YES;
 }
 
 
@@ -239,14 +326,76 @@ typedef NS_ENUM(NSInteger, ColorLampSwitch) {
 
 #pragma mark -  CHcir_Slider_Delegate
 - (void)minIntValueChanged:(CGFloat)minIntValue{
-    NSLog(@"minIntValue%f",minIntValue);
+//    NSLog(@"minIntValue%f",minIntValue);
     
+    [self touchColorWheelView];
+    
+    _mainSwitch.selected = YES;
     
     
 }
 - (void)maxIntValueChanged:(CGFloat)maxIntValue{
-    NSLog(@"maxIntValue%f",maxIntValue);
+    
+    
+    
 }
+
+
+
+
+
+
+
+#pragma mark -  DataOperation
+-(void)saveLampValue{
+
+    
+    if (globalHSB.hue || globalHSB.saturation || slideValue) {
+        [_saveLampArr removeAllObjects];
+        [_saveLampArr addObject:@(globalHSB.hue)];
+        [_saveLampArr addObject:@(globalHSB.saturation)];
+        [_saveLampArr addObject:@(slideValue)];
+    }
+   
+}
+
+
+
+-(void)resetState{
+    
+    BOOL isSelected = [[NSUserDefaults standardUserDefaults] boolForKey:@"mainSwitchState"];
+    
+    if (_saveLampArr.count != 0) {
+        
+        [_colorWheelView setHue:[_saveLampArr[0] floatValue]];
+        [_colorWheelView setSaturation:[_saveLampArr[1] floatValue]];
+        _cirSlider.progress1 = [_saveLampArr[2] floatValue];
+        
+        if (isSelected) {
+            [self touchColorWheelView];
+        }
+    }
+
+}
+
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"presentSceneVC"]) {
+        
+        
+        SceneVC *sceneVC = segue.destinationViewController;
+        
+        sceneVC.operationModel = self.operationModel;
+        
+    }
+
+
+
+}
+
 
 
 

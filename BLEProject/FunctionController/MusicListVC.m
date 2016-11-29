@@ -47,7 +47,7 @@
 
 -(void) initController{
 
-    _playerController = [MPMusicPlayerController systemMusicPlayer];
+    _playerController = [MPMusicPlayerController applicationMusicPlayer];
     
     
     [self.touchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissVC)]];
@@ -100,9 +100,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-
+        cell.backgroundColor = [UIColor clearColor];
         
         
+        
+        
+        cell.selectedBackgroundView = [UIView new];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:26.f/255.f green:161.f/255.f blue:230.f/255.f alpha:1];
+        cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+        cell.detailTextLabel.highlightedTextColor = [UIColor whiteColor];
     }
     
     return cell;

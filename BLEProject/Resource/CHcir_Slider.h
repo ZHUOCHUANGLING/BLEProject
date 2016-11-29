@@ -40,6 +40,12 @@
 
 @property (nonatomic, strong)  UIColor *guidecoverColor1;
 
+@property (nonatomic, strong)  UIColor *coverLineColor;
+
+@property (nonatomic, strong)  UIColor *lineColor;
+
+@property (nonatomic, strong)  UIColor *handleColor;
+
 @property (nonatomic, assign)  CGFloat handleOutSideRadius;
 
 @property (nonatomic, assign)  CGFloat handleInSideRadius;

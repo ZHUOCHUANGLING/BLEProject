@@ -14,12 +14,13 @@
 //BLE
 #define DataManager [DataStreamManager sharedManager]
 
+#define Deviece_Version [[[UIDevice currentDevice] systemVersion] floatValue]
 
 
 //
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define margin 15
-#define ROWHEIGHT 60
+#define ROWHEIGHT ScreenHeight*0.09
 
 #endif /* MacroHeader_h */

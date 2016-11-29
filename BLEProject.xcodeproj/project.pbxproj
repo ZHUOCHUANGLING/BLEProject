@@ -30,9 +30,12 @@
 		E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BF61DDD9449000CABB0 /* Assets.xcassets */; };
 		E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BFA1DDD9508000CABB0 /* Info.plist */; };
 		E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093C041DDDB3ED000CABB0 /* MusicListVC.m */; };
+		E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */; };
+		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
+		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
+		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
-		E8DF5C0E1DE442FF001B3B57 /* SceneCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0D1DE442FF001B3B57 /* SceneCollectionCell.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
 /* End PBXBuildFile section */
 
@@ -97,12 +100,18 @@
 		E8093BFA1DDD9508000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E8093C031DDDB3ED000CABB0 /* MusicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListVC.h; sourceTree = "<group>"; };
 		E8093C041DDDB3ED000CABB0 /* MusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListVC.m; sourceTree = "<group>"; };
+		E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewCell.h; sourceTree = "<group>"; };
+		E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneViewCell.m; sourceTree = "<group>"; };
+		E83830301DEC340600814AD9 /* EQSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQSettingVC.h; sourceTree = "<group>"; };
+		E83830311DEC340600814AD9 /* EQSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EQSettingVC.m; sourceTree = "<group>"; };
+		E83F13291DE59C4600504EDE /* MSColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorUtils.h; sourceTree = "<group>"; };
+		E83F132A1DE59C4600504EDE /* MSColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorUtils.m; sourceTree = "<group>"; };
+		E83F132B1DE59C4600504EDE /* MSColorWheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorWheelView.h; sourceTree = "<group>"; };
+		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
 		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
 		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
 		E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneVC.m; sourceTree = "<group>"; };
-		E8DF5C0C1DE442FF001B3B57 /* SceneCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCollectionCell.h; sourceTree = "<group>"; };
-		E8DF5C0D1DE442FF001B3B57 /* SceneCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCollectionCell.m; sourceTree = "<group>"; };
 		E8DF5C111DE44DE3001B3B57 /* CHcir_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHcir_Slider.h; sourceTree = "<group>"; };
 		E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHcir_Slider.m; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,7 +237,7 @@
 		E8093BD11DDD9295000CABB0 /* FunctionModel */ = {
 			isa = PBXGroup;
 			children = (
-				E8DF5C0F1DE44308001B3B57 /* Lamp */,
+				E838302A1DEC0CDC00814AD9 /* SceneViewCell */,
 			);
 			path = FunctionModel;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 		E8093BDA1DDD9295000CABB0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E83F13281DE59C4600504EDE /* ColorPicker */,
 				E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */,
 				E8093BDC1DDD9295000CABB0 /* BluetoothFoundation.framework */,
 				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
@@ -294,6 +304,8 @@
 				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
 				E8093C031DDDB3ED000CABB0 /* MusicListVC.h */,
 				E8093C041DDDB3ED000CABB0 /* MusicListVC.m */,
+				E83830301DEC340600814AD9 /* EQSettingVC.h */,
+				E83830311DEC340600814AD9 /* EQSettingVC.m */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -343,13 +355,24 @@
 			name = Scan;
 			sourceTree = "<group>";
 		};
-		E8DF5C0F1DE44308001B3B57 /* Lamp */ = {
+		E838302A1DEC0CDC00814AD9 /* SceneViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E8DF5C0C1DE442FF001B3B57 /* SceneCollectionCell.h */,
-				E8DF5C0D1DE442FF001B3B57 /* SceneCollectionCell.m */,
+				E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */,
+				E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */,
 			);
-			name = Lamp;
+			name = SceneViewCell;
+			sourceTree = "<group>";
+		};
+		E83F13281DE59C4600504EDE /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E83F13291DE59C4600504EDE /* MSColorUtils.h */,
+				E83F132A1DE59C4600504EDE /* MSColorUtils.m */,
+				E83F132B1DE59C4600504EDE /* MSColorWheelView.h */,
+				E83F132C1DE59C4600504EDE /* MSColorWheelView.m */,
+			);
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
 		E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */ = {
@@ -562,17 +585,20 @@
 				E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */,
 				E8093BF01DDD9295000CABB0 /* main.m in Sources */,
 				E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */,
+				E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */,
 				E8093BEA1DDD9295000CABB0 /* MusicVC.m in Sources */,
 				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
+				E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */,
 				E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */,
 				E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */,
+				E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */,
 				E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */,
 				E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */,
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
-				E8DF5C0E1DE442FF001B3B57 /* SceneCollectionCell.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
+				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
 				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
 				E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */,
@@ -735,7 +761,7 @@
 				INFOPLIST_FILE = BLEProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JP.BLEProject;
+				PRODUCT_BUNDLE_IDENTIFIER = JPP.BLEProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -756,7 +782,7 @@
 				INFOPLIST_FILE = BLEProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JP.BLEProject;
+				PRODUCT_BUNDLE_IDENTIFIER = JPP.BLEProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

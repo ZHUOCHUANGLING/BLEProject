@@ -10,4 +10,7 @@
 
 @interface SceneVC : UIViewController
 
+
+@property (nonatomic,strong) LEDFunction *operationModel;
+
 @end

@@ -11,12 +11,18 @@
 #import <AVFoundation/AVFoundation.h>
 
 
+
 typedef NS_ENUM(NSInteger, MusicMode) {
     MusicRepeatModeDefault,
     MusicRepeatModeOne,
     MusicShuffleModeSongs
 };
 
+
+typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
+    LocalMusicMode,
+    TFMusicMode
+};
 
 
 
@@ -31,10 +37,28 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 @property (weak, nonatomic) IBOutlet UILabel *musicNameLabel;
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 
-@property (weak, nonatomic) IBOutlet UIView *musicVolumeBG;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentTimeLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *playOrPauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectModeButton;
+
+
+@property (weak, nonatomic) IBOutlet UIView *volumeBackgroudView;
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+
+
+
+
+
+
+@property (weak, nonatomic) IBOutlet UIView *chooseModeBGView;
+
+
+
+
 
 @end
 
@@ -47,11 +71,22 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     NSTimeInterval currentTime;
     NSTimeInterval totalTime;
     MusicMode currentMode;
-    
+    ChooseMusicPlayMode currentMusicMode;
     
     NSTimer *_progressTimer;
     
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -60,6 +95,11 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     
     [self loadMediaItems];
+    [self initUI];
+    [self addObserver];
+    
+    
+    
     
 }
 
@@ -67,39 +107,41 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     _mediaItems = [NSArray array];
     
     [self initMusicPlayerController];
     
+    
 
-    [self addObserver];
-    
-    [self initUI];
-    
-    
 }
+
+
 
 
 
 -(void)loadMediaItems{
     
-    
-    
+
         MPMediaQuery *query = [MPMediaQuery songsQuery];
         _mediaItems = [query items];
         
         hasMusic = [self hasMusic];
     
-    
+        sessionMusicCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"sessionMusicCount"];
         //导入歌曲列表
-        if (hasMusic && sessionMusicCount != _mediaItems.count) {
+        if ((hasMusic && sessionMusicCount != _mediaItems.count )|| [self isFirstLaunch]) {
             [_playerController setQueueWithItemCollection:[[MPMediaItemCollection alloc] initWithItems:[_mediaItems copy]]];
             sessionMusicCount = _mediaItems.count;
+            [[NSUserDefaults standardUserDefaults] setInteger:sessionMusicCount forKey:@"sessionMusicCount"];
         }
     
 
 
 }
+
+
 
 -(BOOL)hasMusic{
 
@@ -112,68 +154,92 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     return YES;
 }
 
+-(BOOL)isFirstLaunch{
 
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstLaunch"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstLaunch"];
+        
+        return  YES;
+    }
+
+    return NO;
+
+}
 
 
 -(void)initMusicPlayerController{
     
-    _playerController = [MPMusicPlayerController systemMusicPlayer];
+    
+    _playerController = [MPMusicPlayerController applicationMusicPlayer];
     [_playerController beginGeneratingPlaybackNotifications];
     
     
     
-    //initMusicMode
-    _playerController.repeatMode = MPMusicRepeatModeAll;
-    
-    
+ 
     if (_progressTimer) {
         [_progressTimer invalidate];
     }
-    _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 
-
+    
+    
+    
+    
 }
-
 
 
 -(void)initUI{
     
-    MPVolumeView *volumeSlide = [[MPVolumeView alloc] initWithFrame:_musicVolumeBG.bounds];
-    volumeSlide.showsRouteButton = NO;
-    [_musicVolumeBG addSubview:volumeSlide];
-    [volumeSlide sizeToFit];
-    
-    
+    _volumeSlider.value = _playerController.volume;
 
+    
+    if(_playerController.nowPlayingItem.title){
+        self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
+    }
+    
+ 
+    
+    if (self.playerController.playbackState == MPMusicPlaybackStatePlaying) {
+        
+        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+    }
+    
+    
+    
+    
+    //设置当前播放模式
+    currentMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"musicMode"];
+    
+    if (currentMode) {
+        [self setMusicModeProperty:currentMode];
+    }else{
+        [self setMusicModeProperty:MusicRepeatModeDefault];
+
+    }
+    
+    
+    
 }
-
-
 
 
 -(void)settingMusicMode:(MusicMode)musicMode{
 
     switch (musicMode) {
         case MusicRepeatModeDefault:
-            _playerController.repeatMode = MPMusicRepeatModeAll;
-            _playerController.shuffleMode = MPMusicRepeatModeNone;
-
+            [self setMusicModeProperty:MusicRepeatModeDefault];
             
             [SVProgressHUD showSuccessWithStatus:@"列表循环播放"];
             break;
             
         case MusicRepeatModeOne:
-            _playerController.repeatMode = MPMusicRepeatModeOne;
-            _playerController.shuffleMode = MPMusicRepeatModeNone;
+            [self setMusicModeProperty:MusicRepeatModeOne];
             
             [SVProgressHUD showSuccessWithStatus:@"单曲播放"];
-            
-            
             break;
             
         case MusicShuffleModeSongs:
-            _playerController.repeatMode = MPMusicRepeatModeAll;
-            _playerController.shuffleMode = MPMusicShuffleModeSongs;
-
+            [self setMusicModeProperty:MusicShuffleModeSongs];
+            
             [SVProgressHUD showSuccessWithStatus:@"随机播放"];
             break;
             
@@ -182,20 +248,61 @@ typedef NS_ENUM(NSInteger, MusicMode) {
             break;
     }
     
+   
+    [[NSUserDefaults standardUserDefaults] setInteger:musicMode forKey:@"musicMode"];
+    
 
 }
 
 
--(void)addObserver{
 
+
+
+-(void)setMusicModeProperty:(MusicMode)musicMode{
+
+    switch (musicMode) {
+        case MusicRepeatModeDefault:
+            _playerController.repeatMode = MPMusicRepeatModeAll;
+            _playerController.shuffleMode = MPMusicShuffleModeOff;
+            
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"顺序"] forState:UIControlStateNormal];
+            
+            break;
+            
+        case MusicRepeatModeOne:
+            _playerController.repeatMode = MPMusicRepeatModeOne;
+            _playerController.shuffleMode = MPMusicShuffleModeOff;
+            
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"单曲循环"] forState:UIControlStateNormal];
+            
+            break;
+            
+        case MusicShuffleModeSongs:
+            _playerController.repeatMode = MPMusicRepeatModeAll;
+            _playerController.shuffleMode = MPMusicShuffleModeSongs;
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"随机"] forState:UIControlStateNormal];
+            
+            break;
+            
+            
+        default:
+            break;
+    }
+
+
+
+}
+
+
+
+
+
+-(void)addObserver{
     
-    //BLE Notification
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didConnectFailedPeripheralNotification:) name:BLEPeripheralDisconnectNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didConnectFailedPeripheralNotification:) name:BLEConnectFailNotification object:nil];
-    
-    
-    
-    
+
     //playerController Notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMusicPlayerControllerStateDidChangeNotification:) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:nil];
 
@@ -216,8 +323,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
         
         [_playerController skipToPreviousItem];
      
-        
-        
     }
     
     
@@ -227,22 +332,30 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)play:(UIButton *)sender {
     
-    if(_playerController){
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       
+        if(_playerController){
 
-    
-        if (self.playerController.playbackState != MPMusicPlaybackStatePlaying) {
+            if (self.playerController.playbackState != MPMusicPlaybackStatePlaying) {
+                
+                [_playerController play];
+                
+            }else{
+                
+                [_playerController pause];
+                
+            }
             
-            [_playerController play];
-            
-        }else{
-        
-            [_playerController pause];
-        
         }
+        
+        
+        
+        
+    });
     
     
-    
-    }
 
 }
 
@@ -286,6 +399,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)chooseTFOrLocalMode:(UIBarButtonItem *)sender {
     
+    _chooseModeBGView.hidden = _chooseModeBGView.hidden?NO:YES;
+    
+    
+    
 }
 
 
@@ -295,7 +412,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     [_playerController setCurrentPlaybackTime:_progressSlider.value * _playerController.nowPlayingItem.playbackDuration];
     
-
+    
     
 }
 
@@ -304,12 +421,19 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 - (IBAction)showVolumeSlide:(UIButton *)sender {
     
     
-    _musicVolumeBG.hidden = _musicVolumeBG.isHidden ? NO : YES ;
+    _volumeBackgroudView.hidden = _volumeBackgroudView.isHidden ? NO : YES ;
     
 }
 
 
 
+- (IBAction)changeVolume:(UISlider *)sender {
+    
+    
+    _playerController.volume = sender.value;
+    
+    
+}
 
 
 
@@ -321,12 +445,13 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 -(void)MPMusicPlayerControllerStateDidChangeNotification:(NSNotification *)notification{
 
     if (_playerController.playbackState == MPMoviePlaybackStatePlaying) {
+        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
         
-        
-      
-
-        
+    }else{
+        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateNormal];
+    
     }
+    
     
     
 
@@ -337,10 +462,11 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 -(void)MPMusicPlayerControllerNowPlayingItemDidChangeNotification:(NSNotification *)notification{
 
     
+    if(_playerController.nowPlayingItem.title){
+          self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
+    }
     
-
     
-    self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
     
     self.totalTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",((NSInteger)_playerController.nowPlayingItem.playbackDuration / 60) ,((NSInteger)_playerController.nowPlayingItem.playbackDuration % 60)];
 
@@ -351,6 +477,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 -(void)MPMusicPlayerControllerVolumeDidChangeNotification:(NSNotification *)notification{
 
+    _volumeSlider.value = _playerController.volume;
 
 }
 
@@ -363,31 +490,20 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 
     self.currentTimeLabel.text = [NSString stringWithTimeInteral:self.playerController.currentPlaybackTime];
+    
+   
     _progressSlider.value = _playerController.currentPlaybackTime/_playerController.nowPlayingItem.playbackDuration;
     
+    
 
 }
 
 
 
-
-#pragma mark -  BLE NotificationMethod
-- (void)didConnectFailedPeripheralNotification:(NSNotification*)notification{
+- (IBAction)openMelodyMode:(UIButton *)sender {
     
-    
-    
-    
-}
-
-
-
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-    
-
-
+    LEDFunction *ledOpration = [LEDFunction new];
+    [ledOpration setLightSenceWithIndex:5 andType:0 andTrans:0];
 }
 
 
@@ -396,6 +512,27 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 
 
+
+
+- (IBAction)chooseMusicPlayMode:(UIButton *)sender {
+
+    currentMusicMode = sender.tag;
+    switch (currentMusicMode) {
+        case LocalMusicMode:
+            self.navigationItem.title = @"本地音乐";
+            break;
+
+        case TFMusicMode:
+            self.navigationItem.title = @"TF卡音乐";
+            break;
+        default:
+            break;
+    }
+   
+    _chooseModeBGView.hidden = YES;
+    
+
+}
 
 
 
