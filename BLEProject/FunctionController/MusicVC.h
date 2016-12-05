@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
+    LocalMusicMode,
+    TFMusicMode,
+    OnlineMusicMode
+};
+
+
 @interface MusicVC : UIViewController
 
 @end

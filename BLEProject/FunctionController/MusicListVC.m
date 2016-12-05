@@ -12,9 +12,14 @@
 
 @interface MusicListVC ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *songListTableView;
 
 
 @property (nonatomic, strong) MPMusicPlayerController *playerController;
+
+@property (nonatomic, copy) NSMutableArray *tfSongListArr;
+
+
 
 @property (weak, nonatomic) IBOutlet UIView *touchView;
 
@@ -23,7 +28,6 @@
 @implementation MusicListVC
 {
     NSArray *_mediaItems;
-
     BOOL hasMusic;
     
 }
@@ -33,25 +37,91 @@
 {
     [super viewWillAppear:animated];
     
-    [self loadMediaItems];
+    
 
-
+    [self initMusicState];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initController];
+     [self.touchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissVC)]];
     
 }
 
--(void) initController{
+
+
+-(void)initMusicState{
+    
+    
+ 
+    if (self.musicMode == LocalMusicMode) {
+        
+        
+        [self initController];
+        [self loadMediaItems];
+    }
+    
+    
+    if (self.musicMode == TFMusicMode) {
+
+        [self initTFMusicState];
+    }
+    
+    
+    
+    
+
+
+}
+
+
+
+
+
+
+-(void)initTFMusicState{
+
+
+    _tfSongListArr = [[NSMutableArray alloc] init];
+    
+    [self.musicOperation getSongList];
+    
+    
+    
+    
+    __weak typeof(self) weakSelf = self;
+
+    self.musicOperation.listSongName = ^(NSString *songListName){
+    
+        
+        [weakSelf.tfSongListArr addObject:songListName];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.songListTableView reloadData];
+        });
+        
+        
+    };
+    
+    
+
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+-(void)initController{
 
     _playerController = [MPMusicPlayerController applicationMusicPlayer];
-    
-    
-    [self.touchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissVC)]];
-    
+
 }
 
 
@@ -59,16 +129,12 @@
 
 
 -(void)loadMediaItems{
-    
 
-        MPMediaQuery *query = [MPMediaQuery songsQuery];
-        _mediaItems = [query items];
-        
-        hasMusic = [self hasMusic];
-        
+    MPMediaQuery *query = [MPMediaQuery songsQuery];
+    _mediaItems = [query items];
     
-    
-    
+    hasMusic = [self hasMusic];
+
 }
 
 -(BOOL)hasMusic{
@@ -89,7 +155,16 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _mediaItems.count;
+    
+    if (self.musicMode == LocalMusicMode) {
+        return _mediaItems.count;
+    }
+    
+    if (self.musicMode == TFMusicMode) {
+        return _tfSongListArr.count;
+    }
+    
+    return 0;
 
 }
 
@@ -97,6 +172,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
@@ -120,17 +196,31 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    MPMediaItem *item = _mediaItems[indexPath.row];
-    cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.artist;
     
-    
-    
-    
-    if ([cell.textLabel.text isEqualToString:_playerController.nowPlayingItem.title]) {
-        cell.selected = YES;
+    if (self.musicMode == LocalMusicMode) {
+        MPMediaItem *item = _mediaItems[indexPath.row];
+        cell.textLabel.text = item.title;
+        cell.detailTextLabel.text = item.artist;
+        
+        if ([cell.textLabel.text isEqualToString:_playerController.nowPlayingItem.title]) {
+            cell.selected = YES;
+        }
     }
     
+    
+    
+    if (self.musicMode == TFMusicMode) {
+        
+        cell.textLabel.text = _tfSongListArr[indexPath.row];
+        
+        if (indexPath.row == self.currentIndex-1) {
+            
+            cell.selected = YES;
+        }
+        else {
+            cell.selected = NO;
+        }
+    }
     
 }
 
@@ -139,21 +229,51 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     
-    _playerController.nowPlayingItem = _mediaItems[indexPath.row];
+    
+    
+    
+    
+    if (self.musicMode == LocalMusicMode) {
+        _playerController.nowPlayingItem = _mediaItems[indexPath.row];
+    }
+    
+    
+    if (self.musicMode == TFMusicMode) {
+        
+        self.currentIndex = indexPath.row+1;
+        
+        [self.musicOperation setPlaySongIndex:indexPath.row+1];
+    }
+    
+    
     
     [tableView reloadData];
+    
+    
 }
 
 
 
 -(void)dismissVC{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
+
 
 }
 
 
 
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    if (scrollView.contentOffset.y>=scrollView.contentSize.height-CGRectGetHeight(scrollView.frame)) {
+        
+        [self.musicOperation getSongList];
+    }
+}
 
 
 

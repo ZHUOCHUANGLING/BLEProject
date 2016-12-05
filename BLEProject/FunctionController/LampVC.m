@@ -154,21 +154,23 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     _cirSlider.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:_cirSlider];
-    
+
     
 
     
     
     CGRect rect = CGRectMake(0.2*ScreenWidth, ScreenHeight*0.15, width, width);
+    
     _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
-    
+    _colorWheelView.center = CGPointMake(cirWidth/2, cirWidth/2);
     [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
+//    _colorWheelView.backgroundColor = [UIColor clearColor];
+    
+//    [self.view addSubview:_colorWheelView];
+    [_cirSlider addSubview:_colorWheelView];
     
     
-    [self.view addSubview:_colorWheelView];
-    
-    
-    
+
 
     
     

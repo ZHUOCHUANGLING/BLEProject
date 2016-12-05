@@ -9,7 +9,11 @@
 #import "LeftSideVC.h"
 #import "UIViewController+MMDrawerController.h"
 
-
+typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
+    LocalMusicMode,
+    TFMusicMode,
+    OnlineMusicMode
+};
 
 
 
@@ -28,7 +32,7 @@
 {
     NSInteger selectedRow;
     
-    
+    ChooseMusicPlayMode musicMode;
 
 }
 
@@ -77,10 +81,7 @@
     self.tableView.backgroundView = backgroundView;
     
 
-    
-    
-    
-    
+ 
 
 }
 
@@ -146,16 +147,75 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    if (indexPath.row != selectedRow) {
+    NSInteger currentMusicMode =  [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
+    
+    if (indexPath.row != selectedRow || musicMode != currentMusicMode) {
         NSString *functionID = _modualIDArr[indexPath.row];
+        
+        
+        //MusicMode
+        if (indexPath.row == 1) {
+            musicMode = currentMusicMode;
+            
+            
+            switch (musicMode) {
+                case LocalMusicMode:
+                    functionID = @"musicVC";
+                    break;
+                    
+                case TFMusicMode:
+                    functionID = @"musicVC";
+                    break;
+                    
+                case OnlineMusicMode:
+                    functionID = @"OnlineMusicVC";
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+        }
+        
+        
         
         UINavigationController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
         
         self.mm_drawerController.centerViewController = fVC;
-        
+
         
         
         fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
+        
+        if (indexPath.row == 1) {
+            
+
+            switch (musicMode) {
+                case LocalMusicMode:
+                    fVC.navigationBar.topItem.title = @"本地音乐";
+
+                    
+                    break;
+                    
+                case TFMusicMode:
+                    fVC.navigationBar.topItem.title = @"TF卡音乐";
+                    
+
+                    
+                    break;
+                    
+                case OnlineMusicMode:
+                    fVC.navigationBar.topItem.title = @"在线音乐";
+                    break;
+                    
+                default:
+                    break;
+            }
+
+
+            
+        }
+        
         
         
         [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -175,6 +235,7 @@
         
  
         
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
 
     }
 

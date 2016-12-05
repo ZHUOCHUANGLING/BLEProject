@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
+@property  (nonatomic, strong)ControlFunction *controlOperation;
 
 @property (nonatomic, strong) AUXFunction *auxOperation;
 
@@ -25,14 +26,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initFunction];
     
+    
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self initFunction];
+
 }
 
 
 
 -(void)initFunction{
 
+    _controlOperation = [ControlFunction new];
+    [_controlOperation enterAUX];
+    [_controlOperation synchronizeState];
+    
+    
+    
     _auxOperation = [AUXFunction new];
     _volOperation = [VolumeFunction new];
     
@@ -76,8 +91,8 @@
     }else{
     
         self.volumeSlider.value = [[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"];
-
-    
+        
+        [_volOperation setDeviceVolumeWithRank:[[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"]];
     }
     
 

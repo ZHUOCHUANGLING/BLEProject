@@ -70,6 +70,7 @@
         CGFloat dimension = 33;
         UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
         _indicatorLayer = [CALayer layer];
+    
         _indicatorLayer.cornerRadius = dimension / 2;
         _indicatorLayer.borderColor = edgeColor.CGColor;
         _indicatorLayer.borderWidth = 2;
@@ -83,6 +84,22 @@
     }
 
     return _indicatorLayer;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+
+    CGFloat radius = CGRectGetWidth(self.bounds) / 2;
+    CGFloat dist = sqrtf((radius - point.x) * (radius - point.x) + (radius - point.y) * (radius - point.y));
+    
+    if (dist <= radius) {
+
+        return self;
+    }
+    else {
+        
+        return self.superview;
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -116,6 +133,7 @@
         [self setSelectedPoint:point];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+
 }
 
 - (void)setSelectedPoint:(CGPoint)point

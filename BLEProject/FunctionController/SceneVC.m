@@ -93,11 +93,7 @@
     cell.imageView.image = [UIImage imageNamed:_sceneDataArr[indexPath.row]];
     cell.titleLab.text =  _sceneDataArr[indexPath.row];
     
-    
-    
-    
-    
-
+ 
 
     
     return cell;

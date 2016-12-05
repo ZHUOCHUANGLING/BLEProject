@@ -8,30 +8,272 @@
 
 #import "TimingVC.h"
 
+
+typedef NS_ENUM(NSInteger, TimeButtonType) {
+    LightOpenBtn = 0x01,
+    LightCloseBtn,
+    PlayerOpenBtn,
+    PlayerCloseBtn,
+    TimingOpenBtn,
+    TimingCloseBtn
+};
+
+
+typedef NS_ENUM(NSInteger, TimeSwitchType) {
+    LightSwitch = 0x0A,
+    PlayerSwitch,
+    TimingSwitch
+};
+
+
 @interface TimingVC ()
+
+@property (weak, nonatomic) IBOutlet UIView *settingTimeBackView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *settingTimePicker;
+
+
+
+
+@property (weak, nonatomic) IBOutlet UISwitch *lightSwitch;
+
+@property (weak, nonatomic) IBOutlet UISwitch *playerSwitch;
+
+@property (weak, nonatomic) IBOutlet UISwitch *timingSwitch;
+
+
+
+
+
+
+@property (weak, nonatomic) IBOutlet UIButton *lightOpenBtn;
+@property (weak, nonatomic) IBOutlet UIButton *lightCloseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *playerOpenBtn;
+@property (weak, nonatomic) IBOutlet UIButton *playerCloseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *timingOpenBtn;
+@property (weak, nonatomic) IBOutlet UIButton *timingCloseBtn;
 
 @end
 
 @implementation TimingVC
+{
+    TimeButtonType currentBtnType;
+    TimeSwitchType currentSwichType;
+    
+    UIButton *currentBtn;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)timingSwitch:(UISwitch *)sender {
+    
+    currentSwichType = sender.tag;
+    
+    switch (currentSwichType) {
+        case LightSwitch:
+            
+            break;
+        case PlayerSwitch:
+            
+            break;
+        case TimingSwitch:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)settingTimeClick:(UIButton *)sender {
+    
+    currentBtnType = sender.tag;
+    currentBtn = sender;
+    
+    self.settingTimeBackView.hidden = NO;
+    
+    
+    
+    
 }
-*/
+
+
+- (IBAction)deleteTimeGesture:(UILongPressGestureRecognizer *)sender {
+    
+    UIButton *currentButton = (UIButton *)sender.view;
+    
+    
+    
+    
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否删除当前设置时间" preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        [currentButton setTitle:@"添加时间" forState:UIControlStateNormal];
+        currentButton.selected = NO;
+        
+        
+        currentBtnType = currentButton.tag;
+        
+        
+      
+        
+        switch (currentBtnType) {
+                
+            case LightOpenBtn:
+                
+                if(!_lightCloseBtn.selected){
+                
+                    _lightSwitch.on = NO;
+                }
+                
+                
+                
+                break;
+            case LightCloseBtn:
+                if (!_lightOpenBtn.selected) {
+                    _lightSwitch.on = NO;
+                }
+                
+
+                break;
+                
+                
+            case PlayerOpenBtn:
+                if(!_playerCloseBtn.selected){
+                    _playerSwitch.on = NO;
+                }
+
+                break;
+            case PlayerCloseBtn:
+                if (!_playerOpenBtn.selected) {
+                    _playerSwitch.on = NO;
+                }
+                
+                
+                break;
+                
+                
+            case TimingOpenBtn:
+                if (!_timingCloseBtn.selected) {
+                    _timingSwitch.on = NO;
+                }
+                
+                
+                break;
+            case TimingCloseBtn:
+                if (!_timingOpenBtn.selected) {
+                    _timingSwitch.on = NO;
+                }
+                
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+        
+        
+        
+    }];
+    
+    
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    
+    
+    
+    
+    [self presentViewController:alertController animated:NO completion:nil];
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+- (IBAction)settingTimeConfirmClick:(UIButton *)sender {
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat: @"HH:mm"];
+    NSString *settingTimeStr = [formatter stringFromDate:_settingTimePicker.date];
+
+    
+    switch (currentBtnType) {
+            
+        case LightOpenBtn:
+            _lightSwitch.on = YES;
+            break;
+        case LightCloseBtn:
+            _lightSwitch.on = YES;
+            break;
+            
+            
+        case PlayerOpenBtn:
+            _playerSwitch.on = YES;
+            break;
+        case PlayerCloseBtn:
+            _playerSwitch.on = YES;
+            break;
+            
+            
+        case TimingOpenBtn:
+            _timingSwitch.on = YES;
+            break;
+        case TimingCloseBtn:
+            _timingSwitch.on = YES;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    currentBtn.selected = YES;
+    
+    [currentBtn setTitle:settingTimeStr forState:UIControlStateNormal &UIControlStateSelected];
+    
+    
+    _settingTimeBackView.hidden = YES;
+    
+    
+}
+
+
+
+- (IBAction)settingTimeCancelClick:(UIButton *)sender {
+    
+    _settingTimeBackView.hidden = YES;
+}
+
+
+
 
 @end

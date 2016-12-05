@@ -9,8 +9,13 @@
 #import "MusicVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UIViewController+MMDrawerController.h"
 
 
+
+
+#import "FunctionSingleton.h"
+#import "MusicListVC.h"
 
 typedef NS_ENUM(NSInteger, MusicMode) {
     MusicRepeatModeDefault,
@@ -19,10 +24,21 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 };
 
 
-typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
-    LocalMusicMode,
-    TFMusicMode
+
+
+typedef NS_ENUM(NSInteger, TFMusicPlayMode){
+    TFMusicRepeatModeDefault = 0x01,
+    TFMusicRepeatModeOne,
+    TFMusicShuffleModeSongs
+
+
 };
+
+
+
+
+
+
 
 
 
@@ -30,7 +46,18 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 @interface MusicVC ()<AVAudioPlayerDelegate>
 
+@property (nonatomic, strong)ControlFunction *controlOperation;
+
+
+//local
 @property (nonatomic, strong) MPMusicPlayerController *playerController;
+
+
+//TF
+@property (nonatomic, strong) MusicFunction *musicOperation;
+@property (nonatomic, strong) VolumeFunction *volumeOperation;
+@property (nonatomic, assign) NSInteger nowTime;
+@property (nonatomic, assign) NSInteger totalTime;
 
 
 
@@ -50,10 +77,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
 
-
-
-
-
 @property (weak, nonatomic) IBOutlet UIView *chooseModeBGView;
 
 
@@ -64,58 +87,168 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 @implementation MusicVC
 {
+    
+    //local
     NSArray *_mediaItems;
     NSInteger sessionMusicCount;
     
     BOOL hasMusic;
-    NSTimeInterval currentTime;
-    NSTimeInterval totalTime;
+
     MusicMode currentMode;
     ChooseMusicPlayMode currentMusicMode;
     
     NSTimer *_progressTimer;
+    NSTimer *_tfMusicTimer;
+    
+    
+    
+    //TF
+    NSInteger nowIndex;
+    TFMusicPlayMode currentTFPlayMode;
+    NSInteger totalNumber;
+    
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+   
+    currentMusicMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
     
-    [self loadMediaItems];
-    [self initUI];
-    [self addObserver];
+    [self initMusicState];
     
+}
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    
+    
+    
+    if (currentMusicMode != LocalMusicMode && _playerController) {
+        [_playerController pause];
+    }
+    
+    
+    if (currentMusicMode != TFMusicMode && self.musicOperation) {
+        
+        if (_playOrPauseButton.selected) {
+            [self.musicOperation setIsPlay:NO];
+        }
+    
+        [_tfMusicTimer setFireDate:[NSDate distantFuture]];
+        
+    }
+    
+    
+
+    
+    
+    if (_progressTimer.isValid) {
+        
+        [_progressTimer invalidate];
+        _progressTimer = nil;
+    }
+    
+    
+    if (_tfMusicTimer.isValid) {
+        [_tfMusicTimer invalidate];
+        _tfMusicTimer = nil;
+    }
+    
+    
+    
+    
+
     
     
     
 }
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
     
-    
-    _mediaItems = [NSArray array];
-    
-    [self initMusicPlayerController];
+}
+
+
+
+
+
+
+
+-(void)initMusicState{
     
     
 
+    
+    FunctionSingleton *func = [FunctionSingleton shareFunction];
+    
+    self.musicOperation = func.musicOperation;
+    
+    
+    switch (currentMusicMode) {
+            
+        case LocalMusicMode:
+            [_musicOperation setDeviceSource:DeviceSourceBluetooth];
+            
+            
+            _mediaItems = [NSArray array];
+            [self initMusicPlayerController];
+            
+            [self loadMediaItems];
+            [self initUI];
+            [self addObserver];
+            
+            
+            
+            break;
+            
+            
+            
+        case TFMusicMode:
+            
+            
+            _controlOperation = [ControlFunction new];
+            [_controlOperation enterMusic];
+            [_controlOperation synchronizeState];
+            
+            
+            [_musicOperation setDeviceSource:DeviceSourceSDCard];
+            
+            [self setupMusicTimer];
+
+            [self initTFFunctionState];
+            
+            self.volumeOperation = [[VolumeFunction alloc] init];
+            
+            
+            
+            
+            
+            break;
+            
+            
+        case OnlineMusicMode:
+            
+            break;
+            
+            
+        default:
+            break;
+    }
+
 }
+
+
+
 
 
 
@@ -182,8 +315,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 
     
-    
-    
+    _progressSlider.userInteractionEnabled = YES;
     
 }
 
@@ -300,6 +432,75 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
+
+-(void)setTFMusicPlayMode:(TFMusicPlayMode)mode{
+
+
+    switch (mode) {
+        case TFMusicRepeatModeDefault:
+            
+            [self.musicOperation setDevicePlayMode:MusicPlayModeAllPlay];
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"顺序"] forState:UIControlStateNormal];
+            
+            
+            break;
+            
+        case TFMusicRepeatModeOne:
+            [self.musicOperation setDevicePlayMode:MusicPlayModeSinglePlay];
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"单曲循环"] forState:UIControlStateNormal];
+            
+            
+            break;
+            
+        case TFMusicShuffleModeSongs:
+            [self.musicOperation setDevicePlayMode:MusicPlayModeRandomPlay];
+            
+            
+            [_selectModeButton setImage:[UIImage imageNamed:@"随机"] forState:UIControlStateNormal];
+            
+            break;
+        default:
+            break;
+    }
+
+    
+    
+     [[NSUserDefaults standardUserDefaults] setInteger:mode forKey:@"tfPlayMode"];
+
+}
+
+
+
+-(void)showProgressHUD:(TFMusicPlayMode)mode{
+
+    switch (mode) {
+        case TFMusicRepeatModeDefault:
+
+            [SVProgressHUD showSuccessWithStatus:@"列表循环播放"];
+            break;
+            
+        case TFMusicRepeatModeOne:
+
+            [SVProgressHUD showSuccessWithStatus:@"单曲播放"];
+            break;
+            
+        case TFMusicShuffleModeSongs:
+
+            [SVProgressHUD showSuccessWithStatus:@"随机播放"];
+            break;
+        default:
+            break;
+    }
+    
+    [self setTFMusicPlayMode:mode];
+
+
+
+}
+
+
 -(void)addObserver{
     
 
@@ -319,12 +520,18 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 - (IBAction)prev:(UIButton *)sender {
     
-    if (_playerController) {
+    if (currentMusicMode == LocalMusicMode) {
+        if (_playerController) {
         
-        [_playerController skipToPreviousItem];
+            [_playerController skipToPreviousItem];
      
+        }
     }
     
+    
+    if (currentMusicMode == TFMusicMode) {
+        [self.musicOperation prev];
+    }
     
 }
 
@@ -334,7 +541,9 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    if (currentMusicMode == LocalMusicMode) {
+        
+    
        
         if(_playerController){
 
@@ -349,11 +558,24 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
             }
             
         }
+
+    }
+    
+    
+    
+    
+    
+    
+    if (currentMusicMode == TFMusicMode) {
         
-        
-        
-        
-    });
+      
+        sender.selected = !sender.selected;
+        [self.musicOperation setIsPlay:sender.selected];
+  
+    }
+    
+    
+    
     
     
 
@@ -364,12 +586,23 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 - (IBAction)next:(id)sender {
     
     
-    if (_playerController) {
+    if (currentMusicMode == LocalMusicMode) {
     
-        [_playerController skipToNextItem];
-    
+        if (_playerController) {
         
+            if (currentMusicMode == LocalMusicMode) {
+                [_playerController skipToNextItem];
+            }
+        }
     }
+    
+    if (currentMusicMode == TFMusicMode) {
+
+        [self.musicOperation next];
+    
+    }
+    
+    
 
 }
 
@@ -389,9 +622,23 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 #pragma mark -  选择模式
 - (IBAction)chooseMode:(UIButton *)sender {
     
-    currentMode = currentMode<2?++currentMode:0;
     
-    [self settingMusicMode:currentMode];
+    
+    if(currentMusicMode == LocalMusicMode){
+        currentMode = currentMode<2?++currentMode:0;
+        [self settingMusicMode:currentMode];
+    }
+    
+    
+    if (currentMusicMode == TFMusicMode) {
+        
+        currentTFPlayMode = currentTFPlayMode<3?++currentTFPlayMode:1;
+        
+        [self showProgressHUD:currentTFPlayMode];
+        
+    }
+    
+    
     
 
 }
@@ -418,6 +665,11 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
+
+
+
+
+
 - (IBAction)showVolumeSlide:(UIButton *)sender {
     
     
@@ -429,8 +681,15 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 - (IBAction)changeVolume:(UISlider *)sender {
     
+    if (currentMusicMode == LocalMusicMode) {
+        _playerController.volume = sender.value;
+    }
     
-    _playerController.volume = sender.value;
+    
+    if (currentMusicMode == TFMusicMode) {
+    
+        [_volumeOperation setDeviceVolumeWithRank:sender.value * 15];
+    }
     
     
 }
@@ -486,13 +745,32 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
+
+
 -(void)updateProgress{
 
-
-    self.currentTimeLabel.text = [NSString stringWithTimeInteral:self.playerController.currentPlaybackTime];
-    
+    if (currentMusicMode == LocalMusicMode) {
+        self.currentTimeLabel.text = [NSString stringWithTimeInteral:self.playerController.currentPlaybackTime];
+        
+        
+        _progressSlider.value = _playerController.currentPlaybackTime/_playerController.nowPlayingItem.playbackDuration;
+    }
    
-    _progressSlider.value = _playerController.currentPlaybackTime/_playerController.nowPlayingItem.playbackDuration;
+    
+    if (currentMusicMode == TFMusicMode) {
+        
+        
+        
+        self.nowTime ++ ;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            self.currentTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",self.nowTime/60,self.nowTime%60];
+            
+            self.progressSlider.value = self.nowTime / (CGFloat)self.totalTime;
+            
+        });
+        
+    }
     
     
 
@@ -511,28 +789,213 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
+#pragma mark -  TF
+-(void)initTFFunctionState{
+
+    
+    
+    __weak typeof(_tfMusicTimer) weakTFTimer = _tfMusicTimer;
+    __weak typeof(self) weakSelf = self;
+    
+    
+    self.musicOperation.currentSongName = ^(NSString *songName){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            weakSelf.musicNameLabel.text = songName;
+
+            
+        });
+    };
+    
+    
+    
+    self.musicOperation.currentMusicState = ^(NSInteger currentIndex,NSInteger totalNum,NSInteger currentTime,NSInteger totalTime,BOOL isPlay){
+    
+        nowIndex = currentIndex;
+        totalNumber = totalNum;
+        
+        if (!weakSelf.nowTime) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.currentTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",currentTime/60,currentTime%60];
+            });
+        }
+        
+        
+        
+        weakSelf.nowTime = currentTime;
+        
+        
+ 
+        
+        if (isPlay) {
+            
+            
+            
+            [weakTFTimer setFireDate:[NSDate date]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+            });
+            
+            }
+        else{
+            
+            
+            [weakTFTimer setFireDate:[NSDate distantFuture]];
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                
+                [weakSelf.playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateNormal];
+            });
+        }
+        
+        
+        
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            weakSelf.playOrPauseButton.selected = isPlay;
+            weakSelf.progressSlider.value = currentTime / (CGFloat) totalTime;
+            weakSelf.totalTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",totalTime/60,totalTime%60];
+        });
+        
+        
+        
+        weakSelf.totalTime = totalTime;
+        
+        
+    
+    };
+    
+
+    
+    self.musicOperation.currentSource = ^(DeviceSource currentSource){
+        
+        
+        
+        if (currentSource == DeviceSourceBluetooth) {
+            [weakTFTimer setFireDate:[NSDate distantFuture]];
+        }
+    
+    
+    };
+    
+
+    
+    
+    _progressSlider.userInteractionEnabled = NO;
+
+    
+    
+     currentTFPlayMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"tfPlayMode"];
+    
+    if (currentTFPlayMode == 0 || !currentTFPlayMode) {
+        currentTFPlayMode = TFMusicRepeatModeDefault;
+    }
+    
+    
+    [self setTFMusicPlayMode:currentTFPlayMode];
+    
+    
+    
+    
+}
+
+
+
+
+
+
+- (void)setupMusicTimer{
+    
+    __weak typeof(self) weakSelf = self;
+    _tfMusicTimer = [NSTimer timerWithTimeInterval:1 target:weakSelf selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    __weak typeof(_tfMusicTimer) weakTimer = _tfMusicTimer;
+    
+    
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        [weakTimer setFireDate:[NSDate distantFuture]];
+        [[NSRunLoop currentRunLoop] addTimer:weakTimer forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] run];
+    });
+    
+}
+
+
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"listSegue"]) {
+        
+        
+        MusicListVC *musicListVC = segue.destinationViewController;
+        
+        
+        musicListVC.musicMode = currentMusicMode;
+        
+        musicListVC.musicOperation = self.musicOperation;
+        
+        musicListVC.totalNum = totalNumber;
+        
+        musicListVC.currentIndex = nowIndex;
+        
+    }
+
+
+
+
+}
 
 
 
 - (IBAction)chooseMusicPlayMode:(UIButton *)sender {
-
+    
     currentMusicMode = sender.tag;
+    
     switch (currentMusicMode) {
         case LocalMusicMode:
-            self.navigationItem.title = @"本地音乐";
+    
             break;
+            
+        case TFMusicMode:{
 
-        case TFMusicMode:
-            self.navigationItem.title = @"TF卡音乐";
+            
             break;
+            
+        }
+            
+        case OnlineMusicMode:
+            break;
+            
         default:
             break;
     }
-   
+
+    
     _chooseModeBGView.hidden = YES;
     
+    
+    
+  
 
+    [[NSUserDefaults standardUserDefaults] setInteger:currentMusicMode forKey:@"ChooseMusicPlayMode"];
+    
+    
+    UITableViewController *leftVC = (UITableViewController *)self.mm_drawerController.leftDrawerViewController;
+    [leftVC tableView:leftVC.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+    
 }
+
+
+
+
 
 
 
