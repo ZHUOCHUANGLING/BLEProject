@@ -26,10 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    [self resetTFSongList];
     
 }
 
+
+-(void)resetTFSongList{
+    
+    NSArray *resetArr;
+    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

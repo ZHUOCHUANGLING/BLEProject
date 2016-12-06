@@ -18,7 +18,7 @@
 #import "MusicListVC.h"
 
 typedef NS_ENUM(NSInteger, MusicMode) {
-    MusicRepeatModeDefault,
+    MusicRepeatModeDefault = 0x01,
     MusicRepeatModeOne,
     MusicShuffleModeSongs
 };
@@ -114,7 +114,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-   
     currentMusicMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
     
     [self initMusicState];
@@ -163,11 +162,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     
-    
-
-    
-    
-    
 }
 
 
@@ -185,9 +179,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 -(void)initMusicState{
-    
-    
-
     
     FunctionSingleton *func = [FunctionSingleton shareFunction];
     
@@ -305,9 +296,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     _playerController = [MPMusicPlayerController applicationMusicPlayer];
     [_playerController beginGeneratingPlaybackNotifications];
-    
-    
-    
+
  
     if (_progressTimer) {
         [_progressTimer invalidate];
@@ -324,8 +313,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     _volumeSlider.value = _playerController.volume;
 
-    
-    if(_playerController.nowPlayingItem.title){
+     if(_playerController.nowPlayingItem.title){
         self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
     }
     
@@ -625,15 +613,20 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     if(currentMusicMode == LocalMusicMode){
-        currentMode = currentMode<2?++currentMode:0;
+        
+        
+        currentMode = currentMode<3?++currentMode:1;
         [self settingMusicMode:currentMode];
+        
     }
     
     
     if (currentMusicMode == TFMusicMode) {
         
+        
         currentTFPlayMode = currentTFPlayMode<3?++currentTFPlayMode:1;
         
+//        [self setTFMusicPlayMode:currentTFPlayMode];
         [self showProgressHUD:currentTFPlayMode];
         
     }

@@ -55,11 +55,21 @@
     [self initUI];
     
     
+    [self resetTFSongList];
+    
 }
 
 
+-(void)resetTFSongList{
+    
+    NSArray *resetArr;
+    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
+    
+}
+
 
 -(void)initUI{
+    
     _peripheralList.delegate = self;
     _peripheralList.dataSource = self;
     _peripheralList.layer.cornerRadius = margin;

@@ -50,15 +50,13 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
+    [[NSUserDefaults standardUserDefaults] setObject:_tfSongListArr forKey:@"tfSongListArr"];
     
-
 }
 
 
 -(void)initMusicState{
-    
-    
- 
+
     if (self.musicMode == LocalMusicMode) {
         
         
@@ -86,8 +84,16 @@
 
 -(void)initTFMusicState{
 
+    
+    NSArray *tfSessionArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"tfSongListArr"];
+    if (tfSessionArr) {
+        _tfSongListArr = [NSMutableArray arrayWithArray:tfSessionArr];
+    }else{
+        _tfSongListArr = [[NSMutableArray alloc] init];
+    }
 
-    _tfSongListArr = [[NSMutableArray alloc] init];
+    
+    
     
     [self.musicOperation getSongList];
     
@@ -96,8 +102,10 @@
     
     __weak typeof(self) weakSelf = self;
 
-    self.musicOperation.listSongName = ^(NSString *songListName){
     
+    self.musicOperation.listSongName = ^(NSString *songListName){
+        
+        
         
         [weakSelf.tfSongListArr addObject:songListName];
         
