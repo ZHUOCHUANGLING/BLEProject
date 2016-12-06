@@ -37,18 +37,22 @@
 {
     [super viewWillAppear:animated];
     
-    
-
     [self initMusicState];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     [self.touchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissVC)]];
-    
+    [self.touchView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissVC)]];
 }
 
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    
+
+}
 
 
 -(void)initMusicState{
@@ -102,12 +106,9 @@
         });
         
         
+        
+        
     };
-    
-    
-
-    
-    
     
     
     
@@ -123,9 +124,6 @@
     _playerController = [MPMusicPlayerController applicationMusicPlayer];
 
 }
-
-
-
 
 
 -(void)loadMediaItems{
@@ -230,9 +228,6 @@
 
     
     
-    
-    
-    
     if (self.musicMode == LocalMusicMode) {
         _playerController.nowPlayingItem = _mediaItems[indexPath.row];
     }
@@ -262,9 +257,6 @@
 
 
 }
-
-
-
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

@@ -36,7 +36,8 @@
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
-		E89545931DED77860097320A /* TFMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89545921DED77860097320A /* TFMusicVC.m */; };
+		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
+		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
@@ -115,8 +116,10 @@
 		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
-		E89545911DED77860097320A /* TFMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMusicVC.h; sourceTree = "<group>"; };
-		E89545921DED77860097320A /* TFMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicVC.m; sourceTree = "<group>"; };
+		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicCell.h; sourceTree = "<group>"; };
+		E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicCell.m; sourceTree = "<group>"; };
+		E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewVC.h; sourceTree = "<group>"; };
+		E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewVC.m; sourceTree = "<group>"; };
 		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
 		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 		E8093BD11DDD9295000CABB0 /* FunctionModel */ = {
 			isa = PBXGroup;
 			children = (
+				E89D0FE61DF5854200B2E0D7 /* OnlineMusicCell */,
 				E838302A1DEC0CDC00814AD9 /* SceneViewCell */,
 			);
 			path = FunctionModel;
@@ -316,10 +320,10 @@
 				E8093C041DDDB3ED000CABB0 /* MusicListVC.m */,
 				E83830301DEC340600814AD9 /* EQSettingVC.h */,
 				E83830311DEC340600814AD9 /* EQSettingVC.m */,
-				E89545911DED77860097320A /* TFMusicVC.h */,
-				E89545921DED77860097320A /* TFMusicVC.m */,
 				E895458E1DED6DDB0097320A /* OnlineMusicVC.h */,
 				E895458F1DED6DDB0097320A /* OnlineMusicVC.m */,
+				E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */,
+				E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -396,6 +400,15 @@
 				E83F132C1DE59C4600504EDE /* MSColorWheelView.m */,
 			);
 			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		E89D0FE61DF5854200B2E0D7 /* OnlineMusicCell */ = {
+			isa = PBXGroup;
+			children = (
+				E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */,
+				E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */,
+			);
+			name = OnlineMusicCell;
 			sourceTree = "<group>";
 		};
 		E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */ = {
@@ -606,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */,
+				E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */,
 				E8093BF01DDD9295000CABB0 /* main.m in Sources */,
 				E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */,
 				E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */,
@@ -613,7 +627,6 @@
 				E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */,
 				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
 				E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */,
-				E89545931DED77860097320A /* TFMusicVC.m in Sources */,
 				E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */,
 				E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */,
 				E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */,
@@ -623,6 +636,7 @@
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
+				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
