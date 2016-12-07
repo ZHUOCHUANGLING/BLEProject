@@ -138,13 +138,13 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 
 -(void)initControlller{
 
-    int width=ScreenWidth*0.6;
-    int cirWidth = ScreenWidth *0.86;
+    int width=ScreenWidth*0.7;
+    int cirWidth = ScreenWidth *0.9;
     
     
     
     
-    CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.06*ScreenHeight, cirWidth, cirWidth);
+    CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
     _cirSlider = [[CHcir_Slider alloc]init];
     _cirSlider.frame = cirRect;
 
@@ -153,6 +153,8 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     _cirSlider.delegate = self;
     _cirSlider.backgroundColor = [UIColor clearColor];
     
+    
+//    _cirSlider.tintColor = [UIColor colorWithRed:70/255.f green:159/255.f blue:227/255.f alpha:1.f];
     [self.view addSubview:_cirSlider];
 
     

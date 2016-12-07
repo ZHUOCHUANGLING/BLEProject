@@ -71,8 +71,16 @@
 
     
 
-    [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"滑竿"] forState:UIControlStateNormal];
-    [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"滑竿"] forState:UIControlStateHighlighted];
+    [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"红线-拷贝"] forState:UIControlStateNormal];
+    [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"红线-拷贝"] forState:UIControlStateHighlighted];
+    
+    
+    
+    _changeChannelSlider.backgroundColor = [UIColor clearColor];
+    UIImage *stetchTrack = [[UIImage imageNamed:@"频段线"]
+                            stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
+    [_changeChannelSlider setMinimumTrackImage:stetchTrack forState:UIControlStateNormal];
+    [_changeChannelSlider setMaximumTrackImage:stetchTrack forState:UIControlStateNormal];
     
 }
 

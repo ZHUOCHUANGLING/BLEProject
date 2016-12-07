@@ -42,8 +42,8 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
         _guideLineColor = [UIColor clearColor];
         _progress = 1.f;
 //        _progress1 = 1.0f;
-        _handleOutSideRadius = 9.f;
-        _handleInSideRadius = 7.f;
+        _handleOutSideRadius = 8.f;
+        _handleInSideRadius = 8.f;
     }
     return self;
 }
@@ -199,7 +199,7 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     
     
     
-//    [[UIColor colorWithRed:26 green:161 blue:230 alpha:1] set];
+//    [[UIColor colorWithRed:70.f/255.f green:159.f/255.f blue:227.f/255.f alpha:1] set];
 //    CGContextSetLineWidth(context, self.handleInSideRadius * 2);
 //    CGContextAddArc(context, handle1.x, handle1.y, self.handleInSideRadius, 0, DegreesToRadians(360), 1);
 //    CGContextStrokePath(context);

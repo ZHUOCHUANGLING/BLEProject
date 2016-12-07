@@ -18,7 +18,7 @@
 #import "MusicListVC.h"
 
 typedef NS_ENUM(NSInteger, MusicMode) {
-    MusicRepeatModeDefault = 0x01,
+    MusicRepeatModeDefault ,
     MusicRepeatModeOne,
     MusicShuffleModeSongs
 };
@@ -609,8 +609,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     if(currentMusicMode == LocalMusicMode){
         
-        
-        currentMode = currentMode<3?++currentMode:1;
+        currentMode = currentMode<2?++currentMode:0;
         [self settingMusicMode:currentMode];
         
     }
