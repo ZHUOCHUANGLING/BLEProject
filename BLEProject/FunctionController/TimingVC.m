@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     _localNotification.alertBody = @"haha";
     _localNotification.alertTitle = @"呼呼";
     _localNotification.soundName = UILocalNotificationDefaultSoundName;
-//    _localNotification.applicationIconBadgeNumber = 1;
+//    _localNotification.applicationIconBadgeNumber = 0;
     _localNotification.alertAction = @"哟西";
     
     

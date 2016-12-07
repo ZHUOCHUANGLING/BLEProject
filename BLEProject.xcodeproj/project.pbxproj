@@ -39,6 +39,7 @@
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
+		E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,8 @@
 		E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewVC.m; sourceTree = "<group>"; };
 		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
 		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
+		E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
+		E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
 		E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneVC.m; sourceTree = "<group>"; };
 		E8DF5C111DE44DE3001B3B57 /* CHcir_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHcir_Slider.h; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 			children = (
 				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
 				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
+				E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */,
+				E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */,
 				E8093BEA1DDD9295000CABB0 /* MusicVC.m in Sources */,
 				E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */,
+				E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */,
 				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
 				E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */,
 				E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */,

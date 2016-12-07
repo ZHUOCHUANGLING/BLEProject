@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     [self.onlineMusicWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
+    
+    self.onlineMusicWebView.scalesPageToFit = YES;
     
     
 }

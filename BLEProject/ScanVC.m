@@ -58,9 +58,6 @@
 }
 
 
-
-
-
 -(void)initUI{
     
     _peripheralList.delegate = self;
@@ -191,11 +188,6 @@
     [self resetDataSource];
     [DataManager startScan];
     
-    
-    
-    
-#warning 测试用
-    [self dismissVC];
 }
 
 
@@ -237,6 +229,21 @@
     
 }
 
+
+
+
+
+#warning 第一版上架用
+
+- (IBAction)pullDownClick:(UIButton *)sender {
+    
+    [self dismissVC];
+    
+    
+    
+    
+    
+}
 
 
 

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -510,7 +511,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TE-wt-cWi">
-                                <rect key="frame" x="151.5" y="461" width="72" height="71.5"/>
+                                <rect key="frame" x="152" y="461" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7TE-wt-cWi" secondAttribute="height" multiplier="1:1" id="HwV-Vu-qRG"/>
                                 </constraints>
@@ -526,7 +527,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf5-Wu-P4G">
-                                <rect key="frame" x="263.5" y="466" width="61.5" height="61.5"/>
+                                <rect key="frame" x="264" y="466" width="61" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lf5-Wu-P4G" secondAttribute="height" multiplier="1:1" id="skc-vh-iNV"/>
                                 </constraints>
@@ -601,7 +602,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-ac-4kh">
-                                <rect key="frame" x="50" y="557.5" width="275" height="4.5"/>
+                                <rect key="frame" x="50" y="558" width="275" height="4"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-V0-VfL">
@@ -620,7 +621,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-HN-O6o">
-                                <rect key="frame" x="50" y="466" width="61.5" height="61.5"/>
+                                <rect key="frame" x="50" y="466" width="62" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vO5-HN-O6o" secondAttribute="height" multiplier="1:1" id="baz-Wz-70a"/>
                                 </constraints>
@@ -668,14 +669,14 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhC-cQ-5il">
-                                <rect key="frame" x="223" y="79" width="150" height="145.5"/>
+                                <rect key="frame" x="223" y="79" width="150" height="146"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉菜单底背景" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-sf-cB0">
-                                        <rect key="frame" x="5" y="0.0" width="140" height="145.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="140" height="146"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2U-9V-fSz">
-                                        <rect key="frame" x="8" y="10" width="134" height="45"/>
+                                        <rect key="frame" x="8" y="10" width="134" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="26" maxY="0.0"/>
@@ -687,7 +688,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyV-jw-Vqi">
-                                        <rect key="frame" x="8" y="100.5" width="134" height="45"/>
+                                        <rect key="frame" x="8" y="101" width="134" height="45"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="在线音乐" image="TF卡音乐">
@@ -698,7 +699,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-DO-aFm">
-                                        <rect key="frame" x="8" y="55" width="134" height="45.5"/>
+                                        <rect key="frame" x="8" y="56" width="134" height="45"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="TF卡音乐" image="TF卡音乐">
@@ -931,14 +932,14 @@
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awa-hC-nJQ">
-                                <rect key="frame" x="223" y="79" width="150" height="145.5"/>
+                                <rect key="frame" x="223" y="79" width="150" height="146"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉菜单底背景" translatesAutoresizingMaskIntoConstraints="NO" id="wYn-R2-S3j">
-                                        <rect key="frame" x="5" y="0.0" width="140" height="145.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="140" height="146"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppq-CK-XSK">
-                                        <rect key="frame" x="8" y="10" width="134" height="45"/>
+                                        <rect key="frame" x="8" y="10" width="134" height="45.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="26" maxY="0.0"/>
@@ -951,7 +952,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvJ-nM-nsS">
-                                        <rect key="frame" x="8" y="100.5" width="134" height="45"/>
+                                        <rect key="frame" x="8" y="100.5" width="134" height="45.5"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="在线音乐" image="TF卡音乐">
@@ -963,7 +964,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plY-vE-YGK">
-                                        <rect key="frame" x="8" y="55" width="134" height="45.5"/>
+                                        <rect key="frame" x="8" y="55.5" width="134" height="45"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="TF卡音乐" image="TF卡音乐">
@@ -1776,7 +1777,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ipR-A1-7S7" firstAttribute="centerX" secondItem="waJ-RS-R1v" secondAttribute="centerX" id="3cB-2A-0pO"/>
                                     <constraint firstItem="ipR-A1-7S7" firstAttribute="centerY" secondItem="waJ-RS-R1v" secondAttribute="centerY" id="AHU-b4-FIa"/>
@@ -1946,15 +1947,15 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCell" id="xOH-F8-Gd2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="copyRightCell" id="xOH-F8-Gd2">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
-                                                    <rect key="frame" x="351.5" y="12.5" width="8.5" height="18"/>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
+                                                    <rect key="frame" x="318.5" y="12.5" width="8.5" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="we0-fd-MQ6" secondAttribute="height" multiplier="17:35" id="zhd-bO-8zX"/>
                                                     </constraints>
@@ -1968,6 +1969,20 @@
                                             <constraint firstItem="we0-fd-MQ6" firstAttribute="height" secondItem="xOH-F8-Gd2" secondAttribute="height" multiplier="0.4" id="5lm-Hd-E0X"/>
                                             <constraint firstItem="we0-fd-MQ6" firstAttribute="centerY" secondItem="xOH-F8-Gd2" secondAttribute="centerY" id="s8P-7W-nPx"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="4Fu-kB-cI6" kind="push" identifier="copyRightSegue" id="xaf-AP-XhA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="aboutUsCell" id="Sla-fx-edb">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sla-fx-edb" id="kcX-F8-76F">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zRM-He-3a3" kind="push" identifier="aboutUsSegue" id="4Xo-0N-hQb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1992,6 +2007,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chk-NF-MuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="4240.9295352323843"/>
+        </scene>
+        <!--版权说明-->
+        <scene sceneID="1zv-vn-wC5">
+            <objects>
+                <viewController id="4Fu-kB-cI6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MHd-4m-fd7"/>
+                        <viewControllerLayoutGuide type="bottom" id="VZ0-0l-8Ms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z5K-Az-XWh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景图片" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-Hn-gj8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CopyRight © 2011-2016 SanCoChip,All Right Reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-LQ-gOq">
+                                <rect key="frame" x="16" y="546.5" width="343" height="120.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="e0w-LQ-gOq" secondAttribute="trailing" id="6bY-eJ-BpV"/>
+                            <constraint firstItem="e0w-LQ-gOq" firstAttribute="leading" secondItem="Z5K-Az-XWh" secondAttribute="leadingMargin" id="Q9I-aD-6XV"/>
+                            <constraint firstItem="e0w-LQ-gOq" firstAttribute="centerX" secondItem="F5Y-Hn-gj8" secondAttribute="centerX" id="Qqn-IB-Jjc"/>
+                            <constraint firstItem="VZ0-0l-8Ms" firstAttribute="top" secondItem="F5Y-Hn-gj8" secondAttribute="bottom" id="aOd-qt-0T1"/>
+                            <constraint firstItem="F5Y-Hn-gj8" firstAttribute="top" secondItem="MHd-4m-fd7" secondAttribute="bottom" id="dbk-Nh-JZW"/>
+                            <constraint firstItem="e0w-LQ-gOq" firstAttribute="height" secondItem="F5Y-Hn-gj8" secondAttribute="height" multiplier="0.2" id="kyA-yq-cVh"/>
+                            <constraint firstItem="VZ0-0l-8Ms" firstAttribute="top" secondItem="e0w-LQ-gOq" secondAttribute="bottom" id="tnu-FW-Qyh"/>
+                            <constraint firstItem="F5Y-Hn-gj8" firstAttribute="leading" secondItem="Z5K-Az-XWh" secondAttribute="leading" id="upp-bO-Bun"/>
+                            <constraint firstAttribute="trailing" secondItem="F5Y-Hn-gj8" secondAttribute="trailing" id="vfV-Fy-MR8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="版权说明" id="DSq-zE-UPk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhB-kt-Yf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.8" y="4118.5907046476768"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="Jgj-Qq-Rwl">
+            <objects>
+                <viewController id="zRM-He-3a3" customClass="AboutUsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S0e-za-GAG"/>
+                        <viewControllerLayoutGuide type="bottom" id="UDp-as-EfY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l2o-cs-ZRT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPA-kO-lEE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IPA-kO-lEE" firstAttribute="top" secondItem="l2o-cs-ZRT" secondAttribute="top" id="FdV-qV-sNi"/>
+                            <constraint firstAttribute="trailing" secondItem="IPA-kO-lEE" secondAttribute="trailing" id="ggD-Fh-Hat"/>
+                            <constraint firstItem="UDp-as-EfY" firstAttribute="top" secondItem="IPA-kO-lEE" secondAttribute="bottom" id="qtd-DH-L7v"/>
+                            <constraint firstItem="IPA-kO-lEE" firstAttribute="leading" secondItem="l2o-cs-ZRT" secondAttribute="leading" id="zDF-8K-Em5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于我们" id="U1b-Pb-gLg"/>
+                    <connections>
+                        <outlet property="aboutUsWebView" destination="IPA-kO-lEE" id="qnc-Ng-4yi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="noE-CX-pKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.8" y="4811.2443778110946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WpK-OW-sFU">
@@ -2111,10 +2201,13 @@
             <objects>
                 <navigationController storyboardIdentifier="settingVC" automaticallyAdjustsScrollViewInsets="NO" id="Ra4-Sn-UzW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JLM-yn-3TB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JLM-yn-3TB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1019607843" green="0.63137254899999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2158,21 +2251,31 @@
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-az-fJc">
+                                <rect key="frame" x="165" y="0.0" width="44" height="19"/>
+                                <state key="normal" backgroundImage="Down"/>
+                                <connections>
+                                    <action selector="pullDownClick:" destination="IRd-sw-lWH" eventType="touchUpInside" id="FFb-Cf-Da5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="59i-MX-W0n" firstAttribute="leading" secondItem="VzW-4i-Moo" secondAttribute="leading" constant="60" id="0pl-XV-G2W"/>
                             <constraint firstAttribute="trailing" secondItem="gci-Xe-5RR" secondAttribute="trailing" constant="60" id="3aI-wt-qa0"/>
+                            <constraint firstItem="2I9-az-fJc" firstAttribute="top" secondItem="Qxv-W1-7dj" secondAttribute="bottom" id="IKN-oj-PgF"/>
                             <constraint firstItem="59i-MX-W0n" firstAttribute="top" secondItem="Qxv-W1-7dj" secondAttribute="bottom" constant="21" id="ImD-Sp-kxd"/>
                             <constraint firstItem="59i-MX-W0n" firstAttribute="centerX" secondItem="VzW-4i-Moo" secondAttribute="centerX" id="Rlx-t6-N4T"/>
                             <constraint firstItem="gci-Xe-5RR" firstAttribute="top" secondItem="59i-MX-W0n" secondAttribute="bottom" constant="5" id="UN7-GV-YSG"/>
                             <constraint firstItem="gci-Xe-5RR" firstAttribute="top" secondItem="Qxv-W1-7dj" secondAttribute="bottom" constant="50" id="VNW-Su-UsW"/>
+                            <constraint firstItem="59i-MX-W0n" firstAttribute="top" secondItem="2I9-az-fJc" secondAttribute="bottom" constant="2" id="YAp-6i-vgk"/>
                             <constraint firstItem="gci-Xe-5RR" firstAttribute="leading" secondItem="VzW-4i-Moo" secondAttribute="leading" constant="60" id="ZZ9-rU-7om"/>
                             <constraint firstItem="ohS-P2-iN0" firstAttribute="top" secondItem="gci-Xe-5RR" secondAttribute="bottom" constant="50" id="mUZ-gc-L3X"/>
                             <constraint firstItem="gci-Xe-5RR" firstAttribute="centerX" secondItem="VzW-4i-Moo" secondAttribute="centerX" id="nD7-lQ-1RE"/>
                             <constraint firstItem="ohS-P2-iN0" firstAttribute="centerX" secondItem="VzW-4i-Moo" secondAttribute="centerX" id="og7-MH-MMD"/>
                             <constraint firstItem="KiA-9s-GSA" firstAttribute="top" secondItem="ohS-P2-iN0" secondAttribute="bottom" constant="40" id="rtX-Ow-hH1"/>
                             <constraint firstAttribute="trailing" secondItem="59i-MX-W0n" secondAttribute="trailing" constant="60" id="wTb-nx-wt9"/>
+                            <constraint firstItem="2I9-az-fJc" firstAttribute="centerX" secondItem="VzW-4i-Moo" secondAttribute="centerX" id="xAS-1x-vyW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="搜索" id="Vty-p9-FoD"/>
@@ -2227,12 +2330,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Down" width="44" height="44"/>
         <image name="EQ" width="27" height="28"/>
         <image name="TF卡音乐" width="20" height="23"/>
         <image name="上一首" width="23" height="26"/>
         <image name="下一页" width="9" height="16"/>
         <image name="下一首" width="27" height="30"/>
-        <image name="下拉菜单底背景" width="150" height="109"/>
+        <image name="下拉菜单底背景" width="150" height="145"/>
         <image name="乡村" width="80" height="80"/>
         <image name="乡村H" width="80" height="80"/>
         <image name="光盘" width="244" height="244"/>

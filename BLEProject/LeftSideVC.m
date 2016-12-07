@@ -284,6 +284,15 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     [DataManager disconnectPeripheral];
     
+    
+#warning 第一版上架用
+    UIViewController * scanVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:@"scanVC"];
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:scanVC animated:YES completion:nil];
+    });
+    
 }
 
 

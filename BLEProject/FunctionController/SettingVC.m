@@ -8,6 +8,7 @@
 
 #import "SettingVC.h"
 
+
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
@@ -16,13 +17,20 @@
 
 @implementation SettingVC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initUI];
+
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     
-    
+    [_settingTableView reloadData];
+
 }
 
 
@@ -41,25 +49,34 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"settingCell"];
-
+   
+    UITableViewCell *cell;
+    
     
     if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"copyRightCell"];
+        
         cell.imageView.image = [UIImage imageNamed:@"版权说明"];
         cell.textLabel.text = @"版权说明";
+        
+        
     }else if(indexPath.row == 1){
     
+        cell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
         cell.imageView.image = [UIImage imageNamed:@"关于我们"];
         cell.textLabel.text = @"关于我们";
     
     }
     
     
-    
-    
-    
+
     return cell;
 }
+
+
+
+
+
 
 
 @end

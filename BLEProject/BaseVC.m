@@ -31,6 +31,8 @@
     
     [self resetTFSongList];
     
+    
+    
     [self registerLocalNotification];
     
     
@@ -42,6 +44,7 @@
     
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+
     
 }
 
