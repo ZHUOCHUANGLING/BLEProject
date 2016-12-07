@@ -105,15 +105,19 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 #pragma mark -  CollectionView_Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     webBackVC.urlString = _urlStringArr[indexPath.row];
+    
 }
 
 
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+    
     if ([segue.identifier isEqualToString:@"webViewSegue"]) {
-        
         
         webBackVC = (WebviewVC *)segue.destinationViewController;
     }

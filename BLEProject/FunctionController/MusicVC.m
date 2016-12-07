@@ -418,9 +418,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 
-
-
-
 -(void)setTFMusicPlayMode:(TFMusicPlayMode)mode{
 
 
@@ -482,10 +479,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             break;
     }
     
+    
     [self setTFMusicPlayMode:mode];
-
-
-
 }
 
 

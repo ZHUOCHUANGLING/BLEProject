@@ -61,14 +61,44 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
     UIButton *currentBtn;
 
+    UILocalNotification *_localNotification;
+    
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initNotification];
+    
+}
+
+
+
+
+-(void)initNotification{
+    
+    _localNotification = [UILocalNotification new];
+    
+    
+    NSDate *pushDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    _localNotification.fireDate = pushDate;
+
+    
+    _localNotification.alertBody = @"haha";
+    _localNotification.alertTitle = @"呼呼";
+    _localNotification.soundName = UILocalNotificationDefaultSoundName;
+//    _localNotification.applicationIconBadgeNumber = 1;
+    _localNotification.alertAction = @"哟西";
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
+
     
     
 }
+
+
 
 
 

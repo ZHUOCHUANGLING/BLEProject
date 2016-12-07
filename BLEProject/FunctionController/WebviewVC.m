@@ -24,15 +24,5 @@
 }
 
 
-//-(void)webViewDidStartLoad:(UIWebView*)webView{
-//
-//    NSLog(@"--------");
-//
-//}
-//-(void)webView:(UIWebView*)webView DidFailLoadWithError:(NSError*)error{
-//
-//    NSLog(@"%@",error);
-//}
-
 
 @end

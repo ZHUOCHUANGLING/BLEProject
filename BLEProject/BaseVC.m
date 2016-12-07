@@ -29,7 +29,27 @@
     
     
     
+    [self resetTFSongList];
     
+    [self registerLocalNotification];
+    
+    
+}
+
+
+
+-(void)registerLocalNotification{
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
+}
+
+
+-(void)resetTFSongList{
+    
+    NSArray *resetArr;
+    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
     
 }
 
@@ -53,6 +73,9 @@
     [self settingSideBarMode];
     
 }
+
+
+
 
 
 

@@ -1424,13 +1424,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="151"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="自动灯光" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-Ax-5JY">
-                                        <rect key="frame" x="11.5" y="9" width="42.5" height="42.5"/>
+                                        <rect key="frame" x="12" y="9.5" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kJI-Ax-5JY" secondAttribute="height" multiplier="1:1" id="9vh-yY-Sv2"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动灯光" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDT-5e-tvT">
-                                        <rect key="frame" x="64" y="20" width="73.5" height="21.5"/>
+                                        <rect key="frame" x="64" y="20" width="74" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1470,7 +1470,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nh2-1V-zZZ">
-                                        <rect key="frame" x="0.0" y="96.5" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="97" width="325" height="34"/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1518,13 +1518,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="151"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="自动播放" translatesAutoresizingMaskIntoConstraints="NO" id="xed-ec-BJk">
-                                        <rect key="frame" x="11.5" y="9" width="42.5" height="42.5"/>
+                                        <rect key="frame" x="12" y="9.5" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xed-ec-BJk" secondAttribute="height" multiplier="1:1" id="E2W-qP-Gym"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYy-AS-FlH">
-                                        <rect key="frame" x="64" y="20" width="73.5" height="21.5"/>
+                                        <rect key="frame" x="64" y="20" width="74" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1564,7 +1564,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD5-gt-gsf">
-                                        <rect key="frame" x="0.0" y="96.5" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="97" width="325" height="34"/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1611,14 +1611,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="弹出框背景" translatesAutoresizingMaskIntoConstraints="NO" id="hys-ao-Ogf">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="151"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="闹钟" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-ne-3kJ">
-                                        <rect key="frame" x="11.5" y="9" width="42.5" height="42.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="红闹钟" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-ne-3kJ">
+                                        <rect key="frame" x="12" y="9.5" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ofN-ne-3kJ" secondAttribute="height" multiplier="1:1" id="L10-Bc-53S"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闹钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00d-bl-vEw">
-                                        <rect key="frame" x="64" y="20" width="37" height="21.5"/>
+                                        <rect key="frame" x="64" y="20" width="37" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1658,7 +1658,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uU-TX-EJg">
-                                        <rect key="frame" x="0.0" y="96.5" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="97" width="325" height="34"/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1706,14 +1706,14 @@
                                         <rect key="frame" x="37" y="183" width="300" height="300"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qzx-f9-saM">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="255.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="255"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="502610612.59374601">
                                                     <!--2016-12-05 06:03:32 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="zh-Hans"/>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNi-gd-UTg">
-                                                <rect key="frame" x="0.0" y="256.5" width="149.5" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="256" width="149.5" height="44"/>
                                                 <state key="normal" title="取消">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -1722,7 +1722,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0C-e3-hPr">
-                                                <rect key="frame" x="150.5" y="256.5" width="149.5" height="43.5"/>
+                                                <rect key="frame" x="150.5" y="256" width="149.5" height="44"/>
                                                 <state key="normal" title="确定">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -1739,7 +1739,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txd-eH-iPP">
-                                                <rect key="frame" x="149.5" y="256" width="1" height="43.5"/>
+                                                <rect key="frame" x="149.5" y="256" width="1" height="44"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1853,6 +1853,82 @@
             </objects>
             <point key="canvasLocation" x="972" y="3465.5172413793107"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zLf-oS-wSv">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="dM0-6j-wDr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="upP-2e-Cqp"/>
+                        <viewControllerLayoutGuide type="bottom" id="hIi-PP-o10"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i9Y-0v-AlX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v17-UT-MgL">
+                                <rect key="frame" x="57" y="202" width="262" height="262"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="弹出框背景" translatesAutoresizingMaskIntoConstraints="NO" id="TJL-Yg-rem">
+                                        <rect key="frame" x="0.0" y="78.5" width="262" height="183.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="大闹钟" translatesAutoresizingMaskIntoConstraints="NO" id="FDg-J9-3ac">
+                                        <rect key="frame" x="65.5" y="0.0" width="131" height="131"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FDg-J9-3ac" secondAttribute="height" multiplier="1:1" id="mbr-Cy-wHJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间到了" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEY-xC-mm9">
+                                        <rect key="frame" x="0.0" y="141.5" width="262" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                        <color key="textColor" red="0.27450980392156865" green="0.62352941176470589" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIr-vk-0iQ">
+                                        <rect key="frame" x="39.5" y="203" width="183" height="39"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="关闭闹钟">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XEY-xC-mm9" firstAttribute="leading" secondItem="v17-UT-MgL" secondAttribute="leading" id="3Mc-nb-byk"/>
+                                    <constraint firstItem="sIr-vk-0iQ" firstAttribute="width" secondItem="v17-UT-MgL" secondAttribute="width" multiplier="0.7" id="6zl-jU-6em"/>
+                                    <constraint firstItem="FDg-J9-3ac" firstAttribute="width" secondItem="v17-UT-MgL" secondAttribute="width" multiplier="0.5" id="7mh-qR-q8k"/>
+                                    <constraint firstAttribute="trailing" secondItem="XEY-xC-mm9" secondAttribute="trailing" id="Edl-Q9-VjW"/>
+                                    <constraint firstItem="sIr-vk-0iQ" firstAttribute="centerY" secondItem="v17-UT-MgL" secondAttribute="centerY" multiplier="1.7" id="Wqi-pG-w48"/>
+                                    <constraint firstAttribute="bottom" secondItem="TJL-Yg-rem" secondAttribute="bottom" id="efH-sV-8Ra"/>
+                                    <constraint firstItem="FDg-J9-3ac" firstAttribute="top" secondItem="v17-UT-MgL" secondAttribute="top" id="fKF-a7-1J6"/>
+                                    <constraint firstItem="TJL-Yg-rem" firstAttribute="height" secondItem="v17-UT-MgL" secondAttribute="height" multiplier="0.7" id="fWx-ly-vLK"/>
+                                    <constraint firstItem="XEY-xC-mm9" firstAttribute="centerY" secondItem="v17-UT-MgL" secondAttribute="centerY" multiplier="1.2" id="fp0-00-Rx3"/>
+                                    <constraint firstItem="sIr-vk-0iQ" firstAttribute="centerX" secondItem="v17-UT-MgL" secondAttribute="centerX" id="jOL-Oq-kPb"/>
+                                    <constraint firstAttribute="width" secondItem="v17-UT-MgL" secondAttribute="height" multiplier="1:1" id="nbW-C6-Qp0"/>
+                                    <constraint firstItem="TJL-Yg-rem" firstAttribute="leading" secondItem="v17-UT-MgL" secondAttribute="leading" id="oKx-zO-5Ci"/>
+                                    <constraint firstAttribute="trailing" secondItem="TJL-Yg-rem" secondAttribute="trailing" id="rJe-Yd-3yI"/>
+                                    <constraint firstItem="FDg-J9-3ac" firstAttribute="centerX" secondItem="v17-UT-MgL" secondAttribute="centerX" id="tYp-GU-26H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.3027076198630137" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v17-UT-MgL" firstAttribute="centerY" secondItem="i9Y-0v-AlX" secondAttribute="centerY" id="CQg-Zz-8rO"/>
+                            <constraint firstItem="v17-UT-MgL" firstAttribute="centerX" secondItem="i9Y-0v-AlX" secondAttribute="centerX" id="TUc-ou-otn"/>
+                            <constraint firstItem="v17-UT-MgL" firstAttribute="width" secondItem="i9Y-0v-AlX" secondAttribute="width" multiplier="0.7" id="Vb4-Y6-jJz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Av-wY-6an"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWi-t4-LKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="3466"/>
+        </scene>
         <!--SettingVC-->
         <scene sceneID="uDo-bY-03W">
             <objects>
@@ -1874,7 +1950,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
@@ -2166,6 +2242,7 @@
         <image name="喇叭有声" width="69" height="55"/>
         <image name="喇叭静音" width="76" height="54"/>
         <image name="声音" width="16" height="12"/>
+        <image name="大闹钟" width="284" height="322"/>
         <image name="左" width="23" height="26"/>
         <image name="开关" width="29" height="33"/>
         <image name="开关H" width="29" height="33"/>
@@ -2185,6 +2262,7 @@
         <image name="爵士H" width="80" height="80"/>
         <image name="白" width="40" height="40"/>
         <image name="红" width="40" height="40"/>
+        <image name="红闹钟" width="30" height="30"/>
         <image name="绿" width="40" height="40"/>
         <image name="背景" width="375" height="667"/>
         <image name="背景图片" width="374" height="504"/>
@@ -2192,7 +2270,6 @@
         <image name="自动灯光" width="30" height="30"/>
         <image name="蓝" width="40" height="40"/>
         <image name="话筒" width="205" height="158"/>
-        <image name="闹钟" width="30" height="30"/>
         <image name="静音" width="16" height="12"/>
         <image name="音乐声音" width="16" height="12"/>
         <image name="音乐旋律" width="23" height="28"/>

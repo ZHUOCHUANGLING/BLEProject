@@ -55,17 +55,10 @@
     [self initUI];
     
     
-    [self resetTFSongList];
-    
 }
 
 
--(void)resetTFSongList{
-    
-    NSArray *resetArr;
-    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
-    
-}
+
 
 
 -(void)initUI{
