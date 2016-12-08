@@ -179,10 +179,12 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 -(void)initMusicState{
     
+    
     FunctionSingleton *func = [FunctionSingleton shareFunction];
     
     self.musicOperation = func.musicOperation;
     
+    [_controlOperation enterMusic];
     
     switch (currentMusicMode) {
             
@@ -207,7 +209,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
             
             _controlOperation = [ControlFunction new];
-            [_controlOperation enterMusic];
+            
             [_controlOperation synchronizeState];
             
             

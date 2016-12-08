@@ -1129,7 +1129,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQH-hL-TDH">
                                 <rect key="frame" x="37.5" y="83.5" width="300" height="47"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ni2-eP-vAA">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ni2-eP-vAA">
                                         <rect key="frame" x="28.5" y="8.5" width="244" height="31"/>
                                         <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1626,29 +1626,29 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sBl-Iw-tM5">
-                                        <rect key="frame" x="268" y="15" width="51" height="31"/>
+                                        <rect key="frame" x="268" y="60.5" width="51" height="31"/>
                                         <connections>
                                             <action selector="timingSwitch:" destination="csl-nk-DNu" eventType="valueChanged" id="thk-u0-cLP"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEr-p7-tdz">
-                                        <rect key="frame" x="93" y="65" width="74" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闹钟1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEr-p7-tdz">
+                                        <rect key="frame" x="106.5" y="65" width="47" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关闭时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy3-LJ-497">
-                                        <rect key="frame" x="93" y="103" width="74" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闹钟2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy3-LJ-497">
+                                        <rect key="frame" x="105.5" y="103" width="49.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0O-OZ-9er">
-                                        <rect key="frame" x="0.0" y="59" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="59" width="268" height="34"/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="添加时间">
+                                        <inset key="titleEdgeInsets" minX="150" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="添加闹钟">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected">
@@ -1660,11 +1660,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uU-TX-EJg">
-                                        <rect key="frame" x="0.0" y="97" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="97" width="268" height="34"/>
                                         <gestureRecognizers/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="添加时间">
+                                        <inset key="titleEdgeInsets" minX="150" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="添加闹钟">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected">
@@ -1675,23 +1675,31 @@
                                             <outletCollection property="gestureRecognizers" destination="WX0-0k-ZsM" appends="YES" id="vBI-QD-NBO"/>
                                         </connections>
                                     </button>
+                                    <switch opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lH8-ko-Vr4">
+                                        <rect key="frame" x="268" y="98" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="timingSwitch:" destination="csl-nk-DNu" eventType="valueChanged" id="CZK-Ug-Lcg"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="00d-bl-vEw" firstAttribute="centerY" secondItem="ofN-ne-3kJ" secondAttribute="centerY" id="2lY-aV-roD"/>
-                                    <constraint firstItem="sBl-Iw-tM5" firstAttribute="centerY" secondItem="ofN-ne-3kJ" secondAttribute="centerY" id="4D0-03-THc"/>
                                     <constraint firstItem="hEr-p7-tdz" firstAttribute="centerX" secondItem="pjR-6U-4jI" secondAttribute="centerX" multiplier="0.8" id="4vI-AZ-jrR"/>
                                     <constraint firstItem="7uU-TX-EJg" firstAttribute="leading" secondItem="pjR-6U-4jI" secondAttribute="leading" id="5Nk-Qs-1Gx"/>
                                     <constraint firstItem="ofN-ne-3kJ" firstAttribute="centerX" secondItem="pjR-6U-4jI" secondAttribute="centerX" multiplier="0.2" id="6EZ-jh-IhT"/>
                                     <constraint firstItem="n0O-OZ-9er" firstAttribute="leading" secondItem="pjR-6U-4jI" secondAttribute="leading" id="B0r-fF-8H3"/>
+                                    <constraint firstItem="lH8-ko-Vr4" firstAttribute="leading" secondItem="7uU-TX-EJg" secondAttribute="trailing" id="EdO-YW-WDB"/>
+                                    <constraint firstItem="lH8-ko-Vr4" firstAttribute="centerX" secondItem="sBl-Iw-tM5" secondAttribute="centerX" id="HQY-JM-RJK"/>
                                     <constraint firstItem="hEr-p7-tdz" firstAttribute="centerY" secondItem="pjR-6U-4jI" secondAttribute="centerY" id="JlW-fs-obG"/>
                                     <constraint firstItem="ofN-ne-3kJ" firstAttribute="width" secondItem="pjR-6U-4jI" secondAttribute="width" multiplier="0.13" id="Lgk-qa-KiH"/>
                                     <constraint firstItem="hys-ao-Ogf" firstAttribute="top" secondItem="pjR-6U-4jI" secondAttribute="top" id="MZt-zZ-9MN"/>
-                                    <constraint firstAttribute="trailing" secondItem="7uU-TX-EJg" secondAttribute="trailing" id="NS3-Bi-qti"/>
+                                    <constraint firstItem="sBl-Iw-tM5" firstAttribute="leading" secondItem="n0O-OZ-9er" secondAttribute="trailing" id="T4s-r8-HdA"/>
                                     <constraint firstAttribute="trailing" secondItem="hys-ao-Ogf" secondAttribute="trailing" id="fLh-2r-gtP"/>
                                     <constraint firstItem="Sy3-LJ-497" firstAttribute="centerY" secondItem="pjR-6U-4jI" secondAttribute="centerY" multiplier="1.5" id="ga8-VI-OkE"/>
+                                    <constraint firstItem="lH8-ko-Vr4" firstAttribute="centerY" secondItem="Sy3-LJ-497" secondAttribute="centerY" id="jCm-e5-C6k"/>
+                                    <constraint firstItem="sBl-Iw-tM5" firstAttribute="centerY" secondItem="n0O-OZ-9er" secondAttribute="centerY" id="jFb-5N-gLy"/>
                                     <constraint firstItem="ofN-ne-3kJ" firstAttribute="centerY" secondItem="pjR-6U-4jI" secondAttribute="centerY" multiplier="0.4" id="p2T-a0-gLg"/>
-                                    <constraint firstAttribute="trailing" secondItem="n0O-OZ-9er" secondAttribute="trailing" id="qnc-qv-cbn"/>
                                     <constraint firstItem="Sy3-LJ-497" firstAttribute="centerX" secondItem="pjR-6U-4jI" secondAttribute="centerX" multiplier="0.8" id="tmT-Yi-9wh"/>
                                     <constraint firstItem="n0O-OZ-9er" firstAttribute="centerY" secondItem="hEr-p7-tdz" secondAttribute="centerY" id="vTN-k2-WVy"/>
                                     <constraint firstAttribute="bottom" secondItem="hys-ao-Ogf" secondAttribute="bottom" id="wcy-xC-2pc"/>
@@ -1715,7 +1723,7 @@
                                                 <locale key="locale" localeIdentifier="zh-Hans"/>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNi-gd-UTg">
-                                                <rect key="frame" x="0.0" y="256" width="150" height="44"/>
+                                                <rect key="frame" x="0.0" y="256" width="149.5" height="44"/>
                                                 <state key="normal" title="取消">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -1724,7 +1732,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0C-e3-hPr">
-                                                <rect key="frame" x="151" y="256" width="149" height="44"/>
+                                                <rect key="frame" x="150.5" y="256" width="149.5" height="44"/>
                                                 <state key="normal" title="确定">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -1741,7 +1749,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txd-eH-iPP">
-                                                <rect key="frame" x="150" y="256" width="1" height="44"/>
+                                                <rect key="frame" x="149.5" y="256" width="1" height="44"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1816,6 +1824,7 @@
                         <outlet property="playerSwitch" destination="mFy-y7-XMW" id="pwv-3J-8tv"/>
                         <outlet property="settingTimeBackView" destination="waJ-RS-R1v" id="WcR-zV-tYa"/>
                         <outlet property="settingTimePicker" destination="Qzx-f9-saM" id="AkO-Vz-peM"/>
+                        <outlet property="timing2Switch" destination="lH8-ko-Vr4" id="6gJ-Wj-xhm"/>
                         <outlet property="timingCloseBtn" destination="7uU-TX-EJg" id="SPG-hV-KtC"/>
                         <outlet property="timingOpenBtn" destination="n0O-OZ-9er" id="ClZ-nw-k6b"/>
                         <outlet property="timingSwitch" destination="sBl-Iw-tM5" id="Lbp-e0-ffv"/>

@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 
 @property (weak, nonatomic) IBOutlet UISwitch *timingSwitch;
 
+@property (weak, nonatomic) IBOutlet UISwitch *timing2Switch;
 
 
 
@@ -156,6 +157,10 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         
         [currentButton setTitle:@"添加时间" forState:UIControlStateNormal];
+        
+        if (currentButton == _timingOpenBtn || currentButton == _timingCloseBtn) {
+            [currentButton setTitle:@"添加闹钟" forState:UIControlStateNormal];
+        }
         currentButton.selected = NO;
         
         
@@ -165,49 +170,47 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
                 
             case LightOpenBtn:
                 
-                if(!_lightCloseBtn.selected){
                 
-                    _lightSwitch.on = NO;
-                }
+                
+                _lightSwitch.on = NO;
+                
                 
                 
                 
                 break;
             case LightCloseBtn:
-                if (!_lightOpenBtn.selected) {
-                    _lightSwitch.on = NO;
-                }
+                
+                _lightSwitch.on = NO;
+                
                 
 
                 break;
                 
                 
             case PlayerOpenBtn:
-                if(!_playerCloseBtn.selected){
-                    _playerSwitch.on = NO;
-                }
+                
+                _playerSwitch.on = NO;
+                
 
                 break;
             case PlayerCloseBtn:
-                if (!_playerOpenBtn.selected) {
-                    _playerSwitch.on = NO;
-                }
                 
+                _playerSwitch.on = NO;
                 
                 break;
                 
                 
             case TimingOpenBtn:
-                if (!_timingCloseBtn.selected) {
-                    _timingSwitch.on = NO;
-                }
+                
+                _timingSwitch.on = NO;
+                
                 
                 
                 break;
             case TimingCloseBtn:
-                if (!_timingOpenBtn.selected) {
-                    _timingSwitch.on = NO;
-                }
+                
+                _timing2Switch.on = NO;
+                
                 
                 
                 break;
@@ -249,18 +252,34 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     switch (currentBtnType) {
             
         case LightOpenBtn:
-            _lightSwitch.on = YES;
+            if (_lightCloseBtn.selected) {
+                _lightSwitch.on = YES;
+            }
+            
+            
             break;
         case LightCloseBtn:
-            _lightSwitch.on = YES;
+            if (_lightOpenBtn.selected) {
+                _lightSwitch.on = YES;
+            }
+            
+            
             break;
             
             
         case PlayerOpenBtn:
-            _playerSwitch.on = YES;
+            if (_playerCloseBtn.selected) {
+                _playerSwitch.on = YES;
+            }
+            
+            
             break;
         case PlayerCloseBtn:
-            _playerSwitch.on = YES;
+            
+            if (_playerOpenBtn.selected) {
+                _playerSwitch.on = YES;
+            }
+            
             break;
             
             
@@ -268,7 +287,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
             _timingSwitch.on = YES;
             break;
         case TimingCloseBtn:
-            _timingSwitch.on = YES;
+            _timing2Switch.on = YES;
             break;
             
         default:
