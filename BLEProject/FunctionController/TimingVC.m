@@ -22,7 +22,8 @@ typedef NS_ENUM(NSInteger, TimeButtonType) {
 typedef NS_ENUM(NSInteger, TimeSwitchType) {
     LightSwitch = 0x0A,
     PlayerSwitch,
-    TimingSwitch
+    TimingSwitch,
+    Timing2Switch
 };
 
 
@@ -32,17 +33,10 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 @property (weak, nonatomic) IBOutlet UIDatePicker *settingTimePicker;
 
 
-
-
 @property (weak, nonatomic) IBOutlet UISwitch *lightSwitch;
-
 @property (weak, nonatomic) IBOutlet UISwitch *playerSwitch;
-
 @property (weak, nonatomic) IBOutlet UISwitch *timingSwitch;
-
 @property (weak, nonatomic) IBOutlet UISwitch *timing2Switch;
-
-
 
 
 
@@ -65,6 +59,9 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     UILocalNotification *_localNotification;
     
     
+    NSMutableArray *_buttonArr;
+    NSMutableArray *_switchArr;
+    
 }
 
 - (void)viewDidLoad {
@@ -72,6 +69,23 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
     [self initNotification];
     
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self refreshUI];
+
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    [self persistentData];
+
 }
 
 
@@ -94,8 +108,6 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
     
     [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
-
-    
     
 }
 
@@ -117,7 +129,9 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
         case TimingSwitch:
             
             break;
+        case Timing2Switch:
             
+            break;
         default:
             break;
     }
@@ -134,16 +148,12 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     currentBtn = sender;
     
     self.settingTimeBackView.hidden = NO;
-    
-    
-    
+
     
 }
 
 
 - (IBAction)deleteTimeGesture:(UILongPressGestureRecognizer *)sender {
-    
-    
     
     
     UIButton *currentButton = (UIButton *)sender.view;
@@ -180,16 +190,12 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
                 
                 _lightSwitch.on = NO;
                 
-                
-
                 break;
-                
                 
             case PlayerOpenBtn:
                 
                 _playerSwitch.on = NO;
                 
-
                 break;
             case PlayerCloseBtn:
                 
@@ -203,12 +209,10 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
                 _timingSwitch.on = NO;
                 
                 
-                
                 break;
             case TimingCloseBtn:
                 
                 _timing2Switch.on = NO;
-                
                 
                 
                 break;
@@ -292,9 +296,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
     [currentBtn setTitle:settingTimeStr forState:UIControlStateNormal &UIControlStateSelected];
     
-    
     _settingTimeBackView.hidden = YES;
-    
     
 }
 
@@ -305,6 +307,74 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     _settingTimeBackView.hidden = YES;
 }
 
+
+
+
+
+
+
+
+-(void)refreshUI{
+    _buttonArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"buttonArr"];
+    
+    for (NSInteger i = 0; i<_buttonArr.count ; i++) {
+        
+        NSString *timeStr = _buttonArr[i];
+        
+        if ((i<=3 && ![timeStr isEqualToString:@"添加时间"])|| (i>3 && ![timeStr isEqualToString:@"添加闹钟"])) {
+            
+            UIButton *settingBtn = [self.view viewWithTag:i+1];
+            settingBtn.selected = YES;
+            [settingBtn setTitle:timeStr forState:UIControlStateNormal &UIControlStateSelected];
+            
+        }
+        
+    }
+    
+    
+    [self refreshSwitch];
+
+}
+
+
+
+-(void)refreshSwitch{
+    _switchArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"switchArr"];
+    
+    _lightSwitch.on = [_switchArr[0] boolValue];
+    _playerSwitch.on = [_switchArr[1] boolValue];
+    _timingSwitch.on = [_switchArr[2] boolValue];
+    _timing2Switch.on = [_switchArr[3] boolValue];
+
+}
+
+
+-(void)persistentData{
+
+    _buttonArr = [NSMutableArray arrayWithObjects:
+                  _lightOpenBtn.titleLabel.text,
+                  _lightCloseBtn.titleLabel.text,
+                  _playerOpenBtn.titleLabel.text,
+                  _playerCloseBtn.titleLabel.text,
+                  _timingOpenBtn.titleLabel.text,
+                  _timingCloseBtn.titleLabel.text,
+                  nil];
+    
+    
+    _switchArr = [NSMutableArray arrayWithObjects:
+                  @(_lightSwitch.on),
+                  @(_playerSwitch.on),
+                  @(_timingSwitch.on),
+                  @(_timing2Switch.on),
+                  nil];
+    
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:_buttonArr forKey:@"buttonArr"];
+    [[NSUserDefaults standardUserDefaults] setObject:_switchArr forKey:@"switchArr"];
+    
+    
+}
 
 
 
