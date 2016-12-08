@@ -154,7 +154,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     _cirSlider.backgroundColor = [UIColor clearColor];
     
     
-//    _cirSlider.tintColor = [UIColor colorWithRed:70/255.f green:159/255.f blue:227/255.f alpha:1.f];
+    _cirSlider.tintColor = [UIColor whiteColor];
     [self.view addSubview:_cirSlider];
 
     

@@ -183,7 +183,7 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     CGContextAddArc(context, center.x, center.y, radius, arcStartAngle, arcStartAngle - progressAngle, 1);
     CGContextStrokePath(context);
     
-    [[UIColor orangeColor]set];
+    [[UIColor colorWithRed:38.f/255.f green:178.f/255.f blue:233.f/255.f alpha:1] set];
     CGContextAddArc(context, center.x, center.y, radius, arcStartAngle, arcStartAngle - progressAngle1, 1);
     CGContextStrokePath(context);
     
