@@ -166,9 +166,11 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
     _colorWheelView.center = CGPointMake(cirWidth/2, cirWidth/2);
     [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
-//    _colorWheelView.backgroundColor = [UIColor clearColor];
     
-//    [self.view addSubview:_colorWheelView];
+    _colorWheelView.layer.borderColor = [UIColor whiteColor].CGColor;
+    _colorWheelView.layer.borderWidth = 5;
+    _colorWheelView.layer.cornerRadius = width/2;
+    
     [_cirSlider addSubview:_colorWheelView];
     
     
@@ -197,6 +199,8 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     b = rgb.blue;
 
     self.mainSwitch.selected = YES;
+    
+    _colorWheelView.layer.borderColor = [UIColor colorWithRed:r green:g blue:b alpha:1].CGColor;
     
     [self adjustData];
     
@@ -228,6 +232,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
             b = 0;
             w = 1;
         }
+        
         
         
         [self.operationModel setLightColorWithRed:r*255*cirSliderValue green:g*255*cirSliderValue blue:b*255*cirSliderValue white:w];

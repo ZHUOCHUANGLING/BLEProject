@@ -15,14 +15,17 @@
 #import "OnlineMusicCell.h"
 #import "WebviewVC.h"
 
+#define RowHeight ScreenHeight*0.07
+
 typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     LocalMusicMode,
     TFMusicMode,
     OnlineMusicMode
 };
 
-@interface OnlineMusicVC ()<UICollectionViewDelegate,UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UIView *chooseModeBGView;
+@interface OnlineMusicVC ()<UICollectionViewDelegate,UICollectionViewDelegate,UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *chooseModeTableView;
 
 @end
 
@@ -35,6 +38,9 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     NSArray *_urlStringArr;
     
     WebviewVC *webBackVC;
+    
+    //chooseModeTableView
+    NSMutableArray *_chooseModeTableViewArr;
 
 }
 - (void)viewDidLoad {
@@ -42,6 +48,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
    
     [self initData];
+    [self initTableView];
     
 }
 
@@ -129,48 +136,97 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
-- (IBAction)showMusicMode:(UIBarButtonItem *)sender {
 
-    _chooseModeBGView.hidden = _chooseModeBGView.hidden?NO:YES;
+
+
+
+
+#pragma mark -  ChooseModeTableView
+
+-(void)initTableView{
+    
+    _chooseModeTableViewArr = [NSMutableArray arrayWithObjects:@"本地音乐",@"TF卡音乐",@"云音乐", nil];
+    _chooseModeTableView = [[UITableView alloc] initWithFrame:CGRectMake(ScreenWidth * 0.6, 70, ScreenWidth*0.39, RowHeight * _chooseModeTableViewArr.count+10)];
+    _chooseModeTableView.delegate = self;
+    _chooseModeTableView.dataSource = self;
+    _chooseModeTableView.rowHeight = RowHeight;
+    _chooseModeTableView.backgroundColor = [UIColor clearColor];
+    _chooseModeTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"下拉菜单底背景"]];
+    _chooseModeTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _chooseModeTableView.width, 10)];
+    _chooseModeTableView.scrollEnabled = NO;
+    _chooseModeTableView.hidden = YES;
+    [_chooseModeTableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+    [_chooseModeTableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    
+    [self.view addSubview:_chooseModeTableView];
     
     
 }
 
 
-- (IBAction)chooseMusicMode:(UIButton *)sender {
+- (IBAction)showMusicMode:(UIBarButtonItem *)sender {
     
-    currentMusicMode = sender.tag;
+    _chooseModeTableView.hidden = _chooseModeTableView.hidden?NO:YES;
     
-    switch (currentMusicMode) {
-        case LocalMusicMode:
-            self.navigationItem.title = @"本地音乐";
-            
-            break;
-            
-        case TFMusicMode:{
-            self.navigationItem.title = @"TF卡音乐";
-            
-            
-            
-            break;
-            
-        }
-            
-        case OnlineMusicMode:
-            self.navigationItem.title = @"在线音乐";
-            
-            
-            break;
-            
-        default:
-            break;
+    
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return  _chooseModeTableViewArr.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [_chooseModeTableView dequeueReusableCellWithIdentifier:@"musicCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"musicCell"];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        
+    }
+    
+    
+    
+    return cell;
+    
+    
+}
+
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    cell.textLabel.text = _chooseModeTableViewArr[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_chooseModeTableViewArr[indexPath.row]];
+    
+    
+}
+
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    NSString *selectedStr = selectedCell.textLabel.text;
+    
+    if ([selectedStr isEqualToString:@"本地音乐"]) {
+        currentMusicMode = LocalMusicMode;
+        
+    }else if([selectedStr isEqualToString:@"TF卡音乐"]){
+        currentMusicMode = TFMusicMode;
+        
+    }else if([selectedStr isEqualToString:@"云音乐"]){
+        currentMusicMode = OnlineMusicMode;
     }
     
     
     
     
+    _chooseModeTableView.hidden = YES;
     
-    _chooseModeBGView.hidden = YES;
     
     [[NSUserDefaults standardUserDefaults] setInteger:currentMusicMode forKey:@"ChooseMusicPlayMode"];
     
@@ -180,8 +236,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
 }
-
-
 
 
 

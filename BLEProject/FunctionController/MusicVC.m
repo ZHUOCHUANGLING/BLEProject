@@ -70,7 +70,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
 
-//@property (weak, nonatomic) IBOutlet UIView *chooseModeBGView;
 
 
 @property (strong, nonatomic) UITableView *chooseModeTableView;
@@ -116,7 +115,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     [self initMusicState];
     
-    [self initTableViewData];
+    [self initTableView];
     
 }
 
@@ -942,9 +941,9 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 #pragma mark -  ChooseModeTableView
 
--(void)initTableViewData{
+-(void)initTableView{
     
-    _chooseModeTableViewArr = [NSMutableArray arrayWithObjects:@"本地音乐",@"TF卡音乐",@"在线音乐", nil];
+    _chooseModeTableViewArr = [NSMutableArray arrayWithObjects:@"本地音乐",@"TF卡音乐",@"云音乐", nil];
     _chooseModeTableView = [[UITableView alloc] initWithFrame:CGRectMake(ScreenWidth * 0.6, 70, ScreenWidth*0.39, RowHeight * _chooseModeTableViewArr.count+10)];
     _chooseModeTableView.delegate = self;
     _chooseModeTableView.dataSource = self;
@@ -1015,7 +1014,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     }else if([selectedStr isEqualToString:@"TF卡音乐"]){
         currentMusicMode = TFMusicMode;
         
-    }else if([selectedStr isEqualToString:@"在线音乐"]){
+    }else if([selectedStr isEqualToString:@"云音乐"]){
         currentMusicMode = OnlineMusicMode;
     }
     

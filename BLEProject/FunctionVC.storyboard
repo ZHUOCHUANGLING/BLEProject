@@ -1055,82 +1055,11 @@
                                     <outlet property="delegate" destination="s7K-zK-IyE" id="3xQ-hG-U8o"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awa-hC-nJQ">
-                                <rect key="frame" x="223" y="79" width="150" height="146"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉菜单底背景" translatesAutoresizingMaskIntoConstraints="NO" id="wYn-R2-S3j">
-                                        <rect key="frame" x="5" y="0.0" width="140" height="146"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppq-CK-XSK">
-                                        <rect key="frame" x="8" y="10" width="134" height="45.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="26" maxY="0.0"/>
-                                        <state key="normal" title="本地音乐" image="本地音乐">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="chooseMusicMode:" destination="s7K-zK-IyE" eventType="touchUpInside" id="rtp-Rq-fOt"/>
-                                            <action selector="chooseMusicPlayMode:" destination="04g-s1-qwm" eventType="touchUpInside" id="vkZ-lv-abd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvJ-nM-nsS">
-                                        <rect key="frame" x="8" y="100.5" width="134" height="45.5"/>
-                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                        <state key="normal" title="在线音乐" image="TF卡音乐">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="chooseMusicMode:" destination="s7K-zK-IyE" eventType="touchUpInside" id="q2X-tf-I9o"/>
-                                            <action selector="chooseMusicPlayMode:" destination="04g-s1-qwm" eventType="touchUpInside" id="Dgo-hf-4WD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plY-vE-YGK">
-                                        <rect key="frame" x="8" y="55.5" width="134" height="45"/>
-                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                        <state key="normal" title="TF卡音乐" image="TF卡音乐">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="chooseMusicMode:" destination="s7K-zK-IyE" eventType="touchUpInside" id="soR-Kw-NEN"/>
-                                            <action selector="chooseMusicPlayMode:" destination="04g-s1-qwm" eventType="touchUpInside" id="rX8-nK-9hk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="wYn-R2-S3j" firstAttribute="top" secondItem="awa-hC-nJQ" secondAttribute="top" id="5qE-Ma-RKL"/>
-                                    <constraint firstAttribute="bottom" secondItem="UvJ-nM-nsS" secondAttribute="bottom" id="9vO-mb-7t0"/>
-                                    <constraint firstAttribute="trailing" secondItem="wYn-R2-S3j" secondAttribute="trailing" constant="5" id="AIs-YT-vnh"/>
-                                    <constraint firstItem="UvJ-nM-nsS" firstAttribute="height" secondItem="Ppq-CK-XSK" secondAttribute="height" id="EXv-TP-p6R"/>
-                                    <constraint firstItem="wYn-R2-S3j" firstAttribute="leading" secondItem="awa-hC-nJQ" secondAttribute="leading" constant="5" id="FEa-Ft-c1h"/>
-                                    <constraint firstItem="Ppq-CK-XSK" firstAttribute="top" secondItem="awa-hC-nJQ" secondAttribute="top" constant="10" id="I1v-Qh-gKA"/>
-                                    <constraint firstAttribute="bottom" secondItem="wYn-R2-S3j" secondAttribute="bottom" id="JCa-z6-dzD"/>
-                                    <constraint firstItem="plY-vE-YGK" firstAttribute="width" secondItem="Ppq-CK-XSK" secondAttribute="width" id="Q2e-jy-pxl"/>
-                                    <constraint firstItem="UvJ-nM-nsS" firstAttribute="leading" secondItem="awa-hC-nJQ" secondAttribute="leading" constant="8" id="Rtc-Jr-NDd"/>
-                                    <constraint firstItem="plY-vE-YGK" firstAttribute="top" secondItem="Ppq-CK-XSK" secondAttribute="bottom" id="TfE-T8-CJw"/>
-                                    <constraint firstAttribute="trailing" secondItem="plY-vE-YGK" secondAttribute="trailing" constant="8" id="WfV-6h-eI5"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ppq-CK-XSK" secondAttribute="trailing" constant="8" id="X27-PG-Sap"/>
-                                    <constraint firstItem="plY-vE-YGK" firstAttribute="height" secondItem="Ppq-CK-XSK" secondAttribute="height" id="Z2L-y9-Gvf"/>
-                                    <constraint firstItem="Ppq-CK-XSK" firstAttribute="leading" secondItem="awa-hC-nJQ" secondAttribute="leading" constant="8" id="aLR-St-yEM"/>
-                                    <constraint firstItem="UvJ-nM-nsS" firstAttribute="width" secondItem="plY-vE-YGK" secondAttribute="width" id="acq-zt-Gxh"/>
-                                    <constraint firstItem="plY-vE-YGK" firstAttribute="leading" secondItem="awa-hC-nJQ" secondAttribute="leading" constant="8" id="mya-UH-X39"/>
-                                    <constraint firstAttribute="trailing" secondItem="UvJ-nM-nsS" secondAttribute="trailing" constant="8" id="uA8-8b-bMV"/>
-                                    <constraint firstItem="UvJ-nM-nsS" firstAttribute="top" secondItem="plY-vE-YGK" secondAttribute="bottom" id="xuy-b4-6Mw"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="awa-hC-nJQ" firstAttribute="width" secondItem="dEO-ia-92E" secondAttribute="width" multiplier="0.4" id="14a-s9-tkb"/>
                             <constraint firstItem="KQi-sU-cbr" firstAttribute="leading" secondItem="dEO-ia-92E" secondAttribute="leading" id="8MQ-zS-fCz"/>
                             <constraint firstItem="D9B-VS-hOm" firstAttribute="top" secondItem="KQi-sU-cbr" secondAttribute="bottom" id="ACq-YG-EF6"/>
-                            <constraint firstAttribute="trailing" secondItem="awa-hC-nJQ" secondAttribute="trailing" constant="2" id="DSt-Cz-ec6"/>
-                            <constraint firstItem="awa-hC-nJQ" firstAttribute="top" secondItem="6Gz-bP-Siq" secondAttribute="bottom" constant="15" id="UGo-Yx-LDY"/>
-                            <constraint firstItem="awa-hC-nJQ" firstAttribute="width" secondItem="awa-hC-nJQ" secondAttribute="height" multiplier="32:31" id="Vek-ER-aTf"/>
                             <constraint firstAttribute="trailing" secondItem="KQi-sU-cbr" secondAttribute="trailing" id="epv-TP-1wo"/>
                             <constraint firstItem="KQi-sU-cbr" firstAttribute="top" secondItem="dEO-ia-92E" secondAttribute="top" id="xkW-eo-DVo"/>
                         </constraints>
@@ -1143,9 +1072,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="chooseModeBGView" destination="awa-hC-nJQ" id="Uut-YF-GbZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-JK-DIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2407,11 +2333,9 @@
     <resources>
         <image name="Down" width="44" height="44"/>
         <image name="EQ" width="27" height="28"/>
-        <image name="TF卡音乐" width="20" height="23"/>
         <image name="上一首" width="23" height="26"/>
         <image name="下一页" width="9" height="16"/>
         <image name="下一首" width="27" height="30"/>
-        <image name="下拉菜单底背景" width="150" height="145"/>
         <image name="乡村" width="80" height="80"/>
         <image name="乡村H" width="80" height="80"/>
         <image name="光盘" width="244" height="244"/>
@@ -2432,7 +2356,6 @@
         <image name="摇滚" width="80" height="80"/>
         <image name="摇滚H" width="80" height="80"/>
         <image name="暂停" width="60" height="60"/>
-        <image name="本地音乐" width="23" height="25"/>
         <image name="歌单" width="28" height="27"/>
         <image name="正常" width="80" height="80"/>
         <image name="正常H" width="80" height="80"/>

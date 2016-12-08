@@ -217,7 +217,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
                     break;
                     
                 case OnlineMusicMode:
-                    fVC.navigationBar.topItem.title = @"在线音乐";
+                    fVC.navigationBar.topItem.title = @"云音乐";
                     break;
                     
                 default:
