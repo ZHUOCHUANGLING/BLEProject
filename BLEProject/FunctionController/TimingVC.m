@@ -143,14 +143,17 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 
 - (IBAction)deleteTimeGesture:(UILongPressGestureRecognizer *)sender {
     
+    
+    
+    
     UIButton *currentButton = (UIButton *)sender.view;
 
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否删除当前设置时间" preferredStyle:UIAlertControllerStyleAlert];
     
     
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
         
     }];
     
@@ -169,13 +172,8 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
         switch (currentBtnType) {
                 
             case LightOpenBtn:
-                
-                
-                
+
                 _lightSwitch.on = NO;
-                
-                
-                
                 
                 break;
             case LightCloseBtn:
@@ -228,14 +226,9 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     [alertController addAction:deleteAction];
     
     
-    
-    
     [self presentViewController:alertController animated:NO completion:nil];
     
-    
-    
-    
-    
+
 }
 
 
