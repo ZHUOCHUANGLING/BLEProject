@@ -102,7 +102,7 @@
                                         <constraint firstAttribute="height" constant="35" id="WqN-st-sVw"/>
                                         <constraint firstAttribute="width" constant="30" id="c48-jg-t2c"/>
                                     </constraints>
-                                    <state key="normal" backgroundImage="侧音箱连接状态"/>
+                                    <state key="normal" backgroundImage="侧音箱"/>
                                     <connections>
                                         <action selector="presentSetting:" destination="Xct-bp-MUG" eventType="touchUpInside" id="3gA-aP-SkD"/>
                                     </connections>
@@ -154,6 +154,7 @@
                     <connections>
                         <outlet property="connectedLabel" destination="8Hf-Ar-OQd" id="gKG-cD-4kC"/>
                         <outlet property="footerView" destination="ZcE-rD-Stb" id="iFN-Jm-tIB"/>
+                        <outlet property="speakerImageBtn" destination="Lod-dx-yZN" id="jD6-Hx-zdB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fd-Oj-luc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,6 +200,6 @@
     <resources>
         <image name="侧蓝牙头像" width="70" height="70"/>
         <image name="侧蓝牙连接状态" width="20" height="27"/>
-        <image name="侧音箱连接状态" width="21" height="26"/>
+        <image name="侧音箱" width="21" height="26"/>
     </resources>
 </document>

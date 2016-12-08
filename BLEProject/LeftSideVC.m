@@ -8,6 +8,7 @@
 
 #import "LeftSideVC.h"
 #import "UIViewController+MMDrawerController.h"
+#import <AVFoundation/AVFoundation.h>
 
 typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     LocalMusicMode,
@@ -25,6 +26,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 @property (weak, nonatomic) IBOutlet UILabel *connectedLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *footerView;
+@property (weak, nonatomic) IBOutlet UIButton *speakerImageBtn;
 
 @end
 
@@ -61,7 +63,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     [super viewDidLoad];
     [self initUI];
     [self initData];
-    
+    [self addObserver];
     
     
 }
@@ -109,6 +111,16 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 }
 
 
+-(void)addObserver{
+
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
+    
+    //监听A2DP拔插
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangedCallBack:) name:AVAudioSessionRouteChangeNotification object:nil];
+    
+
+}
 
 
 
@@ -298,9 +310,35 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
+#pragma mark - A2DP
 
 
-#pragma mark -  connectA2DP
+-(void)audioRouteChangedCallBack:(NSNotification *)notification{
+    
+    NSDictionary *interuptionDict = notification.userInfo;
+    NSInteger routeChangeReason = [[interuptionDict valueForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+    
+    
+    switch (routeChangeReason) {
+        case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+           
+            [self.speakerImageBtn setBackgroundImage:[UIImage imageNamed:@"侧音箱连接状态"] forState: UIControlStateNormal];
+            //            NSLog(@"耳机插入");
+            break;
+        case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+
+            [self.speakerImageBtn setBackgroundImage:[UIImage imageNamed:@"侧音箱"] forState: UIControlStateNormal];
+            //            NSLog(@"耳机拔出，停止播放操作");
+            break;
+        case AVAudioSessionRouteChangeReasonCategoryChange:
+            // 即将播放监听
+//            NSLog(@"AVAudioSessionRouteChangeReasonCategoryChange");
+            break;
+    }
+    
+    
+}
+
 
 
 

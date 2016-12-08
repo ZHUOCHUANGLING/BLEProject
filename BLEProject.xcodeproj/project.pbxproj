@@ -31,6 +31,7 @@
 		E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093C041DDDB3ED000CABB0 /* MusicListVC.m */; };
 		E81819C81DF1136400115578 /* FunctionSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E81819C71DF1136400115578 /* FunctionSingleton.m */; };
 		E81EFC471DF8088F00056BF8 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */; };
+		E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E81EFC491DF8151F00056BF8 /* CustomEQVC.m */; };
 		E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */; };
 		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
@@ -107,6 +108,8 @@
 		E81819C61DF1136400115578 /* FunctionSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionSingleton.h; sourceTree = "<group>"; };
 		E81819C71DF1136400115578 /* FunctionSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionSingleton.m; sourceTree = "<group>"; };
 		E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E81EFC481DF8151F00056BF8 /* CustomEQVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEQVC.h; sourceTree = "<group>"; };
+		E81EFC491DF8151F00056BF8 /* CustomEQVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomEQVC.m; sourceTree = "<group>"; };
 		E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewCell.h; sourceTree = "<group>"; };
 		E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneViewCell.m; sourceTree = "<group>"; };
 		E83830301DEC340600814AD9 /* EQSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQSettingVC.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				E895458F1DED6DDB0097320A /* OnlineMusicVC.m */,
 				E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */,
 				E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */,
+				E81EFC481DF8151F00056BF8 /* CustomEQVC.h */,
+				E81EFC491DF8151F00056BF8 /* CustomEQVC.m */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */,
 				E8093BEA1DDD9295000CABB0 /* MusicVC.m in Sources */,
 				E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */,
+				E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */,
 				E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */,
 				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
 				E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */,
