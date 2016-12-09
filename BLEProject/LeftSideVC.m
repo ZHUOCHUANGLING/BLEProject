@@ -66,8 +66,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     [self addObserver];
     
     
-    [[DataStreamManager sharedManager] readValueWithService:@"FFF0" characteristic:@"FFF1"];
-    
 }
 
 -(void)initUI{
@@ -110,9 +108,16 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 -(void)addObserver{
 
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
-
     //监听A2DP拔插
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangedCallBack:) name:AVAudioSessionRouteChangeNotification object:nil];
+    
+    
+    
+    
+    
+    
+#warning ---
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CentralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
     
     
     
@@ -363,5 +368,13 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 }
 
 
+
+
+-(void)CentralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
+
+    
+
+
+}
 
 @end

@@ -8,6 +8,12 @@
 
 #import "JPProgressHUD.h"
 
+@interface JPProgressHUD ()
+
+@property (nonatomic,strong) NSTimer *timer;
+
+@end
+
 @implementation JPProgressHUD
 
 
@@ -15,14 +21,7 @@
 +(void)showMessage:(NSString *)message{
 
     JPProgressHUD *currentHUD = [JPProgressHUD sharedView];
-    
-    
-    if (currentHUD.superview) {
-        
-        
-    }
-    
-    
+    [currentHUD removeFromSuperview];        
     UILabel *currentLabel = [JPProgressHUD sharedLabel];
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     
@@ -42,24 +41,42 @@
     currentHUD.layer.cornerRadius = 10.0f;
     
     [currentHUD addSubview:currentLabel];
+    
+    
     [currentWindow addSubview:currentHUD];
+
     
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)),dispatch_get_main_queue(), ^{
-        
-        [currentHUD removeFromSuperview];
-        
-    });
-    
-    
-    
-  
+    [currentHUD timerStart];
     
 }
 
+- (NSTimer *)timer {
+    
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(removeHUD:) userInfo:nil repeats:NO];
+    }
+    return _timer;
+}
 
+- (void)timerStart {
+    
+    if (_timer) {
+        
+        [_timer invalidate];
+        _timer = nil;
+    }
+    
+    self.timer;
+}
 
+- (void)removeHUD:(NSTimer *)timer {
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [[JPProgressHUD sharedView] removeFromSuperview];
+    });
+}
 
 + (JPProgressHUD*)sharedView{
     static dispatch_once_t once;

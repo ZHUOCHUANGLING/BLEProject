@@ -347,8 +347,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         case MusicRepeatModeDefault:
             [self setMusicModeProperty:MusicRepeatModeDefault];
             
-
-
             [JPProgressHUD showMessage:@"列表循环播放"];
             
             
@@ -356,7 +354,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
         case MusicRepeatModeOne:
             [self setMusicModeProperty:MusicRepeatModeOne];
-            
             
             [JPProgressHUD showMessage:@"单曲播放"];
             break;
