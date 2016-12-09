@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 
-    [NSThread sleepForTimeInterval:2.0];
+    [NSThread sleepForTimeInterval:1.0];
     
     return YES;
 }

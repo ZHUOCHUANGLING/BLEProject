@@ -42,17 +42,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="4AY-zV-Z30" userLabel="Header">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="侧蓝牙头像" translatesAutoresizingMaskIntoConstraints="NO" id="0qW-b2-7es">
-                                    <rect key="frame" x="20" y="73" width="70" height="70"/>
+                                    <rect key="frame" x="20" y="61" width="70" height="70"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="0qW-b2-7es" secondAttribute="height" multiplier="1:1" id="Qes-3F-u2k"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected_Device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-Ar-OQd">
-                                    <rect key="frame" x="20" y="147.5" width="355" height="20.5"/>
+                                    <rect key="frame" x="20" y="135.5" width="355" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="ZcE-rD-Stb">
-                            <rect key="frame" x="0.0" y="252" width="375" height="128"/>
+                            <rect key="frame" x="0.0" y="232" width="375" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-To-rWW">
@@ -136,7 +136,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YF3-fL-1Z6">
-                                <rect key="frame" x="0.0" y="208" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YF3-fL-1Z6" id="LQr-hi-3DO">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

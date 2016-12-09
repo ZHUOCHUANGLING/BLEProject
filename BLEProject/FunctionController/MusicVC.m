@@ -338,8 +338,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
     }
     
-    
-    
 }
 
 
@@ -350,7 +348,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             [self setMusicModeProperty:MusicRepeatModeDefault];
             
 
-            [SVProgressHUD showSuccessWithStatus:@"列表循环播放"];
+
+            [JPProgressHUD showMessage:@"列表循环播放"];
             
             
             break;
@@ -358,13 +357,14 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         case MusicRepeatModeOne:
             [self setMusicModeProperty:MusicRepeatModeOne];
             
-            [SVProgressHUD showSuccessWithStatus:@"单曲播放"];
+            
+            [JPProgressHUD showMessage:@"单曲播放"];
             break;
             
         case MusicShuffleModeSongs:
             [self setMusicModeProperty:MusicShuffleModeSongs];
             
-            [SVProgressHUD showSuccessWithStatus:@"随机播放"];
+            [JPProgressHUD showMessage:@"随机播放"];
             break;
             
             
@@ -467,17 +467,20 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     switch (mode) {
         case TFMusicRepeatModeDefault:
 
-            [SVProgressHUD showSuccessWithStatus:@"列表循环播放"];
+            
+            [JPProgressHUD showMessage:@"列表循环播放"];
             break;
             
         case TFMusicRepeatModeOne:
 
-            [SVProgressHUD showSuccessWithStatus:@"单曲播放"];
+            
+            [JPProgressHUD showMessage:@"单曲播放"];
             break;
             
         case TFMusicShuffleModeSongs:
 
-            [SVProgressHUD showSuccessWithStatus:@"随机播放"];
+            
+            [JPProgressHUD showMessage:@"随机播放"];
             break;
         default:
             break;
@@ -1037,6 +1040,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
 }
+
 
 
 

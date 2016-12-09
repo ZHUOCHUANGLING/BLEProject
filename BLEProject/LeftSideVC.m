@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     self.tableView.rowHeight = ROWHEIGHT;
     
-    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 180 - 6*ROWHEIGHT);
+    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 160 - 6*ROWHEIGHT);
 
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundView.image = [UIImage imageNamed:@"侧背景"];

@@ -62,10 +62,10 @@
     _auxOperation.getAuxState = ^(BOOL auxState){
     
         if (auxState) {
-            [SVProgressHUD showSuccessWithStatus:@"AUX接入"];
+            [SVProgressHUD showInfoWithStatus:@"AUX接入"];
         }else{
         
-            [SVProgressHUD showSuccessWithStatus:@"AUX未接入"];
+            [SVProgressHUD showInfoWithStatus:@"AUX未接入"];
         
         }
     
