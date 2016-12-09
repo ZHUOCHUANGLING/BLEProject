@@ -349,7 +349,10 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         case MusicRepeatModeDefault:
             [self setMusicModeProperty:MusicRepeatModeDefault];
             
+
             [SVProgressHUD showSuccessWithStatus:@"列表循环播放"];
+            
+            
             break;
             
         case MusicRepeatModeOne:

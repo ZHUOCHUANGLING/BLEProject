@@ -170,7 +170,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
         if (indexPath.row == 1) {
             musicMode = currentMusicMode;
             
-            
             switch (musicMode) {
                 case LocalMusicMode:
                     functionID = @"musicVC";
@@ -274,6 +273,9 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
     leftButton.tintColor = [UIColor whiteColor];
+    
+    [leftButton setImage:[UIImage imageNamed:@"侧边栏图标"]];
+    
     [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
     
 }
