@@ -999,6 +999,10 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 
     cell.textLabel.text = _chooseModeTableViewArr[indexPath.row];
+    
+    if (ScreenWidth == 320) {
+        cell.textLabel.font = [UIFont systemFontOfSize:11.5];
+    }
     cell.imageView.image = [UIImage imageNamed:_chooseModeTableViewArr[indexPath.row]];
     
 
