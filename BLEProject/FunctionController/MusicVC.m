@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "UIViewController+MMDrawerController.h"
+#import "UIView+RotateAnimation.h"
 #import "LMJScrollTextView.h"
 
 
@@ -19,6 +20,7 @@
 
 
 #define RowHeight ScreenHeight*0.07
+#define RotateSpeed 0.8
 
 typedef NS_ENUM(NSInteger, MusicMode) {
     MusicRepeatModeDefault ,
@@ -41,6 +43,9 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 @property (nonatomic, strong)ControlFunction *controlOperation;
 @property (nonatomic, strong)LMJScrollTextView *scrollTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
+
+
 
 //local
 @property (nonatomic, strong) MPMusicPlayerController *playerController;
@@ -559,9 +564,14 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
                 
                 [_playerController play];
                 
+                [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
+                
+                
             }else{
                 
                 [_playerController pause];
+                
+                [_albumImageView stopRotate];
                 
             }
             
@@ -572,13 +582,21 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     
-    
-    
     if (currentMusicMode == TFMusicMode) {
         
       
         sender.selected = !sender.selected;
         [self.musicOperation setIsPlay:sender.selected];
+        
+        if (sender.selected) {
+            
+            [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
+            
+        }else{
+            
+            [_albumImageView stopRotate];
+        }
+        
   
     }
     
@@ -847,6 +865,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+                [weakSelf.albumImageView rotate360DegreeWithImageView:RotateSpeed];
             });
             
             }
@@ -860,6 +879,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
                 
                 [weakSelf.playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateNormal];
+                [weakSelf.albumImageView stopRotate];
             });
         }
         

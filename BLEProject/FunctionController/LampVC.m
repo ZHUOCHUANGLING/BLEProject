@@ -152,6 +152,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     _cirSlider.cutoutAngle = 180;
     _cirSlider.delegate = self;
     _cirSlider.backgroundColor = [UIColor clearColor];
+    
     [_cirSlider addTarget:self action:@selector(sliderTouchuUpInside) forControlEvents:UIControlEventTouchUpInside];
     
     _cirSlider.tintColor = [UIColor whiteColor];
@@ -335,6 +336,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 
 -(void)sliderTouchuUpInside{
     
+    usleep(1000 * 100);
     [self minIntValueChanged:_cirSlider.progress1];
     
 }

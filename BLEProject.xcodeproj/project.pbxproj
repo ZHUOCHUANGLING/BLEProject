@@ -42,6 +42,7 @@
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
 		E8A429351DFA57EE006EDEBC /* JPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A429341DFA57EE006EDEBC /* JPProgressHUD.m */; };
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
+		E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */; };
 		E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
@@ -132,6 +133,8 @@
 		E8A429341DFA57EE006EDEBC /* JPProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPProgressHUD.m; sourceTree = "<group>"; };
 		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
 		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
+		E8BA821E1DFE9F9B0086EB7B /* UIView+RotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RotateAnimation.h"; sourceTree = "<group>"; };
+		E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RotateAnimation.m"; sourceTree = "<group>"; };
 		E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
 		E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 			children = (
 				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
 				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
+				E8BA821E1DFE9F9B0086EB7B /* UIView+RotateAnimation.h */,
+				E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */,
 				E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */,
 				E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */,
 			);
@@ -679,6 +684,7 @@
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
 				E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */,
+				E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
 				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
 				E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */,
