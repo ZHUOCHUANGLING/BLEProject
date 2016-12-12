@@ -36,6 +36,7 @@
 		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
+		E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
@@ -119,6 +120,8 @@
 		E83F132A1DE59C4600504EDE /* MSColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorUtils.m; sourceTree = "<group>"; };
 		E83F132B1DE59C4600504EDE /* MSColorWheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorWheelView.h; sourceTree = "<group>"; };
 		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
+		E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
+		E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
 		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicCell.h; sourceTree = "<group>"; };
@@ -277,6 +280,7 @@
 		E8093BDA1DDD9295000CABB0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */,
 				E8A429321DFA57D4006EDEBC /* JPProgressHUD */,
 				E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */,
 				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
@@ -414,6 +418,15 @@
 				E83F132C1DE59C4600504EDE /* MSColorWheelView.m */,
 			);
 			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */ = {
+			isa = PBXGroup;
+			children = (
+				E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */,
+				E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */,
+			);
+			path = LMJScrollTextView;
 			sourceTree = "<group>";
 		};
 		E89D0FE61DF5854200B2E0D7 /* OnlineMusicCell */ = {
@@ -665,6 +678,7 @@
 				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
+				E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
 				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
 				E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */,

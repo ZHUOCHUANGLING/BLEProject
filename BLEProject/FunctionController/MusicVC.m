@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "UIViewController+MMDrawerController.h"
-
+#import "LMJScrollTextView.h"
 
 
 
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 @interface MusicVC ()<AVAudioPlayerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong)ControlFunction *controlOperation;
-
+@property (nonatomic, strong)LMJScrollTextView *scrollTextView;
 
 //local
 @property (nonatomic, strong) MPMusicPlayerController *playerController;
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 
-@property (weak, nonatomic) IBOutlet UILabel *musicNameLabel;
+
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 
 
@@ -105,6 +105,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     //chooseModeTableView
     NSMutableArray *_chooseModeTableViewArr;
     
+    
+    
 }
 
 
@@ -116,6 +118,9 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     [self initMusicState];
     
     [self initTableView];
+    
+    [self initScrollTextView];
+    
     
 }
 
@@ -313,12 +318,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 -(void)initUI{
     
     _volumeSlider.value = _playerController.volume;
-
-     if(_playerController.nowPlayingItem.title){
-        self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
-    }
-    
- 
     
     if (self.playerController.playbackState == MPMusicPlaybackStatePlaying) {
         
@@ -707,7 +706,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
     
     if(_playerController.nowPlayingItem.title){
-          self.musicNameLabel.text = [NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist];
+        [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
     }
     
     
@@ -783,11 +782,13 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     __weak typeof(self) weakSelf = self;
     
     
+    
+    
     self.musicOperation.currentSongName = ^(NSString *songName){
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            weakSelf.musicNameLabel.text = songName;
-
+            [weakSelf.scrollTextView startScrollWithText:songName textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+            
             
         });
     };
@@ -999,6 +1000,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 
     cell.textLabel.text = _chooseModeTableViewArr[indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:16];
     
     if (ScreenWidth == 320) {
         cell.textLabel.font = [UIFont systemFontOfSize:11.5];
@@ -1047,9 +1049,32 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 
+-(void)initScrollTextView{
+
+    if (_playerController.nowPlayingItem.title) {
+        [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+    }else{
+        [self.scrollTextView startScrollWithText:@"艺术家" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:16]];
+    
+    }
+    
+    
+    [self.view addSubview:self.scrollTextView];
+}
 
 
 
+-(LMJScrollTextView *)scrollTextView{
+
+    if (!_scrollTextView) {
+        _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.55, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+    }
+    
+    
+    return _scrollTextView;
+
+
+}
 
 
 

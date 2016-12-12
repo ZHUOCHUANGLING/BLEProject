@@ -784,12 +784,6 @@
                                     <segue destination="cLc-4r-tNQ" kind="push" id="0d9-2U-T3b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="艺术家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irO-lc-c0l">
-                                <rect key="frame" x="0.0" y="373.5" width="375" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQs-12-cJl">
                                 <rect key="frame" x="244" y="584.5" width="37" height="37"/>
                                 <constraints>
@@ -882,7 +876,6 @@
                             <constraint firstItem="7TE-wt-cWi" firstAttribute="centerY" secondItem="9Ye-Cc-98J" secondAttribute="centerY" multiplier="1.4" id="2wk-ei-1Oo"/>
                             <constraint firstItem="jfh-c6-wSB" firstAttribute="width" secondItem="9Ye-Cc-98J" secondAttribute="width" multiplier="0.7" id="2wx-1f-3Db"/>
                             <constraint firstItem="NYa-V0-VfL" firstAttribute="centerY" secondItem="9Ye-Cc-98J" secondAttribute="centerY" multiplier="1.2" id="3hq-8w-dwR"/>
-                            <constraint firstItem="irO-lc-c0l" firstAttribute="centerY" secondItem="9Ye-Cc-98J" secondAttribute="centerY" multiplier="1.05" id="5Qy-6S-LIh"/>
                             <constraint firstItem="NYa-V0-VfL" firstAttribute="leading" secondItem="Ydh-ee-Bw8" secondAttribute="trailing" constant="7" id="8fG-lb-2A4"/>
                             <constraint firstItem="gqx-6A-4RS" firstAttribute="centerY" secondItem="iQs-12-cJl" secondAttribute="centerY" id="Cyh-PP-rje"/>
                             <constraint firstItem="V4B-3R-8kH" firstAttribute="width" secondItem="8kJ-Vn-0vB" secondAttribute="width" id="DLv-sx-a0v"/>
@@ -913,11 +906,9 @@
                             <constraint firstItem="V4B-3R-8kH" firstAttribute="centerX" secondItem="9Ye-Cc-98J" secondAttribute="centerX" id="hFa-wO-cHk"/>
                             <constraint firstItem="iQs-12-cJl" firstAttribute="centerX" secondItem="9Ye-Cc-98J" secondAttribute="centerX" multiplier="1.4" id="lZ5-eb-LwC"/>
                             <constraint firstAttribute="trailing" secondItem="9Ye-Cc-98J" secondAttribute="trailing" id="ouA-GU-hLb"/>
-                            <constraint firstItem="irO-lc-c0l" firstAttribute="leading" secondItem="aND-to-tia" secondAttribute="leading" id="rRo-Eq-LPP"/>
                             <constraint firstItem="7TE-wt-cWi" firstAttribute="width" secondItem="9Ye-Cc-98J" secondAttribute="width" multiplier="0.2" id="t5b-Sd-GWc"/>
                             <constraint firstItem="8kJ-Vn-0vB" firstAttribute="centerY" secondItem="9Ye-Cc-98J" secondAttribute="centerY" multiplier="1.65" id="tso-mU-yIe"/>
                             <constraint firstItem="1kp-vv-JyT" firstAttribute="centerY" secondItem="NYa-V0-VfL" secondAttribute="centerY" id="wbQ-BW-EYx"/>
-                            <constraint firstAttribute="trailing" secondItem="irO-lc-c0l" secondAttribute="trailing" id="xJF-0b-BX6"/>
                             <constraint firstItem="8kJ-Vn-0vB" firstAttribute="centerX" secondItem="9Ye-Cc-98J" secondAttribute="centerX" multiplier="0.2" id="xoN-Wi-9uR"/>
                             <constraint firstItem="7TE-wt-cWi" firstAttribute="centerY" secondItem="vO5-HN-O6o" secondAttribute="centerY" id="y4S-NZ-kDR"/>
                         </constraints>
@@ -932,7 +923,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentTimeLabel" destination="1kp-vv-JyT" id="2ez-eY-R5t"/>
-                        <outlet property="musicNameLabel" destination="irO-lc-c0l" id="xY5-Fm-TNn"/>
                         <outlet property="playOrPauseButton" destination="7TE-wt-cWi" id="Si3-mM-qeU"/>
                         <outlet property="progressSlider" destination="NYa-V0-VfL" id="ETl-Z4-g9Q"/>
                         <outlet property="selectModeButton" destination="V4B-3R-8kH" id="Dkz-AN-j9U"/>
@@ -1961,7 +1951,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
@@ -1987,7 +1977,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sla-fx-edb" id="kcX-F8-76F">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
