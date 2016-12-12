@@ -97,9 +97,6 @@
     
     [self.musicOperation getSongList];
     
-    
-    
-    
     __weak typeof(self) weakSelf = self;
 
     

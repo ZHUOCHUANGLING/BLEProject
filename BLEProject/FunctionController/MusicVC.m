@@ -110,6 +110,20 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 }
 
 
+
+-(ControlFunction *)controlOperation{
+
+    if (!_controlOperation) {
+        _controlOperation = [ControlFunction new];
+    }
+    return _controlOperation;
+}
+
+
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -129,8 +143,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    
-    
     
     
     if (currentMusicMode != LocalMusicMode && _playerController) {
@@ -184,16 +196,18 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 -(void)initMusicState{
     
-    
+    //tf卡单例对象
     FunctionSingleton *func = [FunctionSingleton shareFunction];
-    
+        
     self.musicOperation = func.musicOperation;
     
-    [_controlOperation enterMusic];
+    
+    [self.controlOperation enterMusic];
     
     switch (currentMusicMode) {
             
         case LocalMusicMode:
+            
             [_musicOperation setDeviceSource:DeviceSourceBluetooth];
             
             _mediaItems = [NSArray array];
@@ -210,12 +224,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
             
         case TFMusicMode:
-            
-            
-            _controlOperation = [ControlFunction new];
-            
-            [_controlOperation synchronizeState];
-            
+#warning -----
+//            [self.controlOperation synchronizeState];
             
             [_musicOperation setDeviceSource:DeviceSourceSDCard];
             
@@ -499,6 +509,15 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBackActive:)name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centeralDisconnectPeripheral:) name:BLEPeripheralDisconnectNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centeralDisconnectPeripheral:) name:BLEConnectFailNotification object:nil];
+    
+    
 
 }
 
@@ -786,6 +805,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     self.musicOperation.currentSongName = ^(NSString *songName){
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakSelf.scrollTextView startScrollWithText:songName textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
@@ -793,6 +813,11 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
         });
     };
+    
+    
+    
+    
+    
     
     
     
@@ -1073,8 +1098,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     return _scrollTextView;
-
-
 }
 
 
@@ -1089,6 +1112,19 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 
+
+
+
+#pragma mark -  BLE_Notification
+-(void)centeralDisconnectPeripheral:(NSNotification *)notification{
+
+    if (_playerController) {
+        [_playerController pause];
+    }
+    
+    
+
+}
 
 
 

@@ -40,8 +40,10 @@
 
 #pragma mark -  监听断开蓝牙事件
 +(void)load{
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentScanVC) name:BLEPeripheralDisconnectNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentScanVC) name:BLEConnectFailNotification object:nil];
+    
 }
 
 
