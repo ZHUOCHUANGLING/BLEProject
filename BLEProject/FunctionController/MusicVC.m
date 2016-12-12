@@ -196,7 +196,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         case LocalMusicMode:
             [_musicOperation setDeviceSource:DeviceSourceBluetooth];
             
-            
             _mediaItems = [NSArray array];
             [self initMusicPlayerController];
             
@@ -496,6 +495,10 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMusicPlayerControllerNowPlayingItemDidChangeNotification:) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMusicPlayerControllerVolumeDidChangeNotification:) name:MPMusicPlayerControllerVolumeDidChangeNotification object:nil];
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBackActive:)name:UIApplicationDidBecomeActiveNotification object:nil];
 
 }
 
@@ -780,8 +783,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     __weak typeof(_tfMusicTimer) weakTFTimer = _tfMusicTimer;
     __weak typeof(self) weakSelf = self;
-    
-    
     
     
     self.musicOperation.currentSongName = ^(NSString *songName){
@@ -1075,6 +1076,20 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 }
+
+
+
+
+-(void)applicationDidBackActive:(NSNotification *)notification{
+
+    [self loadMediaItems];
+
+}
+
+
+
+
+
 
 
 
