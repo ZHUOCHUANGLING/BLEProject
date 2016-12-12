@@ -40,9 +40,8 @@
     currentHUD.layer.masksToBounds = YES;
     currentHUD.layer.cornerRadius = 10.0f;
     
+    
     [currentHUD addSubview:currentLabel];
-    
-    
     [currentWindow addSubview:currentHUD];
 
     

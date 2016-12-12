@@ -7,7 +7,7 @@
 //
 
 #import "ScanVC.h"
-
+#import "UIView+RotateAnimation.h"
 
 @interface ScanVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -185,10 +185,27 @@
 
 #pragma mark -  搜索按钮
 - (IBAction)searchBtn:(UIButton *)sender {
+    
     [DataManager stopScan];
     [self.dataArr removeAllObjects];
     [self resetDataSource];
     [DataManager startScan];
+    
+    sender.userInteractionEnabled = NO;
+    [sender setImage:[UIImage imageNamed:@"搜索旋转"] forState:UIControlStateNormal];
+    [sender setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [sender.imageView rotate360DegreeWithImageView:5];
+    
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [sender.imageView stopRotate];
+        [sender setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"搜索"] forState:UIControlStateNormal];
+        sender.userInteractionEnabled = YES;
+        [DataManager stopScan];
+    });
     
 }
 
@@ -240,9 +257,6 @@
 - (IBAction)pullDownClick:(UIButton *)sender {
     
     [self dismissVC];
-    
-    
-    
     
     
 }
