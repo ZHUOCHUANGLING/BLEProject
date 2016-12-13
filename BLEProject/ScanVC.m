@@ -70,7 +70,7 @@
     //去掉tableview顶部留白
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     
     [self centerStartListening];

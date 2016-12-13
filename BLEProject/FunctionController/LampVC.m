@@ -133,6 +133,10 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 //    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    
+    
 }
 
 

@@ -65,7 +65,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     [self initData];
     [self addObserver];
     
-    
 }
 
 -(void)initUI{
@@ -78,6 +77,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     backgroundView.image = [UIImage imageNamed:@"侧背景"];
     
     self.tableView.backgroundView = backgroundView;
+    
     
 }
 
@@ -201,6 +201,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
         
         
         fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
+
         
         if (indexPath.row == 1) {
             
@@ -233,9 +234,8 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
         
         
         
-        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
         
-
         [self settingNavBar:fVC];
         
         
@@ -289,6 +289,10 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
 }
+
+
+
+
 
 
 

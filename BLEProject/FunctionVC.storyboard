@@ -2053,7 +2053,7 @@
             </objects>
             <point key="canvasLocation" x="1944.8" y="4240.9295352323843"/>
         </scene>
-        <!--关于我们-->
+        <!--About UsVC-->
         <scene sceneID="Jgj-Qq-Rwl">
             <objects>
                 <viewController id="zRM-He-3a3" customClass="AboutUsVC" sceneMemberID="viewController">
@@ -2078,7 +2078,7 @@
                             <constraint firstItem="IPA-kO-lEE" firstAttribute="leading" secondItem="l2o-cs-ZRT" secondAttribute="leading" id="zDF-8K-Em5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="关于我们" id="U1b-Pb-gLg"/>
+                    <navigationItem key="navigationItem" id="U1b-Pb-gLg"/>
                     <connections>
                         <outlet property="aboutUsWebView" destination="IPA-kO-lEE" id="qnc-Ng-4yi"/>
                     </connections>
@@ -2092,7 +2092,7 @@
             <objects>
                 <navigationController storyboardIdentifier="lampVC" automaticallyAdjustsScrollViewInsets="NO" id="p31-ZH-3BW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fFU-67-1c6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fFU-67-1c6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.26274509800000001" green="0.4431372549" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

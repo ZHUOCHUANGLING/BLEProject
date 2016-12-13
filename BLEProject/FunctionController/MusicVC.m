@@ -245,7 +245,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             
             self.volumeOperation = [[VolumeFunction alloc] init];
             
-            
+        
             break;
             
             
@@ -332,6 +332,10 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 -(void)initUI{
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     
     _volumeSlider.value = _playerController.volume;
     
