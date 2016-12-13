@@ -927,6 +927,7 @@
                         <outlet property="playOrPauseButton" destination="7TE-wt-cWi" id="Si3-mM-qeU"/>
                         <outlet property="progressSlider" destination="NYa-V0-VfL" id="ETl-Z4-g9Q"/>
                         <outlet property="selectModeButton" destination="V4B-3R-8kH" id="Dkz-AN-j9U"/>
+                        <outlet property="songListBtn" destination="gqx-6A-4RS" id="0iX-6j-WeH"/>
                         <outlet property="totalTimeLabel" destination="Ydh-ee-Bw8" id="15a-pQ-rqi"/>
                         <outlet property="volumeBackgroudView" destination="jfh-c6-wSB" id="y3t-Iy-QVj"/>
                         <outlet property="volumeSlider" destination="nBE-Zp-NBX" id="Yl9-7u-K1o"/>

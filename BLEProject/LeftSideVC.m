@@ -117,10 +117,8 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
 #warning ---
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CentralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
     
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
 }
 
 
@@ -370,7 +368,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
--(void)CentralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
+-(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
 
     
 

@@ -45,6 +45,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 @property (nonatomic, strong)LMJScrollTextView *scrollTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *songListBtn;
 
 
 //local
@@ -56,7 +57,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 @property (nonatomic, strong) VolumeFunction *volumeOperation;
 @property (nonatomic, assign) NSInteger nowTime;
 @property (nonatomic, assign) NSInteger totalTime;
-//@property (nonatomic, strong) NSMutableArray *tfSongListArr;
+@property (nonatomic, strong) NSMutableArray *tfSongListArr;
 
 
 
@@ -203,7 +204,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 -(void)initMusicState{
     
-//    [self.controlOperation synchronizeState];
+    [self.controlOperation synchronizeState];
     
     
     //tf卡单例对象
@@ -226,14 +227,16 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             [self initUI];
             [self addObserver];
             
-            [self resetTFSongList];
-            
+//            [self resetTFSongList];
+        
             break;
             
             
             
         case TFMusicMode:
-            
+            //直到获取完毕之后才允许点击歌曲列表
+            self.songListBtn.userInteractionEnabled = NO;
+        
             [_musicOperation setDeviceSource:DeviceSourceSDCard];
             
             [self setupMusicTimer];
@@ -241,9 +244,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             [self initTFFunctionState];
             
             self.volumeOperation = [[VolumeFunction alloc] init];
-            
-            
-            
             
             
             break;
@@ -890,15 +890,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             weakSelf.playOrPauseButton.selected = isPlay;
@@ -912,13 +903,12 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         
         
         hasTFCard = YES;
+        weakSelf.songListBtn.userInteractionEnabled = YES;
     };
     
 
     
     self.musicOperation.currentSource = ^(DeviceSource currentSource){
-        
-        
         
         if (currentSource == DeviceSourceBluetooth) {
             [weakTFTimer setFireDate:[NSDate distantFuture]];
@@ -929,38 +919,28 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
 
     
+
+    
+    
+    //提前获取歌曲列表
+    _tfSongListArr = [[NSMutableArray alloc] init];
+    
+    [self.musicOperation getSongList];
+    
+    self.musicOperation.listSongName = ^(NSString *songListName){
+        
+        [weakSelf.tfSongListArr addObject:songListName];
+        
+        if (weakSelf.tfSongListArr.count != 0) {
+            [weakSelf refreshTFSongArr];
+        }
+        
+    };
     
     
     
     
-    
-//    NSArray *tfSessionArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"tfSongListArr"];
-//    
-//    if (tfSessionArr.count != 0) {
-//        _tfSongListArr = [NSMutableArray arrayWithArray:tfSessionArr];
-//    }else{
-//        _tfSongListArr = [[NSMutableArray alloc] init];
-//    }
-//    
-//    
-//    [self.musicOperation getSongList];
-//    
-//    self.musicOperation.listSongName = ^(NSString *songListName){
-//        
-//        [weakSelf.tfSongListArr addObject:songListName];
-//        
-//        
-//    };
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     _progressSlider.userInteractionEnabled = NO;
 
@@ -1199,6 +1179,15 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
     
 }
+
+
+-(void)refreshTFSongArr{
+
+    [[NSUserDefaults standardUserDefaults] setObject:_tfSongListArr forKey:@"tfSongListArr"];
+
+}
+
+
 
 
 @end
