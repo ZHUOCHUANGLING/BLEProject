@@ -15,6 +15,8 @@
 #import "OnlineMusicCell.h"
 #import "WebviewVC.h"
 
+
+
 #define RowHeight ScreenHeight*0.07
 
 typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
@@ -49,6 +51,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
    
     [self initData];
     [self initTableView];
+    [self initUI];
     
 }
 
@@ -75,6 +78,12 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
                      @"http://m.lizhi.fm",
                      @"http://m.ximalaya.com/album-tag/kid",
                      nil];
+
+}
+
+-(void)initUI{
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
 }
 
@@ -121,8 +130,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    
     
     if ([segue.identifier isEqualToString:@"webViewSegue"]) {
         
@@ -184,7 +191,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"musicCell"];
         cell.backgroundColor = [UIColor clearColor];
         
-        
     }
     
     
@@ -240,7 +246,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
 }
-
 
 
 

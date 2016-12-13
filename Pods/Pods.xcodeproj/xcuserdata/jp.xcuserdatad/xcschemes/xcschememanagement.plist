@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MMDrawerController+Storyboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2CE8323A7823829F8C8D66F842F031F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3AA182ACCAB086A6D4437DA6931A2C43</key>
+		<key>076C95B3D3949DCB81374A67E5574F1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>998566382D0B7487D4A273328144EE43</key>
+		<key>84F5F3D71E445886D0A74693F7D63702</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C83DC0B4881D58A9555C25FA8291CA5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7401C56B1B7AC7FDA078AC7B0944D42</key>
 		<dict>
 			<key>primary</key>
 			<true/>
