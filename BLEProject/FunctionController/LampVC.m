@@ -221,7 +221,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     
     
     
-    if (-[_oldTime timeIntervalSinceNow] > 0.1) {
+    if (-[_oldTime timeIntervalSinceNow] > 0.08) {
         _oldTime = [NSDate date];
     
         
@@ -336,8 +336,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 
 -(void)sliderTouchuUpInside{
     
-    usleep(1000 * 100);
-    [self minIntValueChanged:_cirSlider.progress1];
+    [self.operationModel setLightColorWithRed:r*255*_cirSlider.progress1 green:g*255*_cirSlider.progress1 blue:b*255*_cirSlider.progress1 white:w];
     
 }
 
@@ -346,7 +345,7 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 
 #pragma mark -  CHcir_Slider_Delegate
 - (void)minIntValueChanged:(CGFloat)minIntValue{
-//    NSLog(@"minIntValue%f",minIntValue);
+
     
     [self touchColorWheelView];
     

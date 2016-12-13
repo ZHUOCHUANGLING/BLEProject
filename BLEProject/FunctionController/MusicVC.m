@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 @property (nonatomic, strong) VolumeFunction *volumeOperation;
 @property (nonatomic, assign) NSInteger nowTime;
 @property (nonatomic, assign) NSInteger totalTime;
-
+//@property (nonatomic, strong) NSMutableArray *tfSongListArr;
 
 
 
@@ -91,6 +91,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     NSInteger sessionMusicCount;
     
     BOOL hasMusic;
+    BOOL hasTFCard;
 
     MusicMode currentMode;
     ChooseMusicPlayMode currentMusicMode;
@@ -104,6 +105,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     NSInteger nowIndex;
     TFMusicPlayMode currentTFPlayMode;
     NSInteger totalNumber;
+    
     
     
     
@@ -201,11 +203,13 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 -(void)initMusicState{
     
+//    [self.controlOperation synchronizeState];
+    
+    
     //tf卡单例对象
     FunctionSingleton *func = [FunctionSingleton shareFunction];
         
     self.musicOperation = func.musicOperation;
-    
     
     [self.controlOperation enterMusic];
     
@@ -222,15 +226,13 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
             [self initUI];
             [self addObserver];
             
-            
+            [self resetTFSongList];
             
             break;
             
             
             
         case TFMusicMode:
-#warning -----
-//            [self.controlOperation synchronizeState];
             
             [_musicOperation setDeviceSource:DeviceSourceSDCard];
             
@@ -582,20 +584,20 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     
     
-    if (currentMusicMode == TFMusicMode) {
+    if (currentMusicMode == TFMusicMode && hasTFCard) {
         
       
         sender.selected = !sender.selected;
         [self.musicOperation setIsPlay:sender.selected];
         
-        if (sender.selected) {
-            
-            [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
-            
-        }else{
-            
-            [_albumImageView stopRotate];
-        }
+//        if (sender.selected) {
+//            
+//            [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
+//            
+//        }else{
+//            
+//            [_albumImageView stopRotate];
+//        }
         
   
     }
@@ -887,6 +889,16 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             weakSelf.playOrPauseButton.selected = isPlay;
@@ -899,7 +911,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
         weakSelf.totalTime = totalTime;
         
         
-    
+        hasTFCard = YES;
     };
     
 
@@ -916,6 +928,38 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     };
     
 
+    
+    
+    
+    
+    
+    
+//    NSArray *tfSessionArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"tfSongListArr"];
+//    
+//    if (tfSessionArr.count != 0) {
+//        _tfSongListArr = [NSMutableArray arrayWithArray:tfSessionArr];
+//    }else{
+//        _tfSongListArr = [[NSMutableArray alloc] init];
+//    }
+//    
+//    
+//    [self.musicOperation getSongList];
+//    
+//    self.musicOperation.listSongName = ^(NSString *songListName){
+//        
+//        [weakSelf.tfSongListArr addObject:songListName];
+//        
+//        
+//    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     _progressSlider.userInteractionEnabled = NO;
@@ -1138,15 +1182,23 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 #pragma mark -  BLE_Notification
 -(void)centeralDisconnectPeripheral:(NSNotification *)notification{
 
+    
     if (_playerController) {
         [_playerController pause];
     }
-    
-    
 
 }
 
 
+
+
+
+-(void)resetTFSongList{
+    
+    NSArray *resetArr;
+    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
+    
+}
 
 
 @end

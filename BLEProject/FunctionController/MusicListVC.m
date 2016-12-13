@@ -30,6 +30,7 @@
     NSArray *_mediaItems;
     BOOL hasMusic;
     
+    
 }
 
 
@@ -86,7 +87,8 @@
 
     
     NSArray *tfSessionArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"tfSongListArr"];
-    if (tfSessionArr) {
+    
+    if (tfSessionArr.count != 0) {
         _tfSongListArr = [NSMutableArray arrayWithArray:tfSessionArr];
     }else{
         _tfSongListArr = [[NSMutableArray alloc] init];
@@ -109,6 +111,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.songListTableView reloadData];
         });
+        
         
         
         
@@ -190,6 +193,9 @@
         cell.detailTextLabel.highlightedTextColor = [UIColor whiteColor];
     }
     
+    
+    
+    
     return cell;
 
 }
@@ -256,9 +262,15 @@
 
 -(void)dismissVC{
 
+    
+        
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     });
+        
+    
+    
+    
 
 
 }

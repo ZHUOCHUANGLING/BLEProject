@@ -49,6 +49,8 @@
 
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -246,10 +248,21 @@
     });
     
     
+    
+    
+    
+    [self resetTFSongList];
+    
+    
 }
 
 
-
++(void)resetTFSongList{
+    
+    NSArray *resetArr;
+    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
+    
+}
 
 
 #warning 第一版上架用
