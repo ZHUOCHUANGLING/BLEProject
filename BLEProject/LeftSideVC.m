@@ -50,8 +50,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     selectedCell.selected = YES;
   
-    
-    
     self.connectedLabel.text = DataManager.connectedPeripheral.name;
     
 
@@ -259,11 +257,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-
-  
-}
-
 
 
 
@@ -286,7 +279,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 -(void)leftButtonPress:(id)sender{
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
                                     completion:nil];
-    
     
 }
 

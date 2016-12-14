@@ -106,14 +106,28 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     OnlineMusicCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"onlineMusicCell" forIndexPath:indexPath];
     
+    if (ScreenWidth == 320) {
+        cell.width = 120;
+        cell.height = 150;
+    }
+    
+    
     cell.imageView.image = [UIImage imageNamed:_musicNameArr[indexPath.row]];
     cell.titleLab.text =  _musicNameArr[indexPath.row];
     
-
+    
     return cell;
     
 }
 
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (ScreenWidth == 414) {
+        return CGSizeMake(150, 180);
+    }
+    return CGSizeMake(120, 150);
+}
 
 
 
@@ -204,6 +218,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     cell.textLabel.text = _chooseModeTableViewArr[indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:16];
     
     if (ScreenWidth == 320) {
         cell.textLabel.font = [UIFont systemFontOfSize:11.5];

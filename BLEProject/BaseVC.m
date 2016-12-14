@@ -31,8 +31,6 @@
     
     [self resetTFSongList];
     
-    
-    
     [self registerLocalNotification];
     
     
@@ -62,7 +60,6 @@
 
     //让app支持接受远程控制事件
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    
     
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstLaunch"];
     
