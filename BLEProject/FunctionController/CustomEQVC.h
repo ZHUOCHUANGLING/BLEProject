@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomEQVC : UIViewController
-
+@property (nonatomic, strong) EQFunction *eqOperation;
 @end

@@ -42,7 +42,7 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
         _guideLineColor = [UIColor clearColor];
         _progress = 1.f;
 //        _progress1 = 1.0f;
-        _handleOutSideRadius = 8.f;
+        _handleOutSideRadius = 7.f;
         _handleInSideRadius = 8.f;
     }
     return self;

@@ -192,7 +192,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
 }
 

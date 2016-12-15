@@ -7,6 +7,7 @@
 //
 
 #import "AUXVC.h"
+#import "JPProgressHUD.h"
 
 @interface AUXVC ()
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic, strong) VolumeFunction *volOperation;
 
+@property (weak, nonatomic) IBOutlet UIImageView *volumeImageView;
 
 @end
 
@@ -62,10 +64,10 @@
     _auxOperation.getAuxState = ^(BOOL auxState){
     
         if (auxState) {
-            [SVProgressHUD showInfoWithStatus:@"AUX接入"];
+            
         }else{
         
-            [SVProgressHUD showInfoWithStatus:@"AUX未接入"];
+//            [JPProgressHUD showMessage:@"AUX未接入"];
         
         }
     
@@ -112,6 +114,13 @@
 
 
 - (IBAction)volumeChange:(UISlider *)sender {
+    
+    if (sender.value == 0) {
+        _volumeImageView.highlighted = YES;
+    }else{
+        _volumeImageView.highlighted = NO;
+    
+    }
     
     [_volOperation setDeviceVolumeWithRank:sender.value];
     

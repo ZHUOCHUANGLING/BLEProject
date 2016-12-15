@@ -143,12 +143,10 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
 -(void)initControlller{
 
     int width=ScreenWidth*0.67;
-    int cirWidth = ScreenWidth *0.9;
+    int cirWidth = ScreenWidth *0.86;
     
     
-    
-    
-    CGRect cirRect = CGRectMake(0.05 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
+    CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
     _cirSlider = [[CHcir_Slider alloc]init];
     _cirSlider.frame = cirRect;
 
@@ -203,7 +201,10 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     g = rgb.green;
     b = rgb.blue;
 
-    self.mainSwitch.selected = YES;
+    if (_cirSlider.progress1 != 0) {
+        self.mainSwitch.selected = YES;
+    }
+    
     
     _colorWheelView.layer.borderColor = [UIColor colorWithRed:r green:g blue:b alpha:1].CGColor;
     
@@ -353,7 +354,14 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     
     [self touchColorWheelView];
     
-    _mainSwitch.selected = YES;
+    if (minIntValue == 0) {
+        _mainSwitch.selected = NO;
+    }else{
+    
+        _mainSwitch.selected = YES;
+    }
+    
+    
     
     
 }
