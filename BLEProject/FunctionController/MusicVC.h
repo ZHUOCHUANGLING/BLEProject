@@ -17,4 +17,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 @interface MusicVC : UIViewController
 
+
+
 @end

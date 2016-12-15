@@ -126,11 +126,17 @@
 - (void)CenteralSuccessConnnectPeripher:(NSNotification *)SuccessNote
 {
     
-//    Byte byte[] = {0xff};
-//    
-//    [DataManager sendDataWithService:@"FFF0" characteristic:@"FFF1" data:[NSData dataWithBytes:byte length:1]];
+    
     [self dismissVC];
-    NSLog(@"-->与外设连接成功");
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        Byte byte[] = {0xff};
+//        [DataManager sendDataWithService:@"FFF0" characteristic:@"FFF1" data:[NSData dataWithBytes:byte length:1]];
+//        NSLog(@"-->与外设连接成功");
+//        
+//    });
+    
 }
 
 

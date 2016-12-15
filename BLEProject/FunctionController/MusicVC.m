@@ -14,7 +14,7 @@
 #import "LMJScrollTextView.h"
 
 
-
+#import "LeftSideVC.h"
 #import "FunctionSingleton.h"
 #import "MusicListVC.h"
 
@@ -138,6 +138,8 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     currentMusicMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
     
     [self initMusicState];
+    
+    [self initTableViewData];
     
     [self initTableView];
     
@@ -1022,9 +1024,38 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 #pragma mark -  ChooseModeTableView
 
--(void)initTableView{
+
+
+-(void)initTableViewData{
+    
+    
+    LeftSideVC *leftVC = (LeftSideVC *)self.mm_drawerController.leftDrawerViewController;
     
     _chooseModeTableViewArr = [NSMutableArray arrayWithObjects:@"本地音乐",@"TF卡音乐",@"云音乐", nil];
+    
+
+    [_chooseModeTableViewArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        
+        if ((![leftVC.existFuncArr[0] integerValue] && [obj isEqualToString:@"本地音乐"]) || (![leftVC.existFuncArr[1] integerValue] && [obj isEqualToString:@"TF卡音乐"])) {
+            
+            *stop = YES;
+            [_chooseModeTableViewArr removeObject:obj];
+        }
+        
+
+        
+    }];
+
+            
+    
+    
+    
+}
+
+-(void)initTableView{
+    
+    
     _chooseModeTableView = [[UITableView alloc] initWithFrame:CGRectMake(ScreenWidth * 0.6, 70, ScreenWidth*0.39, RowHeight * _chooseModeTableViewArr.count+10)];
     _chooseModeTableView.delegate = self;
     _chooseModeTableView.dataSource = self;
@@ -1112,9 +1143,9 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     [[NSUserDefaults standardUserDefaults] setInteger:currentMusicMode forKey:@"ChooseMusicPlayMode"];
     
-    
     UITableViewController *leftVC = (UITableViewController *)self.mm_drawerController.leftDrawerViewController;
     [leftVC tableView:leftVC.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+    
     
     
 }
@@ -1173,7 +1204,6 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     }
 
 }
-
 
 
 

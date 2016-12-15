@@ -30,13 +30,13 @@
 		E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BFA1DDD9508000CABB0 /* Info.plist */; };
 		E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093C041DDDB3ED000CABB0 /* MusicListVC.m */; };
 		E81819C81DF1136400115578 /* FunctionSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E81819C71DF1136400115578 /* FunctionSingleton.m */; };
-		E81EFC471DF8088F00056BF8 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */; };
 		E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E81EFC491DF8151F00056BF8 /* CustomEQVC.m */; };
 		E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */; };
 		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */; };
+		E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
@@ -110,7 +110,6 @@
 		E8093C041DDDB3ED000CABB0 /* MusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListVC.m; sourceTree = "<group>"; };
 		E81819C61DF1136400115578 /* FunctionSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionSingleton.h; sourceTree = "<group>"; };
 		E81819C71DF1136400115578 /* FunctionSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionSingleton.m; sourceTree = "<group>"; };
-		E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E81EFC481DF8151F00056BF8 /* CustomEQVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEQVC.h; sourceTree = "<group>"; };
 		E81EFC491DF8151F00056BF8 /* CustomEQVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomEQVC.m; sourceTree = "<group>"; };
 		E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewCell.h; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
 		E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
 		E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
+		E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
 		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicCell.h; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E81EFC471DF8088F00056BF8 /* BluetoothFoundation.framework in Frameworks */,
+				E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */,
 				313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,10 +283,10 @@
 		E8093BDA1DDD9295000CABB0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */,
+				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
 				E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */,
 				E8A429321DFA57D4006EDEBC /* JPProgressHUD */,
-				E81EFC461DF8088F00056BF8 /* BluetoothFoundation.framework */,
-				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
 				E83F13281DE59C4600504EDE /* ColorPicker */,
 				E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */,
 			);

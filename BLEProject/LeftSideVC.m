@@ -21,8 +21,10 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 @interface LeftSideVC ()
 
 @property(nonatomic, strong)NSMutableArray *modualIDArr;
-
 @property (nonatomic, strong)NSMutableArray *modualNameArr;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *connectedLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *footerView;
@@ -59,31 +61,38 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initUI];
+    
     [self initData];
     [self addObserver];
     
+    
+    [self centralReceiveNotFoundCorrespondMsg:nil];
+    [self initUI];
 }
 
 -(void)initUI{
     
     self.tableView.rowHeight = ROWHEIGHT;
     
-    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 160 - 6*ROWHEIGHT);
+    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 160 - _modualIDArr.count*ROWHEIGHT);
 
+    
+    
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundView.image = [UIImage imageNamed:@"侧背景"];
     
     self.tableView.backgroundView = backgroundView;
+    
+    selectedRow = -1;
     
     
 }
 
 -(void)initData{
     
-    selectedRow = -1;
     
     
+
     _modualIDArr = [NSMutableArray arrayWithObjects:
                     @"lampVC",
                     @"musicVC",
@@ -99,6 +108,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
                       @"AUX",
                       @"定时",
                       @"设置", nil];
+    
 
 }
 
@@ -130,11 +140,14 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 #pragma mark -  tableView_Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return _modualIDArr.count;
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
@@ -160,15 +173,19 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
     NSInteger currentMusicMode =  [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
     
+    
+    
     if (indexPath.row != selectedRow || musicMode != currentMusicMode) {
+        
         NSString *functionID = _modualIDArr[indexPath.row];
         
         
         //MusicMode
-        if (indexPath.row == 1) {
+        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
             musicMode = currentMusicMode;
             
             switch (musicMode) {
@@ -201,7 +218,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
         fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
 
         
-        if (indexPath.row == 1) {
+        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
             
 
             switch (musicMode) {
@@ -366,9 +383,56 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 -(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
 
+//    NSData *data =notification.userInfo[@"data"];
+//    Byte *bytes = (Byte *)[data bytes];
     
+    
+    _existFuncArr = [NSMutableArray array];
+    
+    Byte byte1[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x01,0x01,0x01};
 
-
+    
+    
+    if (byte1[6] || byte1[7]) {
+        [_existFuncArr addObject:@(byte1[6])];
+        [_existFuncArr addObject:@(byte1[7])];
+    }
+    
+    
+    
+    for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
+        
+        if (!byte1[i+5]) {
+            
+            
+            if (i==0) {
+        
+                [_modualIDArr removeObjectAtIndex:i];
+                [_modualNameArr removeObjectAtIndex:i];
+        
+            }else if ((i==2)&&(!byte1[6])){
+        
+                [_modualIDArr removeObjectAtIndex:1];
+                [_modualNameArr removeObjectAtIndex:1];
+        
+            }else if (i>2){
+        
+                [_modualIDArr removeObjectAtIndex:i-1];
+                [_modualNameArr removeObjectAtIndex:i-1];
+                
+                
+            }
+        
+            
+        }
+    }
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
+    
 }
 
 @end

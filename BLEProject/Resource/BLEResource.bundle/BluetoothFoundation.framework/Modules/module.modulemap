@@ -1,0 +1,6 @@
+framework module BluetoothFoundation {
+  umbrella header "BluetoothFoundation.h"
+
+  export *
+  module * { export * }
+}

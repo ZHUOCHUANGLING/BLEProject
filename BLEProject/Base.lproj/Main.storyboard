@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="klP-RK-9ga">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="klP-RK-9ga">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,7 +72,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-To-rWW">
-                                    <rect key="frame" x="20" y="63" width="30" height="35"/>
+                                    <rect key="frame" x="20" y="91.5" width="30" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="7cv-BO-dSn"/>
                                         <constraint firstAttribute="width" constant="30" id="xDG-ug-vvz"/>
@@ -83,7 +83,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8K-AL-vjX">
-                                    <rect key="frame" x="58" y="65.5" width="46" height="30"/>
+                                    <rect key="frame" x="58" y="94" width="46" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="46" id="iTh-CJ-lOu"/>
                                         <constraint firstAttribute="height" constant="30" id="s2y-0X-8PB"/>
@@ -97,7 +97,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lod-dx-yZN">
-                                    <rect key="frame" x="124" y="63.5" width="30" height="35"/>
+                                    <rect key="frame" x="124" y="92" width="30" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="WqN-st-sVw"/>
                                         <constraint firstAttribute="width" constant="30" id="c48-jg-t2c"/>
@@ -108,7 +108,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="111-GG-hDE">
-                                    <rect key="frame" x="162" y="65.5" width="50" height="30"/>
+                                    <rect key="frame" x="162" y="94" width="50" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="gOm-Wm-1Rs"/>
                                         <constraint firstAttribute="width" constant="50" id="k8V-YE-VDS"/>
@@ -125,9 +125,9 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Lod-dx-yZN" firstAttribute="centerY" secondItem="eNP-To-rWW" secondAttribute="centerY" id="7ZF-l1-3yT"/>
-                                <constraint firstAttribute="bottom" secondItem="eNP-To-rWW" secondAttribute="bottom" constant="30" id="Bj5-ba-CYu"/>
                                 <constraint firstItem="111-GG-hDE" firstAttribute="centerY" secondItem="eNP-To-rWW" secondAttribute="centerY" id="E8U-4N-UX6"/>
                                 <constraint firstItem="eNP-To-rWW" firstAttribute="leading" secondItem="ZcE-rD-Stb" secondAttribute="leading" constant="20" id="KUp-wj-7Yt"/>
+                                <constraint firstItem="eNP-To-rWW" firstAttribute="centerY" secondItem="ZcE-rD-Stb" secondAttribute="centerY" multiplier="1.7" id="nWs-dD-n4B"/>
                                 <constraint firstItem="111-GG-hDE" firstAttribute="leading" secondItem="Lod-dx-yZN" secondAttribute="trailing" constant="8" id="rIf-qS-nMD"/>
                                 <constraint firstItem="Lod-dx-yZN" firstAttribute="leading" secondItem="v8K-AL-vjX" secondAttribute="trailing" constant="20" id="s2X-OY-eGi"/>
                                 <constraint firstItem="v8K-AL-vjX" firstAttribute="leading" secondItem="eNP-To-rWW" secondAttribute="trailing" constant="8" id="uma-ot-Msi"/>

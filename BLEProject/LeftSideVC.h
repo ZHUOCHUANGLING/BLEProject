@@ -11,6 +11,7 @@
 
 @interface LeftSideVC : UITableViewController
 
+@property(nonatomic, strong)NSMutableArray *existFuncArr;
 
 
 @end
