@@ -56,7 +56,6 @@
     
     [self initUI];
     
-    
     [self initFunction];
     
     [self initState];
@@ -141,10 +140,6 @@
     });
     
 }
-
-
-
-
 
 
 

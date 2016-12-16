@@ -384,12 +384,12 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
     if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
         
         
-//        NSData *data =notification.userInfo[@"data"];
-//        Byte *bytes = (Byte *)[data bytes];
+        NSData *data =notification.userInfo[@"data"];
+        Byte *bytes = (Byte *)[data bytes];
         
         
         
-        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x01,0x01,0x01,0x01};
+//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x01,0x01,0x01,0x01};
         
         _existFuncArr = [NSMutableArray array];
         

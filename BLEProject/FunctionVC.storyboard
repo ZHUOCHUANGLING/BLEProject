@@ -1259,36 +1259,40 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hz4-wq-BGZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HxF-Oe-lnl">
-                                        <rect key="frame" x="169" y="253" width="37" height="37"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HxF-Oe-lnl">
+                                        <rect key="frame" x="169" y="315" width="37" height="37"/>
                                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3b-3x-VD7">
-                                        <rect key="frame" x="148" y="350" width="79" height="30"/>
+                                        <rect key="frame" x="137.5" y="372" width="100" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="79" id="Ubm-ES-tTm"/>
+                                            <constraint firstAttribute="width" constant="100" id="Ubm-ES-tTm"/>
                                             <constraint firstAttribute="height" constant="30" id="pAP-10-K9S"/>
                                         </constraints>
-                                        <state key="normal" title="Stop"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="停止搜索">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="searchChannel:" destination="oIQ-rk-FFO" eventType="touchUpInside" id="3aB-Ie-oPQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.3065068493150685" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.089308647260273974" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="HxF-Oe-lnl" firstAttribute="centerX" secondItem="hz4-wq-BGZ" secondAttribute="centerX" id="5vc-jg-kkH"/>
                                     <constraint firstItem="p3b-3x-VD7" firstAttribute="centerX" secondItem="hz4-wq-BGZ" secondAttribute="centerX" id="FfU-ba-h2d"/>
-                                    <constraint firstItem="HxF-Oe-lnl" firstAttribute="centerY" secondItem="hz4-wq-BGZ" secondAttribute="centerY" multiplier="0.9" id="Q1N-0u-dZ6"/>
-                                    <constraint firstItem="p3b-3x-VD7" firstAttribute="top" secondItem="HxF-Oe-lnl" secondAttribute="bottom" constant="60" id="hVw-3a-84N"/>
+                                    <constraint firstItem="HxF-Oe-lnl" firstAttribute="centerY" secondItem="hz4-wq-BGZ" secondAttribute="centerY" id="Q1N-0u-dZ6"/>
+                                    <constraint firstItem="p3b-3x-VD7" firstAttribute="top" secondItem="HxF-Oe-lnl" secondAttribute="bottom" constant="20" id="hVw-3a-84N"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qOH-A3-cFb" firstAttribute="height" secondItem="AZs-JX-Kkl" secondAttribute="height" multiplier="0.8" id="2ll-wC-DXe"/>
+                            <constraint firstItem="hz4-wq-BGZ" firstAttribute="top" secondItem="AZs-JX-Kkl" secondAttribute="top" id="3LU-WK-T9S"/>
                             <constraint firstItem="8SL-zJ-vOz" firstAttribute="centerX" secondItem="AZs-JX-Kkl" secondAttribute="centerX" multiplier="0.25" id="5hn-9e-oZS"/>
                             <constraint firstItem="q1T-Qi-nh6" firstAttribute="top" secondItem="qOH-A3-cFb" secondAttribute="bottom" id="7n5-H8-Zbj"/>
                             <constraint firstItem="Pfs-jh-Owu" firstAttribute="centerX" secondItem="AZs-JX-Kkl" secondAttribute="centerX" multiplier="1.75" id="9Yp-CQ-stz"/>
@@ -1301,7 +1305,6 @@
                             <constraint firstItem="92P-uN-c6e" firstAttribute="width" secondItem="AZs-JX-Kkl" secondAttribute="width" multiplier="0.2" id="PcI-6a-XV3"/>
                             <constraint firstItem="dNN-BX-jbz" firstAttribute="width" secondItem="dNN-BX-jbz" secondAttribute="height" multiplier="23:26" id="S9t-is-KFE"/>
                             <constraint firstItem="q1T-Qi-nh6" firstAttribute="leading" secondItem="AZs-JX-Kkl" secondAttribute="leading" id="T0P-RY-r5m"/>
-                            <constraint firstItem="hz4-wq-BGZ" firstAttribute="top" secondItem="igb-gi-VGc" secondAttribute="bottom" id="T7Q-rd-8ll"/>
                             <constraint firstItem="mQH-hL-TDH" firstAttribute="centerX" secondItem="qOH-A3-cFb" secondAttribute="centerX" id="WDK-Fi-W2G"/>
                             <constraint firstAttribute="trailing" secondItem="q1T-Qi-nh6" secondAttribute="trailing" id="WSp-ls-NoO"/>
                             <constraint firstItem="92P-uN-c6e" firstAttribute="centerX" secondItem="AZs-JX-Kkl" secondAttribute="centerX" multiplier="1.6" id="WgR-c8-Vo0"/>
