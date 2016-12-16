@@ -61,8 +61,9 @@
     //让app支持接受远程控制事件
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstLaunch"];
     
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstMusicFunctionLaunch"];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstSendCustomFunction"];
     
 }
 

@@ -72,7 +72,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-To-rWW">
-                                    <rect key="frame" x="20" y="91.5" width="30" height="35"/>
+                                    <rect key="frame" x="20" y="85" width="30" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="7cv-BO-dSn"/>
                                         <constraint firstAttribute="width" constant="30" id="xDG-ug-vvz"/>
@@ -83,7 +83,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8K-AL-vjX">
-                                    <rect key="frame" x="58" y="94" width="46" height="30"/>
+                                    <rect key="frame" x="58" y="87.5" width="46" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="46" id="iTh-CJ-lOu"/>
                                         <constraint firstAttribute="height" constant="30" id="s2y-0X-8PB"/>
@@ -97,7 +97,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lod-dx-yZN">
-                                    <rect key="frame" x="124" y="92" width="30" height="35"/>
+                                    <rect key="frame" x="124" y="85.5" width="30" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="WqN-st-sVw"/>
                                         <constraint firstAttribute="width" constant="30" id="c48-jg-t2c"/>
@@ -108,7 +108,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="111-GG-hDE">
-                                    <rect key="frame" x="162" y="94" width="50" height="30"/>
+                                    <rect key="frame" x="162" y="87.5" width="50" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="gOm-Wm-1Rs"/>
                                         <constraint firstAttribute="width" constant="50" id="k8V-YE-VDS"/>
@@ -127,7 +127,7 @@
                                 <constraint firstItem="Lod-dx-yZN" firstAttribute="centerY" secondItem="eNP-To-rWW" secondAttribute="centerY" id="7ZF-l1-3yT"/>
                                 <constraint firstItem="111-GG-hDE" firstAttribute="centerY" secondItem="eNP-To-rWW" secondAttribute="centerY" id="E8U-4N-UX6"/>
                                 <constraint firstItem="eNP-To-rWW" firstAttribute="leading" secondItem="ZcE-rD-Stb" secondAttribute="leading" constant="20" id="KUp-wj-7Yt"/>
-                                <constraint firstItem="eNP-To-rWW" firstAttribute="centerY" secondItem="ZcE-rD-Stb" secondAttribute="centerY" multiplier="1.7" id="nWs-dD-n4B"/>
+                                <constraint firstItem="eNP-To-rWW" firstAttribute="centerY" secondItem="ZcE-rD-Stb" secondAttribute="centerY" multiplier="1.6" id="nWs-dD-n4B"/>
                                 <constraint firstItem="111-GG-hDE" firstAttribute="leading" secondItem="Lod-dx-yZN" secondAttribute="trailing" constant="8" id="rIf-qS-nMD"/>
                                 <constraint firstItem="Lod-dx-yZN" firstAttribute="leading" secondItem="v8K-AL-vjX" secondAttribute="trailing" constant="20" id="s2X-OY-eGi"/>
                                 <constraint firstItem="v8K-AL-vjX" firstAttribute="leading" secondItem="eNP-To-rWW" secondAttribute="trailing" constant="8" id="uma-ot-Msi"/>

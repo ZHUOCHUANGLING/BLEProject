@@ -443,7 +443,7 @@
               }
             },
             {
-              "key": "device",
+              "key": "mode",
               "val": 0,
               "rang": {
                 "loc": 1,

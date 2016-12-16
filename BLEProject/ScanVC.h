@@ -10,7 +10,11 @@
 
 @interface ScanVC : UIViewController
 
+
 +(void)presentScanVC;
+
+
+
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ScanVC.h"
+#import "LeftSideVC.h"
 #import "UIView+RotateAnimation.h"
 
 @interface ScanVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -91,7 +92,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralScanedPeripheral:) name:BLEScanedPeripheralNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralSuccessConnnectPeripher:) name:BLEPeripheralConnectSuccedNotification object:nil];
     
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(programInitializedComplete) name:ProgramInitializedComplete object:nil];
 
 }
 
@@ -126,26 +127,47 @@
 - (void)CenteralSuccessConnnectPeripher:(NSNotification *)SuccessNote
 {
     
+    BOOL firstSendCustomData = ![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstSendCustomFunction"];
     
-    [self dismissVC];
+    if (firstSendCustomData) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            Byte byte[] = {0xff};
+            [DataManager sendDataWithService:@"FFF0" characteristic:@"FFF1" data:[NSData dataWithBytes:byte length:1]];
+            NSLog(@"-->与外设连接成功");
+            
+        });
+        
+    }else{
+        
+        [self dismissVC];
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
-//        Byte byte[] = {0xff};
-//        [DataManager sendDataWithService:@"FFF0" characteristic:@"FFF1" data:[NSData dataWithBytes:byte length:1]];
-//        NSLog(@"-->与外设连接成功");
-//        
-//    });
+    }
     
 }
 
 
 
 
+-(void)programInitializedComplete{
+
+    [self dismissVC];
+}
 
 
-
-
+-(BOOL)changeFirstLaunchState{
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstSendCustomFunction"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstSendCustomFunction"];
+        
+        return  YES;
+    }
+    
+    return NO;
+    
+}
 
 
 #pragma mark -  tableView_DataSource
@@ -234,6 +256,8 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    
+    [self changeFirstLaunchState];
 }
 
 
@@ -263,9 +287,6 @@
     });
     
     
-    
-    
-    
     [self resetTFSongList];
     
     
@@ -278,6 +299,11 @@
     [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
     
 }
+
+
+
+
+
 
 
 #warning 第一版上架用

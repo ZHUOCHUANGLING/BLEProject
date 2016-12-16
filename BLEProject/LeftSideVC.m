@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     OnlineMusicMode
 };
 
-
+NSString *const ProgramInitializedComplete = @"InitializedComplete";
 
 @interface LeftSideVC ()
 
@@ -47,13 +47,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     [super viewWillAppear:animated];
     
     
-    
-    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
-    
-    selectedCell.selected = YES;
-  
-    self.connectedLabel.text = DataManager.connectedPeripheral.name;
-    
+    [self refreshUI];
 
 }
 
@@ -64,9 +58,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     [self initData];
     [self addObserver];
-    
-    
-    [self centralReceiveNotFoundCorrespondMsg:nil];
+
     [self initUI];
 }
 
@@ -74,7 +66,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     self.tableView.rowHeight = ROWHEIGHT;
     
-    self.footerView.frame = CGRectMake(0, 0, ScreenWidth,ScreenHeight - 160 - _modualIDArr.count*ROWHEIGHT);
+   
 
     
     
@@ -85,6 +77,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     selectedRow = -1;
     
+
     
 }
 
@@ -119,19 +112,24 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     //监听A2DP拔插
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangedCallBack:) name:AVAudioSessionRouteChangeNotification object:nil];
     
-    
-    
-    
-    
-    
-#warning ---
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
 }
 
 
 
+-(void)refreshUI{
 
+    self.footerView.frame = CGRectMake(self.footerView.x, self.footerView.y, ScreenWidth,ScreenHeight - 160 - _modualIDArr.count*ROWHEIGHT);
+    
+    self.connectedLabel.text = DataManager.connectedPeripheral.name;
+    
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
+    selectedCell.selected = YES;
+    
+    
+}
 
 
 
@@ -383,55 +381,67 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 -(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
 
-//    NSData *data =notification.userInfo[@"data"];
-//    Byte *bytes = (Byte *)[data bytes];
-    
-    
-    _existFuncArr = [NSMutableArray array];
-    
-    Byte byte1[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x01,0x01,0x01};
-
-    
-    
-    if (byte1[6] || byte1[7]) {
-        [_existFuncArr addObject:@(byte1[6])];
-        [_existFuncArr addObject:@(byte1[7])];
-    }
-    
-    
-    
-    for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
+    if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
         
-        if (!byte1[i+5]) {
+        
+//        NSData *data =notification.userInfo[@"data"];
+//        Byte *bytes = (Byte *)[data bytes];
+        
+        
+        
+        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x01,0x01,0x01,0x01};
+        
+        _existFuncArr = [NSMutableArray array];
+        
+        //music mode
+        if (bytes[6] || bytes[7]) {
+            [_existFuncArr addObject:@(bytes[6])];
+            [_existFuncArr addObject:@(bytes[7])];
+        }
+        
+        
+        
+        for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
             
-            
-            if (i==0) {
-        
-                [_modualIDArr removeObjectAtIndex:i];
-                [_modualNameArr removeObjectAtIndex:i];
-        
-            }else if ((i==2)&&(!byte1[6])){
-        
-                [_modualIDArr removeObjectAtIndex:1];
-                [_modualNameArr removeObjectAtIndex:1];
-        
-            }else if (i>2){
-        
-                [_modualIDArr removeObjectAtIndex:i-1];
-                [_modualNameArr removeObjectAtIndex:i-1];
+            if (!bytes[i+5]) {
+                
+                
+                if (i==0) {
+                    
+                    [_modualIDArr removeObjectAtIndex:i];
+                    [_modualNameArr removeObjectAtIndex:i];
+                    
+                }else if ((i==2)&&(!bytes[6])){
+                    
+                    [_modualIDArr removeObjectAtIndex:1];
+                    [_modualNameArr removeObjectAtIndex:1];
+                    
+                }else if (i>2){
+                    
+                    [_modualIDArr removeObjectAtIndex:i-1];
+                    [_modualNameArr removeObjectAtIndex:i-1];
+                    
+                    
+                }
                 
                 
             }
-        
-            
         }
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            selectedRow = -1;
+            [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+            
+        });
+        
     }
     
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
     
+  
+    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramInitializedComplete object:nil];
     
 }
 

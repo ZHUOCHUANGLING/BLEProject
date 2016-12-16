@@ -305,8 +305,9 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 -(BOOL)isFirstLaunch{
 
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstLaunch"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstLaunch"];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstMusicFunctionLaunch"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstMusicFunctionLaunch"];
         
         return  YES;
     }

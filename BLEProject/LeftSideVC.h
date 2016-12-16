@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//程序初始化成功
+extern NSString *const ProgramInitializedComplete;
 
 @interface LeftSideVC : UITableViewController
 
