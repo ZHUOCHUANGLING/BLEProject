@@ -36,6 +36,8 @@
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */; };
+		E8809EC51E077745009507E1 /* LocalMusicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8809EC41E077745009507E1 /* LocalMusicMode.m */; };
+		E8809EC81E077752009507E1 /* TFMusicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8809EC71E077752009507E1 /* TFMusicMode.m */; };
 		E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
@@ -122,6 +124,10 @@
 		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
 		E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
 		E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
+		E8809EC31E077745009507E1 /* LocalMusicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMusicMode.h; sourceTree = "<group>"; };
+		E8809EC41E077745009507E1 /* LocalMusicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMusicMode.m; sourceTree = "<group>"; };
+		E8809EC61E077752009507E1 /* TFMusicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMusicMode.h; sourceTree = "<group>"; };
+		E8809EC71E077752009507E1 /* TFMusicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicMode.m; sourceTree = "<group>"; };
 		E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
@@ -186,6 +192,17 @@
 				11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E80039CB1E03B8E400D69055 /* Modual */ = {
+			isa = PBXGroup;
+			children = (
+				E8809EC31E077745009507E1 /* LocalMusicMode.h */,
+				E8809EC41E077745009507E1 /* LocalMusicMode.m */,
+				E8809EC61E077752009507E1 /* TFMusicMode.h */,
+				E8809EC71E077752009507E1 /* TFMusicMode.m */,
+			);
+			name = Modual;
 			sourceTree = "<group>";
 		};
 		E8037D491DD5ABAF00096969 = {
@@ -333,6 +350,7 @@
 		E8093BFD1DDDB36A000CABB0 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				E80039CB1E03B8E400D69055 /* Modual */,
 				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
 				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
 				E8093C031DDDB3ED000CABB0 /* MusicListVC.h */,
@@ -661,6 +679,7 @@
 			files = (
 				E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */,
 				E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */,
+				E8809EC81E077752009507E1 /* TFMusicMode.m in Sources */,
 				E8093BF01DDD9295000CABB0 /* main.m in Sources */,
 				E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */,
 				E8A429351DFA57EE006EDEBC /* JPProgressHUD.m in Sources */,
@@ -679,6 +698,7 @@
 				E81819C81DF1136400115578 /* FunctionSingleton.m in Sources */,
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
+				E8809EC51E077745009507E1 /* LocalMusicMode.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
 				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,

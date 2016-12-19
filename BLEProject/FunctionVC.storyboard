@@ -1106,16 +1106,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-M1-TKV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-Kh-vzS">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lav-xY-tnc">
+                                        <rect key="frame" x="14.5" y="9.5" width="46.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Lav-xY-tnc" secondAttribute="height" multiplier="23:15" id="b1S-uj-CGp"/>
+                                        </constraints>
+                                        <state key="normal" title="back"/>
+                                        <connections>
+                                            <action selector="previousPageClick:" destination="oib-7t-HNj" eventType="touchUpInside" id="UfY-if-AgJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjP-ET-qTD">
+                                        <rect key="frame" x="311" y="6.5" width="53" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MjP-ET-qTD" secondAttribute="height" multiplier="23:15" id="GFu-El-HI8"/>
+                                        </constraints>
+                                        <state key="normal" title="forward"/>
+                                        <connections>
+                                            <action selector="nextPageClick:" destination="oib-7t-HNj" eventType="touchUpInside" id="3pe-Pd-V9B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w8h-Kh-vzS" secondAttribute="height" multiplier="375:49" id="0Lb-1o-ZOa"/>
+                                    <constraint firstItem="Lav-xY-tnc" firstAttribute="centerX" secondItem="w8h-Kh-vzS" secondAttribute="centerX" multiplier="0.2" id="1x8-wb-Eqn"/>
+                                    <constraint firstItem="Lav-xY-tnc" firstAttribute="centerY" secondItem="w8h-Kh-vzS" secondAttribute="centerY" id="HSf-k7-mKA"/>
+                                    <constraint firstItem="MjP-ET-qTD" firstAttribute="centerY" secondItem="Lav-xY-tnc" secondAttribute="centerY" id="NyF-gr-CKv"/>
+                                    <constraint firstItem="MjP-ET-qTD" firstAttribute="centerX" secondItem="w8h-Kh-vzS" secondAttribute="centerX" multiplier="1.8" id="Uat-sZ-rRc"/>
+                                    <constraint firstAttribute="height" constant="49" id="hiD-No-EOl"/>
+                                    <constraint firstAttribute="width" constant="375" id="wEV-7n-BVU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ELr-M1-TKV" secondAttribute="trailing" id="3Hd-QY-z3y"/>
+                            <constraint firstAttribute="trailing" secondItem="w8h-Kh-vzS" secondAttribute="trailing" id="LPe-eq-qsb"/>
                             <constraint firstItem="ELr-M1-TKV" firstAttribute="leading" secondItem="FEB-5L-HBO" secondAttribute="leading" id="MXB-9n-nV3"/>
+                            <constraint firstItem="Lgm-5D-XSq" firstAttribute="top" secondItem="w8h-Kh-vzS" secondAttribute="bottom" id="TXO-cT-fnw"/>
                             <constraint firstItem="ELr-M1-TKV" firstAttribute="top" secondItem="FEB-5L-HBO" secondAttribute="top" id="WoA-q7-cx2"/>
-                            <constraint firstItem="Lgm-5D-XSq" firstAttribute="top" secondItem="ELr-M1-TKV" secondAttribute="bottom" id="mUh-Zb-Lph"/>
+                            <constraint firstItem="w8h-Kh-vzS" firstAttribute="leading" secondItem="FEB-5L-HBO" secondAttribute="leading" id="XcH-DC-k73"/>
+                            <constraint firstItem="w8h-Kh-vzS" firstAttribute="top" secondItem="ELr-M1-TKV" secondAttribute="bottom" id="ii2-Rw-Ceb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PKR-Lz-n5g"/>
@@ -1125,7 +1163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Irm-VX-5jg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5343" y="1558"/>
+            <point key="canvasLocation" x="5341.6000000000004" y="1557.5712143928038"/>
         </scene>
         <!--FMVC-->
         <scene sceneID="sjP-LO-Ae3">
@@ -1981,7 +2019,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">

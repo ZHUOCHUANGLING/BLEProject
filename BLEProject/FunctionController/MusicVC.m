@@ -107,9 +107,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     TFMusicPlayMode currentTFPlayMode;
     NSInteger totalNumber;
     
-    
-    
-    
+
     //chooseModeTableView
     NSMutableArray *_chooseModeTableViewArr;
     
@@ -597,16 +595,7 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
       
         sender.selected = !sender.selected;
         [self.musicOperation setIsPlay:sender.selected];
-        
-//        if (sender.selected) {
-//            
-//            [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
-//            
-//        }else{
-//            
-//            [_albumImageView stopRotate];
-//        }
-        
+
   
     }
     
