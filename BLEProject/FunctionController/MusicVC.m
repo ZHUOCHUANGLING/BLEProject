@@ -56,6 +56,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     BOOL hasMusic;
     BOOL hasTFCard;
+    BOOL isConnectA2DP;
 
     MusicMode currentMode;
     
@@ -81,8 +82,9 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
 }
 
+
+
 -(void)synchronizeState{
-    
     [shareMusicOperation() setDeviceSource:DeviceSourceBluetooth];
 }
 
@@ -99,6 +101,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     [self loadMediaItems];
     [self initUI];
     [self addObserver];
+    [self judgeIsConnectA2DP];
     
     [self initScrollTextView];
     
@@ -162,6 +165,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     _playerController = [MPMusicPlayerController applicationMusicPlayer];
     [_playerController beginGeneratingPlaybackNotifications];
 
+    currentMode = MusicRepeatModeDefault;
+    [self setMusicModeProperty:currentMode];
+    
+    
  
     if (_progressTimer) {
         [_progressTimer invalidate];
@@ -181,12 +188,16 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 
     dispatch_main_async_safe(^{
+        
+        _albumImageView.layer.cornerRadius = _albumImageView.width/2;
+        _albumImageView.layer.masksToBounds = YES;
+        
         _volumeSlider.value = _playerController.volume;
+        
     });
     
 
-    currentMode = MusicRepeatModeDefault;
-    
+  
 }
 
 
@@ -196,7 +207,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
             
         case MusicRepeatModeDefault:
             [self setMusicModeProperty:MusicRepeatModeDefault];
-            
             [JPProgressHUD showMessage:@"列表循环播放"];
             
             break;
@@ -296,10 +306,40 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     
 
+
 }
 
 
-
+-(void)judgeIsConnectA2DP{
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:AVAudioSessionRouteChangeNotification object:nil] subscribeNext:^(NSNotification *notification) {
+        
+        
+        NSDictionary *interuptionDict = notification.userInfo;
+        NSInteger routeChangeReason = [[interuptionDict valueForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+        
+        
+        switch (routeChangeReason) {
+            case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+                
+                isConnectA2DP = YES;
+                
+                //            NSLog(@"耳机插入");
+                break;
+            case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+                isConnectA2DP = NO;
+              
+                //            NSLog(@"耳机拔出，停止播放操作");
+                break;
+        }
+        
+        
+    }];
+    
+    
+    
+    
+}
 
 
 
@@ -320,10 +360,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 - (IBAction)play:(UIButton *)sender {
     
     
-    
-    
-        
-    
+
        
         if(_playerController){
 
@@ -331,14 +368,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
                 
                 [_playerController play];
                 
-                [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
-                
-                
             }else{
                 
                 [_playerController pause];
-                
-                [_albumImageView stopRotate];
+
                 
             }
             
@@ -414,12 +447,17 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)changeVolume:(UISlider *)sender {
     
-    
     _playerController.volume = sender.value;
+    
     
 }
 
-
+- (IBAction)changeVolumeTouchUP:(UISlider *)sender {
+    
+    if (isConnectA2DP) {
+        [shareMainManager().volumeOperation setDeviceVolumeWithRank:sender.value * 15];
+    }
+}
 
 
 
@@ -429,10 +467,21 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 -(void)MPMusicPlayerControllerStateDidChangeNotification:(NSNotification *)notification{
 
     if (_playerController.playbackState == MPMoviePlaybackStatePlaying) {
-        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+        
+        dispatch_main_async_safe(^{
+            [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+            [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
+        });
+        
+        
         
     }else{
-        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateNormal];
+        
+        dispatch_main_async_safe(^{
+            [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateNormal];
+            [_albumImageView stopRotate];
+        });
+    
     
     }
     
@@ -445,7 +494,11 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
     
     if(_playerController.nowPlayingItem.title){
+        
         [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+        
+        
+        _albumImageView.image = [_playerController.nowPlayingItem.artwork imageWithSize:CGSizeMake(_albumImageView.width, _albumImageView.height)];
     }
     
     
@@ -459,7 +512,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 -(void)MPMusicPlayerControllerVolumeDidChangeNotification:(NSNotification *)notification{
 
+   
     _volumeSlider.value = _playerController.volume;
+    
+    
 
 }
 

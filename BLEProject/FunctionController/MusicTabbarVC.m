@@ -192,7 +192,6 @@
             self.selectedIndex = 2;
         }
         
-//        self.selectedIndex = indexPath.row;
     
     
     }

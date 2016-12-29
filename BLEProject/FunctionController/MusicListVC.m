@@ -48,7 +48,6 @@
 }
 
 
-
 -(void)initController{
 
     _playerController = [MPMusicPlayerController applicationMusicPlayer];
