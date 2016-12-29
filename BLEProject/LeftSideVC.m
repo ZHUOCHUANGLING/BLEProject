@@ -175,103 +175,7 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-//    
-//    NSInteger currentMusicMode =  [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
-//    
-//    
-//    
-//    if (indexPath.row != selectedRow || musicMode != currentMusicMode) {
-//        
-//        NSString *functionID = _modualIDArr[indexPath.row];
-//        
-//        
-//        //MusicMode
-//        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
-//            musicMode = currentMusicMode;
-//            
-//            switch (musicMode) {
-//                case LocalMusicMode:
-//                    functionID = @"musicVC";
-//                    break;
-//                    
-//                case TFMusicMode:
-//                    functionID = @"musicVC";
-//                    break;
-//                    
-//                case OnlineMusicMode:
-//                    functionID = @"OnlineMusicVC";
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-//            
-//        }
-//        
-//        
-//        
-//        UINavigationController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
-//        
-//        self.mm_drawerController.centerViewController = fVC;
-//
-//        
-//        
-//        fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
-//
-//        
-//        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
-//            
-//
-//            switch (musicMode) {
-//                case LocalMusicMode:
-//                    fVC.navigationBar.topItem.title = @"本地音乐";
-//
-//                    
-//                    break;
-//                    
-//                case TFMusicMode:
-//                    fVC.navigationBar.topItem.title = @"TF卡音乐";
-//                    
-//
-//                    
-//                    break;
-//                    
-//                case OnlineMusicMode:
-//                    fVC.navigationBar.topItem.title = @"云音乐";
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-//
-//
-//            
-//        }
-//        
-//        
-//        
-//        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-//        
-//        [self settingNavBar:fVC];
-//        
-//        
-//        
-//        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
-//        
-//        selectedCell.selected = NO;
-//        
-//        
-//        
-//        selectedRow = indexPath.row;
-//        
-// 
-//        
-//        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
-//
-//    }
-    
-    
+
     UITabBarController *tabbarVC = (UITabBarController *)self.mm_drawerController.centerViewController;
     
     tabbarVC.selectedIndex = indexPath.row;
@@ -280,7 +184,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
     
     selectedCell.selected = NO;
-    
     
     selectedRow = indexPath.row;
     

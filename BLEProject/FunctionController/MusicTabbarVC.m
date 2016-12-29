@@ -73,8 +73,8 @@
     
     
     _chooseModeTableViewArr = [NSMutableArray arrayWithObjects:@"本地音乐",@"TF卡音乐",@"云音乐", nil];
+    
     FunctionDataManager *manager = [FunctionDataManager shareManager];
-
     NSArray *existFuncArr = manager.musicFunctionArr;
     
     
@@ -183,7 +183,16 @@
             [self.delegate pausePlayingMusic];
         }
 
-        self.selectedIndex = indexPath.row;
+        
+        if ([selectedStr isEqualToString:@"本地音乐"]) {
+            self.selectedIndex = 0;
+        }else if ([selectedStr isEqualToString:@"TF卡音乐"]){
+            self.selectedIndex = 1;
+        }else{
+            self.selectedIndex = 2;
+        }
+        
+//        self.selectedIndex = indexPath.row;
     
     
     }

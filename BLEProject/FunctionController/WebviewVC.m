@@ -10,6 +10,8 @@
 #import <AFNetworking.h>
 #import "JPProgressHUD.h"
 
+
+
 @interface WebviewVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *onlineMusicWebView;
 
@@ -28,6 +30,8 @@
     
     
     [self openAFNObserveNetState];
+    
+    [self openURLObserve];
     
 }
 
@@ -91,6 +95,20 @@
     
 }
 
+
+
+-(void)openURLObserve{
+
+    
+    [RACObserve(self, urlString) subscribeNext:^(id x) {
+       
+        if ([_urlString isEqualToString:@"about:blank"]) {
+            [self.onlineMusicWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
+        }
+        
+    }];
+
+}
 
 
 

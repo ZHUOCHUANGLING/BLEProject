@@ -507,7 +507,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
     [self.scrollTextView startScrollWithText:@"艺术家" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:16]];
     
-    
 }
 
 

@@ -256,7 +256,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
     [self changeFirstLaunchState];
 }
 

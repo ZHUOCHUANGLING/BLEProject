@@ -234,19 +234,25 @@
     
     NSMutableArray *viewControllers =[NSMutableArray arrayWithArray:self.viewControllers];
     
+    NSEnumerator *reverseArrayEnum = [viewControllers reverseObjectEnumerator];
     
-    [viewControllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    for (UINavigationController *modualNav in reverseArrayEnum) {
         
-        UINavigationController *modualNav = obj;
         NSString *modualName = modualNav.navigationBar.topItem.title;
         
-        
         if (![_modualNameArr containsObject:modualName]) {
-            [viewControllers removeObject:obj];
+            
+            NSLog(@"%--@",modualName);
+            
+            [viewControllers removeObject:modualNav];
+            
         };
-
         
-    }];
+        
+        
+    }
+    
+    
     
     
     [self setViewControllers:viewControllers];

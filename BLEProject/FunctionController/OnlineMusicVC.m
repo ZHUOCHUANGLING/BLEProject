@@ -11,16 +11,16 @@
 
 
 #import "OnlineMusicVC.h"
-//#import "UIViewController+MMDrawerController.h"
 #import "OnlineMusicCell.h"
 #import "WebviewVC.h"
-//#import "LeftSideVC.h"
+
+#import "MusicTabbarVC.h"
 
 
 #define RowHeight ScreenHeight*0.07
 
 
-@interface OnlineMusicVC ()<UICollectionViewDelegate,UICollectionViewDelegate>
+@interface OnlineMusicVC ()<UICollectionViewDelegate,UICollectionViewDelegate,MusicTabbarVCDelegate>
 
 
 
@@ -150,6 +150,11 @@
 
 
 
+#pragma mark -  MusicTabbarVC_Delegate
+-(void)pausePlayingMusic{
+    webBackVC.urlString = @"about:blank";
+    
+}
 
 
 
