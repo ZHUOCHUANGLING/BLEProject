@@ -9,17 +9,8 @@
 #import "LeftSideVC.h"
 #import "UIViewController+MMDrawerController.h"
 #import <AVFoundation/AVFoundation.h>
-
 #import "FunctionDataManager.h"
 
-typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
-    LocalMusicMode,
-    TFMusicMode,
-    OnlineMusicMode
-};
-
-//NSString *const ProgramInitializedComplete = @"InitializedComplete";
-//NSString *const ProgramWillInitializedComplete = @"InitializedWillComplete";
 
 @interface LeftSideVC ()
 
@@ -39,7 +30,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 {
     NSInteger selectedRow;
     
-    ChooseMusicPlayMode musicMode;
 
 }
 
@@ -110,12 +100,10 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 -(void)addObserver{
 
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
     //监听A2DP拔插
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangedCallBack:) name:AVAudioSessionRouteChangeNotification object:nil];
     
-
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadModualData:) name:DataInitializedCompleted object:nil];
     
@@ -195,39 +183,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
 
 
 
-
-
-
-
-
-
-#pragma mark -  侧边栏按钮
-//-(void)settingNavBar:(UINavigationController *)nav{
-//    
-//    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
-//    leftButton.tintColor = [UIColor whiteColor];
-//    
-//    [leftButton setImage:[UIImage imageNamed:@"侧边栏图标"]];
-//    
-//    [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
-//    
-//}
-//
-//-(void)leftButtonPress:(id)sender{
-//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
-//                                    completion:nil];
-//    
-//}
-
-
-
-
-
-
-
-
-
-
 #pragma mark -  DisConnectDevice
 
 
@@ -296,84 +251,6 @@ typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     
     
 }
-
-
-
-
-//-(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
-//
-//    if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
-//        
-//        
-//        NSData *data =notification.userInfo[@"data"];
-////        Byte *bytes = (Byte *)[data bytes];
-//        
-//        
-//        
-//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01};
-//        
-//        _existFuncArr = [NSMutableArray array];
-//        
-//        //music mode
-//        if (bytes[6] || bytes[7]) {
-//            [_existFuncArr addObject:@(bytes[6])];
-//            [_existFuncArr addObject:@(bytes[7])];
-//        }
-//        
-//        
-//        
-//        for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
-//            
-//            if (!bytes[i+5]) {
-//                
-//                
-//                if (i==0) {
-//                    
-//                    [_modualIDArr removeObjectAtIndex:i];
-//                    [_modualNameArr removeObjectAtIndex:i];
-//                    
-//                }else if ((i==2)&&(!bytes[6])){
-//                    
-//                    [_modualIDArr removeObjectAtIndex:1];
-//                    [_modualNameArr removeObjectAtIndex:1];
-//                    
-//                }else if (i>2){
-//                    
-//                    [_modualIDArr removeObjectAtIndex:i-1];
-//                    [_modualNameArr removeObjectAtIndex:i-1];
-//                    
-//                    
-//                }
-//                
-//            }
-//        }
-//        
-//        
-//
-//        
-//    }
-//    
-//    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        
-//        [self.tableView reloadData];
-//        selectedRow = 0;
-//        [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-//        
-//    });
-//    
-//    
-////    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramWillInitializedComplete object:nil userInfo:@{@"modualIDArr":_modualIDArr,@"modualNameArr":_modualNameArr}];
-////    
-////    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramInitializedComplete object:nil];
-// 
-//    
-//  
-//    
-//}
-
-
-
 
 
 

@@ -59,10 +59,12 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
     MusicMode currentMode;
     
-    
     NSTimer *_progressTimer;
 
 }
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -167,7 +169,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 
     
-    _progressSlider.userInteractionEnabled = YES;
+    
     
 }
 
@@ -177,20 +179,13 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
-    _volumeSlider.value = _playerController.volume;
-    
-    if (self.playerController.playbackState == MPMusicPlaybackStatePlaying) {
-        
-        [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
-    }
-    
-    
-    if (currentMode) {
-        [self setMusicModeProperty:currentMode];
-    }else{
-        [self setMusicModeProperty:MusicRepeatModeDefault];
 
-    }
+    dispatch_main_async_safe(^{
+        _volumeSlider.value = _playerController.volume;
+    });
+    
+
+    currentMode = MusicRepeatModeDefault;
     
 }
 
@@ -360,18 +355,11 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)next:(id)sender {
     
-    
-    
-    
         if (_playerController) {
-        
-            
-                [_playerController skipToNextItem];
+
+            [_playerController skipToNextItem];
             
         }
-    
-
-    
     
 
 }

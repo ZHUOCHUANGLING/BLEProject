@@ -202,26 +202,14 @@
     [_modualIDArr addObjectsFromArray: modualArrDic[@"modualIDArr"]];
     [_modualNameArr addObjectsFromArray: modualArrDic[@"modualNameArr"]];
     
-    
-    
-    
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self filterTabbarViewControllers];
     });
     
     
     
-    
-//    NSArray *musicArr = [NSArray arrayWithArray:modualArrDic[@"musicFunctionArr"]];
-//    if (musicArr.count!=0) {
-//        
-//        [[NSNotificationCenter defaultCenter] postNotificationName:MusicFunctionArr object:nil userInfo:@{@"musicFunctionArr":musicArr}];
-//        
-////        self.musicFunctionArr(musicArr);
-//        
-//    }
 
-    
     
 }
 

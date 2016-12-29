@@ -26,4 +26,14 @@
 
 
 
+//主线程异步队列
+#define dispatch_main_async_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+
+
+
 #endif /* MacroHeader_h */

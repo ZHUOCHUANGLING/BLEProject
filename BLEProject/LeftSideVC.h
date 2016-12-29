@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-//程序初始化成功
-//extern NSString *const ProgramInitializedComplete;
-//extern NSString *const ProgramWillInitializedComplete;
-
 
 @interface LeftSideVC : UITableViewController
 
-//@property(nonatomic, strong)NSMutableArray *existFuncArr;
+
 
 
 @end
