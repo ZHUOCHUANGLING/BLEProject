@@ -85,7 +85,9 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 
 -(void)synchronizeState{
+    
     [shareMusicOperation() setDeviceSource:DeviceSourceBluetooth];
+    
 }
 
 
@@ -447,7 +449,9 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)changeVolume:(UISlider *)sender {
     
-    _playerController.volume = sender.value;
+    dispatch_main_async_safe(^{
+        _playerController.volume = sender.value;
+    })
     
     
 }
@@ -512,11 +516,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 -(void)MPMusicPlayerControllerVolumeDidChangeNotification:(NSNotification *)notification{
 
-   
-    _volumeSlider.value = _playerController.volume;
+    dispatch_main_async_safe(^{
+        _volumeSlider.value = _playerController.volume;
+    })
     
-    
-
 }
 
 

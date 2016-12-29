@@ -26,6 +26,7 @@
     [super viewDidLoad];
 
     [self initFunction];
+    [self initVolumeObserver];
     
 }
 
@@ -34,9 +35,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    
-    
+
     [self synchronizeCurrentState];
     [self synchronizeVolumeValue];
 }
@@ -93,9 +92,27 @@
     _auxOperation.getAuxVol = ^(NSInteger volume){
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.volumeSlider.value = volume;
+            
+            
         });
     };
 
+
+}
+
+-(void)initVolumeObserver{
+    
+    [RACObserve(_volumeSlider, value) subscribeNext:^(NSNumber *num) {
+        
+        if ([num floatValue] == 0.0f) {
+
+            _volumeImageView.highlighted = YES;
+        }else{
+            _volumeImageView.highlighted = NO;
+        }
+        
+        
+    }];
 
 }
 
