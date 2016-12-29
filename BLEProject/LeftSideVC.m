@@ -10,13 +10,16 @@
 #import "UIViewController+MMDrawerController.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "FunctionDataManager.h"
+
 typedef NS_ENUM(NSInteger, ChooseMusicPlayMode) {
     LocalMusicMode,
     TFMusicMode,
     OnlineMusicMode
 };
 
-NSString *const ProgramInitializedComplete = @"InitializedComplete";
+//NSString *const ProgramInitializedComplete = @"InitializedComplete";
+//NSString *const ProgramWillInitializedComplete = @"InitializedWillComplete";
 
 @interface LeftSideVC ()
 
@@ -60,6 +63,7 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
     [self addObserver];
 
     [self initUI];
+    
 }
 
 -(void)initUI{
@@ -67,15 +71,13 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
     self.tableView.rowHeight = ROWHEIGHT;
     
    
-
-    
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundView.image = [UIImage imageNamed:@"侧背景"];
     
     self.tableView.backgroundView = backgroundView;
     
-    selectedRow = -1;
+    selectedRow = 0;
     
 
     
@@ -85,7 +87,6 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
     
     
     
-
     _modualIDArr = [NSMutableArray arrayWithObjects:
                     @"lampVC",
                     @"musicVC",
@@ -114,7 +115,10 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
     
 
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(centralReceiveNotFoundCorrespondMsg:) name:BLENotFoundCorrespondMsgNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadModualData:) name:DataInitializedCompleted object:nil];
+    
 }
 
 
@@ -171,101 +175,116 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+//    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+//    
+//    NSInteger currentMusicMode =  [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
+//    
+//    
+//    
+//    if (indexPath.row != selectedRow || musicMode != currentMusicMode) {
+//        
+//        NSString *functionID = _modualIDArr[indexPath.row];
+//        
+//        
+//        //MusicMode
+//        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
+//            musicMode = currentMusicMode;
+//            
+//            switch (musicMode) {
+//                case LocalMusicMode:
+//                    functionID = @"musicVC";
+//                    break;
+//                    
+//                case TFMusicMode:
+//                    functionID = @"musicVC";
+//                    break;
+//                    
+//                case OnlineMusicMode:
+//                    functionID = @"OnlineMusicVC";
+//                    break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }
+//        
+//        
+//        
+//        UINavigationController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
+//        
+//        self.mm_drawerController.centerViewController = fVC;
+//
+//        
+//        
+//        fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
+//
+//        
+//        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
+//            
+//
+//            switch (musicMode) {
+//                case LocalMusicMode:
+//                    fVC.navigationBar.topItem.title = @"本地音乐";
+//
+//                    
+//                    break;
+//                    
+//                case TFMusicMode:
+//                    fVC.navigationBar.topItem.title = @"TF卡音乐";
+//                    
+//
+//                    
+//                    break;
+//                    
+//                case OnlineMusicMode:
+//                    fVC.navigationBar.topItem.title = @"云音乐";
+//                    break;
+//                    
+//                default:
+//                    break;
+//            }
+//
+//
+//            
+//        }
+//        
+//        
+//        
+//        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//        
+//        [self settingNavBar:fVC];
+//        
+//        
+//        
+//        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
+//        
+//        selectedCell.selected = NO;
+//        
+//        
+//        
+//        selectedRow = indexPath.row;
+//        
+// 
+//        
+//        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+//
+//    }
     
-    NSInteger currentMusicMode =  [[NSUserDefaults standardUserDefaults] integerForKey:@"ChooseMusicPlayMode"];
+    
+    UITabBarController *tabbarVC = (UITabBarController *)self.mm_drawerController.centerViewController;
+    
+    tabbarVC.selectedIndex = indexPath.row;
     
     
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
     
-    if (indexPath.row != selectedRow || musicMode != currentMusicMode) {
-        
-        NSString *functionID = _modualIDArr[indexPath.row];
-        
-        
-        //MusicMode
-        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
-            musicMode = currentMusicMode;
-            
-            switch (musicMode) {
-                case LocalMusicMode:
-                    functionID = @"musicVC";
-                    break;
-                    
-                case TFMusicMode:
-                    functionID = @"musicVC";
-                    break;
-                    
-                case OnlineMusicMode:
-                    functionID = @"OnlineMusicVC";
-                    break;
-                    
-                default:
-                    break;
-            }
-            
-        }
-        
-        
-        
-        UINavigationController * fVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:functionID];
-        
-        self.mm_drawerController.centerViewController = fVC;
-
-        
-        
-        fVC.navigationBar.topItem.title = _modualNameArr[indexPath.row];
-
-        
-        if ([selectedCell.textLabel.text isEqualToString:@"音乐"]) {
-            
-
-            switch (musicMode) {
-                case LocalMusicMode:
-                    fVC.navigationBar.topItem.title = @"本地音乐";
-
-                    
-                    break;
-                    
-                case TFMusicMode:
-                    fVC.navigationBar.topItem.title = @"TF卡音乐";
-                    
-
-                    
-                    break;
-                    
-                case OnlineMusicMode:
-                    fVC.navigationBar.topItem.title = @"云音乐";
-                    break;
-                    
-                default:
-                    break;
-            }
-
-
-            
-        }
-        
-        
-        
-        [fVC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        
-        [self settingNavBar:fVC];
-        
-        
-        
-        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRow inSection:0]];
-        
-        selectedCell.selected = NO;
-        
-        
-        
-        selectedRow = indexPath.row;
-        
- 
-        
-        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
-
-    }
+    selectedCell.selected = NO;
+    
+    
+    selectedRow = indexPath.row;
+    
+    [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
 
 }
 
@@ -280,22 +299,22 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
 
 
 #pragma mark -  侧边栏按钮
--(void)settingNavBar:(UINavigationController *)nav{
-    
-    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
-    leftButton.tintColor = [UIColor whiteColor];
-    
-    [leftButton setImage:[UIImage imageNamed:@"侧边栏图标"]];
-    
-    [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
-    
-}
-
--(void)leftButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
-                                    completion:nil];
-    
-}
+//-(void)settingNavBar:(UINavigationController *)nav{
+//    
+//    MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
+//    leftButton.tintColor = [UIColor whiteColor];
+//    
+//    [leftButton setImage:[UIImage imageNamed:@"侧边栏图标"]];
+//    
+//    [nav.navigationBar.topItem setLeftBarButtonItem:leftButton animated:YES];
+//    
+//}
+//
+//-(void)leftButtonPress:(id)sender{
+//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES
+//                                    completion:nil];
+//    
+//}
 
 
 
@@ -363,7 +382,6 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
 - (IBAction)presentSetting:(UIButton *)sender {
     
     
-    
     if (Deviece_Version >= 10) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:nil];
     }else{
@@ -379,70 +397,113 @@ NSString *const ProgramInitializedComplete = @"InitializedComplete";
 
 
 
--(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
+//-(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
+//
+//    if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
+//        
+//        
+//        NSData *data =notification.userInfo[@"data"];
+////        Byte *bytes = (Byte *)[data bytes];
+//        
+//        
+//        
+//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01};
+//        
+//        _existFuncArr = [NSMutableArray array];
+//        
+//        //music mode
+//        if (bytes[6] || bytes[7]) {
+//            [_existFuncArr addObject:@(bytes[6])];
+//            [_existFuncArr addObject:@(bytes[7])];
+//        }
+//        
+//        
+//        
+//        for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
+//            
+//            if (!bytes[i+5]) {
+//                
+//                
+//                if (i==0) {
+//                    
+//                    [_modualIDArr removeObjectAtIndex:i];
+//                    [_modualNameArr removeObjectAtIndex:i];
+//                    
+//                }else if ((i==2)&&(!bytes[6])){
+//                    
+//                    [_modualIDArr removeObjectAtIndex:1];
+//                    [_modualNameArr removeObjectAtIndex:1];
+//                    
+//                }else if (i>2){
+//                    
+//                    [_modualIDArr removeObjectAtIndex:i-1];
+//                    [_modualNameArr removeObjectAtIndex:i-1];
+//                    
+//                    
+//                }
+//                
+//            }
+//        }
+//        
+//        
+//
+//        
+//    }
+//    
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        
+//        [self.tableView reloadData];
+//        selectedRow = 0;
+//        [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+//        
+//    });
+//    
+//    
+////    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramWillInitializedComplete object:nil userInfo:@{@"modualIDArr":_modualIDArr,@"modualNameArr":_modualNameArr}];
+////    
+////    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramInitializedComplete object:nil];
+// 
+//    
+//  
+//    
+//}
 
-    if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
-        
-        
-        NSData *data =notification.userInfo[@"data"];
-        Byte *bytes = (Byte *)[data bytes];
-        
-        
-        
-//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x01,0x01,0x01,0x01};
-        
-        _existFuncArr = [NSMutableArray array];
-        
-        //music mode
-        if (bytes[6] || bytes[7]) {
-            [_existFuncArr addObject:@(bytes[6])];
-            [_existFuncArr addObject:@(bytes[7])];
-        }
-        
-        
-        
-        for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
-            
-            if (!bytes[i+5]) {
-                
-                
-                if (i==0) {
-                    
-                    [_modualIDArr removeObjectAtIndex:i];
-                    [_modualNameArr removeObjectAtIndex:i];
-                    
-                }else if ((i==2)&&(!bytes[6])){
-                    
-                    [_modualIDArr removeObjectAtIndex:1];
-                    [_modualNameArr removeObjectAtIndex:1];
-                    
-                }else if (i>2){
-                    
-                    [_modualIDArr removeObjectAtIndex:i-1];
-                    [_modualNameArr removeObjectAtIndex:i-1];
-                    
-                    
-                }
-                
-                
-            }
-        }
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-            selectedRow = -1;
-            [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-            
-        });
-        
-    }
+
+
+
+
+
+
+-(void)reloadModualData:(NSNotification *)notification{
+
+    NSDictionary *modualArrDic = notification.userInfo;
+    
+    [_modualIDArr removeAllObjects];
+    [_modualNameArr removeAllObjects];
     
     
+    [_modualIDArr addObjectsFromArray: modualArrDic[@"modualIDArr"]];
+    [_modualNameArr addObjectsFromArray: modualArrDic[@"modualNameArr"]];
+
     
-  
-    [[NSNotificationCenter defaultCenter] postNotificationName:ProgramInitializedComplete object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        [self.tableView reloadData];
+        selectedRow = 0;
+        
+        
+    });
+
     
 }
+
+
+
+
+
+
+
+
 
 @end

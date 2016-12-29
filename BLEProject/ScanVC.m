@@ -7,7 +7,7 @@
 //
 
 #import "ScanVC.h"
-#import "LeftSideVC.h"
+#import "FunctionDataManager.h"
 #import "UIView+RotateAnimation.h"
 
 @interface ScanVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -92,7 +92,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralScanedPeripheral:) name:BLEScanedPeripheralNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CenteralSuccessConnnectPeripher:) name:BLEPeripheralConnectSuccedNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(programInitializedComplete) name:ProgramInitializedComplete object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(programInitializedComplete) name:DataInitializedCompleted object:nil];
 
 }
 
@@ -287,18 +287,8 @@
     });
     
     
-    [self resetTFSongList];
-    
-    
 }
 
-
-+(void)resetTFSongList{
-    
-    NSArray *resetArr;
-    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
-    
-}
 
 
 

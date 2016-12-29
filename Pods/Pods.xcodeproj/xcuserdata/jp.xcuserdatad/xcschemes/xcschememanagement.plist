@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>076C95B3D3949DCB81374A67E5574F1C</key>
+		<key>03C379853CE9CCE3A91BBA4D8B279427</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84F5F3D71E445886D0A74693F7D63702</key>
+		<key>8C4C9FA1F3EB20364E59B043C9543B65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7401C56B1B7AC7FDA078AC7B0944D42</key>
+		<key>CB35DB3EF79EFE3665290E8048FCDB1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F44001115749CA1178B1E354CCB2D788</key>
 		<dict>
 			<key>primary</key>
 			<true/>

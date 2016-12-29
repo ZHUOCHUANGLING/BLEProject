@@ -11,12 +11,4 @@
 
 @interface MusicListVC : UIViewController
 
-
-@property (nonatomic, assign) ChooseMusicPlayMode musicMode;
-
-@property(nonatomic, strong) MusicFunction *musicOperation;
-
-@property (nonatomic, assign) NSInteger totalNum;
-@property (nonatomic, assign) NSInteger currentIndex;
-
 @end

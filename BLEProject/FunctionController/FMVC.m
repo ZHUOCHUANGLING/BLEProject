@@ -18,15 +18,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *seachingView;
 
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
-
-
-
-
-@property (nonatomic, strong) VolumeFunction *volOperation;
 
 @property (nonatomic, strong) FMFunction *fmOperation;
-
 
 @property (nonatomic, strong) ControlFunction *controlOperation;
 @end
@@ -36,30 +31,56 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self resetTFSongList];
+    [self initFunction];
+    [self initState];
  
     
-}
-
-
-
--(void)resetTFSongList{
-    
-    NSArray *resetArr;
-    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
-    
+    [self initUI];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self initUI];
-    
-    [self initFunction];
-    
-    [self initState];
+    [self synchronizeCurrentState];
+    [self synchronizeVolumeValue];
+   
 }
+
+
+
+
+-(void)synchronizeCurrentState{
+    
+    [shareMainManager().controlOperation synchronizeState];
+    
+    shareMainManager().controlOperation.getDeviceCurrentState = ^(DeviceCurrentState state){
+        
+        if (state != DeviceCurrentStateFM) {
+            
+            [shareMainManager().controlOperation enterFM];
+            
+        }
+    };
+    
+    
+}
+
+
+
+
+-(void)synchronizeVolumeValue{
+
+    shareMainManager().volumeOperation.currentVolBlock = ^(NSInteger currentVol){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _volumeSlider.value = currentVol;
+        });
+        
+        
+    };
+}
+
 
 
 
@@ -68,13 +89,11 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 
-    
 
     [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"红线-拷贝"] forState:UIControlStateNormal];
     [_changeChannelSlider setThumbImage:[UIImage imageNamed:@"红线-拷贝"] forState:UIControlStateHighlighted];
     
-    
-    
+
     _changeChannelSlider.backgroundColor = [UIColor clearColor];
     UIImage *stetchTrack = [[UIImage imageNamed:@"频段线"]
                             stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
@@ -85,17 +104,9 @@
 
 
 -(void)initFunction{
-   
-    _controlOperation = [ControlFunction new];
-    [_controlOperation enterFM];
-    [_controlOperation synchronizeState];
-    
-    _volOperation = [VolumeFunction new];
     
     _fmOperation = [FMFunction new];
 
-    
-    
 }
 
 
@@ -146,7 +157,7 @@
 #pragma mark -  Channel_Method
 - (IBAction)changeVolumeEvent:(UISlider *)sender {
 
-    [_volOperation setDeviceVolumeWithRank:sender.value];
+    [shareMainManager().volumeOperation setDeviceVolumeWithRank:sender.value];
 }
 
 

@@ -1,0 +1,19 @@
+{
+    "modualID":[
+                "lampVC",
+                "musicVC",
+                "fmVC",
+                "auxVC",
+                "timingVC",
+                "settingVC"
+    ],
+    "modualName":[
+                  "彩灯",
+                  "音乐",
+                  "收音机",
+                  "AUX",
+                  "定时",
+                  "设置"
+    ]
+}
+

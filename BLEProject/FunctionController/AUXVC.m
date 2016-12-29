@@ -13,13 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
-@property  (nonatomic, strong)ControlFunction *controlOperation;
+@property (weak, nonatomic) IBOutlet UIImageView *volumeImageView;
+
 
 @property (nonatomic, strong) AUXFunction *auxOperation;
-
-@property (nonatomic, strong) VolumeFunction *volOperation;
-
-@property (weak, nonatomic) IBOutlet UIImageView *volumeImageView;
 
 @end
 
@@ -28,37 +25,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self resetTFSongList];
+    [self initFunction];
     
 }
 
 
--(void)resetTFSongList{
-    
-    NSArray *resetArr;
-    [[NSUserDefaults standardUserDefaults] setObject:resetArr forKey:@"tfSongListArr"];
-    
-}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self initFunction];
+    
+    
+    [self synchronizeCurrentState];
+    [self synchronizeVolumeValue];
+}
 
+
+
+-(void)synchronizeCurrentState{
+    
+    [shareMainManager().controlOperation synchronizeState];
+    
+    shareMainManager().controlOperation.getDeviceCurrentState = ^(DeviceCurrentState state){
+        
+        if (state != DeviceCurrentStateAUX) {
+            
+            [shareMainManager().controlOperation enterAUX];
+            
+        }
+    };
+    
+    
+}
+
+-(void)synchronizeVolumeValue{
+    
+    shareMainManager().volumeOperation.currentVolBlock = ^(NSInteger currentVol){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _volumeSlider.value = currentVol;
+        });
+        
+        
+    };
 }
 
 
 
 -(void)initFunction{
 
-    _controlOperation = [ControlFunction new];
-    [_controlOperation enterAUX];
-    [_controlOperation synchronizeState];
-    
-    
-    
     _auxOperation = [AUXFunction new];
-    _volOperation = [VolumeFunction new];
     
     __weak typeof(self) weakSelf = self;
     _auxOperation.getAuxState = ^(BOOL auxState){
@@ -66,17 +83,17 @@
         if (auxState) {
             
         }else{
-        
-//            [JPProgressHUD showMessage:@"AUX未接入"];
-        
+            dispatch_async(dispatch_get_main_queue(), ^{
+//                [JPProgressHUD showMessage:@"AUX未接入"];
+            });
         }
     
     };
     
     _auxOperation.getAuxVol = ^(NSInteger volume){
-    
-        weakSelf.volumeSlider.value = volume;
-    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.volumeSlider.value = volume;
+        });
     };
 
 
@@ -92,24 +109,21 @@
     
     
     if (volumeImageView.highlighted) {
+        
         [[NSUserDefaults standardUserDefaults] setFloat:self.volumeSlider.value forKey:@"volumeSliderValue"];
         
-        [_volOperation setDeviceVolumeWithRank:0];
+        [shareMainManager().volumeOperation setDeviceVolumeWithRank:0];
         self.volumeSlider.value = 0;
         
     }else{
     
         self.volumeSlider.value = [[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"];
         
-        [_volOperation setDeviceVolumeWithRank:[[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"]];
+        [shareMainManager().volumeOperation setDeviceVolumeWithRank:[[NSUserDefaults standardUserDefaults] floatForKey:@"volumeSliderValue"]];
     }
     
 
 }
-
-
-
-
 
 
 
@@ -122,7 +136,7 @@
     
     }
     
-    [_volOperation setDeviceVolumeWithRank:sender.value];
+    [shareMainManager().volumeOperation setDeviceVolumeWithRank:sender.value];
     
 }
 

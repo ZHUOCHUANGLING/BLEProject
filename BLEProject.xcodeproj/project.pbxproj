@@ -13,7 +13,6 @@
 		E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BBC1DDD9295000CABB0 /* AppDelegate.m */; };
 		E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BBE1DDD9295000CABB0 /* LaunchScreen.storyboard */; };
 		E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8093BC01DDD9295000CABB0 /* Main.storyboard */; };
-		E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC31DDD9295000CABB0 /* BaseVC.m */; };
 		E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC61DDD9295000CABB0 /* AUXVC.m */; };
 		E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BC81DDD9295000CABB0 /* FMVC.m */; };
 		E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BCA1DDD9295000CABB0 /* LampVC.m */; };
@@ -29,23 +28,28 @@
 		E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093BF61DDD9449000CABB0 /* Assets.xcassets */; };
 		E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8093BFA1DDD9508000CABB0 /* Info.plist */; };
 		E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093C041DDDB3ED000CABB0 /* MusicListVC.m */; };
-		E81819C81DF1136400115578 /* FunctionSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E81819C71DF1136400115578 /* FunctionSingleton.m */; };
+		E815CC651E13AE30002D2D6B /* MusicFunctionManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E815CC641E13AE30002D2D6B /* MusicFunctionManger.m */; };
+		E816B6841E0CB4F500E212EF /* FunctionData.json in Resources */ = {isa = PBXBuildFile; fileRef = E816B6831E0CB4F500E212EF /* FunctionData.json */; };
+		E816B6881E0CB53900E212EF /* FunctionDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E816B6871E0CB53900E212EF /* FunctionDataManager.m */; };
 		E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E81EFC491DF8151F00056BF8 /* CustomEQVC.m */; };
 		E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */; };
 		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */; };
-		E8809EC51E077745009507E1 /* LocalMusicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8809EC41E077745009507E1 /* LocalMusicMode.m */; };
-		E8809EC81E077752009507E1 /* TFMusicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8809EC71E077752009507E1 /* TFMusicMode.m */; };
+		E8642E3E1E126EED00878660 /* TFMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E3D1E126EED00878660 /* TFMusicVC.m */; };
+		E8642E411E126F0F00878660 /* TFMusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E401E126F0F00878660 /* TFMusicListVC.m */; };
+		E8642E491E12911A00878660 /* MainControlSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E481E12911A00878660 /* MainControlSingleton.m */; };
 		E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
 		E8A429351DFA57EE006EDEBC /* JPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A429341DFA57EE006EDEBC /* JPProgressHUD.m */; };
+		E8A526E81E0B723400C5EC82 /* BaseTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A526E71E0B723400C5EC82 /* BaseTabbarVC.m */; };
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
 		E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */; };
 		E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */; };
+		E8D4AF4B1E0E64CC00342C3A /* MusicTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D4AF4A1E0E64CC00342C3A /* MusicTabbarVC.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
 /* End PBXBuildFile section */
@@ -81,8 +85,6 @@
 		E8093BBC1DDD9295000CABB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		E8093BBF1DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8093BC11DDD9295000CABB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8093BC21DDD9295000CABB0 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		E8093BC31DDD9295000CABB0 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		E8093BC51DDD9295000CABB0 /* AUXVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUXVC.h; sourceTree = "<group>"; };
 		E8093BC61DDD9295000CABB0 /* AUXVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUXVC.m; sourceTree = "<group>"; };
 		E8093BC71DDD9295000CABB0 /* FMVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVC.h; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		E8093BCE1DDD9295000CABB0 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		E8093BCF1DDD9295000CABB0 /* TimingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingVC.h; sourceTree = "<group>"; };
 		E8093BD01DDD9295000CABB0 /* TimingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingVC.m; sourceTree = "<group>"; };
-		E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FunctionVC.storyboard; sourceTree = "<group>"; };
+		E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FunctionVC.storyboard; path = ../FunctionVC.storyboard; sourceTree = "<group>"; };
 		E8093BD41DDD9295000CABB0 /* BlueHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueHeader.pch; sourceTree = "<group>"; };
 		E8093BD51DDD9295000CABB0 /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		E8093BD71DDD9295000CABB0 /* LeftSideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideVC.h; sourceTree = "<group>"; };
@@ -110,12 +112,15 @@
 		E8093BFA1DDD9508000CABB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E8093C031DDDB3ED000CABB0 /* MusicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListVC.h; sourceTree = "<group>"; };
 		E8093C041DDDB3ED000CABB0 /* MusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListVC.m; sourceTree = "<group>"; };
-		E81819C61DF1136400115578 /* FunctionSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionSingleton.h; sourceTree = "<group>"; };
-		E81819C71DF1136400115578 /* FunctionSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionSingleton.m; sourceTree = "<group>"; };
+		E815CC631E13AE30002D2D6B /* MusicFunctionManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicFunctionManger.h; sourceTree = "<group>"; };
+		E815CC641E13AE30002D2D6B /* MusicFunctionManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicFunctionManger.m; sourceTree = "<group>"; };
+		E816B6831E0CB4F500E212EF /* FunctionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FunctionData.json; sourceTree = "<group>"; };
+		E816B6861E0CB53900E212EF /* FunctionDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FunctionDataManager.h; path = FunctionModel/FunctionDataManager.h; sourceTree = "<group>"; };
+		E816B6871E0CB53900E212EF /* FunctionDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FunctionDataManager.m; path = FunctionModel/FunctionDataManager.m; sourceTree = "<group>"; };
 		E81EFC481DF8151F00056BF8 /* CustomEQVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEQVC.h; sourceTree = "<group>"; };
 		E81EFC491DF8151F00056BF8 /* CustomEQVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomEQVC.m; sourceTree = "<group>"; };
-		E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneViewCell.h; sourceTree = "<group>"; };
-		E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneViewCell.m; sourceTree = "<group>"; };
+		E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneViewCell.h; path = ../FunctionModel/SceneViewCell.h; sourceTree = "<group>"; };
+		E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneViewCell.m; path = ../FunctionModel/SceneViewCell.m; sourceTree = "<group>"; };
 		E83830301DEC340600814AD9 /* EQSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQSettingVC.h; sourceTree = "<group>"; };
 		E83830311DEC340600814AD9 /* EQSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EQSettingVC.m; sourceTree = "<group>"; };
 		E83F13291DE59C4600504EDE /* MSColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorUtils.h; sourceTree = "<group>"; };
@@ -124,25 +129,31 @@
 		E83F132C1DE59C4600504EDE /* MSColorWheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorWheelView.m; sourceTree = "<group>"; };
 		E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView.h; sourceTree = "<group>"; };
 		E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView.m; sourceTree = "<group>"; };
-		E8809EC31E077745009507E1 /* LocalMusicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMusicMode.h; sourceTree = "<group>"; };
-		E8809EC41E077745009507E1 /* LocalMusicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMusicMode.m; sourceTree = "<group>"; };
-		E8809EC61E077752009507E1 /* TFMusicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMusicMode.h; sourceTree = "<group>"; };
-		E8809EC71E077752009507E1 /* TFMusicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicMode.m; sourceTree = "<group>"; };
-		E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
+		E8642E3C1E126EED00878660 /* TFMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMusicVC.h; sourceTree = "<group>"; };
+		E8642E3D1E126EED00878660 /* TFMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicVC.m; sourceTree = "<group>"; };
+		E8642E3F1E126F0F00878660 /* TFMusicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMusicListVC.h; sourceTree = "<group>"; };
+		E8642E401E126F0F00878660 /* TFMusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicListVC.m; sourceTree = "<group>"; };
+		E8642E471E12911A00878660 /* MainControlSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainControlSingleton.h; sourceTree = "<group>"; };
+		E8642E481E12911A00878660 /* MainControlSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainControlSingleton.m; sourceTree = "<group>"; };
+		E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
-		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicCell.h; sourceTree = "<group>"; };
-		E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicCell.m; sourceTree = "<group>"; };
+		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnlineMusicCell.h; path = ../FunctionModel/OnlineMusicCell.h; sourceTree = "<group>"; };
+		E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnlineMusicCell.m; path = ../FunctionModel/OnlineMusicCell.m; sourceTree = "<group>"; };
 		E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewVC.h; sourceTree = "<group>"; };
 		E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewVC.m; sourceTree = "<group>"; };
 		E8A429331DFA57EE006EDEBC /* JPProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPProgressHUD.h; sourceTree = "<group>"; };
 		E8A429341DFA57EE006EDEBC /* JPProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPProgressHUD.m; sourceTree = "<group>"; };
+		E8A526E61E0B723400C5EC82 /* BaseTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabbarVC.h; sourceTree = "<group>"; };
+		E8A526E71E0B723400C5EC82 /* BaseTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarVC.m; sourceTree = "<group>"; };
 		E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeInterval.h"; sourceTree = "<group>"; };
 		E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeInterval.m"; sourceTree = "<group>"; };
 		E8BA821E1DFE9F9B0086EB7B /* UIView+RotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RotateAnimation.h"; sourceTree = "<group>"; };
 		E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RotateAnimation.m"; sourceTree = "<group>"; };
 		E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
 		E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
+		E8D4AF491E0E64CC00342C3A /* MusicTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTabbarVC.h; sourceTree = "<group>"; };
+		E8D4AF4A1E0E64CC00342C3A /* MusicTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTabbarVC.m; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
 		E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneVC.m; sourceTree = "<group>"; };
 		E8DF5C111DE44DE3001B3B57 /* CHcir_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHcir_Slider.h; sourceTree = "<group>"; };
@@ -194,17 +205,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E80039CB1E03B8E400D69055 /* Modual */ = {
-			isa = PBXGroup;
-			children = (
-				E8809EC31E077745009507E1 /* LocalMusicMode.h */,
-				E8809EC41E077745009507E1 /* LocalMusicMode.m */,
-				E8809EC61E077752009507E1 /* TFMusicMode.h */,
-				E8809EC71E077752009507E1 /* TFMusicMode.m */,
-			);
-			name = Modual;
-			sourceTree = "<group>";
-		};
 		E8037D491DD5ABAF00096969 = {
 			isa = PBXGroup;
 			children = (
@@ -248,26 +248,20 @@
 		E8093BBA1DDD9295000CABB0 /* BLEProject */ = {
 			isa = PBXGroup;
 			children = (
-				E81819C51DF1133A00115578 /* Single */,
 				E8093BD31DDD9295000CABB0 /* Helper */,
 				E8093BDF1DDD9295000CABB0 /* Tool */,
 				E8093BDA1DDD9295000CABB0 /* Resource */,
-				E8093BC41DDD9295000CABB0 /* FunctionController */,
-				E8093BD11DDD9295000CABB0 /* FunctionModel */,
-				E8093BC21DDD9295000CABB0 /* BaseVC.h */,
-				E8093BC31DDD9295000CABB0 /* BaseVC.m */,
-				E8093BD71DDD9295000CABB0 /* LeftSideVC.h */,
-				E8093BD81DDD9295000CABB0 /* LeftSideVC.m */,
-				E8093BC01DDD9295000CABB0 /* Main.storyboard */,
-				E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */,
+				E8642E2B1E121CD200878660 /* BaseModule */,
+				E8093BC41DDD9295000CABB0 /* FunctionalModule */,
 				E8093BF51DDD9449000CABB0 /* Supporting Files */,
 			);
 			path = BLEProject;
 			sourceTree = "<group>";
 		};
-		E8093BC41DDD9295000CABB0 /* FunctionController */ = {
+		E8093BC41DDD9295000CABB0 /* FunctionalModule */ = {
 			isa = PBXGroup;
 			children = (
+				E8642E2F1E121EAB00878660 /* FunctionalView */,
 				E8093C021DDDB39E000CABB0 /* Scan */,
 				E8093BFC1DDDB355000CABB0 /* Lamp */,
 				E8093BFD1DDDB36A000CABB0 /* Music */,
@@ -276,16 +270,8 @@
 				E8093C001DDDB394000CABB0 /* Timing */,
 				E8093C011DDDB399000CABB0 /* Setting */,
 			);
+			name = FunctionalModule;
 			path = FunctionController;
-			sourceTree = "<group>";
-		};
-		E8093BD11DDD9295000CABB0 /* FunctionModel */ = {
-			isa = PBXGroup;
-			children = (
-				E89D0FE61DF5854200B2E0D7 /* OnlineMusicCell */,
-				E838302A1DEC0CDC00814AD9 /* SceneViewCell */,
-			);
-			path = FunctionModel;
 			sourceTree = "<group>";
 		};
 		E8093BD31DDD9295000CABB0 /* Helper */ = {
@@ -300,12 +286,8 @@
 		E8093BDA1DDD9295000CABB0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */,
+				E816B6831E0CB4F500E212EF /* FunctionData.json */,
 				E8093BDB1DDD9295000CABB0 /* BLEResource.bundle */,
-				E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */,
-				E8A429321DFA57D4006EDEBC /* JPProgressHUD */,
-				E83F13281DE59C4600504EDE /* ColorPicker */,
-				E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -313,12 +295,17 @@
 		E8093BDF1DDD9295000CABB0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */,
 				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
 				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
 				E8BA821E1DFE9F9B0086EB7B /* UIView+RotateAnimation.h */,
 				E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */,
 				E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */,
 				E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */,
+				E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */,
+				E8A429321DFA57D4006EDEBC /* JPProgressHUD */,
+				E83F13281DE59C4600504EDE /* ColorPicker */,
+				E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -343,6 +330,7 @@
 				E8093BCA1DDD9295000CABB0 /* LampVC.m */,
 				E8DF5C091DE42F98001B3B57 /* SceneVC.h */,
 				E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */,
+				E8642E301E121EF200878660 /* LampModel */,
 			);
 			name = Lamp;
 			sourceTree = "<group>";
@@ -350,19 +338,16 @@
 		E8093BFD1DDDB36A000CABB0 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				E80039CB1E03B8E400D69055 /* Modual */,
-				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
-				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
-				E8093C031DDDB3ED000CABB0 /* MusicListVC.h */,
-				E8093C041DDDB3ED000CABB0 /* MusicListVC.m */,
+				E815CC621E13ADF9002D2D6B /* MusicManager */,
+				E8D4AF491E0E64CC00342C3A /* MusicTabbarVC.h */,
+				E8D4AF4A1E0E64CC00342C3A /* MusicTabbarVC.m */,
+				E8642E421E12738A00878660 /* LocalMusicModule */,
+				E8642E431E12740800878660 /* TFMusicModule */,
+				E8642E441E12744000878660 /* OnlineMusicModule */,
 				E83830301DEC340600814AD9 /* EQSettingVC.h */,
 				E83830311DEC340600814AD9 /* EQSettingVC.m */,
 				E81EFC481DF8151F00056BF8 /* CustomEQVC.h */,
 				E81EFC491DF8151F00056BF8 /* CustomEQVC.m */,
-				E895458E1DED6DDB0097320A /* OnlineMusicVC.h */,
-				E895458F1DED6DDB0097320A /* OnlineMusicVC.m */,
-				E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */,
-				E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -414,22 +399,13 @@
 			name = Scan;
 			sourceTree = "<group>";
 		};
-		E81819C51DF1133A00115578 /* Single */ = {
+		E815CC621E13ADF9002D2D6B /* MusicManager */ = {
 			isa = PBXGroup;
 			children = (
-				E81819C61DF1136400115578 /* FunctionSingleton.h */,
-				E81819C71DF1136400115578 /* FunctionSingleton.m */,
+				E815CC631E13AE30002D2D6B /* MusicFunctionManger.h */,
+				E815CC641E13AE30002D2D6B /* MusicFunctionManger.m */,
 			);
-			name = Single;
-			sourceTree = "<group>";
-		};
-		E838302A1DEC0CDC00814AD9 /* SceneViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */,
-				E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */,
-			);
-			name = SceneViewCell;
+			name = MusicManager;
 			sourceTree = "<group>";
 		};
 		E83F13281DE59C4600504EDE /* ColorPicker */ = {
@@ -440,7 +416,8 @@
 				E83F132B1DE59C4600504EDE /* MSColorWheelView.h */,
 				E83F132C1DE59C4600504EDE /* MSColorWheelView.m */,
 			);
-			path = ColorPicker;
+			name = ColorPicker;
+			path = ../Resource/ColorPicker;
 			sourceTree = "<group>";
 		};
 		E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */ = {
@@ -449,16 +426,116 @@
 				E85CF8391DFE38A300AD9E5D /* LMJScrollTextView.h */,
 				E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */,
 			);
-			path = LMJScrollTextView;
+			name = LMJScrollTextView;
+			path = ../Resource/LMJScrollTextView;
 			sourceTree = "<group>";
 		};
-		E89D0FE61DF5854200B2E0D7 /* OnlineMusicCell */ = {
+		E8642E2B1E121CD200878660 /* BaseModule */ = {
+			isa = PBXGroup;
+			children = (
+				E8642E461E1290B200878660 /* BaseSingleton */,
+				E8642E2D1E121E0100878660 /* BaseController */,
+				E8642E2E1E121E0E00878660 /* BaseViewModel */,
+				E8642E2C1E121DEC00878660 /* BaseView */,
+			);
+			name = BaseModule;
+			sourceTree = "<group>";
+		};
+		E8642E2C1E121DEC00878660 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BC01DDD9295000CABB0 /* Main.storyboard */,
+			);
+			name = BaseView;
+			sourceTree = "<group>";
+		};
+		E8642E2D1E121E0100878660 /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				E8A526E61E0B723400C5EC82 /* BaseTabbarVC.h */,
+				E8A526E71E0B723400C5EC82 /* BaseTabbarVC.m */,
+				E8093BD71DDD9295000CABB0 /* LeftSideVC.h */,
+				E8093BD81DDD9295000CABB0 /* LeftSideVC.m */,
+			);
+			name = BaseController;
+			sourceTree = "<group>";
+		};
+		E8642E2E1E121E0E00878660 /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E816B6861E0CB53900E212EF /* FunctionDataManager.h */,
+				E816B6871E0CB53900E212EF /* FunctionDataManager.m */,
+			);
+			name = BaseViewModel;
+			sourceTree = "<group>";
+		};
+		E8642E2F1E121EAB00878660 /* FunctionalView */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BD21DDD9295000CABB0 /* FunctionVC.storyboard */,
+			);
+			name = FunctionalView;
+			sourceTree = "<group>";
+		};
+		E8642E301E121EF200878660 /* LampModel */ = {
+			isa = PBXGroup;
+			children = (
+				E838302B1DEC0D0B00814AD9 /* SceneViewCell.h */,
+				E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */,
+			);
+			name = LampModel;
+			sourceTree = "<group>";
+		};
+		E8642E311E121F1D00878660 /* OnlineMusicModel */ = {
 			isa = PBXGroup;
 			children = (
 				E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */,
 				E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */,
 			);
-			name = OnlineMusicCell;
+			name = OnlineMusicModel;
+			sourceTree = "<group>";
+		};
+		E8642E421E12738A00878660 /* LocalMusicModule */ = {
+			isa = PBXGroup;
+			children = (
+				E8093BCB1DDD9295000CABB0 /* MusicVC.h */,
+				E8093BCC1DDD9295000CABB0 /* MusicVC.m */,
+				E8093C031DDDB3ED000CABB0 /* MusicListVC.h */,
+				E8093C041DDDB3ED000CABB0 /* MusicListVC.m */,
+			);
+			name = LocalMusicModule;
+			sourceTree = "<group>";
+		};
+		E8642E431E12740800878660 /* TFMusicModule */ = {
+			isa = PBXGroup;
+			children = (
+				E8642E3C1E126EED00878660 /* TFMusicVC.h */,
+				E8642E3D1E126EED00878660 /* TFMusicVC.m */,
+				E8642E3F1E126F0F00878660 /* TFMusicListVC.h */,
+				E8642E401E126F0F00878660 /* TFMusicListVC.m */,
+			);
+			name = TFMusicModule;
+			sourceTree = "<group>";
+		};
+		E8642E441E12744000878660 /* OnlineMusicModule */ = {
+			isa = PBXGroup;
+			children = (
+				E895458E1DED6DDB0097320A /* OnlineMusicVC.h */,
+				E895458F1DED6DDB0097320A /* OnlineMusicVC.m */,
+				E89D0FEA1DF58D3000B2E0D7 /* WebviewVC.h */,
+				E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */,
+				E8642E311E121F1D00878660 /* OnlineMusicModel */,
+			);
+			name = OnlineMusicModule;
+			sourceTree = "<group>";
+		};
+		E8642E461E1290B200878660 /* BaseSingleton */ = {
+			isa = PBXGroup;
+			children = (
+				E8642E471E12911A00878660 /* MainControlSingleton.h */,
+				E8642E481E12911A00878660 /* MainControlSingleton.m */,
+			);
+			name = BaseSingleton;
 			sourceTree = "<group>";
 		};
 		E8A429321DFA57D4006EDEBC /* JPProgressHUD */ = {
@@ -468,6 +545,7 @@
 				E8A429341DFA57EE006EDEBC /* JPProgressHUD.m */,
 			);
 			name = JPProgressHUD;
+			path = ../Resource;
 			sourceTree = "<group>";
 		};
 		E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */ = {
@@ -477,6 +555,7 @@
 				E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */,
 			);
 			name = CHcir_Slider;
+			path = ../Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +680,7 @@
 			files = (
 				E8093BE51DDD9295000CABB0 /* Main.storyboard in Resources */,
 				E8093BE41DDD9295000CABB0 /* LaunchScreen.storyboard in Resources */,
+				E816B6841E0CB4F500E212EF /* FunctionData.json in Resources */,
 				E8093BFB1DDD9508000CABB0 /* Info.plist in Resources */,
 				E8093BF81DDD9449000CABB0 /* Assets.xcassets in Resources */,
 				E8093BED1DDD9295000CABB0 /* FunctionVC.storyboard in Resources */,
@@ -679,7 +759,6 @@
 			files = (
 				E8093BF41DDD9295000CABB0 /* UIView+Frame.m in Sources */,
 				E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */,
-				E8809EC81E077752009507E1 /* TFMusicMode.m in Sources */,
 				E8093BF01DDD9295000CABB0 /* main.m in Sources */,
 				E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */,
 				E8A429351DFA57EE006EDEBC /* JPProgressHUD.m in Sources */,
@@ -688,26 +767,30 @@
 				E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */,
 				E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */,
 				E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */,
+				E8D4AF4B1E0E64CC00342C3A /* MusicTabbarVC.m in Sources */,
 				E8093BE71DDD9295000CABB0 /* AUXVC.m in Sources */,
 				E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */,
 				E8093BEB1DDD9295000CABB0 /* SettingVC.m in Sources */,
+				E8A526E81E0B723400C5EC82 /* BaseTabbarVC.m in Sources */,
 				E8093BE81DDD9295000CABB0 /* FMVC.m in Sources */,
+				E8642E491E12911A00878660 /* MainControlSingleton.m in Sources */,
 				E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */,
 				E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */,
+				E815CC651E13AE30002D2D6B /* MusicFunctionManger.m in Sources */,
 				E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */,
-				E81819C81DF1136400115578 /* FunctionSingleton.m in Sources */,
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
-				E8809EC51E077745009507E1 /* LocalMusicMode.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
 				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
+				E8642E411E126F0F00878660 /* TFMusicListVC.m in Sources */,
 				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
+				E8642E3E1E126EED00878660 /* TFMusicVC.m in Sources */,
 				E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */,
 				E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */,
 				E8093BEC1DDD9295000CABB0 /* TimingVC.m in Sources */,
-				E8093BE61DDD9295000CABB0 /* BaseVC.m in Sources */,
 				E8093C051DDDB3ED000CABB0 /* MusicListVC.m in Sources */,
+				E816B6881E0CB53900E212EF /* FunctionDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
