@@ -39,7 +39,6 @@
     [self registerLocalNotification];
     
     
-    
     [self addObserver];
 }
 
@@ -67,6 +66,8 @@
                       @"AUX",
                       @"定时",
                       @"设置", nil];
+    
+    self.selectedIndex = 0;
     
 }
 
@@ -102,7 +103,7 @@
 
 -(void)addObserver{
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadModualData:) name:DataInitializedCompleted object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTabbarModualData:) name:DataInitializedCompleted object:nil];
 }
 
 
@@ -123,8 +124,7 @@
 
 #pragma mark -  侧边栏按钮
 -(void)settingNavBar:(UINavigationController *)nav{
-    
-    
+
     
     MMDrawerBarButtonItem * leftButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress:)];
     leftButton.tintColor = [UIColor whiteColor];
@@ -175,7 +175,7 @@
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstMusicFunctionLaunch"];
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstSendCustomFunction"];
+//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstSendCustomFunction"];
     
 }
 
@@ -192,9 +192,11 @@
 
 
 
--(void)reloadModualData:(NSNotification *)notification{
+-(void)reloadTabbarModualData:(NSNotification *)notification{
 
     NSDictionary *modualArrDic = notification.userInfo;
+    
+    
     
     [_modualIDArr removeAllObjects];
     [_modualNameArr removeAllObjects];
@@ -202,14 +204,9 @@
     [_modualIDArr addObjectsFromArray: modualArrDic[@"modualIDArr"]];
     [_modualNameArr addObjectsFromArray: modualArrDic[@"modualNameArr"]];
     
-
     dispatch_async(dispatch_get_main_queue(), ^{
         [self filterTabbarViewControllers];
     });
-    
-    
-    
-
     
 }
 
@@ -226,24 +223,28 @@
     
     for (UINavigationController *modualNav in reverseArrayEnum) {
         
+
         NSString *modualName = modualNav.navigationBar.topItem.title;
+        
+        if ([modualName containsString:@"音乐"]) {
+            modualName = @"音乐";
+        }
         
         if (![_modualNameArr containsObject:modualName]) {
             
-            NSLog(@"%--@",modualName);
+            
             
             [viewControllers removeObject:modualNav];
             
         };
-        
-        
-        
     }
     
     
     
+    dispatch_main_async_safe(^{
+        [self setViewControllers:viewControllers];
+    });
     
-    [self setViewControllers:viewControllers];
 
 }
 

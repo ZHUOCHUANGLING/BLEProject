@@ -107,7 +107,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     _localNotification.alertAction = @"哟西";
     
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
+//    [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
     
 }
 

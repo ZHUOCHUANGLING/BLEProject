@@ -52,14 +52,18 @@
 
 
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self initUI];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [DataManager startScan];
     
-    [self initUI];
+    
     
     
 }
@@ -69,7 +73,7 @@
     
     _peripheralList.delegate = self;
     _peripheralList.dataSource = self;
-    _peripheralList.layer.cornerRadius = margin;
+
     //去掉tableview顶部留白
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -78,12 +82,6 @@
     
     [self centerStartListening];
 }
-
-
-
-
-
-
 
 
 
@@ -132,11 +130,12 @@
     BOOL firstSendCustomData = ![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstSendCustomFunction"];
     
     if (firstSendCustomData) {
-        
+    
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             Byte byte[] = {0xff};
             [DataManager sendDataWithService:@"FFF0" characteristic:@"FFF1" data:[NSData dataWithBytes:byte length:1]];
+            
             NSLog(@"-->与外设连接成功");
             
         });
@@ -146,6 +145,7 @@
         [self dismissVC];
     
     }
+    
     
 }
 
@@ -215,6 +215,15 @@
     _connectingView.hidden = NO;
     
     [DataManager disconnectPeripheral];
+
+    
+    
+    if (DataManager.connectedPeripheral != self.dataArr[indexPath.row]) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstSendCustomFunction"];
+        
+    }
+    
     
     DataManager.connectedPeripheral = self.dataArr[indexPath.row];
     
@@ -288,7 +297,6 @@
     
     
     UIViewController * scanVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:@"scanVC"];
-    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:scanVC animated:YES completion:nil];

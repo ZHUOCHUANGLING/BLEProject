@@ -604,9 +604,14 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 #pragma mark -  MusicTabbarVCDelegate
 -(void)pausePlayingMusic{
 
+
     if (_playerController) {
-        [_playerController pause];
-        [_albumImageView stopRotate];
+        
+        dispatch_main_async_safe(^{
+            [_playerController pause];
+            [_albumImageView stopRotate];
+        });
+      
     }
 
 

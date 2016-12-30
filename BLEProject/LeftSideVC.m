@@ -38,10 +38,15 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
-    
-    
+
     [self refreshUI];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
 }
 
 
@@ -60,16 +65,14 @@
     
     self.tableView.rowHeight = ROWHEIGHT;
     
-   
-    
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundView.image = [UIImage imageNamed:@"侧背景"];
     
     self.tableView.backgroundView = backgroundView;
     
-    selectedRow = 0;
     
-
+    
+    selectedRow = 0;
     
 }
 
@@ -262,7 +265,6 @@
     [_modualIDArr removeAllObjects];
     [_modualNameArr removeAllObjects];
     
-    
     [_modualIDArr addObjectsFromArray: modualArrDic[@"modualIDArr"]];
     [_modualNameArr addObjectsFromArray: modualArrDic[@"modualNameArr"]];
 
@@ -271,7 +273,6 @@
 
         [self.tableView reloadData];
         selectedRow = 0;
-        
         
     });
 

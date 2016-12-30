@@ -106,12 +106,15 @@ static FunctionDataManager *_instance;
 -(void)centralReceiveNotFoundCorrespondMsg:(NSNotification *)notification{
     
     
+
+    
+    
     if ([notification.userInfo[@"characteristic"] isEqualToString:@"FFF1"]) {
     
         NSData *data =notification.userInfo[@"data"];
         Byte *bytes = (Byte *)[data bytes];
         
-//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01};
+//        Byte bytes[] = {0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x01,0x00,0x01,0x01};
         
         
         
@@ -126,7 +129,6 @@ static FunctionDataManager *_instance;
         for (NSInteger i=_modualIDArr.count-1 ; i>=0; i--) {
             
             if (!bytes[i+5]) {
-                
                 
                 if (i==0) {
                     

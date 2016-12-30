@@ -2035,7 +2035,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
@@ -2319,9 +2319,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gci-Xe-5RR">
                                 <rect key="frame" x="60" y="50" width="255" height="419"/>
                                 <color key="backgroundColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohS-P2-iN0">
-                                <rect key="frame" x="165.5" y="519" width="44" height="44"/>
+                                <rect key="frame" x="166" y="519" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="1jE-uZ-1mp"/>
                                     <constraint firstAttribute="height" constant="44" id="blv-uz-2Y9"/>
@@ -2338,7 +2343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-az-fJc">
-                                <rect key="frame" x="165.5" y="0.0" width="44" height="19"/>
+                                <rect key="frame" x="166" y="0.0" width="44" height="19"/>
                                 <state key="normal" backgroundImage="Down"/>
                                 <connections>
                                     <action selector="pullDownClick:" destination="IRd-sw-lWH" eventType="touchUpInside" id="FFb-Cf-Da5"/>

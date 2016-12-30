@@ -457,7 +457,11 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 -(void)pausePlayingMusic{
 
     if (_playOrPauseButton.selected) {
-        [self playOrPauseClick:_playOrPauseButton];
+        
+        dispatch_main_async_safe(^{
+            [self playOrPauseClick:_playOrPauseButton];
+        });
+        
     }
     
 
