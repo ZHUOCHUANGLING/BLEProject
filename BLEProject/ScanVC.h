@@ -14,7 +14,4 @@
 +(void)presentScanVC;
 
 
-
-
-
 @end

@@ -338,9 +338,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
         
     }];
     
-    
-    
-    
 }
 
 
@@ -378,10 +375,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
             }
             
         }
-
-
-    
-    
     
 
 }
@@ -502,7 +495,14 @@ typedef NS_ENUM(NSInteger, MusicMode) {
         [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
         
         
-        _albumImageView.image = [_playerController.nowPlayingItem.artwork imageWithSize:CGSizeMake(_albumImageView.width, _albumImageView.height)];
+        UIImage *albumImage = [_playerController.nowPlayingItem.artwork imageWithSize:CGSizeMake(_albumImageView.width, _albumImageView.height)];
+        
+        if (albumImage) {
+            _albumImageView.image = albumImage;
+        }else{
+            _albumImageView.image = [UIImage imageNamed:@"光盘"];
+        }
+        
     }
     
     
