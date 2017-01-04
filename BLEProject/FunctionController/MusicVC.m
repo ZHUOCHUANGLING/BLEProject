@@ -54,6 +54,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     NSArray *_mediaItems;
     NSInteger sessionMusicCount;
     
+    
     BOOL hasMusic;
     BOOL hasTFCard;
     BOOL isConnectA2DP;
@@ -191,8 +192,11 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
     dispatch_main_async_safe(^{
         
-        _albumImageView.layer.cornerRadius = _albumImageView.width/2;
-        _albumImageView.layer.masksToBounds = YES;
+//        _albumImageView.layer.masksToBounds = YES;
+//        _albumImageView.layer.cornerRadius = _albumImageView.height/2;
+        
+
+        
         
         _volumeSlider.value = _playerController.volume;
         
@@ -489,6 +493,10 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 -(void)MPMusicPlayerControllerNowPlayingItemDidChangeNotification:(NSNotification *)notification{
 
+    
+    _albumImageView.layer.masksToBounds = YES;
+    _albumImageView.layer.cornerRadius = _albumImageView.height/2;
+    
     
     if(_playerController.nowPlayingItem.title){
         
