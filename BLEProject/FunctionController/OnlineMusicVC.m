@@ -15,6 +15,8 @@
 #import "WebviewVC.h"
 
 #import "MusicTabbarVC.h"
+#import "MusicFunctionManger.h"
+
 
 
 #define RowHeight ScreenHeight*0.07
@@ -45,6 +47,20 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self synchronizeState];
+    
+}
+
+
+
+-(void)synchronizeState{
+    
+    [shareMusicOperation() setDeviceSource:DeviceSourceBluetooth];
+    
+}
 
 
 

@@ -48,18 +48,32 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 2;
 }
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
-    cell.imageView.image = [UIImage imageNamed:@"关于我们"];
-    cell.textLabel.text = @"关于我们";
+    UITableViewCell *OTACell = [tableView dequeueReusableCellWithIdentifier:@"OTAUpdate"];
+    UITableViewCell *aboutUsCell  = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
+    
+    if (indexPath.row == 0) {
+        OTACell.imageView.image = [UIImage imageNamed:@"关于我们"];
+        OTACell.textLabel.text = @"OTA升级固件";
+        
+        return OTACell;
+    }else{
+        aboutUsCell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
+        aboutUsCell.imageView.image = [UIImage imageNamed:@"版权说明"];
+        aboutUsCell.textLabel.text = @"关于我们";
+        
+        return aboutUsCell;
+    }
+    
 
 
-    return cell;
+    return nil;
 }
 
 

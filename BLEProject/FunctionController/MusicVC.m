@@ -456,7 +456,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 - (IBAction)changeVolumeTouchUP:(UISlider *)sender {
     
     if (isConnectA2DP) {
-        [shareMainManager().volumeOperation setDeviceVolumeWithRank:sender.value * 15];
+        [shareMainManager().volumeOperation setDeviceVolumeWithRank:sender.value * 10];
     }
 }
 

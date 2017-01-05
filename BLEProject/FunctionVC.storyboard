@@ -2017,7 +2017,7 @@
         <!--SettingVC-->
         <scene sceneID="uDo-bY-03W">
             <objects>
-                <viewController id="Szj-2i-gyH" customClass="SettingVC" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Szj-2i-gyH" customClass="SettingVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tfw-11-yry"/>
                         <viewControllerLayoutGuide type="bottom" id="jDh-9h-hHU"/>
@@ -2031,8 +2031,16 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="aboutUsCell" id="xOH-F8-Gd2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OTAUpdate" id="0Gg-aC-XBp">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Gg-aC-XBp" id="ui1-SI-By0">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="aboutUsCell" id="xOH-F8-Gd2">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -2285,7 +2293,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8c8-kj-JVv">
             <objects>
-                <navigationController storyboardIdentifier="settingVC" automaticallyAdjustsScrollViewInsets="NO" id="Ra4-Sn-UzW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Ra4-Sn-UzW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JLM-yn-3TB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

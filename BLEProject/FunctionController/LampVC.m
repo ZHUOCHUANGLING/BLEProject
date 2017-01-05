@@ -231,11 +231,10 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     
     
     
-    if (-[_oldTime timeIntervalSinceNow] > 0.08) {
+    if (-[_oldTime timeIntervalSinceNow] > 0.1) {
         _oldTime = [NSDate date];
     
-        
-        
+
         w = 0;
         if (_colorWheelView.saturation == 0 && _colorWheelView.hue == 0) {
             r = 0;

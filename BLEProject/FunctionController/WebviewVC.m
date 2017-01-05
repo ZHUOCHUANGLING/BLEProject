@@ -77,9 +77,9 @@
 - (IBAction)previousPageClick:(UIButton *)sender {
     
     
-    if (self.onlineMusicWebView.canGoBack) {
+//    if (self.onlineMusicWebView.canGoBack) {
         [self.onlineMusicWebView goBack];
-    }
+//    }
    
     
 }
@@ -89,9 +89,9 @@
 - (IBAction)nextPageClick:(UIButton *)sender {
     
     
-    if (self.onlineMusicWebView.canGoForward) {
+//    if (self.onlineMusicWebView.canGoForward) {
         [self.onlineMusicWebView goForward];
-    }
+//    }
     
 }
 
