@@ -181,10 +181,9 @@
 
 
 -(void)setSelectedIndex:(NSUInteger)selectedIndex{
-    
     [super setSelectedIndex:selectedIndex];
-    
     self.tabBar.hidden = YES;
+    
     
 }
 
@@ -246,6 +245,8 @@
     
 
 }
+
+
 
 
 

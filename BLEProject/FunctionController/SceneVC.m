@@ -87,9 +87,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SceneViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"sceneCell" forIndexPath:indexPath];
-    
 
-    
     //model
     cell.imageName = _sceneDataArr[indexPath.row];
     cell.selectedImageName = _sceneSelectedDataArr[indexPath.row];

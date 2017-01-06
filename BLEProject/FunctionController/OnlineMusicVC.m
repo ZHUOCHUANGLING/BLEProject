@@ -24,6 +24,7 @@
 
 @interface OnlineMusicVC ()<UICollectionViewDelegate,UICollectionViewDelegate,MusicTabbarVCDelegate>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *onlineCollectionView;
 
 
 @end

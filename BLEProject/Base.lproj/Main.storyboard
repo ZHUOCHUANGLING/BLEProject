@@ -33,24 +33,6 @@
             </objects>
             <point key="canvasLocation" x="-2279" y="701"/>
         </scene>
-        <!--Change NameVC-->
-        <scene sceneID="uAb-7p-Upx">
-            <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="if3-xo-Dlj" customClass="ChangeNameVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Itl-ot-eg3"/>
-                        <viewControllerLayoutGuide type="bottom" id="7uq-vg-Vtg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rgE-7A-Fwv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.197265625" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tRf-70-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3274" y="2111"/>
-        </scene>
         <!--Left SideVC-->
         <scene sceneID="dhn-z7-4HC">
             <objects>

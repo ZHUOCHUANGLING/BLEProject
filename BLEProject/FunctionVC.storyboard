@@ -593,11 +593,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDe-Ek-XXE">
-                                <rect key="frame" x="226.5" y="585.5" width="71" height="30"/>
+                                <rect key="frame" x="224.5" y="584.5" width="75" height="32"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.62352941179999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fDe-Ek-XXE" secondAttribute="height" multiplier="85:36" id="nbT-Vh-G5r"/>
-                                </constraints>
                                 <state key="normal" title="设置">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -696,6 +693,7 @@
                             <constraint firstItem="XMg-wb-heC" firstAttribute="centerX" secondItem="0Z6-Ff-zvf" secondAttribute="centerX" id="Vu0-CL-dP5"/>
                             <constraint firstItem="kt2-5d-u3q" firstAttribute="centerY" secondItem="xDm-TN-UaZ" secondAttribute="centerY" id="W5t-Rk-UZ4"/>
                             <constraint firstItem="xDm-TN-UaZ" firstAttribute="centerY" secondItem="WtJ-pv-7om" secondAttribute="centerY" id="XRX-Cp-ial"/>
+                            <constraint firstItem="fDe-Ek-XXE" firstAttribute="width" secondItem="fKV-xj-Vod" secondAttribute="width" multiplier="0.2" id="Z4D-Tv-j3F"/>
                             <constraint firstItem="0Z6-Ff-zvf" firstAttribute="centerX" secondItem="fKV-xj-Vod" secondAttribute="centerX" multiplier="0.6" id="bve-Ie-nPf"/>
                             <constraint firstItem="Wvi-9s-yCX" firstAttribute="width" secondItem="fKV-xj-Vod" secondAttribute="height" multiplier="0.5" id="c27-xF-Dqh"/>
                             <constraint firstItem="iXG-av-7dj" firstAttribute="width" secondItem="fKV-xj-Vod" secondAttribute="height" multiplier="0.5" id="chA-vR-Xld"/>
@@ -1081,16 +1079,19 @@
                         <constraints>
                             <constraint firstItem="KQi-sU-cbr" firstAttribute="leading" secondItem="dEO-ia-92E" secondAttribute="leading" id="8MQ-zS-fCz"/>
                             <constraint firstItem="D9B-VS-hOm" firstAttribute="top" secondItem="KQi-sU-cbr" secondAttribute="bottom" id="ACq-YG-EF6"/>
+                            <constraint firstItem="KQi-sU-cbr" firstAttribute="top" secondItem="dEO-ia-92E" secondAttribute="top" id="Fb9-RC-hFB"/>
                             <constraint firstAttribute="trailing" secondItem="KQi-sU-cbr" secondAttribute="trailing" id="epv-TP-1wo"/>
-                            <constraint firstItem="KQi-sU-cbr" firstAttribute="top" secondItem="dEO-ia-92E" secondAttribute="top" id="xkW-eo-DVo"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="IdH-IX-DP0"/>
                     <navigationItem key="navigationItem" id="0NR-Av-k7i"/>
+                    <connections>
+                        <outlet property="onlineCollectionView" destination="KQi-sU-cbr" id="Cg3-Ye-ZFO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZY-JK-DIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="1995"/>
+            <point key="canvasLocation" x="3077.5999999999999" y="2016.3418290854574"/>
         </scene>
         <!--WebviewVC-->
         <scene sceneID="RYf-aC-5z8">
