@@ -569,7 +569,14 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 -(LMJScrollTextView *)scrollTextView{
 
     if (!_scrollTextView) {
-        _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.55, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+        
+        if (Device_IsPhone) {
+            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.55, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+        }else{
+            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.6, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+            
+        }
+        
         
         [self.view addSubview:self.scrollTextView];
     }

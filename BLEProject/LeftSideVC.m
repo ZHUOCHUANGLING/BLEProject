@@ -17,6 +17,7 @@
 static NSInteger CharacterCount = 21;
 
 
+
 @interface LeftSideVC ()<UIAlertViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic, strong)NSMutableArray *modualIDArr;
@@ -34,7 +35,6 @@ static NSInteger CharacterCount = 21;
 @implementation LeftSideVC
 {
     NSInteger selectedRow;
-    
 
 }
 
@@ -48,11 +48,7 @@ static NSInteger CharacterCount = 21;
 
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    
-}
+
 
 
 
@@ -149,7 +145,9 @@ static NSInteger CharacterCount = 21;
     
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
+    
+    cell.backgroundColor = [UIColor clearColor];
+    
     cell.textLabel.text = _modualNameArr[indexPath.row];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.imageView.image = [UIImage imageNamed:_modualNameArr[indexPath.row]];
@@ -316,8 +314,7 @@ static NSInteger CharacterCount = 21;
     //添加textfield
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         //        textField.placeholder = @"登陆";
-        
-        
+
         //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alertTextFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
         
         
@@ -355,11 +352,17 @@ static NSInteger CharacterCount = 21;
             //发送修改名字
             //            [self adjustChangedWithName:alertController.textFields.firstObject.text];
             
-            
-            
-            
-            
             //            [self changingName];
+            
+            
+      
+            
+#warning 测试用
+            [self disConnectDevice:nil];
+            
+            
+            
+            
         }
         
         
@@ -389,6 +392,27 @@ static NSInteger CharacterCount = 21;
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -451,7 +475,9 @@ static NSInteger CharacterCount = 21;
 //第三方的键盘判断是否有特殊字符
 //➋➌➍➎➏➐➑➒系统九宫格输入
 - (BOOL)isInputRuleNotBlank:(NSString *)str {
-    NSString *pattern = @"^[a-zA-Z\u4E00-\u9FA5\\d➋➌➍➎➏➐➑➒]*$";
+
+    
+    NSString *pattern = @"^[a-zA-Z\u4E00-\u9FA5\\d➋➌➍➎➏➐➑➒_/]*$";
     //    NSString *pattern = @"[`~!@#$%^&*+=|{}':;',\\[\\].<>~！@#￥%……&*（）+|{}【】‘；：”“’。，、？-_()-""]";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
     BOOL isMatch = [pred evaluateWithObject:str];
@@ -466,7 +492,9 @@ static NSInteger CharacterCount = 21;
 //系统键盘拼音输入中间有空格，用这个方法判断是否有特殊字符
 - (BOOL)isInputRuleAndBlank:(NSString *)str {
     
-    NSString *pattern = @"^[a-zA-Z\u4E00-\u9FA5\\d\\s]*$";
+    
+    
+    NSString *pattern = @"^[a-zA-Z\u4E00-\u9FA5\\d\\s_/]*$";
     //    NSString *pattern = @"[`~!@#$%^&*+=|{}':;',\\[\\].<>~！@#￥%……&*（）+|{}【】‘；：”“’。，、？-_()-""]";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
     BOOL isMatch = [pred evaluateWithObject:str];

@@ -50,7 +50,6 @@
 -(void)initData{
     
     
-    
     _modualIDArr = [NSMutableArray arrayWithObjects:
                     @"lampVC",
                     @"musicVC",
@@ -110,11 +109,11 @@
 #pragma mark -  设置侧边栏
 -(void)settingSideBarMode{
     
+
+    self.mm_drawerController.maximumLeftDrawerWidth = Device_IsPhone ? ScreenWidth * 0.7 : ScreenWidth * 0.6;
     
     self.mm_drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
     self.mm_drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
-    self.mm_drawerController.maximumLeftDrawerWidth = ScreenWidth * 0.7;
-    //    [self.mm_drawerController setShouldStretchDrawer:NO];
     
     
 }

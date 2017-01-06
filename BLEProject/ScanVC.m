@@ -94,6 +94,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(programInitializedComplete) name:DataInitializedCompleted object:nil];
 
+    
 }
 
 
@@ -294,7 +295,6 @@
 
 #pragma mark -  跳转搜索界面
 +(void)presentScanVC{
-    
     
     UIViewController * scanVC = [[UIStoryboard storyboardWithName:@"FunctionVC" bundle:nil] instantiateViewControllerWithIdentifier:@"scanVC"];
     

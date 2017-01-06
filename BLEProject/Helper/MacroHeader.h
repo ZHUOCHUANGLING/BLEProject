@@ -16,6 +16,7 @@
 
 #define Deviece_Version [[[UIDevice currentDevice] systemVersion] floatValue]
 
+#define Device_IsPhone UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
 
 //
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width

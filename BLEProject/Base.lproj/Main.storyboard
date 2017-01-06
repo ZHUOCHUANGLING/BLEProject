@@ -36,7 +36,6 @@
         <!--Change NameVC-->
         <scene sceneID="uAb-7p-Upx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tRf-70-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="overCurrentContext" id="if3-xo-Dlj" customClass="ChangeNameVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Itl-ot-eg3"/>
@@ -48,6 +47,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.197265625" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRf-70-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3274" y="2111"/>
         </scene>
@@ -58,7 +58,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7cM-SO-D00">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="4AY-zV-Z30" userLabel="Header">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -59,13 +59,13 @@
     UITableViewCell *aboutUsCell  = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
     
     if (indexPath.row == 0) {
-        OTACell.imageView.image = [UIImage imageNamed:@"关于我们"];
+        OTACell.imageView.image = [UIImage imageNamed:@"OTA升级"];
         OTACell.textLabel.text = @"OTA升级固件";
         
         return OTACell;
     }else{
         aboutUsCell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
-        aboutUsCell.imageView.image = [UIImage imageNamed:@"版权说明"];
+        aboutUsCell.imageView.image = [UIImage imageNamed:@"关于我们"];
         aboutUsCell.textLabel.text = @"关于我们";
         
         return aboutUsCell;
