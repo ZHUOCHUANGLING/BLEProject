@@ -54,7 +54,7 @@
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     
-    [self.view bringSubviewToFront:_progressView];
+    
 }
 
 
@@ -160,12 +160,14 @@
             
             
             
-            
+            [UIApplication sharedApplication].keyWindow.rootViewController.view.userInteractionEnabled = NO;
             _progressView.hidden = NO;
             __weak typeof(_progressView) weakProgressView = _progressView;
             _sendDataOpt.sendDataSuccessBlock = ^(BOOL isSuccess){
                 
                 if (isSuccess) {
+                    
+                    [UIApplication sharedApplication].keyWindow.rootViewController.view.userInteractionEnabled = YES;
                     
                     weakProgressView.hidden = YES;
                     
