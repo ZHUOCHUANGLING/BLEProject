@@ -2045,7 +2045,7 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OTAUpdate" id="0Gg-aC-XBp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OTAUpdate" id="0Gg-aC-XBp">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Gg-aC-XBp" id="ui1-SI-By0">
@@ -2059,22 +2059,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOH-F8-Gd2" id="bBN-ad-qgK">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下一页" translatesAutoresizingMaskIntoConstraints="NO" id="we0-fd-MQ6">
-                                                    <rect key="frame" x="319" y="13" width="8" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="we0-fd-MQ6" secondAttribute="height" multiplier="17:35" id="zhd-bO-8zX"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="we0-fd-MQ6" secondAttribute="trailing" constant="15" id="Dsd-44-s5w"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="we0-fd-MQ6" firstAttribute="height" secondItem="xOH-F8-Gd2" secondAttribute="height" multiplier="0.4" id="5lm-Hd-E0X"/>
-                                            <constraint firstItem="we0-fd-MQ6" firstAttribute="centerY" secondItem="xOH-F8-Gd2" secondAttribute="centerY" id="s8P-7W-nPx"/>
-                                        </constraints>
                                         <connections>
                                             <segue destination="4Fu-kB-cI6" kind="push" identifier="copyRightSegue" id="xaf-AP-XhA"/>
                                         </connections>
@@ -2085,17 +2070,52 @@
                                     <outlet property="delegate" destination="Szj-2i-gyH" id="Ahx-Fe-3yC"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rg-w1-RCG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-pe-V9I">
+                                        <rect key="frame" x="37" y="332" width="300" height="2"/>
+                                        <color key="progressTintColor" red="0.0" green="0.62745098040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vF5-Ht-ZFP">
+                                        <rect key="frame" x="169" y="281.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在升级，请勿断开蓝牙设备" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-MA-L1i">
+                                        <rect key="frame" x="74.5" y="356.5" width="225.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.089308647259999999" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bkG-pe-V9I" firstAttribute="centerX" secondItem="6Rg-w1-RCG" secondAttribute="centerX" id="DaZ-y1-MB9"/>
+                                    <constraint firstItem="pCH-MA-L1i" firstAttribute="centerY" secondItem="6Rg-w1-RCG" secondAttribute="centerY" multiplier="1.1" id="KKg-NU-zX4"/>
+                                    <constraint firstItem="pCH-MA-L1i" firstAttribute="centerX" secondItem="6Rg-w1-RCG" secondAttribute="centerX" id="KYS-LT-W0S"/>
+                                    <constraint firstItem="bkG-pe-V9I" firstAttribute="width" secondItem="6Rg-w1-RCG" secondAttribute="width" multiplier="0.8" id="R11-K9-Dde"/>
+                                    <constraint firstItem="vF5-Ht-ZFP" firstAttribute="centerY" secondItem="6Rg-w1-RCG" secondAttribute="centerY" multiplier="0.9" id="YNG-XP-Qrv"/>
+                                    <constraint firstItem="bkG-pe-V9I" firstAttribute="centerY" secondItem="6Rg-w1-RCG" secondAttribute="centerY" id="lOd-GX-cGe"/>
+                                    <constraint firstItem="vF5-Ht-ZFP" firstAttribute="centerX" secondItem="6Rg-w1-RCG" secondAttribute="centerX" id="tBR-gk-NvV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jDh-9h-hHU" firstAttribute="top" secondItem="poj-fi-tJE" secondAttribute="bottom" id="5ni-c8-7mG"/>
                             <constraint firstItem="poj-fi-tJE" firstAttribute="top" secondItem="l7m-K9-Yxc" secondAttribute="top" id="7L4-Q2-sph"/>
                             <constraint firstItem="poj-fi-tJE" firstAttribute="leading" secondItem="l7m-K9-Yxc" secondAttribute="leading" id="Qzk-0j-zLn"/>
+                            <constraint firstAttribute="bottom" secondItem="6Rg-w1-RCG" secondAttribute="bottom" id="a51-th-pEV"/>
+                            <constraint firstItem="6Rg-w1-RCG" firstAttribute="leading" secondItem="l7m-K9-Yxc" secondAttribute="leading" id="csd-sP-T1T"/>
+                            <constraint firstItem="6Rg-w1-RCG" firstAttribute="top" secondItem="l7m-K9-Yxc" secondAttribute="top" id="cyB-X0-s2F"/>
+                            <constraint firstAttribute="trailing" secondItem="6Rg-w1-RCG" secondAttribute="trailing" id="tLN-SD-DBh"/>
                             <constraint firstAttribute="trailing" secondItem="poj-fi-tJE" secondAttribute="trailing" id="vRh-iR-c55"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P0H-4t-mWm"/>
                     <connections>
+                        <outlet property="progressSlider" destination="bkG-pe-V9I" id="CFD-MG-zQ5"/>
+                        <outlet property="progressView" destination="6Rg-w1-RCG" id="iAS-kg-d3S"/>
                         <outlet property="settingTableView" destination="poj-fi-tJE" id="Mr0-SI-l6N"/>
                     </connections>
                 </viewController>
@@ -2734,7 +2754,6 @@
         <image name="Down" width="44" height="44"/>
         <image name="EQ" width="27" height="28"/>
         <image name="上一首" width="23" height="26"/>
-        <image name="下一页" width="9" height="16"/>
         <image name="下一首" width="27" height="30"/>
         <image name="乡村" width="80" height="80"/>
         <image name="乡村H" width="80" height="80"/>

@@ -2068,7 +2068,7 @@
       ],
       "note": [
         {
-          "name": "startResponse",
+          "name": "start",
           "comment": "第一次握手回应 switch为握手回应 01为成功 00为失败",
           "location": {
             "SSPhead": "OTA",
@@ -2111,7 +2111,7 @@
           ]
         },
         {
-          "name": "finishResponse",
+          "name": "finish",
           "comment": "第二次握手回应 switch为握手回应 01为成功 00为失败",
           "location": {
             "SSPhead": "OTA",

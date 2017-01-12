@@ -34,13 +34,13 @@
 		E81EFC4A1DF8151F00056BF8 /* CustomEQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E81EFC491DF8151F00056BF8 /* CustomEQVC.m */; };
 		E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */; };
 		E83830321DEC340600814AD9 /* EQSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E83830311DEC340600814AD9 /* EQSettingVC.m */; };
+		E83945FC1E265951003C76D1 /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83945FB1E265951003C76D1 /* BluetoothFoundation.framework */; };
 		E83F132D1DE59C4600504EDE /* MSColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132A1DE59C4600504EDE /* MSColorUtils.m */; };
 		E83F132E1DE59C4600504EDE /* MSColorWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F132C1DE59C4600504EDE /* MSColorWheelView.m */; };
 		E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E85CF83A1DFE38A300AD9E5D /* LMJScrollTextView.m */; };
 		E8642E3E1E126EED00878660 /* TFMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E3D1E126EED00878660 /* TFMusicVC.m */; };
 		E8642E411E126F0F00878660 /* TFMusicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E401E126F0F00878660 /* TFMusicListVC.m */; };
 		E8642E491E12911A00878660 /* MainControlSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8642E481E12911A00878660 /* MainControlSingleton.m */; };
-		E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */; };
 		E89545901DED6DDB0097320A /* OnlineMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E895458F1DED6DDB0097320A /* OnlineMusicVC.m */; };
 		E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FE81DF5857300B2E0D7 /* OnlineMusicCell.m */; };
 		E89D0FEC1DF58D3000B2E0D7 /* WebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E89D0FEB1DF58D3000B2E0D7 /* WebviewVC.m */; };
@@ -49,9 +49,11 @@
 		E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */; };
 		E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */; };
 		E8BB42C71DF7DDA7003D9D51 /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */; };
+		E8D04E651E24730700FD66CD /* SendDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D04E641E24730700FD66CD /* SendDataOperation.m */; };
 		E8D4AF4B1E0E64CC00342C3A /* MusicTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D4AF4A1E0E64CC00342C3A /* MusicTabbarVC.m */; };
 		E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */; };
 		E8DF5C131DE44DE3001B3B57 /* CHcir_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */; };
+		E8FAF5931E2372CE00FB75F5 /* DownLoadFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FAF5921E2372CE00FB75F5 /* DownLoadFileOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,7 @@
 		E838302C1DEC0D0B00814AD9 /* SceneViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneViewCell.m; path = ../FunctionModel/SceneViewCell.m; sourceTree = "<group>"; };
 		E83830301DEC340600814AD9 /* EQSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQSettingVC.h; sourceTree = "<group>"; };
 		E83830311DEC340600814AD9 /* EQSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EQSettingVC.m; sourceTree = "<group>"; };
+		E83945FB1E265951003C76D1 /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E83F13291DE59C4600504EDE /* MSColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorUtils.h; sourceTree = "<group>"; };
 		E83F132A1DE59C4600504EDE /* MSColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSColorUtils.m; sourceTree = "<group>"; };
 		E83F132B1DE59C4600504EDE /* MSColorWheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSColorWheelView.h; sourceTree = "<group>"; };
@@ -135,7 +138,6 @@
 		E8642E401E126F0F00878660 /* TFMusicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMusicListVC.m; sourceTree = "<group>"; };
 		E8642E471E12911A00878660 /* MainControlSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainControlSingleton.h; sourceTree = "<group>"; };
 		E8642E481E12911A00878660 /* MainControlSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainControlSingleton.m; sourceTree = "<group>"; };
-		E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothFoundation.framework; path = ../Resource/BluetoothFoundation.framework; sourceTree = "<group>"; };
 		E895458E1DED6DDB0097320A /* OnlineMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMusicVC.h; sourceTree = "<group>"; };
 		E895458F1DED6DDB0097320A /* OnlineMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMusicVC.m; sourceTree = "<group>"; };
 		E89D0FE71DF5857300B2E0D7 /* OnlineMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnlineMusicCell.h; path = ../FunctionModel/OnlineMusicCell.h; sourceTree = "<group>"; };
@@ -152,12 +154,17 @@
 		E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RotateAnimation.m"; sourceTree = "<group>"; };
 		E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
 		E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
+		E8D04E631E24730700FD66CD /* SendDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendDataOperation.h; sourceTree = "<group>"; };
+		E8D04E641E24730700FD66CD /* SendDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendDataOperation.m; sourceTree = "<group>"; };
+		E8D04E671E24ADB600FD66CD /* OTAModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTAModel.h; sourceTree = "<group>"; };
 		E8D4AF491E0E64CC00342C3A /* MusicTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTabbarVC.h; sourceTree = "<group>"; };
 		E8D4AF4A1E0E64CC00342C3A /* MusicTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTabbarVC.m; sourceTree = "<group>"; };
 		E8DF5C091DE42F98001B3B57 /* SceneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneVC.h; sourceTree = "<group>"; };
 		E8DF5C0A1DE42F98001B3B57 /* SceneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneVC.m; sourceTree = "<group>"; };
 		E8DF5C111DE44DE3001B3B57 /* CHcir_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHcir_Slider.h; sourceTree = "<group>"; };
 		E8DF5C121DE44DE3001B3B57 /* CHcir_Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHcir_Slider.m; sourceTree = "<group>"; };
+		E8FAF5911E2372CE00FB75F5 /* DownLoadFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadFileOperation.h; sourceTree = "<group>"; };
+		E8FAF5921E2372CE00FB75F5 /* DownLoadFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadFileOperation.m; sourceTree = "<group>"; };
 		FB01E5B9BEED9A50C44E3C16 /* Pods-BLEProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E88F19341E029A9D00FDA31A /* BluetoothFoundation.framework in Frameworks */,
+				E83945FC1E265951003C76D1 /* BluetoothFoundation.framework in Frameworks */,
 				313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +302,7 @@
 		E8093BDF1DDD9295000CABB0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				E88F19331E029A9D00FDA31A /* BluetoothFoundation.framework */,
+				E83945FB1E265951003C76D1 /* BluetoothFoundation.framework */,
 				E8093BE01DDD9295000CABB0 /* UIView+Frame.h */,
 				E8093BE11DDD9295000CABB0 /* UIView+Frame.m */,
 				E8BA821E1DFE9F9B0086EB7B /* UIView+RotateAnimation.h */,
@@ -384,8 +391,8 @@
 			children = (
 				E8093BCD1DDD9295000CABB0 /* SettingVC.h */,
 				E8093BCE1DDD9295000CABB0 /* SettingVC.m */,
-				E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */,
-				E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */,
+				E8FAF58D1E236B0600FB75F5 /* OTAModual */,
+				E8FAF58E1E236B2200FB75F5 /* AboutUsModual */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -548,6 +555,14 @@
 			path = ../Resource;
 			sourceTree = "<group>";
 		};
+		E8D04E681E24AE6300FD66CD /* OTAModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8D04E671E24ADB600FD66CD /* OTAModel.h */,
+			);
+			name = OTAModel;
+			sourceTree = "<group>";
+		};
 		E8DF5C101DE44DD2001B3B57 /* CHcir_Slider */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +571,27 @@
 			);
 			name = CHcir_Slider;
 			path = ../Resource;
+			sourceTree = "<group>";
+		};
+		E8FAF58D1E236B0600FB75F5 /* OTAModual */ = {
+			isa = PBXGroup;
+			children = (
+				E8FAF5911E2372CE00FB75F5 /* DownLoadFileOperation.h */,
+				E8FAF5921E2372CE00FB75F5 /* DownLoadFileOperation.m */,
+				E8D04E631E24730700FD66CD /* SendDataOperation.h */,
+				E8D04E641E24730700FD66CD /* SendDataOperation.m */,
+				E8D04E681E24AE6300FD66CD /* OTAModel */,
+			);
+			name = OTAModual;
+			sourceTree = "<group>";
+		};
+		E8FAF58E1E236B2200FB75F5 /* AboutUsModual */ = {
+			isa = PBXGroup;
+			children = (
+				E8BB42C51DF7DDA7003D9D51 /* AboutUsVC.h */,
+				E8BB42C61DF7DDA7003D9D51 /* AboutUsVC.m */,
+			);
+			name = AboutUsModual;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -780,11 +816,13 @@
 				E8093BF31DDD9295000CABB0 /* ScanVC.m in Sources */,
 				E8093BEF1DDD9295000CABB0 /* LeftSideVC.m in Sources */,
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
+				E8D04E651E24730700FD66CD /* SendDataOperation.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
 				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E8642E411E126F0F00878660 /* TFMusicListVC.m in Sources */,
 				E838302E1DEC0D0B00814AD9 /* SceneViewCell.m in Sources */,
+				E8FAF5931E2372CE00FB75F5 /* DownLoadFileOperation.m in Sources */,
 				E8642E3E1E126EED00878660 /* TFMusicVC.m in Sources */,
 				E85CF83B1DFE38A300AD9E5D /* LMJScrollTextView.m in Sources */,
 				E8BA82201DFE9F9B0086EB7B /* UIView+RotateAnimation.m in Sources */,
@@ -944,12 +982,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BLEProject/Resource",
 					"$(PROJECT_DIR)/BLEProject/Resource/BLEResource.bundle",
+					"$(PROJECT_DIR)/BLEProject/Tool",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BLEProject/Helper/BlueHeader.pch";
 				INFOPLIST_FILE = BLEProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BLEProject/Tool",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sancochip.general;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -966,12 +1009,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BLEProject/Resource",
 					"$(PROJECT_DIR)/BLEProject/Resource/BLEResource.bundle",
+					"$(PROJECT_DIR)/BLEProject/Tool",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BLEProject/Helper/BlueHeader.pch";
 				INFOPLIST_FILE = BLEProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BLEProject/Tool",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sancochip.general;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

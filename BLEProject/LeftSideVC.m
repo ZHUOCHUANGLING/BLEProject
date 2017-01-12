@@ -106,7 +106,6 @@ static NSInteger CharacterCount = 21;
     //监听A2DP拔插
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangedCallBack:) name:AVAudioSessionRouteChangeNotification object:nil];
     
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadModualData:) name:DataInitializedCompleted object:nil];
     
 }
