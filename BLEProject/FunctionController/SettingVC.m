@@ -134,6 +134,10 @@
     
     
     
+    
+    
+    
+    
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:DownLoadFirmwareFileCompleted object:nil] subscribeNext:^(NSNotification *notification) {
         
         _sendDataOpt = [[SendDataOperation alloc] init];
@@ -160,8 +164,12 @@
             
             
             
+            
+            
             [UIApplication sharedApplication].keyWindow.rootViewController.view.userInteractionEnabled = NO;
+          
             _progressView.hidden = NO;
+            
             __weak typeof(_progressView) weakProgressView = _progressView;
             _sendDataOpt.sendDataSuccessBlock = ^(BOOL isSuccess){
                 
