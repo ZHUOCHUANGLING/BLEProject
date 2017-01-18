@@ -12,7 +12,6 @@ static MainControlSingleton *_instance;
 
 inline MainControlSingleton* shareMainManager() {
     
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[MainControlSingleton alloc] init];

@@ -32,6 +32,8 @@
     
     [self initUI];
     
+
+    
     
 }
 
@@ -109,9 +111,6 @@
 -(void)selectedOTAUpdate{
 
     
-    
-    
-    
     UIAlertController *isDownLoadAlert = [UIAlertController alertControllerWithTitle:@"是否下载升级文件用以进行OTA升级" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     [isDownLoadAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -120,9 +119,7 @@
     }]];
     
     [isDownLoadAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        
-        
+
         DownLoadFileOperation *operation = [[DownLoadFileOperation alloc] init];
         [operation startDownLoadWithVersion:@"123"];
         
@@ -130,6 +127,9 @@
     }]];
     
     [self presentViewController:isDownLoadAlert animated:YES completion:nil];
+    
+    
+    
     
     
     
@@ -155,16 +155,11 @@
             
             
             [_sendDataOpt startPCBInteraction];
-            
-            
+
             [RACObserve(_sendDataOpt, progress) subscribeNext:^(NSNumber *progress) {
                 _progressSlider.progress = [progress floatValue];
                 
             }];
-            
-            
-            
-            
             
             [UIApplication sharedApplication].keyWindow.rootViewController.view.userInteractionEnabled = NO;
           

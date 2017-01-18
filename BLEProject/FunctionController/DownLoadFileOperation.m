@@ -101,12 +101,11 @@ NSString *const DownLoadFirmwareFileCompleted = @"DownLoadFirmwareFileCompleted"
     NSString * downLoadFileStr = [@"http://192.168.1.71:8080/M1/download?id=" stringByAppendingString:latestVersion];
     
 #warning 测试用
-    downLoadFileStr = @"http://192.168.1.71:8080/M1/download?id=33";
+    downLoadFileStr = @"http://192.168.1.71:8080/M1/download?id=9";
     
     [_httpManager GET:downLoadFileStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
 
         NSData *firmwareFile = responseObject;
         
@@ -115,9 +114,7 @@ NSString *const DownLoadFirmwareFileCompleted = @"DownLoadFirmwareFileCompleted"
         NSLog(@"%ld",(long)firmwareFile.length);
         
         [[NSNotificationCenter defaultCenter] postNotificationName:DownLoadFirmwareFileCompleted object:nil];
-        
-       
-        
+
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
