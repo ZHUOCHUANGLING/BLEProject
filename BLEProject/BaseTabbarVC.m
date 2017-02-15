@@ -108,17 +108,11 @@
 
 #pragma mark -  设置侧边栏
 -(void)settingSideBarMode{
-    
-
-    self.mm_drawerController.maximumLeftDrawerWidth = Device_IsPhone ? ScreenWidth * 0.7 : ScreenWidth * 0.6;
-    
+    self.mm_drawerController.maximumLeftDrawerWidth = Device_IsPhone ? ScreenWidth * 0.7 : ScreenWidth * 0.4;
     self.mm_drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
     self.mm_drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
     
-    
 }
-
-
 
 
 #pragma mark -  侧边栏按钮

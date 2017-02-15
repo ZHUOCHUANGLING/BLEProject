@@ -9,7 +9,7 @@
 #import "SettingVC.h"
 #import "DownLoadFileOperation.h"
 #import "SendDataOperation.h"
-
+#import "UILabel+Extension.h"
 
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -56,7 +56,13 @@
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     
-    
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
 }
 
 
@@ -71,21 +77,45 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell *OTACell = [tableView dequeueReusableCellWithIdentifier:@"OTAUpdate"];
-    UITableViewCell *aboutUsCell  = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
-    
-    if (indexPath.row == 0) {
-        OTACell.imageView.image = [UIImage imageNamed:@"OTA升级"];
-        OTACell.textLabel.text = @"OTA升级固件";
+    if (Device_IsPhone) {
+        UITableViewCell *OTACell = [tableView dequeueReusableCellWithIdentifier:@"OTAUpdate"];
+        UITableViewCell *aboutUsCell  = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
         
-        return OTACell;
+        if (indexPath.row == 0) {
+            OTACell.imageView.image = [UIImage imageNamed:@"OTA升级"];
+            OTACell.textLabel.text = @"OTA升级固件";
+          
+            return OTACell;
+        }else{
+            aboutUsCell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
+            aboutUsCell.imageView.image = [UIImage imageNamed:@"关于我们"];
+            aboutUsCell.textLabel.text = @"关于我们";
+          
+            return aboutUsCell;
+        }
+
     }else{
-        aboutUsCell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
-        aboutUsCell.imageView.image = [UIImage imageNamed:@"关于我们"];
-        aboutUsCell.textLabel.text = @"关于我们";
+        UITableViewCell *OTACell = [tableView dequeueReusableCellWithIdentifier:@"OTAUpdate"];
+        UITableViewCell *aboutUsCell  = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
         
-        return aboutUsCell;
+        if (indexPath.row == 0) {
+            OTACell.imageView.image = [UIImage imageNamed:@"OTA升级"];
+            OTACell.textLabel.text = @"OTA升级固件";
+            [OTACell.textLabel adjustFontSizeWithSize:20];
+            return OTACell;
+        }else{
+            aboutUsCell = [tableView dequeueReusableCellWithIdentifier:@"aboutUsCell"];
+            aboutUsCell.imageView.image = [UIImage imageNamed:@"关于我们"];
+            aboutUsCell.textLabel.text = @"关于我们";
+            [aboutUsCell.textLabel adjustFontSizeWithSize:20];
+            return aboutUsCell;
+        }
+
     }
+    
+    
+    
+    
     
     return nil;
 }

@@ -83,6 +83,8 @@ static const NSInteger EQCOUNT = 8;
     for (UISlider *slider in sliderArr) {
         [self transformSlider:slider];
     }
+    
+    
 }
 
 

@@ -28,6 +28,7 @@
     [self initFunction];
     [self initVolumeObserver];
     
+    [self initUI];
 }
 
 
@@ -68,6 +69,15 @@
         
         
     };
+
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+    
 }
 
 
@@ -116,6 +126,15 @@
 
 }
 
+
+-(void)initUI{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
+    
+    [_volumeSlider setThumbImage:[UIImage imageNamed:@"滑动圆"] forState:UIControlStateNormal];
+    [_volumeSlider setThumbImage:[UIImage imageNamed:@"滑动圆"] forState:UIControlStateHighlighted];
+}
 
 
 - (IBAction)muteTapGesture:(UITapGestureRecognizer *)sender {

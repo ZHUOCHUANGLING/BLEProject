@@ -91,7 +91,12 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     [self initTFFunction];
     [self initUI];
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     
+    [self hiddenAllSuspensionView:nil];
     
 }
 
@@ -101,8 +106,19 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     [self synchronizeState];
     [self synchronizeVolumeValue];
+    
+    [self refreshNavigationBar];
 }
 
+
+
+-(void)refreshNavigationBar{
+    
+    
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
 
 
 -(void)synchronizeState{
@@ -143,6 +159,21 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [_progressSlider setThumbImage:[UIImage imageNamed:@"进度条圆"] forState:UIControlStateNormal];
+    [_progressSlider setThumbImage:[UIImage imageNamed:@"进度条圆"] forState:UIControlStateHighlighted];
+    
+    [_volumeSlider setThumbImage:[UIImage imageNamed:@"滑动圆"] forState:UIControlStateNormal];
+    
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+
     
 }
 
@@ -477,6 +508,13 @@ typedef NS_ENUM(NSInteger, TFMusicPlayMode){
 
 
 
+- (IBAction)hiddenAllSuspensionView:(UITapGestureRecognizer *)sender {
+    
+    _volumeBackgroudView.hidden = YES;
+    
+    MusicTabbarVC *superVC = (MusicTabbarVC *)self.tabBarController;
+    superVC.chooseModeTableView.hidden = YES;
+}
 
 
 @end

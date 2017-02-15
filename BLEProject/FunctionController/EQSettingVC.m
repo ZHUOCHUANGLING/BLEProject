@@ -8,8 +8,21 @@
 
 #import "EQSettingVC.h"
 #import "CustomEQVC.h"
-
+#import "UILabel+Extension.h"
 @interface EQSettingVC ()
+
+@property (weak, nonatomic) IBOutlet UILabel *EQNormal;
+
+@property (weak, nonatomic) IBOutlet UILabel *EQPopular;
+
+@property (weak, nonatomic) IBOutlet UILabel *EQRock;
+
+@property (weak, nonatomic) IBOutlet UILabel *EQSir;
+
+@property (weak, nonatomic) IBOutlet UILabel *EQclassical;
+
+@property (weak, nonatomic) IBOutlet UILabel *EQRural;
+
 
 
 @property(nonatomic, strong)UIImageView *oldImageView;
@@ -32,8 +45,9 @@
     [super viewWillAppear:animated];
     
     [eqOperation synchronizeEQState];
+    
+    [self recoverNavigationBar];
 }
-
 
 
 - (void)viewDidLoad {
@@ -44,6 +58,14 @@
     [self initUI];
     
 }
+
+
+-(void)recoverNavigationBar{
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"顶背景"] forBarMetrics:UIBarMetricsDefault];
+    
+}
+
 
 -(void)initEQFunction{
     eqOperation = [[EQFunction alloc] init];
@@ -93,6 +115,16 @@
 
     _customBtn.layer.cornerRadius = margin;
 
+    
+    [_customBtn.titleLabel adjustFontSizeWithSize:17];
+    [_EQNormal adjustFontSizeWithSize:15];
+    [_EQPopular adjustFontSizeWithSize:15];
+    [_EQRock adjustFontSizeWithSize:15];
+    [_EQSir adjustFontSizeWithSize:15];
+    [_EQclassical adjustFontSizeWithSize:15];
+    [_EQRural adjustFontSizeWithSize:15];
+
+    
 }
 
 - (IBAction)tapAction:(UITapGestureRecognizer *)sender {

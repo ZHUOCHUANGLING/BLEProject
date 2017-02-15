@@ -135,51 +135,87 @@ typedef NS_ENUM(NSInteger, ColorLampButton) {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
     
+
     
 }
 
 
 -(void)initControlller{
 
-    int width=ScreenWidth*0.67;
-    int cirWidth = ScreenWidth *0.86;
-    
-    
+    if (Device_IsPhone) {
+        int width=ScreenWidth*0.67;
+        int cirWidth = ScreenWidth *0.86;
         
-    CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
-    _cirSlider = [[CHcir_Slider alloc]init];
-    _cirSlider.frame = cirRect;
-
-    _cirSlider.startAngle = -90;
-    _cirSlider.cutoutAngle = 180;
-    _cirSlider.delegate = self;
-    _cirSlider.backgroundColor = [UIColor clearColor];
+        
+        
+        CGRect cirRect = CGRectMake(0.07 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
+        _cirSlider = [[CHcir_Slider alloc]init];
+        _cirSlider.frame = cirRect;
+        
+        _cirSlider.startAngle = -90;
+        _cirSlider.cutoutAngle = 180;
+        _cirSlider.delegate = self;
+        _cirSlider.backgroundColor = [UIColor clearColor];
+        
+        CGRect rect = CGRectMake(0.2*ScreenWidth, ScreenHeight*0.15, width, width);
+        
+        _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
+        _colorWheelView.center = CGPointMake(cirWidth/2, cirWidth/2);
+        [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
+        
+        _colorWheelView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _colorWheelView.layer.borderWidth = 5;
+        _colorWheelView.layer.cornerRadius = width/2;
+        
+        [_cirSlider addSubview:_colorWheelView];
+        
+    }else{
+        int width=ScreenWidth*0.6;
+        int cirWidth = ScreenWidth *0.75;
+        
+        
+        CGRect cirRect = CGRectMake(0.125 * ScreenWidth, 0.07*ScreenHeight, cirWidth, cirWidth);
+        _cirSlider = [[CHcir_Slider alloc]init];
+        _cirSlider.frame = cirRect;
+        
+        _cirSlider.startAngle = -90;
+        _cirSlider.cutoutAngle = 180;
+        [_cirSlider setLineWidth:7];
+        [_cirSlider setHandleOutSideRadius:9];
+        _cirSlider.delegate = self;
+        _cirSlider.backgroundColor = [UIColor clearColor];
+        
+        CGRect rect = CGRectMake(0.2*ScreenWidth, ScreenHeight*0.15, width, width);
+        
+        _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
+        _colorWheelView.center = CGPointMake(cirWidth/2, cirWidth/2);
+        [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
+        
+        _colorWheelView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _colorWheelView.layer.borderWidth = 7;
+        _colorWheelView.layer.cornerRadius = width/2;
+        
+        [_cirSlider addSubview:_colorWheelView];
+        
+        
+    }
+    
     
     [_cirSlider addTarget:self action:@selector(sliderTouchuUpInside) forControlEvents:UIControlEventTouchUpInside];
     
     _cirSlider.tintColor = [UIColor whiteColor];
     
     
-        [self.view addSubview:_cirSlider];
-
+    [self.view addSubview:_cirSlider];
     
-    
-    
-
-    
-    
-    CGRect rect = CGRectMake(0.2*ScreenWidth, ScreenHeight*0.15, width, width);
-    
-    _colorWheelView = [[MSColorWheelView alloc] initWithFrame:rect];
-    _colorWheelView.center = CGPointMake(cirWidth/2, cirWidth/2);
-    [_colorWheelView addTarget:self action:@selector(touchColorWheelView) forControlEvents:UIControlEventValueChanged | UIControlEventTouchUpInside|UIControlEventTouchCancel];
-    
-    _colorWheelView.layer.borderColor = [UIColor whiteColor].CGColor;
-    _colorWheelView.layer.borderWidth = 5;
-    _colorWheelView.layer.cornerRadius = width/2;
-    
-    [_cirSlider addSubview:_colorWheelView];
     
     
 

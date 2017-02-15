@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		313186D43835E1348EF40B72 /* libPods-BLEProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */; };
+		3B5DAB051E305A790029389F /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DAB041E305A790029389F /* UILabel+Extension.m */; };
 		E8037D701DD5ABAF00096969 /* BLEProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D6F1DD5ABAF00096969 /* BLEProjectTests.m */; };
 		E8037D7B1DD5ABAF00096969 /* BLEProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8037D7A1DD5ABAF00096969 /* BLEProjectUITests.m */; };
 		E8093BE21DDD9295000CABB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8093BBC1DDD9295000CABB0 /* AppDelegate.m */; };
@@ -75,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		11AF5B8124B6F9A6B589F10F /* Pods-BLEProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEProject/Pods-BLEProject.release.xcconfig"; sourceTree = "<group>"; };
+		3B5DAB031E305A790029389F /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		3B5DAB041E305A790029389F /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		52A79516FB441B7D8EBD2B41 /* libPods-BLEProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BLEProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D521DD5ABAF00096969 /* BLEProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8037D6B1DD5ABAF00096969 /* BLEProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +312,8 @@
 				E8BA821F1DFE9F9B0086EB7B /* UIView+RotateAnimation.m */,
 				E8A64F7C1DDEAACF009434F8 /* NSString+TimeInterval.h */,
 				E8A64F7D1DDEAACF009434F8 /* NSString+TimeInterval.m */,
+				3B5DAB031E305A790029389F /* UILabel+Extension.h */,
+				3B5DAB041E305A790029389F /* UILabel+Extension.m */,
 				E85CF8381DFE38A300AD9E5D /* LMJScrollTextView */,
 				E8A429321DFA57D4006EDEBC /* JPProgressHUD */,
 				E83F13281DE59C4600504EDE /* ColorPicker */,
@@ -818,6 +823,7 @@
 				E8DF5C0B1DE42F98001B3B57 /* SceneVC.m in Sources */,
 				E8D04E651E24730700FD66CD /* SendDataOperation.m in Sources */,
 				E8A64F7E1DDEAACF009434F8 /* NSString+TimeInterval.m in Sources */,
+				3B5DAB051E305A790029389F /* UILabel+Extension.m in Sources */,
 				E89D0FE91DF5857300B2E0D7 /* OnlineMusicCell.m in Sources */,
 				E8093BE91DDD9295000CABB0 /* LampVC.m in Sources */,
 				E8642E411E126F0F00878660 /* TFMusicListVC.m in Sources */,

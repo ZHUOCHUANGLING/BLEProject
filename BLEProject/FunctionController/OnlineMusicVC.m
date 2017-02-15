@@ -16,7 +16,7 @@
 
 #import "MusicTabbarVC.h"
 #import "MusicFunctionManger.h"
-
+#import "UILabel+Extension.h"
 
 
 #define RowHeight ScreenHeight*0.07
@@ -52,6 +52,15 @@
     [super viewWillAppear:animated];
     
     [self synchronizeState];
+    
+    
+    [self recoverNavigationBar];
+}
+
+
+-(void)recoverNavigationBar{
+
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"顶背景"] forBarMetrics:UIBarMetricsDefault];
     
 }
 
@@ -92,6 +101,15 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+
+    
 //    self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
 }
@@ -115,9 +133,15 @@
     
     OnlineMusicCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"onlineMusicCell" forIndexPath:indexPath];
     
-    if (ScreenWidth == 320) {
-        cell.width = 120;
-        cell.height = 150;
+    if (Device_IsPhone) {
+        cell.width = ScreenWidth/3.5;
+        cell.height = ScreenHeight/4.5;
+        
+    }else{
+        
+        cell.width =ScreenWidth/5;
+        cell.height =ScreenHeight/4;
+        [cell.titleLab adjustFontSizeWithSize:17];
     }
     
     
@@ -132,10 +156,22 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (ScreenWidth == 414) {
-        return CGSizeMake(150, 180);
+    //    if (ScreenWidth == 414) {
+    //        return CGSizeMake(150, 180);
+    //    }
+    //    return CGSizeMake(120, 150);
+    
+    
+    if (Device_IsPhone) {
+        
+        
+    }else{
+        
+        return CGSizeMake(ScreenWidth/3.5,ScreenHeight/4.5);
+        
     }
-    return CGSizeMake(120, 150);
+    
+    return CGSizeMake(ScreenWidth/4, ScreenHeight/3.5);
 }
 
 
@@ -158,12 +194,27 @@
         
         webBackVC = (WebviewVC *)segue.destinationViewController;
     }
-
-
+    
+    
 }
 
 
-
+//上左下右边距
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    
+    if (Device_IsPhone) {
+        
+        
+        
+//        return UIEdgeInsetsMake(30, 50, 150, 80);
+    }else{
+        return UIEdgeInsetsMake(135, 150, 0, 80);
+    }
+    
+    return UIEdgeInsetsMake(ScreenHeight/20, ScreenWidth/8, ScreenWidth/10, ScreenWidth/5.4);
+    
+}
 
 
 
@@ -175,5 +226,12 @@
 
 
 
+- (IBAction)hiddenAllSuspensionView:(UITapGestureRecognizer *)sender {
+    MusicTabbarVC *superVC = (MusicTabbarVC *)self.tabBarController;
+    superVC.chooseModeTableView.hidden = YES;
+}
+
+
 
 @end
+

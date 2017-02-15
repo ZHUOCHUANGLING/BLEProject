@@ -8,7 +8,7 @@
 
 #import "SceneVC.h"
 #import "SceneViewCell.h"
-
+#import "UILabel+Extension.h"
 @interface SceneVC ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 
@@ -39,6 +39,16 @@
 
 
 -(void)initData{
+    
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+    
 
     _sceneDataArr = [NSMutableArray arrayWithObjects:
                      @"彩虹",
@@ -83,47 +93,89 @@
 }
 
 
-
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SceneViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"sceneCell" forIndexPath:indexPath];
-
+    
+    if (Device_IsPhone) {
+        
+        //        cell.width =75;
+        //        cell.height =150;
+    }else {
+        
+        cell.width =ScreenWidth/7;
+        cell.height =ScreenHeight/6;
+        [cell.titleLab adjustFontSizeWithSize:17];
+        
+    }
+    
     //model
     cell.imageName = _sceneDataArr[indexPath.row];
     cell.selectedImageName = _sceneSelectedDataArr[indexPath.row];
     
     //view
     cell.imageView.image = [UIImage imageNamed:_sceneDataArr[indexPath.row]];
-    cell.titleLab.text =  _sceneDataArr[indexPath.row];
+    cell.titleLab.text   =  _sceneDataArr[indexPath.row];
     
- 
-
+    //    cell.backgroundColor  =[UIColor redColor];
+    
     
     return cell;
-
-
-
+    
+    
+    
 }
-
-
-
-
+//动态设置每个Item的尺寸大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (Device_IsPhone) {
+        
+        
+        
+    }else {
+        
+        
+        return CGSizeMake(ScreenWidth/4,ScreenHeight/6);
+        
+    }
+    
+    
+    return CGSizeMake(ScreenWidth/4.5, ScreenHeight/6);
+    
+    
+    
+    
+}
+//上左下右边距
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    
+    if (Device_IsPhone) {
+        
+        
+        
+        
+    }else{
+        return UIEdgeInsetsMake(50, 100, 0, 30);
+    }
+    
+    return UIEdgeInsetsMake(20, 20, 0, 20);
+    
+}
 
 #pragma mark -  Collection_Delegate
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     [self.operationModel setLightSenceWithIndex:indexPath.row andType:0 andTrans:0];
-
-
+    
+    
 }
-
-
-
 
 
 
 
 
 @end
+

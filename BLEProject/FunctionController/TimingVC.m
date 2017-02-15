@@ -7,6 +7,7 @@
 //
 
 #import "TimingVC.h"
+#import <objc/runtime.h>
 
 
 typedef NS_ENUM(NSInteger, TimeButtonType) {
@@ -47,6 +48,15 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 @property (weak, nonatomic) IBOutlet UIButton *timingOpenBtn;
 @property (weak, nonatomic) IBOutlet UIButton *timingCloseBtn;
 
+
+
+
+@property (weak, nonatomic) IBOutlet UIButton *cancelSettingTimeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *confirmSettingTimeBtn;
+
+
+
+
 @end
 
 @implementation TimingVC
@@ -58,7 +68,6 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 
     UILocalNotification *_localNotification;
     
-    
     NSMutableArray *_buttonArr;
     NSMutableArray *_switchArr;
     
@@ -69,6 +78,12 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
     [self initNotification];
     
+    
+    [self setPadButtonUI];
+    
+    
+    [self setIOS8DatePicker];
+    
 }
 
 
@@ -76,19 +91,16 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     [super viewWillAppear:animated];
     
     [self refreshUI];
-
+    
 }
 
 
 -(void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:animated];
-    
     [self persistentData];
 
 }
-
-
 
 
 -(void)initNotification{
@@ -109,8 +121,81 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     
 //    [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
     
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    
+    }
+    
 }
 
+
+
+
+-(void)setIOS8DatePicker{
+    
+    
+    if (Deviece_Version<9.0) {
+
+        
+//        _settingTimeView.frame = CGRectMake(0, 0, 100, 200);
+        
+        
+        
+    }
+   
+    
+}
+
+
+
+
+
+-(void)setPadButtonUI{
+    
+    
+    if (!(Device_IsPhone)) {
+        _lightOpenBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_lightOpenBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 150, 0, 0)];
+        _lightCloseBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_lightCloseBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 150, 0, 0)];
+        _playerOpenBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_playerOpenBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 150, 0, 0)];
+        _playerCloseBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_playerCloseBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 150, 0, 0)];
+        _timingOpenBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_timingOpenBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 240, 0, 0)];
+        _timingCloseBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        [_timingCloseBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 240, 0, 0)];
+        
+        
+        
+        _confirmSettingTimeBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        _cancelSettingTimeBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+        
+    }else{
+    
+        if (ScreenHeight == 568) {
+            _lightOpenBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _lightCloseBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _playerOpenBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _playerCloseBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _timingOpenBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _timingCloseBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        }
+    
+    
+    
+    }
+    
+    
+    
+
+}
 
 
 
@@ -176,7 +261,6 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
         }
         currentButton.selected = NO;
         
-        
         currentBtnType = currentButton.tag;
 
         switch (currentBtnType) {
@@ -224,8 +308,6 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
         
     }];
     
-    
-    
     [alertController addAction:cancelAction];
     [alertController addAction:deleteAction];
     
@@ -245,22 +327,18 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
     [formatter setDateFormat: @"HH:mm"];
     NSString *settingTimeStr = [formatter stringFromDate:_settingTimePicker.date];
 
-    
     switch (currentBtnType) {
             
         case LightOpenBtn:
             if (_lightCloseBtn.selected) {
                 _lightSwitch.on = YES;
             }
-            
-            
             break;
+            
         case LightCloseBtn:
             if (_lightOpenBtn.selected) {
                 _lightSwitch.on = YES;
             }
-            
-            
             break;
             
             
@@ -268,29 +346,26 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
             if (_playerCloseBtn.selected) {
                 _playerSwitch.on = YES;
             }
-            
-            
             break;
-        case PlayerCloseBtn:
             
+        case PlayerCloseBtn:
             if (_playerOpenBtn.selected) {
                 _playerSwitch.on = YES;
             }
-            
             break;
-            
             
         case TimingOpenBtn:
             _timingSwitch.on = YES;
             break;
+            
         case TimingCloseBtn:
             _timing2Switch.on = YES;
             break;
             
         default:
             break;
+            
     }
-    
     
     currentBtn.selected = YES;
     
@@ -303,15 +378,8 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
 
 
 - (IBAction)settingTimeCancelClick:(UIButton *)sender {
-    
     _settingTimeBackView.hidden = YES;
 }
-
-
-
-
-
-
 
 
 -(void)refreshUI{
@@ -328,9 +396,7 @@ typedef NS_ENUM(NSInteger, TimeSwitchType) {
             [settingBtn setTitle:timeStr forState:UIControlStateNormal &UIControlStateSelected];
             
         }
-        
     }
-    
     
     [self refreshSwitch];
 

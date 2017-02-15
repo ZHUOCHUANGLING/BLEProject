@@ -67,10 +67,37 @@
 - (CALayer *)indicatorLayer
 {
     if (!_indicatorLayer) {
+       
+        
+        
+        if (Device_IsPhone) {
+            
+            
+        }else{
+            
+            CGFloat dimension = 60;
+            UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+            _indicatorLayer = [CALayer layer];
+            
+            _indicatorLayer.cornerRadius = dimension / 2;
+            _indicatorLayer.borderColor = edgeColor.CGColor;
+            _indicatorLayer.borderWidth = 2;
+            _indicatorLayer.backgroundColor = [UIColor whiteColor].CGColor;
+            _indicatorLayer.bounds = CGRectMake(0, 0, dimension, dimension);
+            _indicatorLayer.position = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2);
+            _indicatorLayer.shadowColor = [UIColor blackColor].CGColor;
+            _indicatorLayer.shadowOffset = CGSizeZero;
+            _indicatorLayer.shadowRadius = 1;
+            _indicatorLayer.shadowOpacity = 0.5f;
+            return _indicatorLayer;
+            
+        }
+        
+        
         CGFloat dimension = 33;
         UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
         _indicatorLayer = [CALayer layer];
-    
+        
         _indicatorLayer.cornerRadius = dimension / 2;
         _indicatorLayer.borderColor = edgeColor.CGColor;
         _indicatorLayer.borderWidth = 2;
@@ -82,8 +109,8 @@
         _indicatorLayer.shadowRadius = 1;
         _indicatorLayer.shadowOpacity = 0.5f;
     }
-
-    return _indicatorLayer;
+        return _indicatorLayer;
+   
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {

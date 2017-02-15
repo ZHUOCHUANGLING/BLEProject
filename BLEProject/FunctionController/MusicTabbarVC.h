@@ -18,10 +18,10 @@
 @end
 
 
-
-
 @interface MusicTabbarVC : UITabBarController
 
 @property (nonatomic ,weak) id <MusicTabbarVCDelegate> delegate;
+
+@property (strong, nonatomic) UITableView *chooseModeTableView;
 
 @end

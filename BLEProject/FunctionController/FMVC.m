@@ -7,7 +7,7 @@
 //
 
 #import "FMVC.h"
-
+#import "UILabel+Extension.h"
 @interface FMVC ()
 
 @property (weak, nonatomic) IBOutlet UIView *volumeBGView;
@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIView *seachingView;
 
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *FMChannelLablefirst;
+
+@property (weak, nonatomic) IBOutlet UILabel *FMChannelLableSecond;
 
 
 @property (nonatomic, strong) FMFunction *fmOperation;
@@ -47,7 +52,11 @@
    
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    _volumeBGView.hidden = YES;
 
+}
 
 
 -(void)synchronizeCurrentState{
@@ -85,6 +94,27 @@
 
 
 -(void)initUI{
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        
+        _FMChannelLab.font =[UIFont systemFontOfSize:120];
+        [_FMChannelLablefirst adjustFontSizeWithSize:15];
+        [_FMChannelLableSecond adjustFontSizeWithSize:15];
+    }
+
+    
+    
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -99,6 +129,11 @@
                             stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
     [_changeChannelSlider setMinimumTrackImage:stetchTrack forState:UIControlStateNormal];
     [_changeChannelSlider setMaximumTrackImage:stetchTrack forState:UIControlStateNormal];
+    
+    
+    
+    [_volumeSlider setThumbImage:[UIImage imageNamed:@"滑动圆"] forState:UIControlStateNormal];
+    
     
 }
 
@@ -222,7 +257,10 @@
 
 
 
-
+- (IBAction)hiddenAllSuspensionView:(UITapGestureRecognizer *)sender {
+    
+    _volumeBGView.hidden = YES;
+}
 
 
 

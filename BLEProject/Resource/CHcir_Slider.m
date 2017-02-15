@@ -63,7 +63,6 @@ static inline CGFloat AngleBetweenPoints(CGPoint a, CGPoint b, CGPoint c) {
     double distance = sqrt((xDist * xDist) + (yDist * yDist));
     CGFloat radius = CGRectGetMidX(self.bounds) - self.lineWidth / 2 - self.handleOutSideRadius *2 ;
     
-    
     CGFloat handleRadius = self.handleOutSideRadius;
     
     return distance < radius + self.lineWidth * 0.5 + handleRadius && distance > radius - self.lineWidth *0.5 - handleRadius;

@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "FunctionDataManager.h"
 
-
+#import "UILabel+Extension.h"
 
 
 static NSInteger CharacterCount = 21;
@@ -23,8 +23,6 @@ static NSInteger CharacterCount = 21;
 @property(nonatomic, strong)NSMutableArray *modualIDArr;
 @property (nonatomic, strong)NSMutableArray *modualNameArr;
 
-
-
 @property (weak, nonatomic) IBOutlet UILabel *connectedLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *footerView;
@@ -35,7 +33,6 @@ static NSInteger CharacterCount = 21;
 @implementation LeftSideVC
 {
     NSInteger selectedRow;
-
 }
 
 
@@ -72,6 +69,18 @@ static NSInteger CharacterCount = 21;
     self.tableView.backgroundView = backgroundView;
     
     selectedRow = 0;
+    
+    
+    if (Device_IsPhone) {
+        
+        //        [_bluetooth.titleLabel adjustFontSizeWithSize:14];
+        //        [_speakers.titleLabel adjustFontSizeWithSize:14];
+        
+    }else{
+        
+        [_connectedLabel adjustFontSizeWithSize:15];
+    }
+    
     
 }
 
@@ -114,6 +123,8 @@ static NSInteger CharacterCount = 21;
 
 -(void)refreshUI{
 
+    
+    
     self.footerView.frame = CGRectMake(self.footerView.x, self.footerView.y, ScreenWidth,ScreenHeight - 160 - _modualIDArr.count*ROWHEIGHT);
     
     if (DataManager.connectedPeripheral.name) {
@@ -144,6 +155,15 @@ static NSInteger CharacterCount = 21;
     
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        
+        [cell.textLabel adjustFontSizeWithSize:20];
+        
+    }
     
     cell.backgroundColor = [UIColor clearColor];
     
@@ -358,10 +378,7 @@ static NSInteger CharacterCount = 21;
             
 #warning 测试用
             [self disConnectDevice:nil];
-            
-            
-            
-            
+                        
         }
         
         

@@ -9,7 +9,7 @@
 #import "MusicTabbarVC.h"
 #import "FunctionDataManager.h"
 #import "MusicFunctionManger.h"
-
+#import "UILabel+Extension.h"
 //#import "MusicVC.h"
 
 
@@ -20,7 +20,7 @@
 
 @interface MusicTabbarVC ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (strong, nonatomic) UITableView *chooseModeTableView;
+
 
 @end
 
@@ -37,6 +37,9 @@
     [self initTableViewData];
     [self initTableView];
     
+    
+
+    
 }
 
 
@@ -47,6 +50,12 @@
 
 }
 
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    _chooseModeTableView.hidden = YES;
+    
+}
 
 -(void)synchronizeCurrentState{
 
@@ -119,10 +128,13 @@
     [_chooseModeTableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
     [_chooseModeTableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     
+    if (!(Device_IsPhone)) {
+        _chooseModeTableView.frame = CGRectMake(ScreenWidth * 0.69, 70, ScreenWidth*0.3, RowHeight * _chooseModeTableViewArr.count+10);
+    }
+    
     [self.view addSubview:_chooseModeTableView];
     
-    
-    
+
     [self tableView:_chooseModeTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
 }
@@ -142,6 +154,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"musicCell"];
         cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
     
@@ -156,11 +169,19 @@
     cell.textLabel.font = [UIFont systemFontOfSize:16];
     
     
+    
     if (ScreenWidth == 320) {
         cell.textLabel.font = [UIFont systemFontOfSize:11.5];
     }
     cell.imageView.image = [UIImage imageNamed:_chooseModeTableViewArr[indexPath.row]];
     
+    
+    if (Device_IsPhone) {
+        
+    }else{
+        
+        [cell.textLabel adjustFontSizeWithSize:17];
+    }
     
 }
 
@@ -186,6 +207,7 @@
         
         if ([selectedStr isEqualToString:@"本地音乐"]) {
             self.selectedIndex = 0;
+            
         }else if ([selectedStr isEqualToString:@"TF卡音乐"]){
             self.selectedIndex = 1;
         }else{

@@ -54,7 +54,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     NSArray *_mediaItems;
     NSInteger sessionMusicCount;
     
-    
     BOOL hasMusic;
     BOOL hasTFCard;
     BOOL isConnectA2DP;
@@ -73,6 +72,8 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     [self initMusicState];
     
+    
+    
 }
 
 
@@ -81,8 +82,37 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     [self synchronizeState];
     
+    if (Device_IsPhone) {
+        
+    }else{
+        //标题颜色和字体
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+
+    
+    
+    [self refreshNavigationBar];
+ 
+    
 }
 
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self hiddenAllSuspensionView:nil];
+
+}
+
+
+-(void)refreshNavigationBar{
+    
+
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
+}
 
 
 -(void)synchronizeState{
@@ -109,9 +139,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     [self initScrollTextView];
     
 }
-
-
-
 
 
 
@@ -178,9 +205,6 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     }
     _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 
-    
-    
-    
 }
 
 
@@ -189,21 +213,22 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
-
+    
     dispatch_main_async_safe(^{
         
 //        _albumImageView.layer.masksToBounds = YES;
 //        _albumImageView.layer.cornerRadius = _albumImageView.height/2;
         
-
+    
         
+        [_progressSlider setThumbImage:[UIImage imageNamed:@"进度条圆"] forState:UIControlStateNormal];
+        [_progressSlider setThumbImage:[UIImage imageNamed:@"进度条圆"] forState:UIControlStateHighlighted];
         
+        [_volumeSlider setThumbImage:[UIImage imageNamed:@"滑动圆"] forState:UIControlStateNormal];
         _volumeSlider.value = _playerController.volume;
         
     });
-    
 
-  
 }
 
 
@@ -362,25 +387,19 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 - (IBAction)play:(UIButton *)sender {
     
-    
+    if(_playerController){
 
-       
-        if(_playerController){
+        if (self.playerController.playbackState != MPMusicPlaybackStatePlaying) {
+            
+            [_playerController play];
+            
+        }else{
+            
+            [_playerController pause];
 
-            if (self.playerController.playbackState != MPMusicPlaybackStatePlaying) {
-                
-                [_playerController play];
-                
-            }else{
-                
-                [_playerController pause];
-
-                
-            }
             
         }
-    
-
+    }
 }
 
 
@@ -473,9 +492,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
             [_playOrPauseButton setBackgroundImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
             [_albumImageView rotate360DegreeWithImageView:RotateSpeed];
         });
-        
-        
-        
+
     }else{
         
         dispatch_main_async_safe(^{
@@ -500,7 +517,14 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     
     if(_playerController.nowPlayingItem.title){
         
-        [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+        
+        if (_playerController.nowPlayingItem.artist) {
+            [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@-%@",_playerController.nowPlayingItem.title,_playerController.nowPlayingItem.artist] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+        }else{
+            [self.scrollTextView startScrollWithText:[NSString stringWithFormat:@"%@",_playerController.nowPlayingItem.title] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17]];
+        }
+        
+
         
         
         UIImage *albumImage = [_playerController.nowPlayingItem.artwork imageWithSize:CGSizeMake(_albumImageView.width, _albumImageView.height)];
@@ -571,9 +595,9 @@ typedef NS_ENUM(NSInteger, MusicMode) {
     if (!_scrollTextView) {
         
         if (Device_IsPhone) {
-            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.55, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.55 , ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
         }else{
-            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.6, ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
+            _scrollTextView = [[LMJScrollTextView alloc] initWithFrame:CGRectMake(20, ScreenHeight * 0.6 , ScreenWidth-40, 30) textScrollModel:LMJTextScrollContinuous direction:LMJTextScrollMoveLeft];
             
         }
         
@@ -618,8 +642,7 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 #pragma mark -  MusicTabbarVCDelegate
 -(void)pausePlayingMusic{
-
-
+    
     if (_playerController) {
         
         dispatch_main_async_safe(^{
@@ -632,6 +655,19 @@ typedef NS_ENUM(NSInteger, MusicMode) {
 
 }
 
+
+
+
+
+- (IBAction)hiddenAllSuspensionView:(UITapGestureRecognizer *)sender {
+    
+    _volumeBackgroudView.hidden = YES;
+    
+    MusicTabbarVC *superVC = (MusicTabbarVC *)self.tabBarController;
+    superVC.chooseModeTableView.hidden = YES;
+    
+    
+}
 
 
 @end

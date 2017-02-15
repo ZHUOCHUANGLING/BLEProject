@@ -9,7 +9,7 @@
 #import "ScanVC.h"
 #import "FunctionDataManager.h"
 #import "UIView+RotateAnimation.h"
-
+#import "UILabel+Extension.h"
 @interface ScanVC ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *peripheralList;
 @property (weak, nonatomic) IBOutlet UIView *connectingView;
 
+@property (weak, nonatomic) IBOutlet UILabel *peripheralName;
 
 @end
 
@@ -64,8 +65,14 @@
     [DataManager startScan];
     
     
-    
-    
+    if (Device_IsPhone) {
+        
+    }else{
+        
+        [_peripheralName adjustFontSizeWithSize:15];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:25], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    }
+
 }
 
 
@@ -76,9 +83,6 @@
 
     //去掉tableview顶部留白
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
     
     [self centerStartListening];
 }
@@ -234,7 +238,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _connectingView.hidden = YES;
     });
-    
 }
 
 
